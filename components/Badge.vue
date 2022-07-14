@@ -1,6 +1,6 @@
 <template>
     <div class="badge-container">
-        <span>{{ name }}</span>
+        <span> {{ name }}</span>
     </div>
 </template>
 
@@ -25,14 +25,19 @@ export default defineComponent({
     background-color: v-bind(color);
     width: fit-content;
     height: fit-content;
-    border-radius: 7px;
+    border-radius: 6px;
     color: $color-font-light;
     padding: 0px $sp-tiny;
     margin-right: $sp-tiny;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     span {
         font-size: $fs-tiny;
         font-weight: $fw-bold;
+        height: 16px;
+        line-height: 16px;
     }
 }
 </style>

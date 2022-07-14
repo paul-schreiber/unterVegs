@@ -31,14 +31,26 @@ export const BadgeColors = {
     [Badges.PIZZA]: '#F78154',
     [Badges.BACKWARE]: '#F7DD72',
     [Badges.SNACK]: '#A99F96',
-    [Badges.FASTFOOD]: '#132E32',
+    [Badges.FASTFOOD]: '#f5bf42',
     [Badges.VISCH]: '#76BED0',
-    [Badges.SÜSSES]: '#805E73',
+    [Badges.SÜSSES]: '#e483e6',
 }
 
 export enum Labels {
     VEGAN = 'VEGAN',
     VEGANISIERBAR = 'VEGANISIERBAR'
+}
+
+export const LabelText = {
+    [Labels.VEGAN]: {
+        content: '🌱',
+        tooltip: 'Dieses Gericht ist vegan.'
+    },
+    [Labels.VEGANISIERBAR]: {
+        content: '🧀',
+        tooltip: 'Dieses Gericht ist veganisierbar. Klicke hier für weitere Infos!'
+    }
+
 }
 
 export enum ShopIds {
@@ -48,5 +60,5 @@ export enum ShopIds {
     NORDSEE = 'NO',
     DEUTSCHEBAHN = 'DB',
     FREDDYFRESH = 'FF',
-    
+
 }

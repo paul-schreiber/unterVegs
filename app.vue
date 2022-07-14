@@ -23,6 +23,7 @@ html * {
 html, body {
   min-height: 100vh;
   margin: 0px;
+  background-color: $color-light-background;
 }
 
 .content-wrapper {

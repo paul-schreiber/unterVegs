@@ -60,8 +60,8 @@ export default defineComponent({
 .content-wrapper {
   display: flex;
   width: 100%;
-  align-items: center;
   justify-content: center;
+  height: calc(100vh - 10vh - 80px)
 }
 
 .search-container {
@@ -69,10 +69,13 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 700px;
+  height: fit-content;
   max-width: 100%;
   border-radius: 15px;
+  background-color: white;
+  margin-top: $sp-large;
 
   header {
     span {
