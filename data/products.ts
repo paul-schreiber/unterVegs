@@ -20,7 +20,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -40,7 +40,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -60,7 +60,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -80,7 +80,7 @@ export default [
         "lastEdited": new Date('2022-7-14'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -100,7 +100,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -120,7 +120,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -130,7 +130,17 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.NORDSEE,
         "label": Labels.VEGAN,
-        "badges": [Badges.FASTFOOD, Badges.VISH],
+        "badges": [Badges.FASTFOOD, Badges.VISCH],
         "notes": "Vish"
+    },
+    {
+        "name": "Milchreis",
+        "id": uuidv4(),
+        "author": "Miriam",
+        "lastEdited": new Date('2022-7-14'),
+        "shop": ShopIds.DEUTSCHEBAHN,
+        "label": Labels.VEGAN,
+        "badges": [Badges.SÜSSES],
+        "notes": "Leckerer veganer Milchreis - 'für unsere kleinen Gäste'"
     }
 ] as Product[]

@@ -6,8 +6,11 @@
 
 <style lang="scss" scoped>
     .item-container {
+        width: 100%;
+        border-radius: 15px;
+        padding: $sp-small;
     &:hover {
-      background-color: $color-font-medium;
+      background-color: $color-light-grey;
     }
   }
 </style>

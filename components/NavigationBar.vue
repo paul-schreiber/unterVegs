@@ -3,7 +3,6 @@
     <NuxtLink to="/legal">
       <img alt="Vue logo" src="../assets/img/logo.png" />
     </NuxtLink>
-    unterVegs
   </nav>
 </template>
 
@@ -24,7 +23,6 @@ nav {
   align-items: center;
 
   img {
-      width: 50px;
       height: 50px;
   }
 }

@@ -3,7 +3,7 @@ export default [
     {
         name: 'Mc Donalds',
         id: ShopIds.MCDONALDS,
-        notes: ''
+        notes: '',
     },
     {
         name: 'Burger King',
@@ -13,6 +13,11 @@ export default [
     {
         name: 'Backwerk',
         id: ShopIds.BACKWERK,
+        notes: ''
+    },
+    {
+        name: 'Deutsche Bahn',
+        id: ShopIds.DEUTSCHEBAHN,
         notes: ''
     }
 ] as Shop[]

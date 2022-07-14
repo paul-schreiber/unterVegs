@@ -12,7 +12,8 @@ export type Product = {
 export type Shop = {
     name: string,
     id: ShopIds,
-    notes: string
+    notes: string,
+    badgeColor: string
 }
 
 export enum Badges {
@@ -21,7 +22,18 @@ export enum Badges {
     BACKWARE = 'BACKWARE',
     SNACK = 'SNACK',
     FASTFOOD = 'FASTFOOD',
-    VISH = 'VISH'
+    VISCH = 'VISCH',
+    SÜSSES = 'SÜSSES'
+}
+
+export const BadgeColors = {
+    [Badges.BURGER]: '#CE7C7C',
+    [Badges.PIZZA]: '#F78154',
+    [Badges.BACKWARE]: '#F7DD72',
+    [Badges.SNACK]: '#A99F96',
+    [Badges.FASTFOOD]: '#132E32',
+    [Badges.VISCH]: '#76BED0',
+    [Badges.SÜSSES]: '#805E73',
 }
 
 export enum Labels {
@@ -34,4 +46,7 @@ export enum ShopIds {
     BURGERKING = 'BK',
     BACKWERK = 'BW',
     NORDSEE = 'NO',
+    DEUTSCHEBAHN = 'DB',
+    FREDDYFRESH = 'FF',
+    
 }

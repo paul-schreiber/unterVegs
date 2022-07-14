@@ -1,7 +1,9 @@
 <template>
   <router-link to="/product">
     <div class="product-item">
-      <div class="badge-container">{{ product.badges }}</div>
+      <div class="badges-container">
+        <Badge v-for="badge in product.badges" :key="badge" :color="getBadgeColor(badge)" :name="badge"/>
+      </div>
       <div class="name-container">{{ product.name }}</div>
       <div class="label-container">{{ product.label }}</div>
       <div class="date-container">{{ timeSince(product.lastEdited) }}</div>
@@ -11,7 +13,8 @@
 
 <script lang="ts">
 import { DateTime } from "luxon";
-import type { Product } from "../types"
+import type { Badges, Product, ShopIds } from "../types"
+import { BadgeColors } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
@@ -25,6 +28,9 @@ export default defineComponent({
       const dayInPast = DateTime.fromJSDate(date)
       const diff = DateTime.now().diff(dayInPast, ["years", "months", "days", "hours", "minutes"]).toObject()
       return diff.years != 0 ? `${diff.years} years` : diff.months != 0 ? `${diff.months} months` : diff.days != 0 ? `${diff.days} days` : `${diff.hours} hours`
+    },
+    getBadgeColor(badgeId: Badges) {
+      return BadgeColors[badgeId]
     }
   }
 });
@@ -39,15 +45,18 @@ a {
 
 .product-item {
   display: flex;
-  width: 600px;
+  width: 100%;
   height: 40px;
   align-items: center;
+  justify-content: space-between;
 
-  .badge-container {
-    width: 300px;
+  .badges-container {
+    display: flex;
+    width: 150px;
   }
 
   .name-container {
+    text-align: left;
     width: 30%;
   }
 

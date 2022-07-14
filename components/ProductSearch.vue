@@ -81,7 +81,6 @@ export default defineComponent({
 
     width: 100%;
     padding: $sp-medium;
-    border-bottom: 2px solid $color-light-grey;
     display: flex;
     align-items: center;
     color: $color-font-medium;
@@ -104,6 +103,7 @@ export default defineComponent({
     max-height: 400px;
     padding: $sp-medium;
     overflow: scroll;
+    border-top: 2px solid $color-light-grey;
   }
 }
 </style>

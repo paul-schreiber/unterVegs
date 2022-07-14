@@ -24,7 +24,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .result-list {
-  width: fit-content;
+  width: 100%;
 }
 
 header {
