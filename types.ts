@@ -11,7 +11,7 @@ export type Product = {
 
 export type Shop = {
     name: string,
-    shopId: ShopIds,
+    id: ShopIds,
     notes: string
 }
 
@@ -20,7 +20,8 @@ export enum Badges {
     PIZZA = 'PIZZA',
     BACKWARE = 'BACKWARE',
     SNACK = 'SNACK',
-    FASTFOOD = 'FASTFOOD'
+    FASTFOOD = 'FASTFOOD',
+    VISH = 'VISH'
 }
 
 export enum Labels {
@@ -32,4 +33,5 @@ export enum ShopIds {
     MCDONALDS = 'MCD',
     BURGERKING = 'BK',
     BACKWERK = 'BW',
+    NORDSEE = 'NO',
 }

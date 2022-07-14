@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto"
-import { Product, Badges, Labels, ShopIds } from "./types"
+import { Product, Badges, Labels, ShopIds } from "../types"
 import { v4 as uuidv4 } from 'uuid';
 
 export default [
@@ -14,7 +14,7 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
@@ -34,7 +34,7 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
@@ -54,7 +54,7 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
@@ -74,7 +74,7 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-14'),
@@ -94,7 +94,7 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
@@ -114,7 +114,7 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
@@ -122,5 +122,15 @@ export default [
         "label": Labels.VEGAN,
         "badges": [Badges.BACKWARE, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
+    },
+    {
+        "name": "Fish & Chips",
+        "id": uuidv4(),
+        "author": "Miriam",
+        "lastEdited": new Date('2022-7-12'),
+        "shop": ShopIds.NORDSEE,
+        "label": Labels.VEGAN,
+        "badges": [Badges.FASTFOOD, Badges.VISH],
+        "notes": "Vish"
     }
 ] as Product[]
