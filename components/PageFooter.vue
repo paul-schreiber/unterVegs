@@ -17,12 +17,15 @@ export default {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgb(27, 55, 27);
+  background-color: $color-primary;
   height: 10vh;
-  color: white;
+  color: $color-font-light;
+  padding: $sp-big;
+
 
   a {
-    color: white;
+    color: $color-font-light;
+    ;
   }
 }
 </style>

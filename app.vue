@@ -22,6 +22,6 @@ html, body {
 }
 
 .content-wrapper {
-  padding: 5vw;
+  padding: $sp-big;
 }
 </style>

@@ -19,6 +19,9 @@ nav {
   width: 100%;
   height: 60px;
   background-color: rgb(243, 243, 243);
+  padding: $sp-small;
+  display: flex;
+  align-items: center;
 
   img {
       width: 50px;
