@@ -4,13 +4,13 @@
       <h4 class="block-title">{{ title }}</h4>
     </header>
     <div class="result-list">
-      <ResultItem v-for="result in results" :key="result.id" :item="result" />
+      <ProductItem v-for="result in results" :key="result.id" :product="result" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import type { Item } from "../types"
+import type { Product } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "ResultBlock",
@@ -20,7 +20,7 @@ export default defineComponent({
       required: true
     },
     results: {
-      type: Object as () => Item[],
+      type: Object as () => Product[],
       required: true
     },
   },

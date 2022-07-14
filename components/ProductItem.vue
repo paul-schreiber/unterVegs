@@ -1,22 +1,22 @@
 <template>
   <router-link to="/product">
-    <div class="result-item">
-      <div class="badge-container">{{ item.badges }}</div>
-      <div class="name-container">{{ item.name }}</div>
-      <div class="label-container">{{ item.label }}</div>
-      <div class="date-container">{{ timeSince(item.lastEdited) }}</div>
+    <div class="product-item">
+      <div class="badge-container">{{ product.badges }}</div>
+      <div class="name-container">{{ product.name }}</div>
+      <div class="label-container">{{ product.label }}</div>
+      <div class="date-container">{{ timeSince(product.lastEdited) }}</div>
     </div>
   </router-link>
 </template>
 
 <script lang="ts">
 import { DateTime } from "luxon";
-import type { Item } from "../types"
+import type { Product } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
-    item: {
-      type: Object as () => Item,
+    product: {
+      type: Object as () => Product,
       required: true
     },
   },
@@ -37,7 +37,7 @@ a {
   width: fit-content;
 }
 
-.result-item {
+.product-item {
   display: flex;
   width: 600px;
   height: 40px;

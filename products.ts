@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto"
-import { Item, Badges, Labels } from "./types"
+import { Product, Badges, Labels, ShopIds } from "./types"
 import { v4 as uuidv4 } from 'uuid';
 
 export default [
@@ -8,7 +8,7 @@ export default [
         "id": uuidv4(),
         "author": "Miriam",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Backwerk",
+        "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
         "badges": [Badges.BACKWARE, Badges.SNACK],
         "notes": "auch mit Butter erhältlich"
@@ -18,7 +18,7 @@ export default [
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Mc Donalds",
+        "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
         "badges": [Badges.BACKWARE, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
@@ -28,7 +28,7 @@ export default [
         "id": uuidv4(),
         "author": "Miriam",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Backwerk",
+        "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
         "badges": [Badges.BACKWARE, Badges.SNACK],
         "notes": "auch mit Butter erhältlich"
@@ -38,7 +38,7 @@ export default [
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Mc Donalds",
+        "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
         "badges": [Badges.BACKWARE, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
@@ -48,7 +48,7 @@ export default [
         "id": uuidv4(),
         "author": "Miriam",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Backwerk",
+        "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
         "badges": [Badges.BACKWARE, Badges.SNACK],
         "notes": "auch mit Butter erhältlich"
@@ -58,7 +58,7 @@ export default [
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Mc Donalds",
+        "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
         "badges": [Badges.BACKWARE, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
@@ -68,7 +68,7 @@ export default [
         "id": uuidv4(),
         "author": "Miriam",
         "lastEdited": new Date('2022-7-9'),
-        "company": "Backwerk",
+        "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
         "badges": [Badges.BACKWARE, Badges.SNACK],
         "notes": "auch mit Butter erhältlich"
@@ -78,7 +78,7 @@ export default [
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-14'),
-        "company": "Mc Donalds",
+        "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
         "badges": [Badges.BACKWARE, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
@@ -88,7 +88,7 @@ export default [
         "id": uuidv4(),
         "author": "Miriam",
         "lastEdited": new Date('2022-3-12'),
-        "company": "Backwerk",
+        "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
         "badges": [Badges.BACKWARE, Badges.SNACK],
         "notes": "auch mit Butter erhältlich"
@@ -98,7 +98,7 @@ export default [
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Mc Donalds",
+        "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
         "badges": [Badges.BACKWARE, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
@@ -108,7 +108,7 @@ export default [
         "id": uuidv4(),
         "author": "Miriam",
         "lastEdited": new Date('2021-7-12'),
-        "company": "Backwerk",
+        "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
         "badges": [Badges.BACKWARE, Badges.SNACK],
         "notes": "auch mit Butter erhältlich"
@@ -118,9 +118,9 @@ export default [
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
-        "company": "Mc Donalds",
+        "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
         "badges": [Badges.BACKWARE, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     }
-] as Item[]
+] as Product[]

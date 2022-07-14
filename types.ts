@@ -1,12 +1,18 @@
-export type Item = {
+export type Product = {
     name: string;
     id: string;
     author: string;
-    company: string;
+    shop: ShopIds;
     badges: Badges[];
     label: Labels;
     lastEdited: Date;
     notes: string;
+}
+
+export type Shop = {
+    name: string,
+    shopId: ShopIds,
+    notes: string
 }
 
 export enum Badges {
@@ -20,4 +26,10 @@ export enum Badges {
 export enum Labels {
     VEGAN = 'VEGAN',
     VEGANISIERBAR = 'VEGANISIERBAR'
+}
+
+export enum ShopIds {
+    MCDONALDS = 'MCD',
+    BURGERKING = 'BK',
+    BACKWERK = 'BW',
 }

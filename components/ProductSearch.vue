@@ -2,26 +2,29 @@
   <div class="search-container">
     <input v-model="searchTerm" placeholder="Search for a product or a shop..." />
     <div class="search-results">
-      <ResultBlock :results="filteredProducts" title='Produkte' :v-if="products.length != 0" />
+      <ResultBlock :results="filteredProducts" title='Produkte' v-if="filteredProducts.length != 0" />
+      <ResultBlock :results="shops" title='Shops' v-if="shops.length != 0" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import type { Item } from "../types"
+import type { Product } from "../types"
 import products from "../products";
+import shops from "../shops";
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "ProductSearch",
   data() {
     return {
-      products: products as Item[],
-      searchTerm: '' as String
+      products: products as Product[],
+      searchTerm: '' as String,
+      shops: shops,
     };
   },
 
   computed: {
-    filteredProducts(): Item[] {
+    filteredProducts(): Product[] {
       return products.filter((product) => {
         const productName = product.name.toLowerCase()
         return productName.includes(this.searchTerm.toLowerCase())
