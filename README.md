@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# unterVegs
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+unterVegs ist eine Suche für vegane Produkte verschiedener Imbiss- und Restaurantketten.
 
 ## Setup
 
