@@ -13,15 +13,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $color-font-dark;
+}
+
+html * {
+  box-sizing: border-box;
 }
 
 html, body {
   min-height: 100vh;
   margin: 0px;
+  background-color: $color-light-background;
 }
 
 .content-wrapper {
-  padding: 5vw;
+  padding: $sp-big;
 }
 </style>

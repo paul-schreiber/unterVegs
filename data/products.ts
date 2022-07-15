@@ -1,5 +1,4 @@
-import { randomUUID } from "crypto"
-import { Product, Badges, Labels, ShopIds } from "./types"
+import { Product, Badges, Labels, ShopIds } from "../types"
 import { v4 as uuidv4 } from 'uuid';
 
 export default [
@@ -14,13 +13,13 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -34,13 +33,13 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -54,13 +53,13 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -74,13 +73,13 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-14'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -94,13 +93,13 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -114,13 +113,33 @@ export default [
         "notes": "auch mit Butter erhältlich"
     },
     {
-        "name": "Vegan TS",
+        "name": "Fresh Vegan TS",
         "id": uuidv4(),
         "author": "Paul",
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BACKWARE, Badges.FASTFOOD],
+        "badges": [Badges.BURGER, Badges.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
+    },
+    {
+        "name": "Fish & Chips",
+        "id": uuidv4(),
+        "author": "Miriam",
+        "lastEdited": new Date('2022-7-12'),
+        "shop": ShopIds.NORDSEE,
+        "label": Labels.VEGAN,
+        "badges": [Badges.FASTFOOD, Badges.VISCH],
+        "notes": "Vish"
+    },
+    {
+        "name": "Milchreis",
+        "id": uuidv4(),
+        "author": "Miriam",
+        "lastEdited": new Date('2022-7-14'),
+        "shop": ShopIds.DEUTSCHEBAHN,
+        "label": Labels.VEGAN,
+        "badges": [Badges.SÜSSES],
+        "notes": "Leckerer veganer Milchreis - 'für unsere kleinen Gäste'"
     }
 ] as Product[]

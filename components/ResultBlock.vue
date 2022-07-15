@@ -4,13 +4,12 @@
       <h4 class="block-title">{{ title }}</h4>
     </header>
     <div class="result-list">
-      <ProductItem v-for="result in results" :key="result.id" :product="result" />
+      <slot></slot>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import type { Product } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "ResultBlock",
@@ -18,25 +17,24 @@ export default defineComponent({
     title: {
       type: String,
       required: true
-    },
-    results: {
-      type: Object as () => Product[],
-      required: true
-    },
+    }
   },
 });
 </script>
 
 <style lang="scss" scoped>
 .result-list {
-  width: fit-content;
+  width: 100%;
 }
 
 header {
   display: flex;
   justify-content: flex-start;
+
   .block-title {
     margin: 0px;
+    font-size: $fs-small;
+    color: $color-font-medium;
   }
 }
 </style>

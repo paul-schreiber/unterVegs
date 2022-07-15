@@ -1,9 +1,8 @@
 <template>
   <nav id="nav">
-    <NuxtLink to="/legal">
+    <NuxtLink to="/">
       <img alt="Vue logo" src="../assets/img/logo.png" />
     </NuxtLink>
-    unterVegs
   </nav>
 </template>
 
@@ -17,11 +16,12 @@ export default {
 <style lang="scss" scoped>
 nav {
   width: 100%;
-  height: 60px;
-  background-color: rgb(243, 243, 243);
+  height: 80px;
+  padding: $sp-medium;
+  display: flex;
+  align-items: center;
 
   img {
-      width: 50px;
       height: 50px;
   }
 }
