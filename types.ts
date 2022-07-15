@@ -23,7 +23,8 @@ export enum Badges {
     SNACK = 'SNACK',
     FASTFOOD = 'FASTFOOD',
     VISCH = 'VISCH',
-    SÜSSES = 'SÜSSES'
+    SÜSSES = 'SÜSSES',
+    SALAT = 'SALAT'
 }
 
 export const BadgeColors = {
@@ -54,11 +55,46 @@ export const LabelText = {
 }
 
 export enum ShopIds {
-    MCDONALDS = 'MCD',
-    BURGERKING = 'BK',
+    ASIAGOURMET = 'AG',
+    BACKFACTORY = 'BAFA',
     BACKWERK = 'BW',
-    NORDSEE = 'NO',
+    BARCELONA = 'BAR',
+    BLOCKHOUSE = 'BLH',
+    BURGERHEART = 'BH',
+    BURGERKING = 'BK',
+    CALLAPIZZA = 'CAP',
+    CHIDOBA = 'CHI',
+    CIGKÖFTEM = 'CIKÖ',
     DEUTSCHEBAHN = 'DB',
+    DEANDAVID = 'DEDA',
+    DITSCH = 'DI',
+    DOMINOSPIZZA = 'DOM',
+    DUNKINDONUTS = 'DUDO',
+    EDELBEISSER = 'EDBE',
     FREDDYFRESH = 'FF',
-
+    FRITTENWERK = 'FW',
+    GREGORYS = 'GREG',
+    HANSIMGLÜCK = 'HIG',
+    IMMERGRÜN = 'IG',
+    JIMBLOCK = 'JB',
+    KAISERBIOBÄCKEREI = 'KBIO',
+    KAMPS = 'KA',
+    LECROBAC = 'LC',
+    LOSTERIA = 'LOS',
+    MCDONALDS = 'MCD',
+    MOSCHMOSCH = 'MOMO',
+    NORDSEE = 'NOSE',
+    PAPAJOHNS = 'PAJO',
+    PETERPANE = 'PEPA',
+    PIZZAHELDEN = 'PIHE',
+    PIZZAHUT = 'PIHU',
+    ROYALDONUTS = 'RODO',
+    SAUSALITOS = 'SAUSA',
+    SCOOM = 'SCO',
+    STARBUCKS = 'STA',
+    SUBWAY = 'SUB',
+    SUHICIRCLE = 'SUCI',
+    VAPIANO = 'VAP',
+    WONDERWAFFEL = 'WOWA',
+    WORLDOFPIZZA = 'WOP',
 }
