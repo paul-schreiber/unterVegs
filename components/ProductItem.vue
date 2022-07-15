@@ -61,7 +61,6 @@ a {
 
   .name-container {
     text-align: left;
-    font-weight: $fw-bold;
     flex-grow: 1;
   }
 

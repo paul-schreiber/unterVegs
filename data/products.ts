@@ -1,4 +1,3 @@
-import { randomUUID } from "crypto"
 import { Product, Badges, Labels, ShopIds } from "../types"
 import { v4 as uuidv4 } from 'uuid';
 
