@@ -25,31 +25,23 @@
 
 <script lang="ts">
 import type { Product, Shop } from "../types"
-import products from "../data/products";
-import shops from "../data/shops";
 import { defineComponent } from "vue";
+import { DataService } from '../services/DataService'
+const DS = new DataService()
 export default defineComponent({
   name: "ProductSearch",
   data() {
     return {
-      products: products as Product[],
       searchTerm: '' as String,
-      shops: shops,
     };
   },
 
   computed: {
     filteredProducts(): Product[] {
-      return products.filter((product) => {
-        const productName = product.name.toLowerCase()
-        return productName.includes(this.searchTerm.toLowerCase())
-      })
+      return DS.filterProducts(this.searchTerm)
     },
     filteredShops(): Shop[] {
-      return shops.filter((shop) => {
-        const shopName = shop.name.toLowerCase()
-        return shopName.includes(this.searchTerm.toLowerCase())
-      })
+      return DS.filterShops(this.searchTerm)
     },
     hideResults(): boolean { return this.searchTerm === '' || this.filteredProducts.length === 0 && this.filteredShops.length === 0 }
   }
@@ -70,7 +62,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  width: 700px;
+  width: 800px;
   height: fit-content;
   max-width: 100%;
   border-radius: 15px;
@@ -93,7 +85,6 @@ export default defineComponent({
 
   .search-field {
     width: 100%;
-    height: 50px;
     border-radius: 15px;
     font-size: 20px;
     border: none;

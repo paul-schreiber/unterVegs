@@ -25,7 +25,7 @@ export default defineComponent({
     background-color: v-bind(color);
     width: fit-content;
     height: fit-content;
-    border-radius: 6px;
+    border-radius: 4px;
     color: $color-font-light;
     padding: 0px $sp-tiny;
     margin-right: $sp-tiny;

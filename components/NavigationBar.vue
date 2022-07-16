@@ -1,7 +1,7 @@
 <template>
   <nav id="nav">
     <NuxtLink to="/">
-      <img alt="Vue logo" src="../assets/img/logo.png" />
+      <img src="../assets/img/logo.png" />
     </NuxtLink>
   </nav>
 </template>

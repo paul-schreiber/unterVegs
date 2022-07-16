@@ -3,13 +3,18 @@
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
       <div class="label-container">{{ shop.id }}</div>
+      <div class="categories-container">
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" />
+      </div>
     </div>
   </router-link>
 </template>
 
 <script lang="ts">
-import { DateTime } from "luxon";
-import type { Shop } from "../types"
+import { DataService } from '../services/DataService'
+const DS = new DataService()
+import type { Shop, Categories } from "../types"
+import { CategorieColor } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
@@ -17,6 +22,16 @@ export default defineComponent({
       type: Object as () => Shop,
       required: true
     },
+  },
+  computed: {
+    getProductBadges(): Categories[] {
+      return DS.getCategoriesByShopId(this.shop.id)
+    }
+  },
+  methods: {
+    getCategorieColor(categorieId: Categories) {
+      return CategorieColor[categorieId]
+    }
   }
 });
 </script>
@@ -34,8 +49,10 @@ a {
   height: 40px;
   align-items: center;
 
-  .badge-container {
-    width: 300px;
+  .categories-container {
+    display: flex;
+    width: 150px;
+    margin-right: $sp-small;
   }
 
   .name-container {
@@ -46,8 +63,5 @@ a {
     width: 150px;
   }
 
-  .date-container {
-    width: 120px;
-  }
 }
 </style>

@@ -1,4 +1,4 @@
-import { Product, Badges, Labels, ShopIds } from "../types"
+import { Product, Categories, Labels, ShopIds } from "../types"
 import { v4 as uuidv4 } from 'uuid';
 
 export default [
@@ -9,7 +9,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
-        "badges": [Badges.BACKWARE, Badges.SNACK],
+        "categories": [Categories.BACKWARE, Categories.SNACK],
         "notes": "auch mit Butter erhältlich"
     },
     {
@@ -19,7 +19,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BURGER, Badges.FASTFOOD],
+        "categories": [Categories.BURGER, Categories.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -29,7 +29,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
-        "badges": [Badges.BACKWARE, Badges.SNACK],
+        "categories": [Categories.BACKWARE, Categories.SNACK],
         "notes": "auch mit Butter erhältlich"
     },
     {
@@ -39,7 +39,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BURGER, Badges.FASTFOOD],
+        "categories": [Categories.BURGER, Categories.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -49,7 +49,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
-        "badges": [Badges.BACKWARE, Badges.SNACK],
+        "categories": [Categories.BACKWARE, Categories.SNACK],
         "notes": "auch mit Butter erhältlich"
     },
     {
@@ -59,7 +59,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BURGER, Badges.FASTFOOD],
+        "categories": [Categories.BURGER, Categories.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -69,7 +69,7 @@ export default [
         "lastEdited": new Date('2022-7-9'),
         "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
-        "badges": [Badges.BACKWARE, Badges.SNACK],
+        "categories": [Categories.BACKWARE, Categories.SNACK],
         "notes": "auch mit Butter erhältlich"
     },
     {
@@ -79,7 +79,7 @@ export default [
         "lastEdited": new Date('2022-7-14'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BURGER, Badges.FASTFOOD],
+        "categories": [Categories.BURGER, Categories.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -89,7 +89,7 @@ export default [
         "lastEdited": new Date('2022-3-12'),
         "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
-        "badges": [Badges.BACKWARE, Badges.SNACK],
+        "categories": [Categories.BACKWARE, Categories.SNACK],
         "notes": "auch mit Butter erhältlich"
     },
     {
@@ -99,7 +99,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BURGER, Badges.FASTFOOD],
+        "categories": [Categories.BURGER, Categories.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -109,7 +109,7 @@ export default [
         "lastEdited": new Date('2021-7-12'),
         "shop": ShopIds.BACKWERK,
         "label": Labels.VEGANISIERBAR,
-        "badges": [Badges.BACKWARE, Badges.SNACK],
+        "categories": [Categories.BACKWARE, Categories.SNACK],
         "notes": "auch mit Butter erhältlich"
     },
     {
@@ -119,7 +119,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.MCDONALDS,
         "label": Labels.VEGAN,
-        "badges": [Badges.BURGER, Badges.FASTFOOD],
+        "categories": [Categories.BURGER, Categories.FASTFOOD],
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
@@ -129,7 +129,7 @@ export default [
         "lastEdited": new Date('2022-7-12'),
         "shop": ShopIds.NORDSEE,
         "label": Labels.VEGAN,
-        "badges": [Badges.FASTFOOD, Badges.VISCH],
+        "categories": [Categories.FASTFOOD, Categories.VISCH],
         "notes": "Vish"
     },
     {
@@ -139,7 +139,7 @@ export default [
         "lastEdited": new Date('2022-7-14'),
         "shop": ShopIds.DEUTSCHEBAHN,
         "label": Labels.VEGAN,
-        "badges": [Badges.SÜSSES],
+        "categories": [Categories.SÜSSES],
         "notes": "Leckerer veganer Milchreis - 'für unsere kleinen Gäste'"
     }
 ] as Product[]
