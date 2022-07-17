@@ -126,7 +126,7 @@ export default [
         notes: ''
     },
     {
-        name: 'Mc Donalds',
+        name: 'McDonald´s',
         id: ShopIds.MCDONALDS,
         notes: ''
     },

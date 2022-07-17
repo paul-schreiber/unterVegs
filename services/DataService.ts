@@ -11,6 +11,10 @@ export class DataService {
         return products
     }
 
+    public getShopById(shopId: ShopIds): Shop {
+        return shops.find(shop => shop.id === shopId)
+    }
+
     public getProductByShopId(shopId: ShopIds): Product[] {
         return products.filter(product => product.shop === shopId)
     }

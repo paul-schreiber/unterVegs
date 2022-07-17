@@ -2,7 +2,6 @@
   <router-link to="/shop">
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
-      <div class="label-container">{{ shop.id }}</div>
       <div class="categories-container">
         <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" />
       </div>
@@ -56,6 +55,7 @@ a {
   }
 
   .name-container {
+    text-align: left;
     width: 30%;
   }
 

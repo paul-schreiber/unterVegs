@@ -3,15 +3,17 @@
     <div class="product-item">
       <div class="label-container" :title="getLabel.tooltip"><Badge :color="getLabel.color" :name="product.label"/></div>
       <div class="name-container">{{ product.name }}</div>
-      <div class="shop-container">{{ product.shop }}</div>
+      <div class="shop-container">{{ getShop.name }}</div>
       <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`">{{ timeSince(product.lastEdited) }}</div>
     </div>
   </router-link>
 </template>
 
 <script lang="ts">
+import { DataService } from '../services/DataService'
+const DS = new DataService()
 import { DateTime } from "luxon";
-import type { Product } from "../types"
+import type { Product, Shop } from "../types"
 import { LabelProperties } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
@@ -24,6 +26,9 @@ export default defineComponent({
   computed: {
     getLabel() {
       return LabelProperties[this.product.label]
+    },
+    getShop():Shop {
+      return DS.getShopById(this.product.shop)
     }
   },
   methods: {
