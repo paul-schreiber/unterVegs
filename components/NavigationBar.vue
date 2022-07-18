@@ -1,16 +1,17 @@
 <template>
   <nav id="nav">
     <NuxtLink to="/">
-      <img alt="Vue logo" src="../assets/img/logo.png" />
+      <img src="../assets/img/logo.png" />
     </NuxtLink>
   </nav>
 </template>
 
 <script>
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   name: "NavigationBar",
   props: {},
-};
+})
 </script>
 
 <style lang="scss" scoped>

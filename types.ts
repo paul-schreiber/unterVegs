@@ -3,8 +3,9 @@ export type Product = {
     id: string;
     author: string;
     shop: ShopIds;
-    badges: Badges[];
+    categories: Categories[];
     label: Labels;
+    created: Date;
     lastEdited: Date;
     notes: string;
 }
@@ -16,7 +17,7 @@ export type Shop = {
     badgeColor: string
 }
 
-export enum Badges {
+export enum Categories {
     BURGER = 'BURGER',
     PIZZA = 'PIZZA',
     BACKWARE = 'BACKWARE',
@@ -27,14 +28,14 @@ export enum Badges {
     SALAT = 'SALAT'
 }
 
-export const BadgeColors = {
-    [Badges.BURGER]: '#CE7C7C',
-    [Badges.PIZZA]: '#F78154',
-    [Badges.BACKWARE]: '#F7DD72',
-    [Badges.SNACK]: '#A99F96',
-    [Badges.FASTFOOD]: '#f5bf42',
-    [Badges.VISCH]: '#76BED0',
-    [Badges.SÜSSES]: '#e483e6',
+export const CategorieColor = {
+    [Categories.BURGER]: '#CE7C7C',
+    [Categories.PIZZA]: '#F78154',
+    [Categories.BACKWARE]: '#F7DD72',
+    [Categories.SNACK]: '#A99F96',
+    [Categories.FASTFOOD]: '#f5bf42',
+    [Categories.VISCH]: '#76BED0',
+    [Categories.SÜSSES]: '#e483e6',
 }
 
 export enum Labels {
@@ -42,13 +43,15 @@ export enum Labels {
     VEGANISIERBAR = 'VEGANISIERBAR'
 }
 
-export const LabelText = {
+export const LabelProperties = {
     [Labels.VEGAN]: {
         content: '🌱',
+        color: '#226600',
         tooltip: 'Dieses Gericht ist vegan.'
     },
     [Labels.VEGANISIERBAR]: {
         content: '🧀',
+        color: '#6eb54a',
         tooltip: 'Dieses Gericht ist veganisierbar. Klicke hier für weitere Infos!'
     }
 

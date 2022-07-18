@@ -1,20 +1,20 @@
 <template>
-  <router-link to="/product">
+  <NuxtLink :to="`/product/${product.id}`">
     <div class="product-item">
-      <div class="badges-container">
-        <Badge v-for="badge in product.badges" :key="badge" :color="getBadgeColor(badge)" :name="badge"/>
-      </div>
+      <div class="label-container" ><Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip"/></div>
       <div class="name-container">{{ product.name }}</div>
-      <div class="label-container" :title="getLabel(product.label).tooltip">{{ getLabel(product.label).content }}</div>
+      <div class="shop-container">{{ getShop.name }}</div>
       <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`">{{ timeSince(product.lastEdited) }}</div>
     </div>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script lang="ts">
+import { DataService } from '../services/DataService'
+const DS = new DataService()
 import { DateTime } from "luxon";
-import type { Badges, Product, Labels } from "../types"
-import { BadgeColors, LabelText } from "../types"
+import type { Product, Shop } from "../types"
+import { LabelProperties } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
@@ -23,17 +23,19 @@ export default defineComponent({
       required: true
     },
   },
+  computed: {
+    getLabel() {
+      return LabelProperties[this.product.label]
+    },
+    getShop():Shop {
+      return DS.getShopById(this.product.shop)
+    }
+  },
   methods: {
     timeSince(date: Date) {
       const dayInPast = DateTime.fromJSDate(date)
       const diff = DateTime.now().diff(dayInPast, ["years", "months", "days", "hours", "minutes"]).toObject()
       return diff.years != 0 ? `${diff.years} Jahr` : diff.months != 0 ? `${diff.months} Monaten` : diff.days != 0 ? `${diff.days} Tagen` : `${diff.hours} Stunden`
-    },
-    getBadgeColor(badgeId: Badges) {
-      return BadgeColors[badgeId]
-    },
-    getLabel(label: Labels) {
-      return LabelText[label]
     }
   }
 });
@@ -49,11 +51,11 @@ a {
 .product-item {
   display: flex;
   width: 100%;
-  height: 40px;
+  height: 30px;
   align-items: center;
   justify-content: space-between;
 
-  .badges-container {
+  .label-container {
     display: flex;
     width: 150px;
     margin-right: $sp-small;
@@ -62,10 +64,6 @@ a {
   .name-container {
     text-align: left;
     flex-grow: 1;
-  }
-
-  .label-container {
-    width: 30px;
   }
 
   .date-container {

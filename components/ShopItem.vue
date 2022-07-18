@@ -1,15 +1,19 @@
 <template>
-  <router-link to="/shop">
+  <NuxtLink :to="`/shop/${shop.id}`">
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
-      <div class="label-container">{{ shop.id }}</div>
+      <div class="categories-container">
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :title="badge"/>
+      </div>
     </div>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script lang="ts">
-import { DateTime } from "luxon";
-import type { Shop } from "../types"
+import { DataService } from '../services/DataService'
+const DS = new DataService()
+import type { Shop, Categories } from "../types"
+import { CategorieColor } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
@@ -17,6 +21,16 @@ export default defineComponent({
       type: Object as () => Shop,
       required: true
     },
+  },
+  computed: {
+    getProductBadges(): Categories[] {
+      return DS.getCategoriesByShopId(this.shop.id)
+    }
+  },
+  methods: {
+    getCategorieColor(categorieId: Categories) {
+      return CategorieColor[categorieId]
+    }
   }
 });
 </script>
@@ -24,8 +38,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 a {
   text-decoration: none;
-  color: black;
   width: fit-content;
+  color: $color-font-dark;
 }
 
 .shop-item {
@@ -34,11 +48,14 @@ a {
   height: 40px;
   align-items: center;
 
-  .badge-container {
-    width: 300px;
+  .categories-container {
+    display: flex;
+    width: 150px;
+    margin-right: $sp-small;
   }
 
   .name-container {
+    text-align: left;
     width: 30%;
   }
 
@@ -46,8 +63,5 @@ a {
     width: 150px;
   }
 
-  .date-container {
-    width: 120px;
-  }
 }
 </style>
