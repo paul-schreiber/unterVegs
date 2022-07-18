@@ -1,10 +1,37 @@
 <template>
   <div id="app">
     <NavigationBar />
-    <router-view></router-view>
+    <div class="content-wrapper">
+      <NuxtPage />
+    </div>
     <PageFooter />
   </div>
 </template>
+
+<script>
+import { defineComponent } from "vue";
+export default defineComponent({
+  head() {
+    return {
+      title: 'unterVegs',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'unterVegs ist dein Reisebegleiter für vegane Produkte in Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!'
+        }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+        { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon/apple-touch-icon.png' },
+        { rel: 'icon', type: 'image/png', href: '/favicon/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', href: '/favicon/favicon-16x16.png' },
+        { rel: 'manifest', href: '/favicon/site.webmanifest' },
+      ]
+    }
+  }
+})
+</script>
 
 
 <style lang="scss">
@@ -20,7 +47,8 @@ html * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
   margin: 0px;
   background-color: $color-light-background;
@@ -28,5 +56,8 @@ html, body {
 
 .content-wrapper {
   padding: $sp-big;
+  display: grid;
+  width: 100%;
+  height: calc(100vh - 10vh - 80px)
 }
 </style>
