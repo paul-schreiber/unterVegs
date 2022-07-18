@@ -7,7 +7,7 @@
                     :title="badge" />
             </div>
             <div class="description">
-                {{shop.notes}}
+                {{ shop.notes }}
             </div>
         </header>
         <div class="product-list">
@@ -61,14 +61,11 @@ header {
 
     .badge-container {
         margin-bottom: $sp-small;
+        display: flex;
     }
 
     .description {
         text-align: left;
     }
-}
-
-.badge-container {
-    display: flex;
 }
 </style>

@@ -5,6 +5,7 @@ export type Product = {
     shop: ShopIds;
     categories: Categories[];
     label: Labels;
+    created: Date;
     lastEdited: Date;
     notes: string;
 }
