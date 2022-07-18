@@ -23,14 +23,14 @@ export default [
         "notes": "Burgerpatty gestellt von Nestle"
     },
     {
-        "name": "Bretzel",
+        "name": "Weizenbällchen mit Gemüsefüllung",
         "id": uuidv4(),
-        "author": "Miriam",
-        "lastEdited": new Date('2022-7-12'),
-        "shop": ShopIds.BACKWERK,
-        "label": Labels.VEGANISIERBAR,
+        "author": "Paul",
+        "lastEdited": new Date('2022-7-18'),
+        "shop": ShopIds.CIGKÖFTEM,
+        "label": Labels.VEGAN,
         "categories": [Categories.BACKWARE, Categories.SNACK],
-        "notes": "auch mit Butter erhältlich"
+        "notes": "Auch als Weizenbällchen Box erhältlich"
     },
     {
         "name": "Fresh Vegan TS",

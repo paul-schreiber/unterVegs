@@ -7,10 +7,11 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   name: "NavigationBar",
   props: {},
-};
+})
 </script>
 
 <style lang="scss" scoped>

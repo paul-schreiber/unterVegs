@@ -41,14 +41,14 @@ export default [
         notes: ''
     },
     {
-        name: 'Cigköften',
+        name: 'Cigköftem',
         id: ShopIds.CIGKÖFTEM,
         notes: 'Ciğköfte ist eine anatolische Spezialität, die aus Vollkorn-Bulgur, Tomatenmark, Paprikamark, Granatapfel Soße, Sonnenblumenöl, Petersilie und einer speziellen Gewürzmischung besteht. Sein traditioneller Herkunft reicht mehrere Hunderte Jahre zurück und ist heute eine, weltweit bekannte vegane Spezialität geworden. Sie beinhaltet nur die besten Zutaten aus der Natur und alles vegan, mit exzellentem Geschmack. Ciğköfte gewinnt heute auf allem Kontinenten als eine gesunde, kalorienarme, praktische und schnelle Ernährung an Beliebtheit.'
     },
     {
         name: 'Deutsche Bahn',
         id: ShopIds.DEUTSCHEBAHN,
-        notes: ''
+        notes: 'Wer im Zug keine eigene Verpflegung dabei hat, bekommt im Bordrestaurant immerhin Frühstück, Nudeln und Salat.'
     },
     {
         name: 'Dean & David',
@@ -63,7 +63,7 @@ export default [
     {
         name: 'Dominos Pizza',
         id: ShopIds.DOMINOSPIZZA,
-        notes: ''
+        notes: 'Die Pizzakette hat neben Wedges und Pizzabrötchen auch explizit vegane Pizzen im Angebot, die sogar mit veganem Käse belegt sind. Darüber hinaus kann man sich auch selbst eine vegane Pizza zusammenstellen, denn sowohl der Teig, als auch die Pizzasoße enthalten keine tierischen Inhaltsstoffe.'
     },
     {
         name: 'Dunkin Donuts',

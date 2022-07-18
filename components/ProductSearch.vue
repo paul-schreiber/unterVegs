@@ -1,24 +1,22 @@
 <template>
-  <div class="content-wrapper">
-    <div class="search-container">
-      <header>
-        <span>
-          <font-awesome-icon :icon="['fas', 'search']" />
-        </span>
-        <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field" />
-      </header>
-      <div class="search-results" v-if="!hideResults">
-        <ResultBlock title='Produkte' v-if="filteredProducts.length != 0">
-          <ItemContainer v-for="result in filteredProducts" :key="result.id">
-            <ProductItem :product="result" />
-          </ItemContainer>
-        </ResultBlock>
-        <ResultBlock title='Shops' v-if="filteredShops.length != 0">
-          <ItemContainer v-for="result in filteredShops" :key="result.id">
-            <ShopItem :shop="result" />
-          </ItemContainer>
-        </ResultBlock>
-      </div>
+  <div class="search-container">
+    <header>
+      <span>
+        <font-awesome-icon :icon="['fas', 'search']" />
+      </span>
+      <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field" />
+    </header>
+    <div class="search-results" v-if="!hideResults">
+      <ResultBlock title='Produkte' v-if="filteredProducts.length != 0">
+        <ItemContainer v-for="product in filteredProducts" :key="product.id">
+          <ProductItem :product="product" />
+        </ItemContainer>
+      </ResultBlock>
+      <ResultBlock title='Shops' v-if="filteredShops.length != 0">
+        <ItemContainer v-for="shop in filteredShops" :key="shop.id">
+          <ShopItem :shop="shop" />
+        </ItemContainer>
+      </ResultBlock>
     </div>
   </div>
 </template>
@@ -49,14 +47,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.content-wrapper {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  height: calc(100vh - 10vh - 80px)
-}
-
 .search-container {
+  justify-self: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,12 +1,12 @@
 <template>
-  <router-link to="/product">
+  <NuxtLink :to="`/product/${product.id}`">
     <div class="product-item">
-      <div class="label-container" :title="getLabel.tooltip"><Badge :color="getLabel.color" :name="product.label"/></div>
+      <div class="label-container" ><Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip"/></div>
       <div class="name-container">{{ product.name }}</div>
       <div class="shop-container">{{ getShop.name }}</div>
       <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`">{{ timeSince(product.lastEdited) }}</div>
     </div>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script lang="ts">

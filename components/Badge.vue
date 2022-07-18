@@ -1,5 +1,5 @@
 <template>
-    <div class="badge-container">
+    <div class="badge-container" :title="title">
         <span> {{ name }}</span>
     </div>
 </template>
@@ -15,6 +15,10 @@ export default defineComponent({
         color: {
             type: String,
             required: true
+        },
+        title: {
+            type: String,
+            required: false
         }
     }
 })

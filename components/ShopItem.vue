@@ -1,12 +1,12 @@
 <template>
-  <router-link to="/shop">
+  <NuxtLink :to="`/shop/${shop.id}`">
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
       <div class="categories-container">
-        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" />
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :title="badge"/>
       </div>
     </div>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script lang="ts">
@@ -38,8 +38,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 a {
   text-decoration: none;
-  color: black;
   width: fit-content;
+  color: $color-font-dark;
 }
 
 .shop-item {
