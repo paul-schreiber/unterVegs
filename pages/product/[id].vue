@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { DateTime } from "luxon";
-import { LabelProperties, CategorieColor, Categories } from "../../types"
+import { Labels, CategorieColor, Categories } from "../../types"
 import { defineComponent } from "vue";
 import { DataService } from '../../services/DataService'
 const DS = new DataService()
@@ -38,7 +38,7 @@ export default defineComponent({
   },
   computed: {
     getLabel() {
-      return LabelProperties[this.product.label]
+      return Labels[this.product.label]
     },
     getShop() {
       return DS.getShopById(this.product.shop).name

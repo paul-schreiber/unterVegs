@@ -55,9 +55,9 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  width: 800px;
+  max-width: 800px;
   height: fit-content;
-  max-width: 100%;
+  width: 90vw;
   border-radius: 15px;
   background-color: white;
   margin-top: $sp-large;

@@ -55,9 +55,15 @@ body {
 }
 
 .content-wrapper {
-  padding: $sp-big;
+  padding: $sp-small;
   display: grid;
   width: 100%;
   height: calc(100vh - 10vh - 80px)
+}
+
+@media only screen and (min-width: 800px) {
+  .content-wrapper {
+    padding: $sp-big;
+  }
 }
 </style>

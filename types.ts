@@ -4,7 +4,7 @@ export type Product = {
     author: string;
     shop: ShopIds;
     categories: Categories[];
-    label: Labels;
+    label: LabelIds;
     created: Date;
     lastEdited: Date;
     notes: string;
@@ -15,6 +15,13 @@ export type Shop = {
     id: ShopIds,
     notes: string,
     badgeColor: string
+}
+
+export type Label = {
+    name: string,
+    shortName: string,
+    color: string,
+    tooltip: string
 }
 
 export enum Categories {
@@ -38,22 +45,24 @@ export const CategorieColor = {
     [Categories.SÜSSES]: '#e483e6',
 }
 
-export enum Labels {
+export enum LabelIds {
     VEGAN = 'VEGAN',
     VEGANISIERBAR = 'VEGANISIERBAR'
 }
 
-export const LabelProperties = {
-    [Labels.VEGAN]: {
-        content: '🌱',
+export const Labels = {
+    [LabelIds.VEGAN]: {
+        name: 'VEGAN',
+        shortName: 'V',
         color: '#226600',
         tooltip: 'Dieses Gericht ist vegan.'
-    },
-    [Labels.VEGANISIERBAR]: {
-        content: '🧀',
+    } as Label,
+    [LabelIds.VEGANISIERBAR]: {
+        name: 'VEGANISIERBAR',
+        shortName: 'VB',
         color: '#6eb54a',
         tooltip: 'Dieses Gericht ist veganisierbar. Klicke hier für weitere Infos!'
-    }
+    } as Label
 
 }
 

@@ -1,4 +1,4 @@
-import { Product, Categories, Labels, ShopIds } from "../types"
+import { Product, Categories, LabelIds, ShopIds } from "../types"
 import { v4 as uuidv4 } from 'uuid';
 
 export default [
@@ -9,7 +9,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.BACKWERK,
-        label: Labels.VEGANISIERBAR,
+        label: LabelIds.VEGANISIERBAR,
         categories: [Categories.BACKWARE, Categories.SNACK],
         notes: "auch mit Butter erhältlich"
     },
@@ -20,7 +20,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.MCDONALDS,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.BURGER, Categories.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle"
     },
@@ -31,7 +31,7 @@ export default [
         created: new Date('2022-7-18'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.CIGKÖFTEM,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.BACKWARE, Categories.SNACK],
         notes: "Auch als Weizenbällchen Box erhältlich"
     },
@@ -42,7 +42,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.MCDONALDS,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.BURGER, Categories.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle"
     },
@@ -53,7 +53,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.BACKWERK,
-        label: Labels.VEGANISIERBAR,
+        label: LabelIds.VEGANISIERBAR,
         categories: [Categories.BACKWARE, Categories.SNACK],
         notes: "auch mit Butter erhältlich"
     },
@@ -64,7 +64,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.MCDONALDS,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.BURGER, Categories.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle"
     },
@@ -75,7 +75,7 @@ export default [
         created: new Date('2022-7-9'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.BACKWERK,
-        label: Labels.VEGANISIERBAR,
+        label: LabelIds.VEGANISIERBAR,
         categories: [Categories.BACKWARE, Categories.SNACK],
         notes: "auch mit Butter erhältlich"
     },
@@ -86,7 +86,7 @@ export default [
         created: new Date('2022-7-14'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.MCDONALDS,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.BURGER, Categories.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle"
     },
@@ -97,7 +97,7 @@ export default [
         created: new Date('2022-3-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.BACKWERK,
-        label: Labels.VEGANISIERBAR,
+        label: LabelIds.VEGANISIERBAR,
         categories: [Categories.BACKWARE, Categories.SNACK],
         notes: "auch mit Butter erhältlich"
     },
@@ -108,7 +108,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.MCDONALDS,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.BURGER, Categories.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle"
     },
@@ -119,7 +119,7 @@ export default [
         created: new Date('2021-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.BACKWERK,
-        label: Labels.VEGANISIERBAR,
+        label: LabelIds.VEGANISIERBAR,
         categories: [Categories.BACKWARE, Categories.SNACK],
         notes: "auch mit Butter erhältlich"
     },
@@ -130,7 +130,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.MCDONALDS,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.BURGER, Categories.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle"
     },
@@ -141,7 +141,7 @@ export default [
         created: new Date('2022-7-12'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.NORDSEE,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.FASTFOOD, Categories.VISCH],
         notes: "Vish"
     },
@@ -152,7 +152,7 @@ export default [
         created: new Date('2022-7-14'),
         lastEdited: new Date('2022-7-18'),
         shop: ShopIds.DEUTSCHEBAHN,
-        label: Labels.VEGAN,
+        label: LabelIds.VEGAN,
         categories: [Categories.SÜSSES],
         notes: "Leckerer veganer Milchreis - 'für unsere kleinen Gäste'"
     }
