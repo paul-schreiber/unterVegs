@@ -7,14 +7,15 @@ export type Product = {
     label: LabelIds;
     created: Date;
     lastEdited: Date;
+    isSeasonal: Boolean,
     notes: string;
 }
 
 export type Shop = {
     name: string,
     id: ShopIds,
-    notes: string,
-    badgeColor: string
+    isLocal: Boolean,
+    notes: string
 }
 
 export type Label = {
@@ -31,8 +32,10 @@ export enum Categories {
     SNACK = 'SNACK',
     FASTFOOD = 'FASTFOOD',
     VISCH = 'VISCH',
-    SÜSSES = 'SÜSSES',
-    SALAT = 'SALAT'
+    SÜSS = 'SÜSS',
+    SALAT = 'SALAT', 
+    HERZHAFT = 'HERZHAFT',
+    PASTA = 'PASTA' 
 }
 
 export const CategorieColor = {
@@ -42,7 +45,10 @@ export const CategorieColor = {
     [Categories.SNACK]: '#A99F96',
     [Categories.FASTFOOD]: '#f5bf42',
     [Categories.VISCH]: '#76BED0',
-    [Categories.SÜSSES]: '#e483e6',
+    [Categories.SÜSS]: '#e483e6',
+    [Categories.SALAT]: '#659900',
+    [Categories.HERZHAFT]: '#226688',
+    [Categories.PASTA]: '#e400e6',
 }
 
 export enum LabelIds {
