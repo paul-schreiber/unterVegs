@@ -40,7 +40,7 @@ export default defineComponent({
       return Labels[this.product.label]
     },
     getLabelName(): string {
-      return this.isMobile ? this.getLabel.shortName : this.getLabel.name
+      return false ? this.getLabel.shortName : this.getLabel.name
     },
     getShop(): Shop {
       return DS.getShopById(this.product.shop)

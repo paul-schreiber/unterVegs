@@ -22,11 +22,11 @@ export default defineComponent({
         }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
-        { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/favicon/apple-touch-icon.png' },
-        { rel: 'icon', type: 'image/png', href: '/favicon/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', href: '/favicon/favicon-16x16.png' },
-        { rel: 'manifest', href: '/favicon/site.webmanifest' },
+        { rel: 'icon', type: 'image/x-icon', href: 'static/favicon/favicon.ico' },
+        { rel: 'apple-touch-icon', type: 'image/x-icon', href: 'static/favicon/apple-touch-icon.png' },
+        { rel: 'icon', type: 'image/png', href: 'static/favicon/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', href: 'static/favicon/favicon-16x16.png' },
+        { rel: 'manifest', href: 'static/favicon/site.webmanifest' },
       ]
     }
   }
@@ -58,7 +58,7 @@ body {
   padding: $sp-small;
   display: grid;
   width: 100%;
-  height: calc(100vh - 10vh - 80px)
+  min-height: calc(100vh - 10vh - 80px)
 }
 
 @media only screen and (min-width: 800px) {

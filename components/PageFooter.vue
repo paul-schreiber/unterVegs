@@ -15,8 +15,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: $color-primary;
   height: 10vh;
