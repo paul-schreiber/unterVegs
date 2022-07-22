@@ -6,10 +6,10 @@
         {{ getShop }}
       </div>
       <div class="badge-container">
-        <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" />
+        <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :removable="false"/>
       </div>
       <div class="badge-container">
-        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge"
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :removable="false"
           :title="badge" />
       </div>
     </header>

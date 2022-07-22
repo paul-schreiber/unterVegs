@@ -3,7 +3,7 @@
         <header>
             <h1 class="heading">{{ shop.name }}</h1>
             <div class="badge-container">
-                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge"
+                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :removable="false"
                     :title="badge" />
             </div>
             <div class="description">

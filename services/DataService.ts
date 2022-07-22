@@ -31,17 +31,21 @@ export class DataService {
         return [...categories]
     }
 
-    public filterProducts(searchTerm: string) {
+    public filterProducts(searchTerm: string, filters: Categories[]) {
         return this.getAllProducts().filter((product) => {
             const productName = product.name.toLowerCase()
-            return productName.includes(searchTerm.toLowerCase())
+            const hasMatchedSearchTerm = productName.includes(searchTerm.toLowerCase())
+            const hasCategory = filters.every(filterCategory => product.categories.includes(filterCategory))
+            return hasMatchedSearchTerm && hasCategory
         })
     }
 
-    public filterShops(searchTerm: string) {
+    public filterShops(searchTerm: string, filters: Categories[]) {
         return this.getAllShops().filter((shop) => {
             const shopName = shop.name.toLowerCase()
-            return shopName.includes(searchTerm.toLowerCase())
+            const hasMatchedSearchTerm = shopName.includes(searchTerm.toLowerCase())
+            const hasCategory = filters.every(filterCategory => this.getCategoriesByShopId(shop.id).includes(filterCategory))
+            return hasMatchedSearchTerm && hasCategory
         })
     }
 }
