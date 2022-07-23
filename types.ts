@@ -26,29 +26,29 @@ export type Label = {
 }
 
 export enum Categories {
-    BURGER = 'BURGER',
-    PIZZA = 'PIZZA',
+    PASTA = 'PASTA',
     BACKWARE = 'BACKWARE',
+    PIZZA = 'PIZZA',
+    BURGER = 'BURGER',
+    SALAT = 'SALAT', 
+    VISCH = 'VISCH',
     SNACK = 'SNACK',
     FASTFOOD = 'FASTFOOD',
-    VISCH = 'VISCH',
     SÜSS = 'SÜSS',
-    SALAT = 'SALAT', 
     HERZHAFT = 'HERZHAFT',
-    PASTA = 'PASTA' 
 }
 
 export const CategorieColor = {
-    [Categories.BURGER]: '#CE7C7C',
-    [Categories.PIZZA]: '#F78154',
-    [Categories.BACKWARE]: '#F7DD72',
-    [Categories.SNACK]: '#A99F96',
-    [Categories.FASTFOOD]: '#f5bf42',
-    [Categories.VISCH]: '#76BED0',
-    [Categories.SÜSS]: '#e483e6',
-    [Categories.SALAT]: '#659900',
-    [Categories.HERZHAFT]: '#226688',
-    [Categories.PASTA]: '#e400e6',
+    [Categories.PASTA]: '#E96E6C',
+    [Categories.BACKWARE]: '#F6A037',
+    [Categories.PIZZA]: '#F1D15A',
+    [Categories.BURGER]: '#B0D363',
+    [Categories.SALAT]: '#6AAE60',
+    [Categories.VISCH]: '#87C3BF',
+    [Categories.SNACK]: '#5F8DB6',
+    [Categories.FASTFOOD]: '#B07CDD',
+    [Categories.SÜSS]: '#D37CA4',
+    [Categories.HERZHAFT]: '#FFA2AA',
 }
 
 export enum LabelIds {
