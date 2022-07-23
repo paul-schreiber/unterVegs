@@ -3,7 +3,7 @@
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
       <div class="categories-container">
-        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :title="badge"/>
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :title="badge" :removable="false"/>
       </div>
     </div>
   </NuxtLink>

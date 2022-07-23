@@ -1,6 +1,9 @@
 <template>
     <div class="badge-container" :title="title">
-        <span> {{ name }}</span>
+        <div class="badge-name"> {{ name }}</div>
+        <button class="close-button" v-if="removable" @click="onClose(name)">
+            <font-awesome-icon :icon="['fas', 'xmark']" />
+        </button>
     </div>
 </template>
 
@@ -18,6 +21,14 @@ export default defineComponent({
         },
         title: {
             type: String,
+            required: false
+        },
+        removable: {
+            type: Boolean,
+            required: true
+        },
+        onClose: {
+            type: Function,
             required: false
         }
     }
@@ -37,11 +48,20 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
 
-    span {
+    .badge-name {
         font-size: $fs-tiny;
         font-weight: $fw-bold;
         height: 16px;
         line-height: 16px;
+    }
+
+    .close-button {
+        background-color: inherit;
+        color: inherit;
+        border: none;
+        cursor: pointer;
+        padding: 0px;
+        padding-left: $sp-tiny;
     }
 }
 </style>
