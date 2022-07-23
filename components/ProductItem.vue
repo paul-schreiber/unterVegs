@@ -47,8 +47,8 @@ export default defineComponent({
     }
   },
   methods: {
-    timeSince(date: Date) {
-      const dayInPast = DateTime.fromJSDate(date)
+    timeSince(date: string) {
+      const dayInPast = DateTime.fromJSDate(new Date(date))
       const diff = DateTime.now().diff(dayInPast, ["years", "months", "days", "hours", "minutes"]).toObject()
       return diff.years != 0 ? `${diff.years} Jahr` : diff.months != 0 ? `${diff.months} Monaten` : diff.days != 0 ? `${diff.days} Tagen` : `${diff.hours} Stunden`
     }

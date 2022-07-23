@@ -48,8 +48,8 @@ export default defineComponent({
     }
   },
   methods: {
-    makeDateReadable(date: Date): String {
-      return DateTime.fromJSDate(date).toLocaleString()
+    makeDateReadable(date: string): String {
+      return DateTime.fromJSDate(new Date(date)).toLocaleString()
     },
     getCategorieColor(categorieId: Categories) {
       return CategorieColor[categorieId]

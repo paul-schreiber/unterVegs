@@ -5,8 +5,8 @@ export type Product = {
     shop: ShopIds;
     categories: Categories[];
     label: LabelIds;
-    created: Date;
-    lastEdited: Date;
+    created: string;
+    lastEdited: string;
     isSeasonal: Boolean,
     notes: string;
 }
