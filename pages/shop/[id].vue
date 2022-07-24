@@ -1,15 +1,19 @@
 <template>
     <div>
         <header>
-            <h1 class="heading">{{ shop.name }}</h1>
+            <div class="heading-container">
+                <h1 class="heading">{{ shop.name }}</h1>
+                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL"/>
+            </div>
             <div class="badge-container">
-                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :removable="false"
-                    :title="badge" />
+                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge"
+                    :removable="false" :title="badge" />
             </div>
             <div class="description">
                 {{ shop.notes }}
             </div>
         </header>
+        <h3>Alle Produkte:</h3>
         <div class="product-list">
             <ItemContainer v-for="product in getProducts" :key="product.id">
                 <ProductItem :product="product" />
@@ -54,10 +58,24 @@ header {
 
     margin-bottom: $sp-big;
 
-    .heading {
-        text-align: left;
-        margin: $sp-small 0px;
+    .heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        img {
+            margin-right: $sp-small;
+            height: 60px;
+        }
+
+        .heading {
+            text-align: left;
+            margin: 0px;
+            margin-bottom: $sp-small;
+        }
     }
+
+
 
     .badge-container {
         margin-bottom: $sp-small;
@@ -67,5 +85,10 @@ header {
     .description {
         text-align: left;
     }
+}
+
+h3 {
+    text-align: left;
+    margin: 0px;
 }
 </style>

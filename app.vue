@@ -4,11 +4,13 @@
     <div class="content-wrapper">
       <NuxtPage />
     </div>
+    <CookieBanner :onAccept="enableAnalytics" />
     <PageFooter />
   </div>
 </template>
 
 <script>
+import { useState } from "vue-gtag-next";
 import { defineComponent } from "vue";
 export default defineComponent({
   head() {
@@ -28,6 +30,12 @@ export default defineComponent({
         { rel: 'icon', type: 'image/png', href: 'static/favicon/favicon-16x16.png' },
         { rel: 'manifest', href: 'static/favicon/site.webmanifest' },
       ]
+    }
+  },
+  methods: {
+    enableAnalytics() {
+      const { isEnabled } = useState()
+      isEnabled.value = true
     }
   }
 })
@@ -58,7 +66,9 @@ body {
   padding: $sp-small;
   display: grid;
   width: 100%;
-  min-height: calc(100vh - 10vh - 80px)
+  max-width: 1200px;
+  margin: auto;
+  min-height: calc(100vh - $footerHeight - $navbarHeight)
 }
 
 @media only screen and (min-width: 800px) {

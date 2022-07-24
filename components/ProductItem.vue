@@ -23,10 +23,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      isMobile: {
-        type: Boolean,
-        required: true
-      }
+      isMobile: window.innerWidth < 700
     }
   },
   props: {
@@ -40,7 +37,7 @@ export default defineComponent({
       return Labels[this.product.label]
     },
     getLabelName(): string {
-      return false ? this.getLabel.shortName : this.getLabel.name
+      return this.isMobile ? this.getLabel.shortName : this.getLabel.name
     },
     getShop(): Shop {
       return DS.getShopById(this.product.shop)

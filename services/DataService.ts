@@ -35,7 +35,7 @@ export class DataService {
         return this.getAllProducts().filter((product) => {
             const productName = product.name.toLowerCase()
             const hasMatchedSearchTerm = productName.includes(searchTerm.toLowerCase())
-            const hasCategory = filters.every(filterCategory => product.categories.includes(filterCategory))
+            const hasCategory = filters.length ? filters.some(filterCategory => product.categories.includes(filterCategory)) : true
             return hasMatchedSearchTerm && hasCategory
         })
     }
@@ -44,7 +44,7 @@ export class DataService {
         return this.getAllShops().filter((shop) => {
             const shopName = shop.name.toLowerCase()
             const hasMatchedSearchTerm = shopName.includes(searchTerm.toLowerCase())
-            const hasCategory = filters.every(filterCategory => this.getCategoriesByShopId(shop.id).includes(filterCategory))
+            const hasCategory = filters.length ? filters.some(filterCategory => this.getCategoriesByShopId(shop.id).includes(filterCategory)) : true
             return hasMatchedSearchTerm && hasCategory
         })
     }

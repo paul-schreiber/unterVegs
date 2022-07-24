@@ -45,7 +45,7 @@ a {
 .shop-item {
   display: flex;
   width: 600px;
-  height: 40px;
+  height: 30px;
   align-items: center;
 
   .categories-container {
