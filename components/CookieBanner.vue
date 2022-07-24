@@ -1,7 +1,7 @@
 <template>
     <div class="cookie-banner" v-if="!hideBanner">
         <div>
-            <p>🍪 Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch nutzerfreundlicher zu
+            <p><span>🍪</span> Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch nutzerfreundlicher zu
                 gestalten.</p>
             <p>Bist du damit einverstanden?</p>
         </div>
@@ -53,6 +53,10 @@ export default defineComponent({
     p {
         margin: 0px;
         text-align: left;
+
+        span {
+            font-size: $fs-large;
+        }
     }
 }
 </style>
