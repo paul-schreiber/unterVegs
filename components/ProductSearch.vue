@@ -11,7 +11,7 @@
         </div>
         <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field" />
         <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0">
-          <font-awesome-icon :icon="['fas', 'filter']" />
+          <font-awesome-icon :icon="['fas', 'sliders']" />
         </button>
       </div>
       <div class="filter-container" v-if="availableFilters.size != 0 && showFilterPanel">
