@@ -17,7 +17,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 nav {
   width: 100%;
-  height: 80px;
+  height: $navbarHeight;
   padding: $sp-medium;
   display: flex;
   align-items: center;
