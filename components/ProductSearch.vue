@@ -24,20 +24,25 @@
         </div>
       </div>
     </header>
-    <div class="search-results" v-if="!hideResults">
-      <ResultBlock title='Shops' v-if="filteredShops.length != 0">
-        <ItemContainer v-for="shop in filteredShops" :key="shop.id">
-          <ShopItem :shop="shop" />
-        </ItemContainer>
-      </ResultBlock>
-      <ResultBlock title='Produkte' v-if="filteredProducts.length != 0">
-        <ItemContainer v-for="product in filteredProducts" :key="product.id">
-          <ProductItem :product="product" />
-        </ItemContainer>
-      </ResultBlock>
-    </div>
-    <div class="search-results" v-if="!hasResults">
-    <span>Keine Ergebnisse.</span>
+    <div class="content-container" v-if="!hideResults">
+      <div class="tab-bar">
+        <TabItem title="Produkte" icon="pizza-slice" @click="selectTab('products')"
+          :resultCount="filteredProducts.length" :isActive="selectedTab === 'products'" />
+        <TabItem title="Shops" icon="store" @click="selectTab('shops')" :resultCount="filteredShops.length"
+          :isActive="selectedTab === 'shops'" />
+      </div>
+      <div class="search-results">
+        <ResultBlock :hasResults="filteredProducts.length != 0" v-if="selectedTab === 'products'">
+          <ItemContainer v-for="product in filteredProducts" :key="product.id">
+            <ProductItem :product="product" />
+          </ItemContainer>
+        </ResultBlock>
+        <ResultBlock :hasResults="filteredShops.length != 0" v-if="selectedTab === 'shops'">
+          <ItemContainer v-for="shop in filteredShops" :key="shop.id">
+            <ShopItem :shop="shop" />
+          </ItemContainer>
+        </ResultBlock>
+      </div>
     </div>
   </div>
 </template>
@@ -56,7 +61,8 @@ export default defineComponent({
       availableFilters: new Set<Categories>(Object.keys(Categories) as Categories[]),
       appliedFilters: new Set<Categories>(),
       showFilterPanel: false,
-      maxFilters: 3
+      maxFilters: 3,
+      selectedTab: 'products'
     };
   },
 
@@ -67,10 +73,7 @@ export default defineComponent({
     filteredShops(): Shop[] {
       return DS.filterShops(this.searchTerm, [...this.appliedFilters])
     },
-    hideResults(): boolean { return (this.searchTerm === '' && this.appliedFilters.size === 0) || this.filteredProducts.length === 0 && this.filteredShops.length === 0 },
-    hasResults(): boolean {
-      return !(this.filteredProducts.length === 0 && this.filteredShops.length === 0)
-    }
+    hideResults(): boolean { return this.searchTerm === '' && this.appliedFilters.size === 0 }
   },
   methods: {
     getCategorieColor(categorieId: Categories) {
@@ -91,6 +94,9 @@ export default defineComponent({
     },
     toggleFilterPanel() {
       this.showFilterPanel = !this.showFilterPanel
+    },
+    selectTab(tabName: string) {
+      this.selectedTab = tabName
     }
   }
 });
@@ -166,12 +172,24 @@ export default defineComponent({
     }
   }
 
-  .search-results {
+  .content-container {
     width: 100%;
-    max-height: 400px;
-    padding: $sp-medium;
-    overflow: scroll;
-    border-top: 2px solid $color-light-grey;
+    .tab-bar {
+      display: flex;
+      width: 100%;
+      padding: 0px $sp-medium;
+      justify-content: flex-start;
+      margin-bottom: -2px;
+      z-index: 100;
+    }
+
+    .search-results {
+      width: 100%;
+      max-height: 400px;
+      padding: $sp-medium;
+      overflow: scroll;
+      border-top: 2px solid $color-light-grey;
+    }
   }
 }
 </style>

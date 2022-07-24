@@ -15,7 +15,8 @@ export type Shop = {
     name: string,
     id: ShopIds,
     isLocal: Boolean,
-    notes: string
+    notes: string,
+    imgURL?: string
 }
 
 export type Label = {
