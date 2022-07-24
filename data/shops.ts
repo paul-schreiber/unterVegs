@@ -10,7 +10,8 @@ export default [
         name: 'Backwerk',
         id: ShopIds.BACKWERK,
         isLocal: false,
-        notes: ''
+        notes: '',
+        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/BackWerk_logo.svg'
     },
     {
         name: 'Cafe & Bar Celona',
@@ -34,7 +35,8 @@ export default [
         name: 'Burger King',
         id: ShopIds.BURGERKING,
         isLocal: false,
-        notes: ''
+        notes: '',
+        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Burger_King_logo_%281994%29.svg/1056px-Burger_King_logo_%281994%29.svg.png'
     },
     {
         name: 'Call a Pizza',
