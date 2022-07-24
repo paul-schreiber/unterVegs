@@ -2,8 +2,7 @@
     <div class="cookie-banner" v-if="!hideBanner">
         <div>
             <p><span>🍪</span> Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch nutzerfreundlicher zu
-                gestalten.</p>
-            <p>Bist du damit einverstanden?</p>
+                gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">Datenschutzerklärung</NuxtLink> . Bist du mit den Cookies einverstanden?</p>
         </div>
         <Button name="Ja, ich will 🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
         <Button name="Nein!" :isPrimary="false"  tooltip="Cookies ablehnen" :onClick="onReject" />

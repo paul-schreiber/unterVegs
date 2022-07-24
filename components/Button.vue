@@ -39,6 +39,7 @@ button {
     padding: $sp-tiny;
     border: solid 2px $color-primary;
     margin: $sp-small;
+    font-weight: bold;
 
     &.primary {
         background-color: $color-primary;
