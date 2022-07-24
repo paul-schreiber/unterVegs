@@ -69,7 +69,7 @@ a {
 
   .label-container {
     display: flex;
-    width: 150px;
+    width: 110px;
     margin-right: $sp-small;
   }
 
