@@ -2,11 +2,11 @@
   <NuxtLink :to="`/product/${product.id}`">
     <div class="product-item">
       <div class="label-container">
-        <Badge :color="getLabel.color" :name="getLabelName" :title="getLabel.tooltip" :removable="false"/>
+        <Badge :color="getLabel.color" :name="getLabelName" :title="getLabel.tooltip" :removable="false" />
       </div>
       <div class="name-container">{{ product.name }}</div>
       <div class="shop-container">{{ getShop.name }}</div>
-      <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`">{{
+      <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`" v-if="!isMobile">{{
           timeSince(product.lastEdited)
       }}</div>
     </div>
@@ -23,7 +23,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      isMobile: window.innerWidth < 700
+      isMobile: window.innerWidth < 3000
     }
   },
   props: {
@@ -69,17 +69,32 @@ a {
 
   .label-container {
     display: flex;
-    width: 110px;
-    margin-right: $sp-small;
+    width: 20px;
+    margin-right: $sp-medium;
   }
 
   .name-container {
     text-align: left;
     flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .shop-container {
+    text-align: right;
+    white-space: nowrap;
+    margin-left: $sp-medium;
   }
 
   .date-container {
     width: 120px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .label-container {
+    width: 110px;
   }
 }
 </style>
