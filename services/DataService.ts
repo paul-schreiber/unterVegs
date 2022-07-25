@@ -5,11 +5,11 @@ import { Categories, Product, Shop, ShopIds } from '../types'
 export class DataService {
 
     public getAllProducts(): Product[] {
-        return products
+        return products.sort((a,b) => a.name.localeCompare(b.name))
     }
 
     public getAllShops(): Shop[] {
-        return shops
+        return shops.sort((a,b) => a.name.localeCompare(b.name))
     }
 
     public getProductById(productId: String): Product {

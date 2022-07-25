@@ -60,7 +60,7 @@ a {
   }
 
   .label-container {
-    width: 150px;
+    width: 110px;
   }
 
 }
