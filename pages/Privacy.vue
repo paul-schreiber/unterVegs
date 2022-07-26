@@ -123,7 +123,13 @@ export default defineComponent({
 .privacy-policy {
     text-align: left;
 
+    h2 {
+        font-size: $fs-large;
+    }
+
     section {
+        font-weight: $fw-light;
+        line-height: 1.6rem;
         margin-bottom: $sp-large;
     }
 }
