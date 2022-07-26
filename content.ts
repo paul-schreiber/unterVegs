@@ -4,5 +4,6 @@ export default {
         street: 'Blissestraße 27',
         zipCode: '10713',
         city: 'Berlin',
+        mail: 'untervegs@proton.me'
     }
 }
