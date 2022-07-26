@@ -1,8 +1,9 @@
 <template>
   <NuxtLink :to="`/product/${product.id}`">
     <div class="product-item">
-      <div :class="{'label-container':true, mobile: isMobile}">
-        <Badge :color="getLabel.color" :name="getLabelName" :title="getLabel.tooltip" :removable="false" />
+      <div :class="{ 'label-container': true, mobile: isMobile }">
+        <Badge :color="getLabel.color" :name="getLabelName" :id="getLabelName" :title="getLabel.tooltip"
+          :removable="false" />
       </div>
       <div class="name-container">{{ product.name }}</div>
       <div class="shop-container">{{ getShop.name }}</div>
