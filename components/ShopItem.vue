@@ -3,7 +3,8 @@
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
       <div class="categories-container">
-        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :title="badge" :removable="false"/>
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge"
+          :title="badge" :removable="false" />
       </div>
     </div>
   </NuxtLink>
@@ -44,19 +45,23 @@ a {
 
 .shop-item {
   display: flex;
-  width: 600px;
+  width: 100%;
   height: 30px;
   align-items: center;
 
   .categories-container {
+    max-width: 60%;
     display: flex;
-    width: 150px;
     margin-right: $sp-small;
+    overflow-x: scroll;
+    gap: $sp-tiny;
   }
 
   .name-container {
+    min-width: 140px;    
     text-align: left;
-    width: 30%;
+    white-space: nowrap;
+    margin-right: $sp-medium;
   }
 
   .label-container {
