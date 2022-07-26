@@ -24,7 +24,7 @@ export default defineComponent({
         }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: 'static/favicon/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: 'static/favicon/favicon.svg' },
         { rel: 'apple-touch-icon', type: 'image/x-icon', href: 'static/favicon/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', href: 'static/favicon/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', href: 'static/favicon/favicon-16x16.png' },
