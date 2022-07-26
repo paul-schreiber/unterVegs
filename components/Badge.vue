@@ -1,7 +1,7 @@
 <template>
     <div class="badge-container" :title="title">
-        <div class="badge-name"> {{ name }}</div>
-        <button class="close-button" v-if="removable" @click="onClose(name)">
+        <div :class="{ 'badge-name': true, mobile: isMobile }"> {{ name }}</div>
+        <button class="close-button" v-if="removable" @click="onClose(id)">
             <font-awesome-icon :icon="['fas', 'xmark']" />
         </button>
     </div>
@@ -12,6 +12,10 @@ import { defineComponent } from "vue";
 export default defineComponent({
     props: {
         name: {
+            type: String,
+            required: true
+        },
+        id: {
             type: String,
             required: true
         },
@@ -31,6 +35,11 @@ export default defineComponent({
             type: Function,
             required: false
         }
+    },
+    computed: {
+        isMobile() {
+            return window.innerWidth < 700
+        }
     }
 })
 </script>
@@ -48,10 +57,16 @@ export default defineComponent({
     justify-content: center;
 
     .badge-name {
+        display: grid;
+        align-items: center;
         font-size: $fs-tiny;
         font-weight: $fw-bold;
         height: 16px;
         line-height: 16px;
+
+        &.mobile {
+            height: 20px;
+        }
     }
 
     .close-button {

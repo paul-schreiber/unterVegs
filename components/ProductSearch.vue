@@ -7,7 +7,8 @@
         </span>
         <div class="applied-categories-container">
           <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieColor(category)"
-            :removable="true" :name="shortenText(category)" :title="category" :onClose="removeCategoryFromFilter" />
+            :removable="true" :name="shortenText(category)" :id="category" :title="category"
+            :onClose="removeCategoryFromFilter" />
         </div>
         <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field" />
         <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0">
@@ -18,7 +19,7 @@
         <div class="available-categories-container">
           <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
             @click="addCategoryToFilter(category)">
-            <Badge :color="getCategorieColor(category)" :removable="false" :name="category"
+            <Badge :color="getCategorieColor(category)" :removable="false" :name="category" :id="category"
               :title="`Nach ${category} suchen`" />
           </div>
         </div>
