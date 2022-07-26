@@ -1,7 +1,7 @@
 <template>
   <nav id="nav">
     <NuxtLink to="/">
-      <img src="~/assets/img/logo.png" />
+      <img src="~/assets/img/logo-unterVegs.svg" />
     </NuxtLink>
     <div class="menu">
       <div class="menu-item">
@@ -29,14 +29,14 @@ export default defineComponent({
 <style lang="scss" scoped>
 nav {
   width: 100%;
-  height: $navbarHeight;
+  height: $navbar-height;
   padding: $sp-medium;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   img {
-    height: 50px;
+    height: $navbar-height;
   }
 
   .menu {

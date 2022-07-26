@@ -25,7 +25,7 @@ export default defineComponent({
 .footer {
   width: 100%;
   background-color: $color-primary;
-  height: $footerHeight;
+  height: $footer-height;
   color: $color-font-light;
   padding: $sp-medium $sp-big;
   display: flex;

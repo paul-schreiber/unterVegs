@@ -68,7 +68,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  min-height: calc(100vh - $footerHeight - $navbarHeight)
+  min-height: calc(100vh - $footer-height - $navbar-height)
 }
 
 @media only screen and (min-width: 800px) {
