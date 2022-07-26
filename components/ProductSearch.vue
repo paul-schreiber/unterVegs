@@ -10,7 +10,8 @@
             :removable="true" :name="shortenText(category)" :id="category" :title="category"
             :onClose="removeCategoryFromFilter" />
         </div>
-        <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field" />
+        <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field"
+          @keydown="removeLastCategoryFromFilter" />
         <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0">
           <font-awesome-icon :icon="['fas', 'sliders']" />
         </button>
@@ -106,6 +107,14 @@ export default defineComponent({
     },
     shortenText(text: string): string {
       return this.isMobile ? text.slice(0, 2) : text
+    },
+    removeLastCategoryFromFilter(keypress: KeyboardEvent) {
+      if (keypress.key === 'Backspace' && this.searchTerm === '' && this.appliedFilters.size != 0) {
+        const filterArray = [...this.appliedFilters]
+        const lastFilter = filterArray[filterArray.length - 1]
+        this.appliedFilters.delete(lastFilter)
+        this.availableFilters.add(lastFilter)
+      }
     }
   }
 });
