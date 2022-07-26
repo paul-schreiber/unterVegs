@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="`/product/${product.id}`">
     <div class="product-item">
-      <div class="label-container">
+      <div :class="{'label-container':true, mobile: isMobile}">
         <Badge :color="getLabel.color" :name="getLabelName" :title="getLabel.tooltip" :removable="false" />
       </div>
       <div class="name-container">{{ product.name }}</div>
@@ -21,11 +21,6 @@ import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
-  data() {
-    return {
-      isMobile: window.innerWidth < 3000
-    }
-  },
   props: {
     product: {
       type: Object as () => Product,
@@ -41,6 +36,9 @@ export default defineComponent({
     },
     getShop(): Shop {
       return DS.getShopById(this.product.shop)
+    },
+    isMobile(): boolean {
+      return window.innerWidth < 700
     }
   },
   methods: {
@@ -69,8 +67,11 @@ a {
 
   .label-container {
     display: flex;
-    width: 20px;
     margin-right: $sp-medium;
+
+    &.mobile {
+      width: 20px;
+    }
   }
 
   .name-container {
@@ -92,7 +93,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 700px) {
   .label-container {
     width: 110px;
   }

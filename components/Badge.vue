@@ -43,7 +43,6 @@ export default defineComponent({
     border-radius: 4px;
     color: $color-font-light;
     padding: 0px $sp-tiny;
-    margin-right: $sp-tiny;
     display: flex;
     align-items: center;
     justify-content: center;

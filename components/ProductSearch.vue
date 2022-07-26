@@ -7,7 +7,7 @@
         </span>
         <div class="applied-categories-container">
           <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieColor(category)"
-            :removable="true" :name="category" :title="category" :onClose="removeCategoryFromFilter" />
+            :removable="true" :name="shortenText(category)" :title="category" :onClose="removeCategoryFromFilter" />
         </div>
         <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field" />
         <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0">
@@ -62,7 +62,7 @@ export default defineComponent({
       appliedFilters: new Set<Categories>(),
       showFilterPanel: false,
       maxFilters: 3,
-      selectedTab: 'products'
+      selectedTab: 'products',
     };
   },
 
@@ -73,7 +73,12 @@ export default defineComponent({
     filteredShops(): Shop[] {
       return DS.filterShops(this.searchTerm, [...this.appliedFilters])
     },
-    hideResults(): boolean { return this.searchTerm === '' && this.appliedFilters.size === 0 }
+    hideResults(): boolean {
+      return this.searchTerm === '' && this.appliedFilters.size === 0
+    },
+    isMobile(): boolean {
+      return window.innerWidth < 700
+    }
   },
   methods: {
     getCategorieColor(categorieId: Categories) {
@@ -97,6 +102,9 @@ export default defineComponent({
     },
     selectTab(tabName: string) {
       this.selectedTab = tabName
+    },
+    shortenText(text: string): string {
+      return this.isMobile ? text.slice(0, 2) : text
     }
   }
 });
@@ -148,6 +156,7 @@ export default defineComponent({
     .available-categories-container {
       display: flex;
       margin-right: $sp-small;
+      gap: $sp-tiny;
     }
 
     .applied-categories-container {
@@ -156,6 +165,7 @@ export default defineComponent({
 
     .available-categories-container {
       padding-left: calc(20px + $sp-small);
+      flex-wrap: wrap;
     }
 
     .badge-wrapper {
@@ -174,6 +184,7 @@ export default defineComponent({
 
   .content-container {
     width: 100%;
+
     .tab-bar {
       display: flex;
       width: 100%;
