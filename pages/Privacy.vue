@@ -108,7 +108,7 @@
 </template>
 
 <script>
-import content from "~~/content";
+import content from "~~/data/content";
 import { defineComponent } from "vue";
 export default defineComponent({
     data() {
