@@ -9,6 +9,16 @@ export default defineNuxtConfig({
     pwa: {
         icon: {
             source: 'static/favicon/icon.png'
+        },
+        manifest: {
+            name: 'unterVegs',
+            lang: 'de',
+            short_name: 'unterVegs',
+            start_url: '/',
+            display: 'standalone',
+            background_color: '#ffffff',
+            theme_color: '#498830',
+            "description": "unterVegs ist dein Reisebegleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!.",
         }
     },
     vite: {
@@ -24,12 +34,4 @@ export default defineNuxtConfig({
     typescript: {
         typeCheck: true
     },
-    name: 'unterVegs',
-    lang: 'de',
-    short_name: 'unterVegs',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#498830',
-    "description": "unterVegs ist dein Reisebegleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!.",
 })
