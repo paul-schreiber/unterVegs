@@ -6,6 +6,11 @@ export default defineNuxtConfig({
     modules: [
         '@kevinmarrec/nuxt-pwa'
     ],
+    pwa: {
+        icon: {
+            source: 'static/favicon/icon.png'
+        }
+    },
     vite: {
         css: {
             preprocessorOptions: {
@@ -18,5 +23,13 @@ export default defineNuxtConfig({
     target: 'static',
     typescript: {
         typeCheck: true
-    }
+    },
+    name: 'unterVegs',
+    lang: 'de',
+    short_name: 'unterVegs',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#498830',
+    "description": "unterVegs ist dein Reisebegleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!.",
 })
