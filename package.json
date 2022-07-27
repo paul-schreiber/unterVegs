@@ -20,6 +20,7 @@
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "uuid": "^8.3.2",
-    "vue-gtag-next": "^1.14.0"
+    "vue-gtag-next": "^1.14.0",
+    "vue3-cookies": "^1.0.6"
   }
 }
