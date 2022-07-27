@@ -1,9 +1,27 @@
 <template>
   <nav id="nav">
-    <NuxtLink to="/">
-      <img src="~/assets/img/logo-unterVegs.svg" />
-    </NuxtLink>
-    <div class="menu">
+    <div class="nav-bar-container">
+      <NuxtLink to="/">
+        <img src="~/assets/img/logo-unterVegs.svg" />
+      </NuxtLink>
+      <div class="menu" v-if="!isMobile">
+        <div class="menu-item">
+          <NuxtLink to="/about">
+            Über uns
+          </NuxtLink>
+        </div>
+        <div class="menu-item">
+          <NuxtLink to="/donate">
+            Unterstütze uns!
+          </NuxtLink>
+        </div>
+      </div>
+
+      <button class="burger-menu" v-if="isMobile" @click="toggleMenu">
+        <font-awesome-icon :icon="['fas', 'bars']" />
+      </button>
+    </div>
+    <div class="mobile-menu" v-if="showMobileMenu && isMobile">
       <div class="menu-item">
         <NuxtLink to="/about">
           Über uns
@@ -18,25 +36,47 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "NavigationBar",
-  props: {},
+  data() {
+    return {
+      showMobileMenu: false,
+    }
+  },
+  computed: {
+    isMobile(): boolean {
+      return window.innerWidth < 700
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.showMobileMenu = !this.showMobileMenu;
+    },
+  },
 })
 </script>
 
 <style lang="scss" scoped>
 nav {
-  width: 100%;
-  height: $navbar-height;
-  padding: $sp-medium;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .nav-bar-container {
+    width: 100%;
+    height: $navbar-height;
+    padding: $sp-medium;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   img {
     height: $navbar-height;
+  }
+
+  .burger-menu {
+    all: unset;
+    cursor: pointer;
+    font-size: $fs-large;
   }
 
   .menu {
@@ -53,6 +93,19 @@ nav {
         font-weight: bold;
         text-decoration: none;
       }
+    }
+  }
+
+  .mobile-menu {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
+
+    a {
+      color: $color-font-dark;
+      font-weight: bold;
+      text-decoration: none;
     }
   }
 }
