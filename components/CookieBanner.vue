@@ -48,6 +48,8 @@ export default defineComponent({
     padding: $sp-medium;
     border-radius: 10px;
     box-shadow: $box-shadow;
+    width: 95%;
+    max-width: 800px;
 
     p {
         margin: 0px;
