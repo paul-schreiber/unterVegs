@@ -33,25 +33,29 @@ export type Category = {
 
 export enum CategoryIds {
     PASTA = 'PASTA',
+    MEXIKANISCH = 'MEXIKANISCH',
     BACKWARE = 'BACKWARE',
     PIZZA = 'PIZZA',
+    ASIATISCH = 'ASIATISCH',
     BURGER = 'BURGER',
     SALAT = 'SALAT', 
+    SUPPE = 'SUPPE',
     VISCH = 'VISCH',
     SNACK = 'SNACK',
     FASTFOOD = 'FASTFOOD',
-    SÜSS = 'SÜSS',
     SANDWICH = 'SANDWICH',
-    ASIATISCH = 'ASIATISCH',
-    SUPPE = 'SUPPE',
-    FRÜHSTÜCK = 'FRÜHSTÜCK',
-    MEXIKANISCH = 'MEXIKANISCH'
+    SÜSS = 'SÜSS',
+    FRÜHSTÜCK = 'FRÜHSTÜCK'
 }
 
 export const Categories = {
     [CategoryIds.PASTA]: {
         name: 'PASTA',
         color: '#E96E6C'
+    } as Category,
+    [CategoryIds.MEXIKANISCH]: {
+        name: 'MEXIKANISCH',
+        color: '#E87A52'
     } as Category,
     [CategoryIds.BACKWARE]: {
         name: 'BACKWARE',
@@ -61,6 +65,10 @@ export const Categories = {
         name: 'PIZZA',
         color: '#F1D15A'
     } as Category,
+    [CategoryIds.ASIATISCH]: {
+        name: 'ASIATISCH',
+        color: '#D3CA63'
+    } as Category,
     [CategoryIds.BURGER]: {
         name: 'BURGER',
         color: '#B0D363'
@@ -68,6 +76,10 @@ export const Categories = {
     [CategoryIds.SALAT]: {
         name: 'SALAT/BOWL',
         color: '#6AAE60'
+    } as Category,
+    [CategoryIds.SUPPE]: {
+        name: 'SUPPE',
+        color: '#6AC18F'
     } as Category,
     [CategoryIds.VISCH]: {
         name: 'VISCH',
@@ -79,32 +91,20 @@ export const Categories = {
     } as Category,
     [CategoryIds.FASTFOOD]: {
         name: 'FASTFOOD',
-        color: '#B07CDD'
+        color: '#6B6FDB'
+    } as Category,
+    [CategoryIds.SANDWICH]: {
+        name: 'SANDWICH/WRAP',
+        color: '#9F6EC9'
     } as Category,
     [CategoryIds.SÜSS]: {
         name: 'SÜSS',
         color: '#D37CA4'
     } as Category,
-    [CategoryIds.SANDWICH]: {
-        name: 'SANDWICH/WRAP',
-        color: '#FFA2AA'
-    } as Category,
-    [CategoryIds.ASIATISCH]: {
-        name: 'ASIATISCH',
-        color: '#F6A037'
-    } as Category,
-    [CategoryIds.SUPPE]: {
-        name: 'SUPPE',
-        color: '#FFA2AA'
-    } as Category,
     [CategoryIds.FRÜHSTÜCK]: {
         name: 'FRÜHSTÜCK',
-        color: '#F6A037'
-    } as Category,
-    [CategoryIds.MEXIKANISCH]: {
-        name: 'MEXIKANISCH',
-        color: '#F6A037'
-    } as Category,
+        color: '#FFA2A2'
+    } as Category
 }
 
 export enum LabelIds {
