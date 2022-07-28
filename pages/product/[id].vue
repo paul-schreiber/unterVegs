@@ -6,11 +6,12 @@
         {{ getShop }}
       </div>
       <div class="badge-container">
-        <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label" :removable="false"/>
+        <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
+          :removable="false" />
       </div>
       <div class="badge-container">
-        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge" :name="getCategoryObject(badge).name" :removable="false"
-          :title="badge" />
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge"
+          :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
       </div>
     </header>
     <div class="description">
@@ -80,6 +81,7 @@ header {
   .badge-container {
     display: flex;
     margin-bottom: $sp-small;
+    gap: $sp-tiny;
   }
 }
 

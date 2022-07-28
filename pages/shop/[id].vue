@@ -74,11 +74,10 @@ header {
         }
     }
 
-
-
     .badge-container {
         margin-bottom: $sp-small;
         display: flex;
+        gap: $sp-tiny;
     }
 
     .description {
