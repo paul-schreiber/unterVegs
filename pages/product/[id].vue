@@ -18,9 +18,21 @@
       {{ product.notes }}
     </div>
     <div class="properties">
-      <div><span>von:</span>{{ product.author }}</div>
-      <div><span>erstellt:</span>{{ makeDateReadable(product.created) }}</div>
-      <div><span>zuletzt aktualisiert:</span> {{ makeDateReadable(product.lastEdited) }}</div>
+      <div><span class="label">von:</span>{{ product.author }}</div>
+      <div><span class="label">erstellt:</span>{{ makeDateReadable(product.created) }}</div>
+      <div><span class="label">zuletzt aktualisiert:</span> {{ makeDateReadable(product.lastEdited) }}</div>
+      <div>
+        <span class="label">Standort:</span>
+        <span v-if="product.isSeasonal">nicht überall</span>
+        <span v-else>überall</span>
+        erhältlich
+      </div>
+      <div>
+        <span class="label">Verfügbarkeit:</span>
+        <span v-if="product.isSeasonal">nicht jederzeit</span>
+        <span v-else>immer</span>
+        verfügbar
+      </div>
     </div>
   </div>
 </template>
@@ -82,6 +94,7 @@ header {
     display: flex;
     margin-bottom: $sp-small;
     gap: $sp-tiny;
+    flex-wrap: wrap;
   }
 }
 
@@ -93,7 +106,7 @@ header {
 .properties {
   text-align: left;
 
-  span {
+  .label {
     margin-right: $sp-small;
   }
 }

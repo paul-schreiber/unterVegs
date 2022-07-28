@@ -3,21 +3,20 @@
         <header>
             <div class="heading-container">
                 <h1 class="heading">{{ shop.name }}</h1>
-                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL"/>
+                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" />
             </div>
             <div class="badge-container">
-                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge" :name="getCategoryObject(badge).name"
-                    :removable="false" :title="badge" />
+                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color"
+                    :id="badge" :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
             </div>
             <div class="description">
                 {{ shop.notes }}
             </div>
+            <font-awesome-icon :icon="['fas', 'map-pin']" v-if="shop.isLocal" />
         </header>
         <h3>Alle Produkte:</h3>
         <div class="product-list">
-            <ItemContainer v-for="product in getProducts" :key="product.id">
-                <ProductItem :product="product" />
-            </ItemContainer>
+            <ProductDetailItem v-for="product in getProducts" :key="product.id" :product="product" />
         </div>
     </div>
 </template>
@@ -78,11 +77,20 @@ header {
         margin-bottom: $sp-small;
         display: flex;
         gap: $sp-tiny;
+        flex-wrap: wrap;
     }
 
     .description {
         text-align: left;
     }
+}
+
+.product-list {
+    margin: $sp-medium 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-medium;
+    justify-content: center;
 }
 
 h3 {
