@@ -1,6 +1,6 @@
 import products from '../data/products'
 import shops from '../data/shops'
-import { Categories, Product, Shop, ShopIds } from '../types'
+import { CategoryIds, Product, Shop, ShopIds } from '../types'
 
 export class DataService {
 
@@ -24,14 +24,14 @@ export class DataService {
         return this.getAllProducts().filter(product => product.shop === shopId)
     }
 
-    public getCategoriesByShopId(shopId: ShopIds): Categories[] {
+    public getCategoriesByShopId(shopId: ShopIds): CategoryIds[] {
         const products = this.getProductsByShopId(shopId)
-        let categories = new Set<Categories>()
+        let categories = new Set<CategoryIds>()
         products.forEach(product => product.categories.forEach((category => categories.add(category))))
         return [...categories]
     }
 
-    public filterProducts(searchTerm: string, filters: Categories[]) {
+    public filterProducts(searchTerm: string, filters: CategoryIds[]) {
         return this.getAllProducts().filter((product) => {
             const productName = product.name.toLowerCase()
             const hasMatchedSearchTerm = productName.includes(searchTerm.toLowerCase())
@@ -40,7 +40,7 @@ export class DataService {
         })
     }
 
-    public filterShops(searchTerm: string, filters: Categories[]) {
+    public filterShops(searchTerm: string, filters: CategoryIds[]) {
         return this.getAllShops().filter((shop) => {
             const shopName = shop.name.toLowerCase()
             const hasMatchedSearchTerm = shopName.includes(searchTerm.toLowerCase())

@@ -1,9 +1,9 @@
-import { Product, Categories, LabelIds, ShopIds } from "../types"
+import { Product, CategoryIds, LabelIds, ShopIds } from "../types"
 import { v4 as uuidv4 } from 'uuid';
 
 export default [
     {
-        name: "Laugenbretzel",
+        name: "Laugenbrezel",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-12',
@@ -11,7 +11,7 @@ export default [
         shop: ShopIds.BACKWERK,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BACKWARE, Categories.SNACK],
+        categories: [CategoryIds.BACKWARE, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -23,7 +23,7 @@ export default [
         shop: ShopIds.BACKWERK,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BACKWARE, Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.BACKWARE, CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -35,7 +35,7 @@ export default [
         shop: ShopIds.BACKWERK,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BACKWARE, Categories.HERZHAFT, Categories.SNACK],
+        categories: [CategoryIds.BACKWARE, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -47,7 +47,7 @@ export default [
         shop: ShopIds.BACKWERK,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BACKWARE, Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.BACKWARE, CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -59,7 +59,7 @@ export default [
         shop: ShopIds.BACKWERK,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BACKWARE, Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.BACKWARE, CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -71,7 +71,7 @@ export default [
         shop: ShopIds.BACKWERK,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BACKWARE, Categories.HERZHAFT, Categories.SNACK],
+        categories: [CategoryIds.BACKWARE, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -83,7 +83,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle"
     },
     {
@@ -95,7 +95,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Burgerpatty gestellt von Nestle. In Restaurants mit eingeschränkter Produktauswahl erhältlich."
     },
     {
@@ -107,7 +107,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.FASTFOOD],
+        categories: [CategoryIds.SNACK, CategoryIds.FASTFOOD],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben. Können mit veganen Saucen (Ketchup, Süßsauer, Curry, Barbeque, CHili) bestellt werden."
     },
     {
@@ -119,7 +119,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.FASTFOOD],
+        categories: [CategoryIds.SNACK, CategoryIds.FASTFOOD],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben. Können mit veganen Saucen (Ketchup, Süßsauer, Curry, Barbeque, CHili) bestellt werden."
     },
     {
@@ -131,7 +131,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: true,
-        categories: [Categories.SNACK, Categories.FASTFOOD],
+        categories: [CategoryIds.SNACK, CategoryIds.FASTFOOD],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben. Können mit veganen Saucen (Ketchup, Süßsauer, Curry, Barbeque, CHili) bestellt werden."
     },
     {
@@ -143,8 +143,8 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.SÜSS],
-        notes: "Muss mit veganen Toppings (KitKat vegan, Erdbeer-Sauce vegan) bestellt werden."
+        categories: [CategoryIds.SÜSS],
+        notes: "Muss mit veganen Toppings (KitKat vegan, Oreo, Katjes, Erdbeer-Sauce vegan) bestellt werden."
     },
     {
         name: "McSundae Schoko",
@@ -155,7 +155,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.SÜSS],
+        categories: [CategoryIds.SÜSS],
         notes: "Muss mit veganer Sauce (Erdbeer-Sauce vegan) bestellt werden."
     },
     {
@@ -167,7 +167,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben."
     },
     {
@@ -179,7 +179,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -191,7 +191,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK],
+        categories: [CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -203,7 +203,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.SÜSS],
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben."
     },
     {
@@ -215,7 +215,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.SÜSS],
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben."
     },
     {
@@ -227,7 +227,7 @@ export default [
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.SALAT],
+        categories: [CategoryIds.SNACK, CategoryIds.SALAT],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben."
     },
     {
@@ -239,7 +239,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: ""
     },
     {
@@ -251,7 +251,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: ""
     },
     {
@@ -263,7 +263,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.FASTFOOD, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK, CategoryIds.FASTFOOD,],
         notes: "folgende Saucen sind vegan: Ketchup, vegane Mayo, Sweet&Sour, BBQ, Mild Curry, Salsa Extra Hot."
     },
     {
@@ -275,7 +275,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen. Zum veganiseren: Ohne Käse (Milch) bestellen."
     },
     {
@@ -287,7 +287,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen. Zum veganisieren: Ohne Käse (Milch) und Sauce (Ei) bestellen. Sauce kann evtl. durch vegane Mayo ersetzt werden. "
     },
     {
@@ -299,7 +299,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen. Zum veganisieren: Ohne Käse (Milch) und Sauce (Ei) bestellen. Sauce kann evtl. durch vegane Mayo ersetzt werden. "
     },
     {
@@ -311,7 +311,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen."
     },
     {
@@ -323,7 +323,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen."
     },
     {
@@ -335,7 +335,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen. Eine Kreuzkontaminierung mit Eiern kann nicht ausgeschlossen werden."
     },
     {
@@ -347,7 +347,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen. Zum veganisieren: Käse und Kasesauce (Milch) abbestellen."
     },
     {
@@ -359,7 +359,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen. Zum veganisieren: Käse und Käsesauce (Milch, Ei) abbestellen."
     },
     {
@@ -371,7 +371,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.BURGER, Categories.FASTFOOD],
+        categories: [CategoryIds.BURGER, CategoryIds.FASTFOOD],
         notes: "Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen. Zum veganisieren: Käse und Käsesauce (Milch, Ei) abbestellen."
     },
     {
@@ -383,7 +383,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SALAT, Categories.SNACK],
+        categories: [CategoryIds.SALAT, CategoryIds.SNACK],
         notes: "Mit veganem Balsamico Dressing"
     },
     {
@@ -395,7 +395,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.SALAT, Categories.SNACK],
+        categories: [CategoryIds.SALAT, CategoryIds.SNACK],
         notes: "Mit veganem Balsamico Dressing und plant-based Patty. Das Patty kann (laut Angaben der Website) beim Grillen in Kontakt mit Rindfleisch kommen."
     },
     {
@@ -407,7 +407,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.FASTFOOD, Categories.SNACK],
+        categories: [CategoryIds.FASTFOOD, CategoryIds.SNACK],
         notes: "folgende Saucen sind vegan: Ketchup, vegane Mayo, Sweet&Sour, BBQ, Mild Curry, Salsa Extra Hot."
     },
     {
@@ -419,7 +419,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.FASTFOOD, Categories.SNACK],
+        categories: [CategoryIds.FASTFOOD, CategoryIds.SNACK],
         notes: "folgende Saucen sind vegan: Ketchup, vegane Mayo, Sweet&Sour, BBQ, Mild Curry, Salsa Extra Hot."
     },
     {
@@ -431,7 +431,7 @@ export default [
         shop: ShopIds.BURGERKING,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -443,7 +443,7 @@ export default [
         shop: ShopIds.CIGKÖFTEM,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.BACKWARE, Categories.SNACK],
+        categories: [CategoryIds.BACKWARE, CategoryIds.SNACK],
         notes: "Auch als Weizenbällchen Box erhältlich"
     },
     {
@@ -455,7 +455,7 @@ export default [
         shop: ShopIds.NORDSEE,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.FASTFOOD, Categories.VISCH],
+        categories: [CategoryIds.FASTFOOD, CategoryIds.VISCH],
         notes: "Auf der Website nicht vegan gelabelt."
     },
     {
@@ -467,7 +467,7 @@ export default [
         shop: ShopIds.NORDSEE,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.FASTFOOD, Categories.VISCH],
+        categories: [CategoryIds.FASTFOOD, CategoryIds.VISCH],
         notes: ""
     },
     {
@@ -479,7 +479,7 @@ export default [
         shop: ShopIds.NORDSEE,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.FASTFOOD, Categories.VISCH],
+        categories: [CategoryIds.FASTFOOD, CategoryIds.VISCH],
         notes: "Auf der Website nicht vegan gelabelt."
     },
     {
@@ -491,11 +491,11 @@ export default [
         shop: ShopIds.DEUTSCHEBAHN,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS],
+        categories: [CategoryIds.SÜSS],
         notes: "Leckerer veganer Milchreis - 'für unsere kleinen Gäste'"
     },
     {
-        name: "Vegan Cookies & Creme",
+        name: "Vegan Cookies & Creme Donut",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-20',
@@ -503,11 +503,11 @@ export default [
         shop: ShopIds.DUNKINDONUTS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: "Mit Oreo Keksen"
     },
     {
-        name: "Vegan Strawberry Swirl",
+        name: "Vegan Strawberry Swirl Donut",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-20',
@@ -515,11 +515,11 @@ export default [
         shop: ShopIds.DUNKINDONUTS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
-        name: "Vegan Mr. Happy",
+        name: "Vegan Mr. Happy Donut",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-20',
@@ -527,11 +527,11 @@ export default [
         shop: ShopIds.DUNKINDONUTS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: "Mit Erdbeerfüllung."
     },
     {
-        name: "Vegan Chocolate Frosted Sprinkles",
+        name: "Vegan Chocolate Frosted Sprinkles Donut",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-20',
@@ -539,11 +539,11 @@ export default [
         shop: ShopIds.DUNKINDONUTS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
-        name: "Vegan Strawberry Frosted Sprinkles",
+        name: "Vegan Strawberry Frosted Sprinkles Donut",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-20',
@@ -551,11 +551,11 @@ export default [
         shop: ShopIds.DUNKINDONUTS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
-        name: "Vegan Bavarian Creme",
+        name: "Vegan Bavarian Creme Donut",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-20',
@@ -563,7 +563,7 @@ export default [
         shop: ShopIds.DUNKINDONUTS,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SÜSS, Categories.SNACK],
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -575,7 +575,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "vegane Salamipizza."
     },
     {
@@ -587,7 +587,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "mit veganem Hähnchen, Brokkoli, Frühlingszwiebeln und Teriyaki Sauce."
     },
     {
@@ -599,7 +599,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "mit veganem Hähnchen, Paprika, Mais, roten Zwiebeln und Curry Sauce."
     },
     {
@@ -611,7 +611,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "mit Tomaten, Brokkoli und Pilzen."
     },
     {
@@ -623,7 +623,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "mit Tomaten, Spinat und Knoblauch."
     },
     {
@@ -635,7 +635,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: "mit Tomaten, Spinat und Knoblauch."
     },
     {
@@ -647,7 +647,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK],
+        categories: [CategoryIds.SNACK],
         notes: "gibt es mit Apfelkompot. Als herzhafte Dips: vegane Aioli oder Sweet-Chili Sauce."
     },
     {
@@ -659,7 +659,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -671,7 +671,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -683,7 +683,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK],
         notes: "Mit veganer Salami-Käse-Füllung."
     },
     {
@@ -695,7 +695,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK],
         notes: "sechs vegane Hänchen Filets mit einem Dip. Möglich sind: vegane Aioli oder Sweet-Chili Sauce"
     },
     {
@@ -707,7 +707,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.SÜSS],
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
         notes: ""
     },
     {
@@ -719,7 +719,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.SÜSS],
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
         notes: "Mit Dip mit Karamellgeschmack"
     },
     {
@@ -731,7 +731,7 @@ export default [
         shop: ShopIds.DOMINOSPIZZA,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "Hier kann eine Pizza selbst zusammengestellt werden. Es ist möglich, diese mit veganem Käse zu belegen. Die Special Crust Cheese ist nicht vegan."
     },
     {
@@ -743,7 +743,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -755,7 +755,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK, CategoryIds.SUPPE],
         notes: "Croutons, die auf Wunsch hinzugefügt werden können, sind nicht vegan."
     },
     {
@@ -767,7 +767,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.SÜSS],
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
         notes: "veganer Zitronenjoghurt, Schokoladenbiskuit, Erdbeersauce."
     },
     {
@@ -779,7 +779,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "mit Tomatensauce, veganem Käse, veganer Salami, Rucola und Basilikumöl."
     },
     {
@@ -791,7 +791,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: "Mit Grillgemüse, Artischocken, Tomatensauce, Pesto Basilico mit Pinienkernen, Zwiebeln."
     },
     {
@@ -803,7 +803,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: "Mit Tomatensauce, Kirschtomaten, Zwiebeln."
     },
     {
@@ -815,7 +815,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: "Mit Olivenöl, Knoblauch, Chili, Petersilie."
     },
     {
@@ -827,7 +827,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: "Mit Tomatensauce, Knoblauch, Zwiebeln, Chili."
     },
     {
@@ -839,7 +839,7 @@ export default [
         shop: ShopIds.VAPIANO,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: "Mit Veganem Basilikumpesto mit Pinienkernen."
     },
     {
@@ -851,7 +851,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK],
         notes: ""
     },
     {
@@ -863,7 +863,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.HERZHAFT],
+        categories: [CategoryIds.SNACK],
         notes: "Pizzabrot, frische Tomaten, Knoblauch, Rosmarin, Basilikum."
     },
     {
@@ -875,7 +875,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SALAT],
+        categories: [CategoryIds.SALAT],
         notes: ""
     },
     {
@@ -887,7 +887,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SALAT],
+        categories: [CategoryIds.SALAT],
         notes: ""
     },
     {
@@ -899,7 +899,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "zum veganisieren: der normale Käse muss gegen veganen getauscht werden."
     },
     {
@@ -911,7 +911,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "zum veganisieren: der normale Käse muss gegen veganen getauscht werden."
     },
     {
@@ -923,7 +923,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "zum veganisieren: der normale Käse muss gegen veganen getauscht werden."
     },
     {
@@ -935,7 +935,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.PIZZA],
+        categories: [CategoryIds.PIZZA],
         notes: "zum veganisieren: der normale Käse muss gegen veganen getauscht werden."
     },
     {
@@ -947,7 +947,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: ""
     },
     {
@@ -959,7 +959,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: "Wenn ohne Käse bestellt wird."
     },
     {
@@ -971,7 +971,7 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.PASTA],
+        categories: [CategoryIds.PASTA],
         notes: ""
     },
     {
@@ -983,7 +983,1975 @@ export default [
         shop: ShopIds.LOSTERIA,
         label: LabelIds.VEGAN,
         isSeasonal: false,
-        categories: [Categories.SNACK, Categories.SÜSS],
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
         notes: ""
+    },
+    {
+        name: "Tuscany Spicy vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PIZZAHUT,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Mit Mais, Jalapenos, Bruschetta, Balsamico."
+    },
+    {
+        name: "Smokey BBQ vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PIZZAHUT,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Mit BBQ Sauce, Violife Vegane Käsealternative, Mais, Zwiebeln, Paprika-Mix, Veganer Hühnchenersatz."
+    },
+    {
+        name: "Vegan Chik'n'Cheez",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PIZZAHUT,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Mit Vegane Sauce Käse-Geschmack, Violife Vegane Käsealternative, rote Zwiebeln, Paprika-Mix, Champignons, Veganer Hühnchenersatz."
+    },
+    {
+        name: "Creamy Cheez Pasta vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PIZZAHUT,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PASTA],
+        notes: ""
+    },
+    {
+        name: "Frohnatur",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Falafel-Erbsen-Bratling, Guacamole, junger Spinat mit Knoblauchmayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Chee'is vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Veg von Beef-BratlingGw, veganer Käse mit roten Zwiebeln. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Kebab Klaus",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Zitronen-Thymian-Sauce, Veg von Beef-Bratling, planted.kebab, Microgreens. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Der Held",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Veg von Chicken-Bratling in pikanter knuspriger Cornflakes-Panade, Wildkräuter, roten Zwiebeln, Guacamole mit Mangochutney. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Trüffelfee",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Falafel-Erbsen-Bratling, Champignons, Spinat, Steakpfeffer mit Trüffelcreme. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Räubertochter",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Green-Oat-Bratling, Champignons, Wildkräuter mit Federleicht-Mayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Der Crunchige",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Veg von Chicken-Bratling in pikanter knuspriger Cornflakes-Panade, junger Spinat und Knoblauchmayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Schatzinsel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Süßkartoffel-Amaranth-Bratling, sonnengetrocknete Tomaten, Wildkräuter, Steakpfeffer mit Basilikum-Mayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Der Crunchige",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Veg von Chicken-Bratling in pikanter knuspriger Cornflakes-Panade, junger Spinat und Knoblauchmayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Panflöte",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Falafel-Erbsen-Bratling, vegane Scheibe, knusprige Kartoffelchips, Röstzwiebeln mit BBQ-Soße. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Gartensalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: ""
+    },
+    {
+        name: "Kleiner Salat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: ""
+    },
+    {
+        name: "Beerenhunger",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Gemischter Salat, Beerenmix, geröstete Pinienkerne, Walnusskerne, Blaubeeren, vegane Hirtenwürfel, Granatapfel-Himbeer-Vinaigrette."
+    },
+    {
+        name: "Süsskartoffelfritten (Pommes)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Die Saucen auf dem Tisch, die zur Verfügung stehen, sind vegan. Mögliche kostepflichtige vegane Saucen: Mangochutney, Guacamole, Knoblauchmayo, White Smokey BBQ Sauce, Süße Feige, Trüffelcreme, BBQ Sauce, Basilikummayo, Zitronen-Thymian-Sauce."
+    },
+    {
+        name: "Fritten (Pommes)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Die Saucen auf dem Tisch, die zur Verfügung stehen, sind vegan. Mögliche kostepflichtige vegane Saucen: Mangochutney, Guacamole, Knoblauchmayo, White Smokey BBQ Sauce, Süße Feige, Trüffelcreme, BBQ Sauce, Basilikummayo, Zitronen-Thymian-Sauce."
+    },
+    {
+        name: "Guacamoly Fritten (Pommes)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Overload Fritten: 1/2 Pfund Süßkartoffelfritten, Guacamole, Röstzwiebeln, Rucola, Federleicht-Sauce."
+    },
+    {
+        name: "Sir Choc-a-lot",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Saftiger Schokoladenkuchen mit Kugel veganes Vanilleeis."
+    },
+    {
+        name: "Laugenbrezel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-22',
+        lastEdited: '2022-7-22',
+        shop: ShopIds.BACKFACTORY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Laugenstange",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-22',
+        lastEdited: '2022-7-22',
+        shop: ShopIds.BACKFACTORY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Mixbagel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-22',
+        lastEdited: '2022-7-22',
+        shop: ShopIds.BACKFACTORY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Oriental Brezel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-22',
+        lastEdited: '2022-7-22',
+        shop: ShopIds.BACKFACTORY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Brezel belegt mit Avocado, pikantem Hummus, Tomate und  Petersilie."
+    },
+    {
+        name: "Rustino Plant-Based Cruncher (Vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-22',
+        lastEdited: '2022-7-22',
+        shop: ShopIds.BACKFACTORY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Brötchen belegt mit Hühnchen-Alternative, Gurke, veganer Mayonnaise und Salat."
+    },
+    {
+        name: "Pommes Frittes",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Es gibt Ketchup dazu."
+    },
+    {
+        name: "Veganer Wrap Sweet Chili mit planted.chicken",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SANDWICH],
+        notes: ""
+    },
+    {
+        name: "Vegane Focaccia",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SNACK],
+        notes: "Mit Peperoni, Tomaten und Oliven."
+    },
+    {
+        name: "Vegane Gemüsebolognese mit Fusili",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PASTA],
+        notes: ""
+    },
+    {
+        name: "Veganes Gemüsecurry mit Basmatireis",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: ""
+    },
+    {
+        name: "Veganes planted.chicken Teriyaki mit Basmatireis",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: ""
+    },
+    {
+        name: "Vegane Tomatensuppe",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SUPPE, CategoryIds.SNACK],
+        notes: "Mit Brötchen"
+    },
+    {
+        name: "Veganer orientalischer Linsensalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Veganer italienischer Nudelsalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: "Mit getrockneten Tomaten, Kalamata-Oliven und Kapern."
+    },
+    {
+        name: "Veganes Porridge Apfel-Zimt",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.DEUTSCHEBAHN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.FRÜHSTÜCK],
+        notes: "Wahlweise mit veganem Topping Haselnuss-Cashew."
+    },
+    {
+        name: "Bagel Avocado (vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Bagel vegan Shawarma",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Sesambagel mit veganem Shawarma (Soja), Hummus, Tomatensauce, Antipasti, Tomate, Rucola, Salat."
+    },
+    {
+        name: "Dragon Mix Bowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Smoothiebowl (Pitaya) mit Obst und Granola."
+    },
+    {
+        name: "Tropical Mix Bowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Smoothiebowl (Mango-, Ananas-, Maraujageschnack) mit Obst und Granola."
+    },
+    {
+        name: "Berry Mix Bowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-23',
+        lastEdited: '2022-7-23',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Smoothiebowl (Beerengeschmack) mit Obst und Granola."
+    },
+    {
+        name: "Ciabatta Antipasti",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SANDWICH],
+        notes: "Ciabatta mit Hummus, getrockneten Tomaten, Grillgemüse und Rucola."
+    },
+    {
+        name: "Crossaint Mehrkorn vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Cookies vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "veganer Apfelkuchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Banane Johannisbeeren Schnitte vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Schwarze Johannisbeer Torte Handmade - vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Laugenbrezel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Muffin Lemon vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Veganes Pesto mit Antipasti Pasta",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PASTA],
+        notes: ""
+    },
+    {
+        name: "Salat Avocado (ohne Dressing)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "vegane Dressings: Balsamico, Essig & Öl."
+    },
+    {
+        name: "Avocado Stulle",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Kirschtomaten Suppe",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SUPPE, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Avocado Wrap",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.COFFEEFELLOWS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Wolpertinger",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Pikanter Gemüsebratling, vegane Goldscheibe & Avocadocreme. Kann mit Sauerteig-, Mehrkornbrötchen oder brotlos bestellt werden."
+    },
+    {
+        name: "Kutscher",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Pikanter Gemüsebratling, Grillgemüse, Knoblauchsoße & Rauke. Kann mit Sauerteig-, Mehrkornbrötchen oder brotlos bestellt werden."
+    },
+    {
+        name: "Abenteuerlust",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Falafelbratling, Grillgemüse, Rote Bete & Knoblauchsosse. Kann mit Sauerteig-, Mehrkornbrötchen oder brotlos bestellt werden."
+    },
+    {
+        name: "Weltenbummler",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Falafelbratling, Avocadocreme, Jalapenos & Kräutersalat. Kann mit Sauerteig-, Mehrkornbrötchen oder brotlos bestellt werden."
+    },
+    {
+        name: "Zeitgeist",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Vegane Hähnchenalternative im Knuspermantel, vegane Goldscheibe & Trüffelsosse. Kann mit Sauerteig-, Mehrkornbrötchen oder brotlos bestellt werden."
+    },
+    {
+        name: "Naturbursche",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Herzhafter Pflanzenbratling, karamellisierte Zwiebeln & Champignons. Kann mit Sauerteig-, Mehrkornbrötchen oder brotlos bestellt werden."
+    },
+    {
+        name: "Sonnengruss",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Herzhafter Pflanzenbratling, vegane Goldscheibe & scharfe Chilischotensosse. Kann mit Sauerteig-, Mehrkornbrötchen oder brotlos bestellt werden."
+    },
+    {
+        name: "Rohköstlich",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Salat & Nussdressing. Als Bowl zusätzlich mit Körnermix, Krautsalat, Rote Bete & Hanfdressing erhältlich."
+    },
+    {
+        name: "Wohltat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Salat, Grillgemüse, Champignons, Trüffelsosse & Apfel-Balsam-Dressing. Als Bowl zusätzlich mit Körnermix, Krautsalat, Rote Bete & Hanfdressing erhältlich."
+    },
+    {
+        name: "Tausendsassa",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Salat, Rote Bete, Falafelecken, Knoblauchsosse & Limetten-Chili-Dressing. Als Bowl zusätzlich mit Körnermix, Krautsalat, Rote Bete & Hanfdressing erhältlich."
+    },
+    {
+        name: "Goldfritten (Pommes)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "vegane Saucen dazu: HANS IM GLÜCK-Sauce, Avocadocreme, scharfe Chilischotensauce, 3-Pfeffer-Sauce, Knoblauchsauce, Trüffelsauce."
+    },
+    {
+        name: "Süsskartoffel-Fritten (Pommes)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "vegane Saucen dazu: HANS IM GLÜCK-Sauce, Avocadocreme, scharfe Chilischotensauce, 3-Pfeffer-Sauce, Knoblauchsauce, Trüffelsauce."
+    },
+    {
+        name: "Lausbub",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Mamas veganer Keksteig mit Beerenpüree."
+    },
+    {
+        name: "Kuchenfein",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Saisonal wechselndes veganes Küchlein & Obstsalat"
+    },
+    {
+        name: "Süsse Fritten",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-24',
+        lastEdited: '2022-7-24',
+        shop: ShopIds.HANSIMGLÜCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Süsskartoffel-Fritten & Beerenpüree mit veganer Eissorte."
+    },
+    {
+        name: "Spicy Vegan Patty",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-26',
+        lastEdited: '2022-7-26',
+        shop: ShopIds.SUBWAY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH, CategoryIds.FASTFOOD],
+        notes: "Subs können selbst zusammengestellt werden oder alternativ als Salat oder Wrap bestellt werden. Vegane Brote: Italian, Sesam, Weizenwrap, Spinatwrap. Käse muss abbestellt werden oder mit der veganen Käseälternative Vegan Slices ersetzt werden. Vegane Saucen: Hickory Smoked BBQ, Hot Sauce, Salsa, Sweet Onion, Vegan Garlic Aioli."
+    },
+    {
+        name: "Meatless Chicken Teriyaki",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-26',
+        lastEdited: '2022-7-26',
+        shop: ShopIds.SUBWAY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH, CategoryIds.FASTFOOD],
+        notes: "Subs können selbst zusammengestellt werden oder alternativ als Salat oder Wrap bestellt werden. Vegane Brote: Italian, Sesam, Weizenwrap, Spinatwrap. Käse muss abbestellt werden oder mit der veganen Käseälternative Vegan Slices ersetzt werden. Vegane Saucen: Hickory Smoked BBQ, Hot Sauce, Salsa, Sweet Onion, Vegan Garlic Aioli."
+    },
+    {
+        name: "Veggie Delite",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-26',
+        lastEdited: '2022-7-26',
+        shop: ShopIds.SUBWAY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH, CategoryIds.FASTFOOD],
+        notes: "Subs können selbst zusammengestellt werden oder alternativ als Salat oder Wrap bestellt werden. Vegane Brote: Italian, Sesam, Weizenwrap, Spinatwrap. Käse muss abbestellt werden oder mit der veganen Käseälternative Vegan Slices ersetzt werden. Vegane Saucen: Hot Sauce, Salsa, Sweet Onion, Vegan Garlic Aioli."
+    },
+    {
+        name: "Double Chocolate Cookie(vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-26',
+        lastEdited: '2022-7-26',
+        shop: ShopIds.SUBWAY,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: ""
+    },
+    {
+        name: "Basilikumtofu-Tomate Baguette",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.LECROBAG,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SANDWICH],
+        notes: ""
+    },
+    {
+        name: "veganer Muffin",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.LECROBAG,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: "Ist nicht auf der Website angegeben, konnte aber in einigen Filialen gesichtet werden."
+    },
+    {
+        name: "Salat Don Quinoa",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SCOOM,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Salat Hummus",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SCOOM,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Apfeltasche",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Franzbrötchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Schweineohren",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Franzbrötchen Schoko",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: "Nur bei Kamps Filialen mit Backstube."
+    },
+    {
+        name: "Franzbrötchen mit Apfel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: "Nur bei Kamps Filialen mit Backstube."
+    },
+    {
+        name: "Franzbrötchen mit Kürbiskernen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: "Nur bei Kamps Filialen mit Backstube."
+    },
+    {
+        name: "Laugenbrezel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Laugenbrötchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Laugenstange",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Obstbecher (Melone)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Obstbecher (Ananas)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Obstbecher",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Salat vegetarisch",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.KAMPS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SALAT],
+        notes: "Nur bei Kamps Filialen mit Backstube."
+    },
+    {
+        name: "Laugenbrezel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DITSCH,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Laugenbrezel mit Kürbiskernen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DITSCH,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Laugenstange",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DITSCH,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "JB vegan Hamburger",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Entweder mit Veggie-Patty (Kürbis-Chiasamen) oder mit Beefless Patty."
+    },
+    {
+        name: "JB vegan Champignon",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "JB Sauce, frisch gegrillte Champignons und Zwiebel. Entweder mit Veggie-Patty (Kürbis-Chiasamen) oder mit Beefless Patty."
+    },
+    {
+        name: "JB vegan Italian",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "JB Sauce, Rucola, rote Zwiebeln, Tomaten Salsa. Entweder mit Veggie-Patty (Kürbis-Chiasamen) oder mit Beefless Patty."
+    },
+    {
+        name: "JB Salad",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Veganes Dressing: Balsamico."
+    },
+    {
+        name: "JB Salad",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Veganes Dressing: Balsamico."
+    },
+    {
+        name: "Pommes",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Vegane Saucen: Ketchup und JB Sauce."
+    },
+    {
+        name: "Süßkartoffelpommes",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Vegane Saucen: Ketchup und JB Sauce."
+    },
+    {
+        name: "JB Coleslaw",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Vegan Bombas - Tortilla Chips",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.MEXIKANISCH],
+        notes: "Bunte Tortillachips, Verdino vegane Meatballs, Verdino Chili sin Carne, Kichererbsen, Quinoa Linsen Salat"
+    },
+    {
+        name: "Tortilla Chips & Dips",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.MEXIKANISCH],
+        notes: "Bunte Tortillachips mit 2 Dips nach Wahl. Vegane Dips: "
+    },
+    {
+        name: "Avocado Burger",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Süßkartoffel & Bohne, Guacamole, Maiscrunch, Red Salsa, White Mexican Burgersauce, Grillgemüse."
+    },
+    {
+        name: "Chili sin Carne",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.MEXIKANISCH],
+        notes: "Erbsenprotein, Bohnen, Verdino vegane Meatballs, Quinoa Linsen Salat, Kichererbsen."
+    },
+    {
+        name: "Mexican Aztec Bowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.MEXIKANISCH, CategoryIds.SALAT],
+        notes: "Mexikanischer Reis, Pflücksalat, Guacamole, Pico de Gallo Tomaten, Cajun Apfel Karotten Salat, Maiscrunch, Kirchererbsen, Quinoa Linsensalat, Mango Chili Dressing."
+    },
+    {
+        name: "Mexican Salad",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.MEXIKANISCH, CategoryIds.SALAT],
+        notes: "Pflücksalat, Pico de Gallo Tomaten, Cajun Apfel Karotten Salat, Maiscrunch, schwarze Bohnen, Kichererbsen, Mango Chili Dressing."
+    },
+    {
+        name: "Verduras Fajitas",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGANISIERBAR,
+        isSeasonal: false,
+        categories: [CategoryIds.MEXIKANISCH],
+        notes: "zum veganisieren: ohne Cheddar-Morzzarella-Mix bestellen."
+    },
+    {
+        name: "Vegan Bombas Tacos",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.MEXIKANISCH],
+        notes: "Verdino Chili sin Carne, Verdino veganer Meatball, Quinoa Linsen Salat"
+    },
+    {
+        name: "Apfel Enchiladas",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.SAUSALITOS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.MEXIKANISCH, CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Weizentortillas, Apfelkompott, Zimtzucker, Apfelsorbet, vegane Crème fraîche."
+    },
+    {
+        name: "fruchtige Tomatensuppe",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SUPPE],
+        notes: "Aus Tomaten mit Bärlauch und Olivenöl, dazu Kräuter-Knoblauchciabatta."
+    },
+    {
+        name: "BRUSCHETTA",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGANISIERBAR,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "knuspriges Ciabatta mit sonnengereiften Tomaten, Rucola, aromatischen italienischen Kräutern, feinem Olivenöl und Grana Padano. Zum veganisieren: Ohne Grana Padano bestellen."
+    },
+    {
+        name: "Pizzabrötchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Superfood Salad",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Getrocknete Feigen, Chiasamen, Granatapfelkerne, Cranberries, Kürbiskerne, Goji Beeren, Tomaten, Gurken, Möhren und nussiger Rucola auf marktfrischem gemischtem Salat in Rote-Bete-Sesam-Vinaigrette."
+    },
+    {
+        name: "Lieblingssalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Gemischte Blattsalate mit Tomaten, Gurken, feinen Möhrenraspeln, Feldsalat und Rucola, dazu ofenfrisches Kräuter-Knoblauchciabatta."
+    },
+    {
+        name: "Gemüsecurry Jalfrezi",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Indisches Tomatencurry mit Gemüse und Kartoffelstückchen, dazu Basmatireis und Tandoori Garlic Naan."
+    },
+    {
+        name: "kleiner Beilagensalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: "Gemischte Blattsalate mit Tomate, Gurke, feinen Möhrenraspeln, Feldsalat und Rucola, dazu Balsamico-Vinaigrette."
+    },
+    {
+        name: "mediterrane Kartöffelchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Mit Kräuteröl, frischem Rosmarin und Thymian"
+    },
+    {
+        name: "Blattspinat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Sautierter Blattspinat mit Knoblauch und Zwiebeln"
+    },
+    {
+        name: "Kräuter-Knoblauchciabatta",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Sorbetbecher",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.ALEX,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "1 Kugel Apfel Sorbet, 1 Kugel Maracuja Sorbet, Obstsalat und Flamm-Chips."
+    },
+    {
+        name: "Block House Salat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.BLOCKHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SALAT],
+        notes: "veganes Dressing: Italian Dressing."
+    },
+    {
+        name: "Pommes Frittes",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.BLOCKHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Baked Potato",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.BLOCKHOUSE,
+        label: LabelIds.VEGANISIERBAR,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "zum veganisieren: ohne Sour Cream bestellen."
+    },
+    {
+        name: "Coleslaw American Style",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.BLOCKHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SALAT],
+        notes: "Frischer Weißkohlsalat mit Karotten- und Gurkenraspeln."
+    },
+    {
+        name: "Vegan Funghi",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Möglich dazuzubestellen: Veganer Crust Dipper (Barbecue, Knoblauch, Süß Sauer) oder veganer Knoblauch Dip XXL."
+    },
+    {
+        name: "Vuna",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA, CategoryIds.VISCH],
+        notes: "mit veganer Tunfisch Alternative. Möglich dazuzubestellen: Veganer Crust Dipper (Barbecue, Knoblauch, Süß Sauer) oder veganer Knoblauch Dip XXL."
+    },
+    {
+        name: "Vegan BBQ",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "mit pikanter Barbecue Soße, Hefeschmelz, Blattspinat, weißen Zwiebeln, Paprika und Mais. Möglich dazuzubestellen: Veganer Crust Dipper (Barbecue, Knoblauch, Süß Sauer) oder veganer Knoblauch Dip XXL."
+    },
+    {
+        name: "Vegan Vegetaria",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Zwiebeln, frischer Paprika, Broccoli, Mais und Oliven. Möglich dazuzubestellen: Veganer Crust Dipper (Barbecue, Knoblauch, Süß Sauer) oder veganer Knoblauch Dip XXL."
+    },
+    {
+        name: "Vegan Margherita",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Möglich dazuzubestellen: Veganer Crust Dipper (Barbecue, Knoblauch, Süß Sauer) oder veganer Knoblauch Dip XXL."
+    },
+    {
+        name: "Free-Style Salat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Vegane Dressings: CaP American Dressing, Balsamico-Dressing, CaP Hausdressing."
+    },
+    {
+        name: "Gartensalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Blattsalat, Cocktailtomaten, frischer Paprika und Mais. Vegane Dressings: CaP American Dressing, Balsamico-Dressing, CaP Hausdressing."
+    },
+    {
+        name: "Classic Pizzaecken",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: "Vegane Dips: Barbecue, Knoblauch, Süß Sauer."
+    },
+    {
+        name: "Refreshing Rasperry Sorbet",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CALLAPIZZA,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: ""
+    },
+    {
+        name: "Cigköftem",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CIGKÖFTEM,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Als Wrap, Big Wrap, Paket etc. erhältlich."
+    },
+    {
+        name: "Falafel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CIGKÖFTEM,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Als Wrap, Portion, Paket etc. erhältlich."
+    },
+    {
+        name: "Weizenbällchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CIGKÖFTEM,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Als Wrap, Portion, Paket etc. erhältlich."
+    },
+    {
+        name: "Lavas-Brot",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.CIGKÖFTEM,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Falafel-Tahini",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Mit Green Falafel, Süßkartoffel Chunks, cremigem Hummus, Roter Bete, saftigen Granatapfelkernen, Gurken und mit frischer Minze verfeinert. Dazu empfohlen: Tahini-Lemon Dressing. Folgende Dressings sind vegan: Pink Balsamico, Ponzu Lemon, Tahini Lemon, Rucola."
+    },
+    {
+        name: "Vegan Harvest",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Mit Roast Potatoes, Brokkoli, Pilzen, Rotkohl, süßen Weintrauben, knackiger Paprika, frischer Kresse und Walnüssen. Dazu empfohlen: Pink Balsamico Vinaigrette. Folgende Dressings sind vegan: Pink Balsamico, Ponzu Lemon, Tahini Lemon, Rucola."
+    },
+    {
+        name: "Mix your own Salad",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Salate können selbst zusammengestellt werden. Folgende Dressings sind vegan: Pink Balsamico, Ponzu Lemon, Tahini Lemon, Rucola."
+    },
+    {
+        name: "Mix your own Bowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Bowls können selbst zusammengestellt werden. Folgende Saucen sind vegan: Lemon Mint, Mexican Salsa, Erdnuss Limette, Teriyaki, Spicy Ginger."
+    },
+    {
+        name: "Vegan Falafel Bowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Mit Green Falafel, cremigem Hummus, saftigen Granatapfelkernen, Roter Bete, Gurken, knackigen Karotten, frischer Minze, warmen Quinoa & Vollkornreis und frischem Salat. Dazu empfohlen: Lemon Mint Sauce. Alternativ sind auch alle anderen Bowl Saucen vegan außer die Soja Sesam Sauce."
+    },
+    {
+        name: "Green Thai Curry vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Mit frischem Gemüse (je nach Saison z.B. Brokkoli, Zucchini, Karotten, Weißkohl, Lauch) und Jasmin-Duftreis."
+    },
+    {
+        name: "Red Thai Curry vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Mit frischem Gemüse (je nach Saison z.B. Brokkoli, Zucchini, Karotten, Weißkohl, Lauch) und Jasmin-Duftreis."
+    },
+    {
+        name: "Mango Kokos Curry vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Mit Kichererbsen, frischem Gemüse (je nach Saison z.B. Brokkoli, Zucchini, Karotten, Weißkohl, Lauch) und Jasmin-Duftreis. Nur in teilnehmenden Stores."
+    },
+    {
+        name: "Rotes Linsen Dal",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Mit Sojaghurt und Jasmin-Duftreis."
+    },
+    {
+        name: "Süßkartoffel Spinat Curry ",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Mit Kichererbsen und Jasmin-Duftreis."
+    },
+    {
+        name: "Mango Möhren Suppe",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SUPPE],
+        notes: "Erhältlich von Oktober bis März."
+    },
+    {
+        name: "Karotten-Kokos-Ingwer Suppe",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SUPPE],
+        notes: "Erhältlich von Oktober bis März."
+    },
+    {
+        name: "Kürbissuppe",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SUPPE],
+        notes: "Erhältlich von Oktober bis März."
+    },
+    {
+        name: "Tomaten Basilikum Suppe",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SUPPE],
+        notes: "Erhältlich von Oktober bis März."
+    },
+    {
+        name: "Vegan Sweet Potato Sandwich",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Mit Süßkartoffel Chunks, Rotkohl, Babyspinat, Crunchy Onions, frischer Kresse und Miso Mayo."
+    },
+    {
+        name: "Vegan Falafel Wrap",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Mit Green Falafel, cremigem Hummus, Avocado, Rotkohl, frischer Minze, Granatapfelkernen, Rucola, Salat und Mexican Salsa."
+    },
+    {
+        name: "Beeren Chia Pudding",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: ""
+    },
+    {
+        name: "Bananenbrot",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.DEANDAVID,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: "Mit Johannisbeeren, Walnüssen, Mandeln."
+    },
+    {
+        name: "Vegan Margherita",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: ""
+    },
+    {
+        name: "Non Chicken BBQ Vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "BBQ-Soße, veganes Hähnchen und rote Zwiebeln."
+    },
+    {
+        name: "Mediteranea Vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Schwarze Oliven, Jalapeños, rote Zwiebeln, gewürfelte Tomaten und Oregano."
+    },
+    {
+        name: "Garden Party Vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Rote Zwiebeln, grüne Paprika, Mais, Champignons, gewürfelte Tomaten."
+    },
+    {
+        name: "Fresh Garden Vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Champignons, Blattspinat, Broccoli und rote Paprika."
+    },
+    {
+        name: "Pomodoro Vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA],
+        notes: "Gewürfelte Tomaten und italienische Kräuter."
+    },
+    {
+        name: "Papadias Non Chicken BBQ Vegan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA, CategoryIds.SANDWICH],
+        notes: "Pizza-Sandwich mit BBQ Soße, veganes Hähnchen, weiße Zwiebeln und dem veganen Kokosnuss-Käse Vegan Sheese."
+    },
+    {
+        name: "Vegan Sheese Rolls",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.PAPAJOHNS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.PIZZA, CategoryIds.SNACK],
+        notes: "Pizzabrötchen mit Pizzasoße und dem veganen Kokosnuss-Käse Vegan Sheese."
     },
 ] as Product[]

@@ -3,8 +3,8 @@
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
       <div class="categories-container">
-        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge"
-          :id="badge" :title="badge" :removable="false" />
+        <Badge v-for="badgeID in getProductBadges" :key="badgeID" :color="getCategory(badgeID).color" :name="getCategory(badgeID).name"
+          :id="badgeID" :title="badgeID" :removable="false" />
       </div>
     </div>
   </NuxtLink>
@@ -13,8 +13,8 @@
 <script lang="ts">
 import { DataService } from '../services/DataService'
 const DS = new DataService()
-import type { Shop, Categories } from "../types"
-import { CategorieColor } from "../types"
+import type { Shop, CategoryIds } from "../types"
+import { Categories } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
@@ -24,13 +24,13 @@ export default defineComponent({
     },
   },
   computed: {
-    getProductBadges(): Categories[] {
+    getProductBadges(): CategoryIds[] {
       return DS.getCategoriesByShopId(this.shop.id)
     }
   },
   methods: {
-    getCategorieColor(categorieId: Categories) {
-      return CategorieColor[categorieId]
+    getCategory(categorieId: CategoryIds) {
+      return Categories[categorieId]
     }
   }
 });

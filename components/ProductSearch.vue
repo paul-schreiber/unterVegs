@@ -6,8 +6,8 @@
           <font-awesome-icon :icon="['fas', 'search']" />
         </span>
         <div class="applied-categories-container">
-          <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieColor(category)"
-            :removable="true" :name="shortenText(category)" :id="category" :title="category"
+          <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieObject(category).color"
+            :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
             :onClose="removeCategoryFromFilter" />
         </div>
         <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field"
@@ -20,7 +20,7 @@
         <div class="available-categories-container">
           <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
             @click="addCategoryToFilter(category)">
-            <Badge :color="getCategorieColor(category)" :removable="false" :name="category" :id="category"
+            <Badge :color="getCategorieObject(category).color" :removable="false" :name="getCategorieObject(category).name" :id="category"
               :title="`Nach ${category} suchen`" />
           </div>
         </div>
@@ -50,8 +50,8 @@
 </template>
 
 <script lang="ts">
-import { Product, Shop, Categories } from "../types"
-import { CategorieColor } from "../types"
+import { Product, Shop, CategoryIds, Category } from "../types"
+import { Categories } from "../types"
 import { defineComponent } from "vue";
 import { DataService } from '../services/DataService'
 const DS = new DataService()
@@ -60,8 +60,8 @@ export default defineComponent({
   data() {
     return {
       searchTerm: '' as String,
-      availableFilters: new Set<Categories>(Object.keys(Categories) as Categories[]),
-      appliedFilters: new Set<Categories>(),
+      availableFilters: new Set<CategoryIds>(Object.keys(CategoryIds) as CategoryIds[]),
+      appliedFilters: new Set<CategoryIds>(),
       showFilterPanel: false,
       maxFilters: 3,
       selectedTab: 'products',
@@ -83,10 +83,10 @@ export default defineComponent({
     }
   },
   methods: {
-    getCategorieColor(categorieId: Categories) {
-      return CategorieColor[categorieId]
+    getCategorieObject(categorieId: CategoryIds): Category {
+      return Categories[categorieId]
     },
-    addCategoryToFilter(category: Categories) {
+    addCategoryToFilter(category: CategoryIds) {
       if (this.appliedFilters.size === this.maxFilters) {
         alert(`Du kannst nur ${this.maxFilters} Filter gleichzeitig nutzen`)
         return
@@ -95,7 +95,7 @@ export default defineComponent({
       this.availableFilters.delete(category)
       this.toggleFilterPanel()
     },
-    removeCategoryFromFilter(category: Categories) {
+    removeCategoryFromFilter(category: CategoryIds) {
       this.appliedFilters.delete(category)
       this.availableFilters.add(category)
     },

@@ -1,10 +1,10 @@
 import { Shop, ShopIds } from '../types'
 export default [
     {
-        name: 'Asia Gourmet',
-        id: ShopIds.ASIAGOURMET,
+        name: 'Alex',
+        id: ShopIds.ALEX,
         isLocal: false,
-        notes: '',
+        notes: ''
     },
     {
         name: 'Backwerk',
@@ -17,11 +17,23 @@ export default [
         name: 'Cafe & Bar Celona',
         id: ShopIds.BARCELONA,
         isLocal: false,
+        notes: 'Das Angebot kann sich je nach Standort unterscheiden.'
+    },
+    {
+        name: 'Coffee Fellowa',
+        id: ShopIds.COFFEEFELLOWS,
+        isLocal: false,
         notes: ''
     },
     {
         name: 'Backfactory',
         id: ShopIds.BACKFACTORY,
+        isLocal: false,
+        notes: ''
+    },
+    {
+        name: 'Blockhouse',
+        id: ShopIds.BLOCKHOUSE,
         isLocal: false,
         notes: ''
     },
@@ -66,7 +78,7 @@ export default [
         name: 'Dean & David',
         id: ShopIds.DEANDAVID,
         isLocal: false,
-        notes: ''
+        notes: 'Hier gibt es neben explizit veganen Produkten nun auch die Möglichkeit, das Hühnchen durch veganes planted.chicken zu ersetzen und so verschiedene Salate oder Bowls zu veganisieren. Dean and David bietet folgende vegane Dressings: Pink Balsamico, Ponzu Lemon, Tahini Lemon, Rucola. Bei den Bowl Saucen ist nur die Soja Sesam Sauce NICHT vegan. '
     },
     {
         name: 'Ditsch',
@@ -142,7 +154,7 @@ export default [
     },
     {
         name: 'Le Crobag',
-        id: ShopIds.LECROBAC,
+        id: ShopIds.LECROBAG,
         isLocal: false,
         notes: ''
     },
@@ -173,8 +185,8 @@ export default [
     {
         name: 'Papa John´s',
         id: ShopIds.PAPAJOHNS,
-        isLocal: false,
-        notes: ''
+        isLocal: true,
+        notes: 'Filialen sind in Hamburg, Magdeburg, Merseburg und Leipzig.'
     },
     {
         name: 'Peter Pane',
