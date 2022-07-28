@@ -6,7 +6,7 @@
                 <img class="logo" :src="shop.imgURL" v-if="shop.imgURL"/>
             </div>
             <div class="badge-container">
-                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge"
+                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge" :name="getCategoryObject(badge).name"
                     :removable="false" :title="badge" />
             </div>
             <div class="description">
@@ -27,10 +27,9 @@
 
 import { defineComponent } from "vue";
 import { DataService } from '../../services/DataService'
-import { ShopIds } from "~~/types";
+import { Category, ShopIds, CategoryIds } from "~~/types";
 const DS = new DataService()
-import { Categories } from "~~/types";
-import { CategorieColor } from "../../types"
+import { Categories } from "../../types"
 export default defineComponent({
     data() {
         return {
@@ -41,13 +40,13 @@ export default defineComponent({
         getProducts() {
             return DS.getProductsByShopId(this.shop.id)
         },
-        getProductBadges(): Categories[] {
+        getProductBadges(): CategoryIds[] {
             return DS.getCategoriesByShopId(this.shop.id)
         }
     },
     methods: {
-        getCategorieColor(categorieId: Categories) {
-            return CategorieColor[categorieId]
+        getCategoryObject(categorieId: CategoryIds): Category {
+            return Categories[categorieId]
         }
     }
 })

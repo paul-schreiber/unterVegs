@@ -6,10 +6,10 @@
         {{ getShop }}
       </div>
       <div class="badge-container">
-        <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :removable="false"/>
+        <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label" :removable="false"/>
       </div>
       <div class="badge-container">
-        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategorieColor(badge)" :name="badge" :removable="false"
+        <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge" :name="getCategoryObject(badge).name" :removable="false"
           :title="badge" />
       </div>
     </header>
@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { DateTime } from "luxon";
-import { Labels, CategorieColor, Categories } from "../../types"
+import { Labels, Categories, CategoryIds, Category } from "../../types"
 import { defineComponent } from "vue";
 import { DataService } from '../../services/DataService'
 const DS = new DataService()
@@ -43,7 +43,7 @@ export default defineComponent({
     getShop() {
       return DS.getShopById(this.product.shop).name
     },
-    getProductBadges(): Categories[] {
+    getProductBadges(): CategoryIds[] {
       return this.product.categories
     }
   },
@@ -51,8 +51,8 @@ export default defineComponent({
     makeDateReadable(date: string): String {
       return DateTime.fromJSDate(new Date(date)).toLocaleString()
     },
-    getCategorieColor(categorieId: Categories) {
-      return CategorieColor[categorieId]
+    getCategoryObject(categorieId: CategoryIds): Category {
+      return Categories[categorieId]
     }
   }
 })

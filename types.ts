@@ -3,7 +3,7 @@ export type Product = {
     id: string;
     author: string;
     shop: ShopIds;
-    categories: Categories[];
+    categories: CategoryIds[];
     label: LabelIds;
     created: string;
     lastEdited: string;
@@ -26,7 +26,12 @@ export type Label = {
     tooltip: string
 }
 
-export enum Categories {
+export type Category = {
+    name: string,
+    color: string,
+}
+
+export enum CategoryIds {
     PASTA = 'PASTA',
     BACKWARE = 'BACKWARE',
     PIZZA = 'PIZZA',
@@ -36,20 +41,70 @@ export enum Categories {
     SNACK = 'SNACK',
     FASTFOOD = 'FASTFOOD',
     SÜSS = 'SÜSS',
-    HERZHAFT = 'HERZHAFT',
+    SANDWICH = 'SANDWICH',
+    ASIATISCH = 'ASIATISCH',
+    SUPPE = 'SUPPE',
+    FRÜHSTÜCK = 'FRÜHSTÜCK',
+    MEXIKANISCH = 'MEXIKANISCH'
 }
 
-export const CategorieColor = {
-    [Categories.PASTA]: '#E96E6C',
-    [Categories.BACKWARE]: '#F6A037',
-    [Categories.PIZZA]: '#F1D15A',
-    [Categories.BURGER]: '#B0D363',
-    [Categories.SALAT]: '#6AAE60',
-    [Categories.VISCH]: '#87C3BF',
-    [Categories.SNACK]: '#5F8DB6',
-    [Categories.FASTFOOD]: '#B07CDD',
-    [Categories.SÜSS]: '#D37CA4',
-    [Categories.HERZHAFT]: '#FFA2AA',
+export const Categories = {
+    [CategoryIds.PASTA]: {
+        name: 'PASTA',
+        color: '#E96E6C'
+    } as Category,
+    [CategoryIds.BACKWARE]: {
+        name: 'BACKWARE',
+        color: '#F6A037'
+    } as Category,
+    [CategoryIds.PIZZA]: {
+        name: 'PIZZA',
+        color: '#F1D15A'
+    } as Category,
+    [CategoryIds.BURGER]: {
+        name: 'BURGER',
+        color: '#B0D363'
+    } as Category,
+    [CategoryIds.SALAT]: {
+        name: 'SALAT/BOWL',
+        color: '#6AAE60'
+    } as Category,
+    [CategoryIds.VISCH]: {
+        name: 'VISCH',
+        color: '#87C3BF'
+    } as Category,
+    [CategoryIds.SNACK]: {
+        name: 'SNACK',
+        color: '#5F8DB6'
+    } as Category,
+    [CategoryIds.FASTFOOD]: {
+        name: 'FASTFOOD',
+        color: '#B07CDD'
+    } as Category,
+    [CategoryIds.SÜSS]: {
+        name: 'SÜSS',
+        color: '#D37CA4'
+    } as Category,
+    [CategoryIds.SANDWICH]: {
+        name: 'SANDWICH/WRAP',
+        color: '#FFA2AA'
+    } as Category,
+    [CategoryIds.ASIATISCH]: {
+        name: 'ASIATISCH',
+        color: '#F6A037'
+    } as Category,
+    [CategoryIds.SUPPE]: {
+        name: 'SUPPE',
+        color: '#FFA2AA'
+    } as Category,
+    [CategoryIds.FRÜHSTÜCK]: {
+        name: 'FRÜHSTÜCK',
+        color: '#F6A037'
+    } as Category,
+    [CategoryIds.MEXIKANISCH]: {
+        name: 'MEXIKANISCH',
+        color: '#F6A037'
+    } as Category,
 }
 
 export enum LabelIds {
@@ -74,7 +129,7 @@ export const Labels = {
 }
 
 export enum ShopIds {
-    ASIAGOURMET = 'AG',
+    ALEX = 'ALEX',
     BACKFACTORY = 'BAFA',
     BACKWERK = 'BW',
     BARCELONA = 'BAR',
@@ -84,6 +139,7 @@ export enum ShopIds {
     CALLAPIZZA = 'CAP',
     CHIDOBA = 'CHI',
     CIGKÖFTEM = 'CIKÖ',
+    COFFEEFELLOWS = 'CF',
     DEUTSCHEBAHN = 'DB',
     DEANDAVID = 'DEDA',
     DITSCH = 'DI',
@@ -98,7 +154,7 @@ export enum ShopIds {
     JIMBLOCK = 'JB',
     KAISERBIOBÄCKEREI = 'KBIO',
     KAMPS = 'KA',
-    LECROBAC = 'LC',
+    LECROBAG = 'LG',
     LOSTERIA = 'LOS',
     MCDONALDS = 'MCD',
     MOSCHMOSCH = 'MOMO',
