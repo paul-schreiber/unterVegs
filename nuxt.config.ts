@@ -18,7 +18,7 @@ export default defineNuxtConfig({
             display: 'standalone',
             background_color: '#ffffff',
             theme_color: '#498830',
-            "description": "unterVegs ist dein Reisebegleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!.",
+            "description": "unterVegs ist dein Begleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!.",
         }
     },
     vite: {

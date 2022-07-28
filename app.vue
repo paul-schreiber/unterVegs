@@ -20,7 +20,7 @@ export default defineComponent({
         {
           hid: 'description',
           name: 'description',
-          content: 'unterVegs ist dein Reisebegleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswahl!'
+          content: 'unterVegs ist dein Begleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswahl!'
         }
       ],
       link: [
