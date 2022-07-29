@@ -1,12 +1,12 @@
 <template>
-    <button @click="onClick()" :title="tooltip" :class="buttonType">{{name}}</button>
+    <button @click="onClick()" :title="tooltip" :class="buttonType">{{ name }}</button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
     props: {
-         name: {
+        name: {
             type: String,
             required: true
         },
@@ -14,7 +14,7 @@ export default defineComponent({
             type: Boolean,
             required: true
         },
-         tooltip: {
+        tooltip: {
             type: String,
             required: false
         },
@@ -36,16 +36,17 @@ button {
     all: unset;
     cursor: pointer;
     border-radius: 10px;
-    padding: $sp-tiny;
+    padding: $sp-small;
     border: solid 2px $color-primary;
     margin: $sp-small;
     font-weight: bold;
 
     &.primary {
         background-color: $color-primary;
-         color: $color-font-light;
+        color: $color-font-light;
     }
-     &.secondary {
+
+    &.secondary {
         border: solid 2px $color-font-medium;
     }
 }

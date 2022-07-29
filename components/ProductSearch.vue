@@ -10,7 +10,7 @@
             :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
             :onClose="removeCategoryFromFilter" />
         </div>
-        <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field"
+        <input v-model="searchTerm" placeholder="Suche nach 'Pizza' oder 'Dean & David'..." class="search-field"
           @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
         <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0">
           <font-awesome-icon :icon="['fas', 'sliders']" />
@@ -53,8 +53,6 @@
 import { Product, Shop, CategoryIds, Category } from "../types"
 import { Categories } from "../types"
 import { defineComponent } from "vue";
-import { DataService } from '../services/DataService'
-const DS = new DataService()
 export default defineComponent({
   name: "ProductSearch",
   data() {
@@ -70,10 +68,10 @@ export default defineComponent({
 
   computed: {
     filteredProducts(): Product[] {
-      return DS.filterProducts(this.searchTerm, [...this.appliedFilters])
+      return this.$DS.filterProducts(this.searchTerm, [...this.appliedFilters])
     },
     filteredShops(): Shop[] {
-      return DS.filterShops(this.searchTerm, [...this.appliedFilters])
+      return this.$DS.filterShops(this.searchTerm, [...this.appliedFilters])
     },
     hideResults(): boolean {
       return this.searchTerm === '' && this.appliedFilters.size === 0

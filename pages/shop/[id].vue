@@ -3,11 +3,15 @@
         <header>
             <div class="heading-container">
                 <h1 class="heading">{{ shop.name }}</h1>
-                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL"/>
+                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" />
             </div>
             <div class="badge-container">
-                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge" :name="getCategoryObject(badge).name"
-                    :removable="false" :title="badge" />
+                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color"
+                    :id="badge" :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
+            </div>
+            <div class="is-local-warning" title="Dieses Restaurant gibt es nur an manchen Orten." v-if="shop.isLocal">
+                <font-awesome-icon :icon="['fas', 'map-pin']" />
+                {{ `${shop.name} gibt es nicht in allen Bundesländern.` }}
             </div>
             <div class="description">
                 {{ shop.notes }}
@@ -15,9 +19,7 @@
         </header>
         <h3>Alle Produkte:</h3>
         <div class="product-list">
-            <ItemContainer v-for="product in getProducts" :key="product.id">
-                <ProductItem :product="product" />
-            </ItemContainer>
+            <ProductDetailItem v-for="product in getProducts" :key="product.id" :product="product" />
         </div>
     </div>
 </template>
@@ -26,22 +28,20 @@
 
 
 import { defineComponent } from "vue";
-import { DataService } from '../../services/DataService'
 import { Category, ShopIds, CategoryIds } from "~~/types";
-const DS = new DataService()
 import { Categories } from "../../types"
 export default defineComponent({
     data() {
         return {
-            shop: DS.getShopById(this.$route.params.id as ShopIds),
+            shop: this.$DS.getShopById(this.$route.params.id as ShopIds),
         }
     },
     computed: {
         getProducts() {
-            return DS.getProductsByShopId(this.shop.id)
+            return this.$DS.getProductsByShopId(this.shop.id)
         },
         getProductBadges(): CategoryIds[] {
-            return DS.getCategoriesByShopId(this.shop.id)
+            return this.$DS.getCategoriesByShopId(this.shop.id)
         }
     },
     methods: {
@@ -78,6 +78,12 @@ header {
         margin-bottom: $sp-small;
         display: flex;
         gap: $sp-tiny;
+        flex-wrap: wrap;
+    }
+
+    .is-local-warning {
+        text-align: left;
+        margin-bottom: $sp-small;
     }
 
     .description {
@@ -85,8 +91,23 @@ header {
     }
 }
 
+.product-list {
+    margin: $sp-medium 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-medium;
+    justify-content: center;
+
+}
+
 h3 {
     text-align: left;
     margin: 0px;
+}
+
+@media only screen and (min-width: 700px) {
+    .product-list {
+        justify-content: flex-start;
+    }
 }
 </style>
