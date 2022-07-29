@@ -25,22 +25,20 @@
 
 
 import { defineComponent } from "vue";
-import { DataService } from '../../services/DataService'
 import { Category, ShopIds, CategoryIds } from "~~/types";
-const DS = new DataService()
 import { Categories } from "../../types"
 export default defineComponent({
     data() {
         return {
-            shop: DS.getShopById(this.$route.params.id as ShopIds),
+            shop: this.$DS.getShopById(this.$route.params.id as ShopIds),
         }
     },
     computed: {
         getProducts() {
-            return DS.getProductsByShopId(this.shop.id)
+            return this.$DS.getProductsByShopId(this.shop.id)
         },
         getProductBadges(): CategoryIds[] {
-            return DS.getCategoriesByShopId(this.shop.id)
+            return this.$DS.getCategoriesByShopId(this.shop.id)
         }
     },
     methods: {

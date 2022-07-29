@@ -11,8 +11,6 @@
 </template>
 
 <script lang="ts">
-import { DataService } from '../services/DataService'
-const DS = new DataService()
 import type { Shop, CategoryIds } from "../types"
 import { Categories } from "../types"
 import { defineComponent } from "vue";
@@ -25,7 +23,7 @@ export default defineComponent({
   },
   computed: {
     getProductBadges(): CategoryIds[] {
-      return DS.getCategoriesByShopId(this.shop.id)
+      return this.$DS.getCategoriesByShopId(this.shop.id)
     }
   },
   methods: {

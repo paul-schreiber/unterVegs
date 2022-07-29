@@ -29,15 +29,17 @@
     <div class="bottom-info">{{ getAuthorWithDate }}</div>
     <div class="error-click-to-action">
       <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
-      <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
-      <NuxtLink :to="{
-        name: 'contact',
-        params: {
-          topic: `Fehler - ${product.name}/${getShop}`
-        }
-      }">
-        <button title="Melde ein Problem oder einen Fehler!">Fehler melden 👷🏽‍♀️</button>
-      </NuxtLink>
+      <div>
+        <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
+        <NuxtLink :to="{
+          name: 'contact',
+          params: {
+            topic: `Fehler - ${product.name}/${getShop}`
+          }
+        }">
+          <button title="Melde ein Problem oder einen Fehler!">Fehler melden 👷🏽‍♀️</button>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
@@ -46,12 +48,10 @@
 import { DateTime } from "luxon";
 import { Labels, Categories, CategoryIds, Category } from "../../types"
 import { defineComponent } from "vue";
-import { DataService } from '../../services/DataService'
-const DS = new DataService()
 export default defineComponent({
   data() {
     return {
-      product: DS.getProductById(this.$route.params.id as String)
+      product: this.$DS.getProductById(this.$route.params.id as String)
     }
   },
   computed: {
@@ -59,7 +59,7 @@ export default defineComponent({
       return Labels[this.product.label]
     },
     getShop() {
-      return DS.getShopById(this.product.shop).name
+      return this.$DS.getShopById(this.product.shop).name
     },
     getProductBadges(): CategoryIds[] {
       return this.product.categories
@@ -157,6 +157,7 @@ header {
   }
 
   button {
+    width: 145px;
     all: unset;
     cursor: pointer;
     border-radius: 10px;

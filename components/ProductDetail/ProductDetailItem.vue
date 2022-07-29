@@ -24,8 +24,6 @@
 
 
 <script lang="ts">
-import { DataService } from '../../services/DataService'
-const DS = new DataService()
 import { DateTime } from "luxon";
 import type { Product, Shop, Label } from "../../types"
 import { Labels } from "../../types"
@@ -45,7 +43,7 @@ export default defineComponent({
             return this.isMobile ? this.getLabel.shortName : this.getLabel.name
         },
         getShop(): Shop {
-            return DS.getShopById(this.product.shop)
+            return this.$DS.getShopById(this.product.shop)
         },
         isMobile(): boolean {
             return window.innerWidth < 700

@@ -53,8 +53,6 @@
 import { Product, Shop, CategoryIds, Category } from "../types"
 import { Categories } from "../types"
 import { defineComponent } from "vue";
-import { DataService } from '../services/DataService'
-const DS = new DataService()
 export default defineComponent({
   name: "ProductSearch",
   data() {
@@ -70,10 +68,10 @@ export default defineComponent({
 
   computed: {
     filteredProducts(): Product[] {
-      return DS.filterProducts(this.searchTerm, [...this.appliedFilters])
+      return this.$DS.filterProducts(this.searchTerm, [...this.appliedFilters])
     },
     filteredShops(): Shop[] {
-      return DS.filterShops(this.searchTerm, [...this.appliedFilters])
+      return this.$DS.filterShops(this.searchTerm, [...this.appliedFilters])
     },
     hideResults(): boolean {
       return this.searchTerm === '' && this.appliedFilters.size === 0
