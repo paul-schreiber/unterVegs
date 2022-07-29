@@ -18,17 +18,27 @@
       <div>
         <div class="label">zuletzt aktualisiert:</div> {{ makeDateReadable(product.lastEdited) }}
       </div>
-      <div>
+      <div v-if="product.isSeasonal">
         <div class="label">Verfügbarkeit:</div>
-        <span v-if="product.isSeasonal">nicht jederzeit</span>
-        <span v-else>immer</span>
-        verfügbar
+        <span>nicht jederzeit verfügbar</span>
       </div>
     </div>
     <div class="description">
       {{ product.notes }}
     </div>
     <div class="bottom-info">{{ getAuthorWithDate }}</div>
+    <div class="error-click-to-action">
+      <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
+      <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
+      <NuxtLink :to="{
+        name: 'contact',
+        params: {
+          topic: `Fehler - ${product.name}/${getShop}`
+        }
+      }">
+        <button title="Melde ein Problem oder einen Fehler!">Fehler melden 👷🏽‍♀️</button>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -71,6 +81,11 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
+a {
+  color: $color-font-dark;
+  text-decoration: none;
+}
+
 header {
   margin-bottom: $sp-medium;
 
@@ -120,6 +135,36 @@ header {
 }
 
 .bottom-info {
+  margin-bottom: $sp-large;
   color: $color-font-medium;
+}
+
+.error-click-to-action {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: $sp-medium;
+  margin: auto;
+  text-align: left;
+  padding: $sp-medium;
+  border-radius: 15px;
+  background-color: $color-warning-bg;
+  font-weight: bold;
+
+  .warning-icon {
+    color: $color-warning;
+    font-size: 1.6rem;
+  }
+
+  button {
+    all: unset;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: $sp-small;
+    margin: $sp-small;
+    font-weight: bold;
+    background-color: $color-warning;
+    color: $color-font-light;
+  }
 }
 </style>

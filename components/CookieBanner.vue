@@ -6,7 +6,7 @@
                 gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">Datenschutzerklärung
                 </NuxtLink>.</p>
         </div>
-        <Button name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
+        <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
     </div>
 </template>
 
