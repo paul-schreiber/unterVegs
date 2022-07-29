@@ -9,10 +9,13 @@
                 <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color"
                     :id="badge" :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
             </div>
+            <div class="is-local-warning" title="Dieses Restaurant gibt es nur an manchen Orten." v-if="shop.isLocal">
+                <font-awesome-icon :icon="['fas', 'map-pin']" />
+                {{ `${shop.name} gibt es nicht in allen Bundesländern.` }}
+            </div>
             <div class="description">
                 {{ shop.notes }}
             </div>
-            <font-awesome-icon :icon="['fas', 'map-pin']" v-if="shop.isLocal" />
         </header>
         <h3>Alle Produkte:</h3>
         <div class="product-list">
@@ -78,6 +81,11 @@ header {
         flex-wrap: wrap;
     }
 
+    .is-local-warning {
+        text-align: left;
+        margin-bottom: $sp-small;
+    }
+
     .description {
         text-align: left;
     }
@@ -98,8 +106,8 @@ h3 {
 }
 
 @media only screen and (min-width: 700px) {
-  .product-list {
-    justify-content: flex-start;
-  }
+    .product-list {
+        justify-content: flex-start;
+    }
 }
 </style>
