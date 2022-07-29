@@ -2,16 +2,21 @@
     <NuxtLink :to="`/product/${product.id}`">
         <div class="product-item">
             <header>
-                <div class="product-name">{{ product.name }}</div>
                 <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
-                    :removable="false" />
+                        :removable="false" />
+                <div class="labels">
+                    <font-awesome-icon :icon="['fas', 'calendar-day']" title="nicht immer verfügbar"
+                        v-if="product.isSeasonal" />
+                        <font-awesome-icon :icon="['fas', 'circle-info']" title="Klicke für mehr Infos!"/>
+                </div>
             </header>
             <div class="body">
-                <font-awesome-icon :icon="['fas', 'calendar-day']" v-if="product.isSeasonal" />
+                <div class="product-name">{{ product.name }}</div>
                 <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`">
-                    aktualisiert vor {{
+                    bearbeitet vor {{
                             timeSince(product.lastEdited)
-                    }}</div>
+                    }}
+                </div>
             </div>
         </div>
     </NuxtLink>
@@ -66,9 +71,8 @@ a {
 .product-item {
     display: flex;
     flex-direction: column;
-    min-width: 340px;
-    height: 100px;
-    padding: $sp-small;
+    width: 300px;
+    padding: $sp-medium;
     box-shadow: $box-shadow;
     border-radius: 15px;
     background-color: white;
@@ -79,14 +83,11 @@ a {
         justify-content: space-between;
         margin-bottom: $sp-small;
 
-        .product-name {
-            text-align: left;
-            width: 220px;
-            font-weight: bold;
-            font-size: $fs-medium;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .labels {
+            display: flex;
+            align-items: center;
+            gap: $sp-small;
+            color: $color-font-medium;
         }
     }
 
@@ -94,6 +95,21 @@ a {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: space-between;
+
+        .product-name {
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .date-container {
+            color: $color-font-medium;
+        }
     }
 }
 </style>

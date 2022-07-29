@@ -91,10 +91,17 @@ header {
     flex-wrap: wrap;
     gap: $sp-medium;
     justify-content: center;
+
 }
 
 h3 {
     text-align: left;
     margin: 0px;
+}
+
+@media only screen and (min-width: 700px) {
+  .product-list {
+    justify-content: flex-start;
+  }
 }
 </style>
