@@ -116,7 +116,7 @@ export const Labels = {
     [LabelIds.VEGAN]: {
         name: 'VEGAN',
         shortName: 'V',
-        color: '#226600',
+        color: '#267200',
         tooltip: 'Dieses Gericht ist vegan.'
     } as Label,
     [LabelIds.VEGANISIERBAR]: {

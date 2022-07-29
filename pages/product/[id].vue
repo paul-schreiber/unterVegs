@@ -1,39 +1,34 @@
 <template>
   <div>
     <header>
-      <h1 class="heading">{{ product.name }}</h1>
-      <div class="shop-name">
-        {{ getShop }}
-      </div>
-      <div class="badge-container">
+      <div class="heading">
+        <h1>{{ product.name }}</h1>
         <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
           :removable="false" />
       </div>
-      <div class="badge-container">
+      <div class="shop-name">
+        {{ getShop }}
+      </div>
+      <div class="badges-container">
         <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge"
           :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
       </div>
     </header>
-    <div class="description">
-      {{ product.notes }}
-    </div>
     <div class="properties">
-      <div><span class="label">von:</span>{{ product.author }}</div>
-      <div><span class="label">erstellt:</span>{{ makeDateReadable(product.created) }}</div>
-      <div><span class="label">zuletzt aktualisiert:</span> {{ makeDateReadable(product.lastEdited) }}</div>
       <div>
-        <span class="label">Standort:</span>
-        <span v-if="product.isSeasonal">nicht überall</span>
-        <span v-else>überall</span>
-        erhältlich
+        <div class="label">zuletzt aktualisiert:</div> {{ makeDateReadable(product.lastEdited) }}
       </div>
       <div>
-        <span class="label">Verfügbarkeit:</span>
+        <div class="label">Verfügbarkeit:</div>
         <span v-if="product.isSeasonal">nicht jederzeit</span>
         <span v-else>immer</span>
         verfügbar
       </div>
     </div>
+    <div class="description">
+      {{ product.notes }}
+    </div>
+    <div class="bottom-info">{{ getAuthorWithDate }}</div>
   </div>
 </template>
 
@@ -58,11 +53,14 @@ export default defineComponent({
     },
     getProductBadges(): CategoryIds[] {
       return this.product.categories
+    },
+    getAuthorWithDate(): String {
+      return `erstellt von ${this.product.author} am ${this.makeDateReadable(this.product.created)}`
     }
   },
   methods: {
     makeDateReadable(date: string): String {
-      return DateTime.fromJSDate(new Date(date)).toLocaleString()
+      return DateTime.fromJSDate(new Date(date)).setLocale('de').toLocaleString()
     },
     getCategoryObject(categorieId: CategoryIds): Category {
       return Categories[categorieId]
@@ -74,13 +72,18 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 header {
-
   margin-bottom: $sp-medium;
 
   .heading {
-    text-align: left;
-    margin-top: $sp-small;
-    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      text-align: left;
+      margin-top: $sp-small;
+      margin-bottom: 0px;
+    }
   }
 
   .shop-name {
@@ -90,24 +93,33 @@ header {
     margin-bottom: $sp-small;
   }
 
-  .badge-container {
+  .badges-container {
     display: flex;
-    margin-bottom: $sp-small;
     gap: $sp-tiny;
     flex-wrap: wrap;
+    margin-bottom: $sp-small;
+
   }
 }
 
 .description {
   text-align: left;
-  margin-bottom: $sp-small;
+  margin-bottom: $sp-medium;
 }
 
 .properties {
   text-align: left;
+  margin-bottom: $sp-medium;
 
   .label {
+    width: 200px;
+    display: inline-block;
+    font-weight: $fw-bold;
     margin-right: $sp-small;
   }
+}
+
+.bottom-info {
+  color: $color-font-medium;
 }
 </style>
