@@ -10,7 +10,7 @@
             :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
             :onClose="removeCategoryFromFilter" />
         </div>
-        <input v-model="searchTerm" placeholder="Search for a product or a shop..." class="search-field"
+        <input v-model="searchTerm" placeholder="Suche nach 'Pizza' oder 'Dean & David'..." class="search-field"
           @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
         <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0">
           <font-awesome-icon :icon="['fas', 'sliders']" />
