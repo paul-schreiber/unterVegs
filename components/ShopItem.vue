@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts">
-import type { Shop, CategoryIds } from "../../types"
-import { Categories } from "../../types"
+import type { Shop, CategoryIds } from "../types"
+import { Categories } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {

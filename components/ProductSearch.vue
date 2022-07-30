@@ -51,8 +51,8 @@
 </template>
 
 <script lang="ts">
-import { Product, Shop, CategoryIds, Category } from "../../types"
-import { Categories } from "../../types"
+import { Product, Shop, CategoryIds, Category } from "../types"
+import { Categories } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "ProductSearch",

@@ -25,8 +25,8 @@
 
 <script lang="ts">
 import { DateTime } from "luxon";
-import type { Product, Shop, Label } from "../../types"
-import { Labels } from "../../types"
+import type { Product, Shop, Label } from "../types"
+import { Labels } from "../types"
 import { defineComponent } from "vue";
 export default defineComponent({
     props: {

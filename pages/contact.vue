@@ -41,7 +41,7 @@
 <script>
 //import VueFriendlyCaptcha from "@somushq/vue-friendly-captcha";
 import { defineComponent } from "vue";
-import UserInputWithCaption from "~~/components/ContactForm/UserInputWithCaption.vue";
+import UserInputWithCaption from "~~/components/Contact/UserInputWithCaption.vue";
 export default defineComponent({
     data() {
         return {
