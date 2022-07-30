@@ -12,7 +12,12 @@
         </div>
         <div class="menu-item">
           <NuxtLink to="/donate">
-            Unterstütze uns!
+            Unterstütze uns
+          </NuxtLink>
+        </div>
+         <div class="menu-item">
+          <NuxtLink to="/contact">
+            Kontakt
           </NuxtLink>
         </div>
       </div>

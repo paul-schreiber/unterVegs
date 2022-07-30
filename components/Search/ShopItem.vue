@@ -1,5 +1,4 @@
 <template>
-  <NuxtLink :to="`/shop/${shop.id}`">
     <div class="shop-item">
       <div class="name-container">{{ shop.name }}</div>
       <div class="categories-container">
@@ -7,7 +6,6 @@
           :id="badgeID" :title="badgeID" :removable="false" />
       </div>
     </div>
-  </NuxtLink>
 </template>
 
 <script lang="ts">

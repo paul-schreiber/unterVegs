@@ -11,8 +11,9 @@
             :onClose="removeCategoryFromFilter" />
         </div>
         <input v-model="searchTerm" placeholder="Suche nach 'Pizza' oder 'Dean & David'..." class="search-field"
-          @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
-        <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen" :disabled="availableFilters.size === 0">
+          @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" />
+        <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
+          :disabled="availableFilters.size === 0">
           <font-awesome-icon :icon="['fas', 'sliders']" />
         </button>
       </div>
@@ -20,8 +21,8 @@
         <div class="available-categories-container">
           <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
             @click="addCategoryToFilter(category)">
-            <Badge :color="getCategorieObject(category).color" :removable="false" :name="getCategorieObject(category).name" :id="category"
-              :title="`Nach ${category} suchen`" />
+            <Badge :color="getCategorieObject(category).color" :removable="false"
+              :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
           </div>
         </div>
       </div>
@@ -35,12 +36,12 @@
       </div>
       <div class="search-results">
         <ResultBlock :hasResults="filteredProducts.length != 0" v-if="selectedTab === 'products'">
-          <ItemContainer v-for="product in filteredProducts" :key="product.id">
-            <ProductItem :product="product" />
-          </ItemContainer>
+            <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`" >
+              <ProductItem :product="product" />
+            </ItemContainer>
         </ResultBlock>
         <ResultBlock :hasResults="filteredShops.length != 0" v-if="selectedTab === 'shops'">
-          <ItemContainer v-for="shop in filteredShops" :key="shop.id">
+          <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
             <ShopItem :shop="shop" />
           </ItemContainer>
         </ResultBlock>

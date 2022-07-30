@@ -20,7 +20,7 @@ export default defineComponent({
         },
         onClick: {
             type: Function,
-            required: true
+            required: false
         }
     },
     computed: {
@@ -38,8 +38,8 @@ button {
     border-radius: 10px;
     padding: $sp-small;
     border: solid 2px $color-primary;
-    margin: $sp-small;
     font-weight: bold;
+    white-space: nowrap;
 
     &.primary {
         background-color: $color-primary;
