@@ -115,7 +115,7 @@ export enum LabelIds {
 export const Labels = {
     [LabelIds.VEGAN]: {
         name: 'VEGAN',
-        shortName: 'V',
+        shortName: 'VE',
         color: '#267200',
         tooltip: 'Dieses Gericht ist vegan.'
     } as Label,
