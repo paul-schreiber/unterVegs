@@ -12,7 +12,7 @@
         </div>
         <input v-model="searchTerm" placeholder="Suche nach 'Pizza' oder 'Dean & David'..." class="search-field"
           @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
-        <button @click="toggleFilterPanel" class="filter-icon-container" aria-label="Filtereinstellungen" :disabled="availableFilters.size === 0">
+        <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen" :disabled="availableFilters.size === 0">
           <font-awesome-icon :icon="['fas', 'sliders']" />
         </button>
       </div>
@@ -150,10 +150,11 @@ export default defineComponent({
         margin-right: $sp-tiny;
       }
 
-      .filter-icon-container {
+      .filter-icon {
         padding: $sp-tiny;
         all: unset;
         cursor: pointer;
+        margin-left: $sp-small;
       }
     }
 
