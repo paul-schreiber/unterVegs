@@ -1,7 +1,8 @@
 <template>
     <div class="cookie-banner" v-if="!hideBanner">
+        <div class="cookie-icon-container"><span>🍪</span> </div>
         <div>
-            <p><span>🍪</span> Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
+            <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
                 nutzerfreundlicher zu
                 gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">Datenschutzerklärung
                 </NuxtLink>.</p>
@@ -48,7 +49,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .cookie-banner {
     position: fixed;
-    bottom: 100px;
+    bottom: $sp-medium;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
@@ -58,13 +59,26 @@ export default defineComponent({
     width: 95%;
     max-width: 800px;
 
-    p {
-        margin: 0px;
-        text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $sp-small;
 
+    .cookie-icon-container {
         span {
             font-size: $fs-large;
         }
+    }
+
+    p {
+        margin: 0px;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .cookie-banner {
+        flex-direction: row;
     }
 }
 </style>

@@ -1,6 +1,7 @@
 import productsJSON from '../data/products'
 import shopsJSON from '../data/shops'
-import { CategoryIds, Product, Shop, ShopIds } from '../types'
+import type { CategoryIds, Product, Shop, ShopIds } from '../types'
+import { Categories } from '../types';
 
 export class DataService {
 
@@ -19,7 +20,6 @@ export class DataService {
     public getAllProducts(): Product[] {
         return this.products
     }
-
     public getAllShops(): Shop[] {
         return this.shops
     }

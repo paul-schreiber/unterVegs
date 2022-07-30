@@ -14,33 +14,39 @@
           :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
       </div>
     </header>
-    <div class="properties">
-      <div>
-        <div class="label">zuletzt aktualisiert:</div> {{ makeDateReadable(product.lastEdited) }}
+    <div class="product-info">
+      <div class="properties">
+        <div>
+          <div class="label">zuletzt aktualisiert:</div> {{ makeDateReadable(product.lastEdited) }}
+        </div>
+        <div v-if="product.isSeasonal">
+          <div class="label">Verfügbarkeit:</div>
+          <span>nicht jederzeit verfügbar</span>
+        </div>
       </div>
-      <div v-if="product.isSeasonal">
-        <div class="label">Verfügbarkeit:</div>
-        <span>nicht jederzeit verfügbar</span>
+      <div class="description">
+        {{ product.notes }}
       </div>
+      <div class="bottom-info">{{ getAuthorWithDate }}</div>
     </div>
-    <div class="description">
-      {{ product.notes }}
-    </div>
-    <div class="bottom-info">{{ getAuthorWithDate }}</div>
-    <div class="error-click-to-action">
-      <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
-      <div>
-        <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
+    <footer>
+
+      <div class="error-click-to-action">
+        <div class="header">
+          <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
+          <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
+        </div>
         <NuxtLink :to="{
           name: 'contact',
           params: {
             topic: `Fehler - ${product.name}/${getShop}`
           }
         }">
-          <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">Fehler melden 👷🏽‍♀️</button>
+          <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">👷🏽‍♀️ Fehler
+            melden</button>
         </NuxtLink>
       </div>
-    </div>
+    </footer>
   </div>
 </template>
 
@@ -117,30 +123,38 @@ header {
   }
 }
 
-.description {
-  text-align: left;
-  margin-bottom: $sp-medium;
-}
+.product-info {
+  min-height: 55vh;
 
-.properties {
-  text-align: left;
-  margin-bottom: $sp-medium;
-
-  .label {
-    width: 200px;
-    display: inline-block;
-    font-weight: $fw-bold;
-    margin-right: $sp-small;
+  .description {
+    text-align: left;
+    margin-bottom: $sp-medium;
   }
-}
 
-.bottom-info {
-  margin-bottom: $sp-large;
-  color: $color-font-medium;
+  .properties {
+    text-align: left;
+    margin-bottom: $sp-medium;
+
+    .label {
+      width: 200px;
+      display: inline-block;
+      font-weight: $fw-bold;
+      margin-right: $sp-small;
+    }
+  }
+
+  .bottom-info {
+    margin-bottom: $sp-large;
+    color: $color-font-medium;
+  }
+
+
+
 }
 
 .error-click-to-action {
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: fit-content;
   gap: $sp-medium;
@@ -150,6 +164,12 @@ header {
   border-radius: 15px;
   background-color: $color-warning-bg;
   font-weight: bold;
+
+  .header {
+    display: flex;
+    gap: $sp-small;
+    align-items: center;
+  }
 
   .warning-icon {
     color: $color-warning;
@@ -166,6 +186,12 @@ header {
     font-weight: bold;
     background-color: $color-warning;
     color: $color-font-light;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .error-click-to-action {
+    flex-direction: row;
   }
 }
 </style>
