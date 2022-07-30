@@ -1,7 +1,7 @@
 <template>
   <nav id="nav">
     <div class="nav-bar-container">
-      <NuxtLink to="/" name="Link zur Startseite">
+      <NuxtLink to="/" aria-label="Link zur Startseite">
         <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo"/>
       </NuxtLink>
       <div class="menu" v-if="!isMobile">
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <button class="burger-menu" v-if="isMobile" @click="toggleMenu" name="Menü-Button">
+      <button class="burger-menu" v-if="isMobile" @click="toggleMenu" aria-label="Menü-Button">
         <font-awesome-icon :icon="['fas', 'bars']" />
       </button>
     </div>

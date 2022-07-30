@@ -1,7 +1,7 @@
 <template>
     <div class="badge-container" :title="title">
         <div :class="{ 'badge-name': true, mobile: isMobile }"> {{ name }}</div>
-        <button class="close-button" v-if="removable" @click="onClose(id)" name="Badge entfernen">
+        <button class="close-button" v-if="removable" @click="onClose(id)" aria-label="Badge entfernen">
             <font-awesome-icon :icon="['fas', 'xmark']" />
         </button>
     </div>

@@ -31,7 +31,7 @@
 
             </section>
             <div class="action-bar">
-                <ActionButton name="Absenden" :onClick="submitForm" :disabled="!formIsFilled" :isPrimary=true />
+                <ActionButton name="Absenden" aria-label="Absenden" :onClick="submitForm" :disabled="!formIsFilled" :isPrimary=true />
             </div>
         </form>
     </div>
