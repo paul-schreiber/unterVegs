@@ -56,11 +56,11 @@ html,
 body {
   min-height: 100vh;
   margin: 0px;
-  background-color: $color-light-background;
+  background-color: $color-background-light;
 }
 
 .content-wrapper {
-  padding: $sp-small;
+  padding: $sp-medium;
   display: grid;
   width: 100%;
   max-width: 1200px;
