@@ -63,6 +63,8 @@ nav {
   .nav-bar-container {
     width: 100%;
     height: $navbar-height;
+    min-height: 100px;
+    max-height: 130px;
     padding: $sp-medium;
     display: flex;
     align-items: center;
@@ -70,7 +72,9 @@ nav {
   }
 
   .logo {
-    height: calc($navbar-height * 0.80)
+    height: calc($navbar-height * 0.80);
+    min-height: 80px;
+    max-height: 105px;
   }
 
   .burger-menu {
