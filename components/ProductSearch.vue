@@ -12,7 +12,7 @@
         </div>
         <input v-model="searchTerm" placeholder="Suche nach 'Pizza' oder 'Dean & David'..." class="search-field"
           @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
-        <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0" name="Filtereinstellungen">
+        <button @click="toggleFilterPanel" class="filter-icon-container" aria-label="Filtereinstellungen" :disabled="availableFilters.size === 0">
           <font-awesome-icon :icon="['fas', 'sliders']" />
         </button>
       </div>

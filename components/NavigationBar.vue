@@ -2,7 +2,7 @@
   <nav id="nav">
     <div class="nav-bar-container">
       <NuxtLink to="/" aria-label="Link zur Startseite">
-        <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo"/>
+        <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo" class="logo"/>
       </NuxtLink>
       <div class="menu" v-if="!isMobile">
         <div class="menu-item">
@@ -69,8 +69,8 @@ nav {
     justify-content: space-between;
   }
 
-  img {
-    height: $navbar-height;
+  .logo {
+    height: calc($navbar-height * 0.80)
   }
 
   .burger-menu {
