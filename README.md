@@ -1,4 +1,4 @@
-# unterVegs
+# unterVegs 🥕
 
 unterVegs ist eine Suche für vegane Produkte verschiedener Imbiss- und Restaurantketten.
 
