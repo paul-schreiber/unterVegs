@@ -20,15 +20,12 @@ export default defineComponent({
         {
           hid: 'description',
           name: 'description',
-          content: 'unterVegs ist dein Begleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswahl!'
+          content: 'unterVegs ist dein Begleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!'
         }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: 'static/favicon/favicon.svg' },
         { rel: 'apple-touch-icon', type: 'image/x-icon', href: 'static/favicon/apple-touch-icon.png' },
-        { rel: 'icon', type: 'image/png', href: 'static/favicon/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', href: 'static/favicon/favicon-16x16.png' },
-        { rel: 'manifest', href: 'static/favicon/site.webmanifest' },
       ]
     }
   },

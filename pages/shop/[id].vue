@@ -3,7 +3,7 @@
         <header>
             <div class="heading-container">
                 <h1 class="heading">{{ shop.name }}</h1>
-                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" />
+                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" :alt="`Logo von ${shop.name}`"/>
             </div>
             <div class="badge-container">
                 <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color"

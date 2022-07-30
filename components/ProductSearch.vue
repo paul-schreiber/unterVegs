@@ -2,7 +2,7 @@
   <div class="search-container">
     <header>
       <div class="search">
-        <span>
+        <span class="search-icon">
           <font-awesome-icon :icon="['fas', 'search']" />
         </span>
         <div class="applied-categories-container">
@@ -12,7 +12,7 @@
         </div>
         <input v-model="searchTerm" placeholder="Suche nach 'Pizza' oder 'Dean & David'..." class="search-field"
           @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
-        <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0">
+        <button @click="toggleFilterPanel" class="filter-icon-container" :disabled="availableFilters.size === 0" name="Filtereinstellungen">
           <font-awesome-icon :icon="['fas', 'sliders']" />
         </button>
       </div>
@@ -146,11 +146,12 @@ export default defineComponent({
       color: $color-font-medium;
       font-size: 20px;
 
-      span {
-        margin-right: $sp-small;
+      .search-icon {
+        margin-right: $sp-tiny;
       }
 
       .filter-icon-container {
+        padding: $sp-tiny;
         all: unset;
         cursor: pointer;
       }
@@ -187,6 +188,7 @@ export default defineComponent({
       border: none;
       outline: none;
       color: $color-font-dark;
+      padding: $sp-tiny 0px;
     }
   }
 
