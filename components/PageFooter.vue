@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="insta-link-container">
-      <a href="https://www.instagram.com/untervegs_com/" name="Link zu Instagram">
+      <a href="https://www.instagram.com/untervegs_com/" aria-label="Link zu Instagram">
         <font-awesome-icon :icon="['fab', 'instagram']" />
       </a>
     </div>

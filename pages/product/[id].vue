@@ -37,7 +37,7 @@
             topic: `Fehler - ${product.name}/${getShop}`
           }
         }">
-          <button title="Melde ein Problem oder einen Fehler!" name="Fehler melden">Fehler melden 👷🏽‍♀️</button>
+          <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">Fehler melden 👷🏽‍♀️</button>
         </NuxtLink>
       </div>
     </div>
