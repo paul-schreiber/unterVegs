@@ -1,8 +1,8 @@
 <template>
   <nav id="nav">
     <div class="nav-bar-container">
-      <NuxtLink to="/">
-        <img src="~/assets/img/logo-unterVegs.svg" />
+      <NuxtLink to="/" name="Link zur Startseite">
+        <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo"/>
       </NuxtLink>
       <div class="menu" v-if="!isMobile">
         <div class="menu-item">
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <button class="burger-menu" v-if="isMobile" @click="toggleMenu">
+      <button class="burger-menu" v-if="isMobile" @click="toggleMenu" name="Menü-Button">
         <font-awesome-icon :icon="['fas', 'bars']" />
       </button>
     </div>
