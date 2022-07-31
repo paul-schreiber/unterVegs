@@ -12,14 +12,17 @@ export class DataService {
         this.products = productsJSON.sort((a,b) => a.name.localeCompare(b.name))
         this.shops = shopsJSON.sort((a,b) => a.name.localeCompare(b.name))
 
+        //generate id's
         this.products.forEach(product => {
             product.id = `${product.shop.replace(/\s/g,'')}-${product.name.replace(/\s/g,'')}`
+            this.sortCategories(product.categories)
         })
     }
 
     public getAllProducts(): Product[] {
         return this.products
     }
+
     public getAllShops(): Shop[] {
         return this.shops
     }
@@ -40,10 +43,12 @@ export class DataService {
         const products = this.getProductsByShopId(shopId)
         let categories = new Set<CategoryIds>()
         products.forEach(product => product.categories.forEach((category => categories.add(category))))
-        return [...categories]
+        const categoryArray = [...categories]
+        this.sortCategories(categoryArray)
+        return categoryArray
     }
 
-    public filterProducts(searchTerm: string, filters: CategoryIds[]) {
+    public filterProducts(searchTerm: string, filters: CategoryIds[]): Product[] {
         return this.products.filter((product) => {
             const productName = product.name.toLowerCase()
             const hasMatchedSearchTerm = productName.includes(searchTerm.toLowerCase())
@@ -52,12 +57,16 @@ export class DataService {
         })
     }
 
-    public filterShops(searchTerm: string, filters: CategoryIds[]) {
+    public filterShops(searchTerm: string, filters: CategoryIds[]): Shop[] {
         return this.shops.filter((shop) => {
             const shopName = shop.name.toLowerCase()
             const hasMatchedSearchTerm = shopName.includes(searchTerm.toLowerCase())
             const hasCategory = filters.length ? filters.some(filterCategory => this.getCategoriesByShopId(shop.id).includes(filterCategory)) : true
             return hasMatchedSearchTerm && hasCategory
         })
+    }
+
+    public sortCategories(categoryIds: CategoryIds[]) {
+        categoryIds.sort((a,b) => Categories[a].sequenceNumber - Categories[b].sequenceNumber)
     }
 }

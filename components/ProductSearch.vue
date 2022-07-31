@@ -97,6 +97,9 @@ export default defineComponent({
     removeCategoryFromFilter(category: CategoryIds) {
       this.appliedFilters.delete(category)
       this.availableFilters.add(category)
+      const availableFiltersArray = [...this.availableFilters]
+      this.$DS.sortCategories(availableFiltersArray)
+      this.availableFilters = new Set<CategoryIds>(availableFiltersArray)
     },
     toggleFilterPanel() {
       this.showFilterPanel = !this.showFilterPanel
@@ -133,7 +136,6 @@ export default defineComponent({
   width: 90vw;
   border-radius: 15px;
   background-color: white;
-  margin-top: $sp-large;
 
   header {
     width: 100%;
@@ -168,10 +170,6 @@ export default defineComponent({
       display: flex;
       margin-right: $sp-small;
       gap: $sp-tiny;
-    }
-
-    .applied-categories-container {
-      max-width: 240px;
     }
 
     .available-categories-container {
