@@ -90,6 +90,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+
 .form-section {
     margin-bottom: $sp-medium;
 }

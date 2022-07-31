@@ -1,20 +1,21 @@
 <template>
     <div class="donate-page">
         <h1>Deine Hilfe wird gebraucht!</h1>
-        <div>Ob du selbst Produkte hinzufügst oder aktualisierst, deinen Freunden von unterVegs erzählst, etwas spendest
-            oder uns einfach eine nette Nachricht da lässt - Wir freuen uns auf Feedback und deine Unterstützung!</div>
+        <section>Ob du selbst Produkte hinzufügst oder aktualisierst, deinen Freunden von unterVegs erzählst, etwas spendest
+            oder uns einfach eine nette Nachricht da lässt - Wir freuen uns auf Feedback und deine Unterstützung!</section>
         <h2>📣 Shout it out loud!</h2>
-        <section>
+        <section class="description-section">
             <p>Du findest unterVegs übertrieben praktisch hast noch sie so ein extrem cooles Projekt gesehen? So geht es
                 uns auch 😎. Leg los und
                 erzähl deinen Freunden, Kollegen und der Oma von nebenan davon! Dir passt etwas nicht? Dann gib uns
                 Feedback was wir ändern können! </p>
             <NuxtLink to="/contact">
-                <ActionButton title="Gib uns dein Feedback!" aria-label="Feedback geben" name="Feedback geben" :isPrimary="true" />
+                <ActionButton title="Gib uns dein Feedback!" aria-label="Feedback geben" name="Feedback geben"
+                    :isPrimary="true" />
             </NuxtLink>
         </section>
         <h2>🤜🏼 Mach mit!</h2>
-        <section>
+        <section class="description-section">
             <p>
                 Du willst selbst mitmachen und fleißig Produkte hinzufügen? Super, denn wir können helfende Hände und
                 wachsame Augen auf dem Sortiment der Restaurants gebrauchen.
@@ -28,7 +29,7 @@
             </NuxtLink>
         </section>
         <h2>🙏🏼 Sag Danke!</h2>
-        <section>
+        <section class="description-section">
             <p>
                 Falls du keine Zeit hast uns mit Rat und Tat zur Seite zu stehen ist das nicht schlimm. Wir freuen uns
                 auch
@@ -59,6 +60,7 @@ h1 {
 
 h2 {
     width: fit-content;
+    margin: $sp-small 0px;
 }
 
 
@@ -66,7 +68,7 @@ h2 {
 .donate-page {
     text-align: left;
 
-    section {
+    .description-section {
         margin-bottom: $sp-huge;
     }
 }
