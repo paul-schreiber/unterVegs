@@ -2,7 +2,7 @@
     <div>
         <header>
             <div class="heading-container">
-                <h1 class="heading">{{ shop.name }}</h1>
+                <h2 class="heading">{{ shop.name }}</h2>
                 <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" :alt="`Logo von ${shop.name}`"/>
             </div>
             <div class="badge-container">

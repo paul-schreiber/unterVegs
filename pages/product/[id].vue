@@ -2,7 +2,7 @@
   <div>
     <header>
       <div class="heading">
-        <h1>{{ product.name }}</h1>
+        <h2>{{ product.name }}</h2>
         <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
           :removable="false" />
       </div>
@@ -100,7 +100,7 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    h1 {
+    h2 {
       text-align: left;
       margin-top: $sp-small;
       margin-bottom: 0px;
