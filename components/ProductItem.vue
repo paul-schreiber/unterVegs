@@ -1,5 +1,4 @@
 <template>
-  <NuxtLink :to="`/product/${product.id}`">
     <div class="product-item">
       <div :class="{ 'label-container': true, mobile: isMobile }">
         <Badge :color="getLabel.color" :name="getLabelName" :id="getLabelName" :title="getLabel.tooltip"
@@ -11,7 +10,6 @@
           timeSince(product.lastEdited)
       }}</div>
     </div>
-  </NuxtLink>
 </template>
 
 <script lang="ts">
@@ -51,11 +49,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-a {
-  text-decoration: none;
-  color: $color-font-dark;
-  width: fit-content;
-}
 
 .product-item {
   display: flex;

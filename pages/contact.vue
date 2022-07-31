@@ -41,7 +41,7 @@
 <script>
 //import VueFriendlyCaptcha from "@somushq/vue-friendly-captcha";
 import { defineComponent } from "vue";
-import UserInputWithCaption from "~~/components/ContactForm/UserInputWithCaption.vue";
+import UserInputWithCaption from "~~/components/Contact/UserInputWithCaption.vue";
 export default defineComponent({
     data() {
         return {
@@ -90,6 +90,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+
 .form-section {
     margin-bottom: $sp-medium;
 }

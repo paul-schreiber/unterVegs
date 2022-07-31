@@ -1,8 +1,8 @@
 <template>
   <nav id="nav">
-    <div class="nav-bar-container">
+    <div class="navbar-container">
       <NuxtLink to="/" aria-label="Link zur Startseite">
-        <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo"/>
+        <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo" class="logo" />
       </NuxtLink>
       <div class="menu" v-if="!isMobile">
         <div class="menu-item">
@@ -12,7 +12,12 @@
         </div>
         <div class="menu-item">
           <NuxtLink to="/donate">
-            Unterstütze uns!
+            Unterstütze uns
+          </NuxtLink>
+        </div>
+        <div class="menu-item">
+          <NuxtLink to="/contact">
+            Kontakt
           </NuxtLink>
         </div>
       </div>
@@ -30,6 +35,11 @@
       <div class="menu-item">
         <NuxtLink to="/donate">
           Unterstütze uns!
+        </NuxtLink>
+      </div>
+      <div class="menu-item">
+        <NuxtLink to="/contact">
+          Kontakt
         </NuxtLink>
       </div>
     </div>
@@ -60,17 +70,24 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 nav {
-  .nav-bar-container {
+  max-width: $max-page-width;
+  margin: auto;
+
+  .navbar-container {
     width: 100%;
     height: $navbar-height;
+    min-height: 100px;
+    max-height: 130px;
     padding: $sp-medium;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  img {
-    height: $navbar-height;
+  .logo {
+    height: calc($navbar-height * 0.80);
+    min-height: 80px;
+    max-height: 105px;
   }
 
   .burger-menu {
@@ -106,6 +123,14 @@ nav {
       color: $color-font-dark;
       font-weight: bold;
       text-decoration: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  nav {
+    .navbar-container {
+      padding: $sp-big;
     }
   }
 }

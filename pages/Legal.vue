@@ -96,10 +96,6 @@ export default defineComponent({
 .legal-container {
     text-align: left;
 
-    h2 {
-        font-size: $fs-large;
-    }
-
     section {
         font-weight: $fw-light;
         line-height: 1.6rem;

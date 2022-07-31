@@ -1,14 +1,16 @@
 <template>
   <div class="footer">
-    <div class="insta-link-container">
-      <a href="https://www.instagram.com/untervegs_com/" aria-label="Link zu Instagram">
-        <font-awesome-icon :icon="['fab', 'instagram']" />
-      </a>
-    </div>
-    <NuxtLink to="/legal">Impressum </NuxtLink>
-    <NuxtLink to="/privacy">Datenschutz</NuxtLink>
-    <div>
-      Made with ❤️ by Miri & <a class="contact-link" href="https://github.com/paul-schreiber">Paul</a>
+    <div class="inner-footer">
+      <div class="insta-link-container">
+        <a href="https://www.instagram.com/untervegs_com/" aria-label="Link zu Instagram">
+          <font-awesome-icon :icon="['fab', 'instagram']" />
+        </a>
+      </div>
+      <NuxtLink to="/legal">Impressum </NuxtLink>
+      <NuxtLink to="/privacy">Datenschutz</NuxtLink>
+      <div>
+        Made with ❤️ by Miri & <a class="contact-link" href="https://github.com/paul-schreiber">Paul</a>
+      </div>
     </div>
   </div>
 </template>
@@ -24,22 +26,26 @@ export default defineComponent({
 <style lang="scss" scoped>
 .footer {
   width: 100%;
-  background-color: $color-primary;
-  height: $footer-height;
-  color: $color-font-light;
-  padding: $sp-medium $sp-big;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: $color-background-dark;
 
-
-  a {
+  .inner-footer {
+    max-width: $max-page-width;
+    margin: auto;
+    height: $footer-height;
     color: $color-font-light;
-  }
+    padding: $sp-medium $sp-big;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  .insta-link-container {
-    font-size: $fs-large;
-    vertical-align: center;
+    a {
+      color: $color-font-light;
+    }
+
+    .insta-link-container {
+      font-size: $fs-large;
+      vertical-align: center;
+    }
   }
 }
 </style>

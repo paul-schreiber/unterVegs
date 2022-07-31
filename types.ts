@@ -29,6 +29,7 @@ export type Label = {
 export type Category = {
     name: string,
     color: string,
+    sequenceNumber: number
 }
 
 export enum CategoryIds {
@@ -51,59 +52,73 @@ export enum CategoryIds {
 export const Categories = {
     [CategoryIds.PASTA]: {
         name: 'PASTA',
-        color: '#E96E6C'
+        color: '#E96E6C',
+        sequenceNumber: 1
     } as Category,
     [CategoryIds.MEXIKANISCH]: {
         name: 'MEXIKANISCH',
-        color: '#E87A52'
+        color: '#E87A52',
+        sequenceNumber: 2
     } as Category,
     [CategoryIds.BACKWARE]: {
         name: 'BACKWARE',
-        color: '#F6A037'
+        color: '#F6A037',
+        sequenceNumber: 3
     } as Category,
     [CategoryIds.PIZZA]: {
         name: 'PIZZA',
-        color: '#F1D15A'
+        color: '#F1D15A',
+        sequenceNumber: 4
     } as Category,
     [CategoryIds.ASIATISCH]: {
         name: 'ASIATISCH',
-        color: '#D3CA63'
+        color: '#D3CA63',
+        sequenceNumber: 5
     } as Category,
     [CategoryIds.BURGER]: {
         name: 'BURGER',
-        color: '#B0D363'
+        color: '#B0D363',
+        sequenceNumber: 6
     } as Category,
     [CategoryIds.SALAT]: {
         name: 'SALAT/BOWL',
-        color: '#6AAE60'
+        color: '#6AAE60',
+        sequenceNumber: 7
     } as Category,
     [CategoryIds.SUPPE]: {
         name: 'SUPPE',
-        color: '#6AC18F'
+        color: '#6AC18F',
+        sequenceNumber: 8
     } as Category,
     [CategoryIds.VISCH]: {
         name: 'VISCH',
-        color: '#87C3BF'
+        color: '#87C3BF',
+        sequenceNumber: 9
     } as Category,
     [CategoryIds.SNACK]: {
         name: 'SNACK',
-        color: '#5F8DB6'
+        color: '#5F8DB6',
+        sequenceNumber: 10
     } as Category,
     [CategoryIds.FASTFOOD]: {
         name: 'FASTFOOD',
-        color: '#6B6FDB'
+        color: '#6B6FDB',
+        sequenceNumber: 11
     } as Category,
     [CategoryIds.SANDWICH]: {
         name: 'SANDWICH/WRAP',
-        color: '#9F6EC9'
+        color: '#9F6EC9',
+        sequenceNumber: 12
     } as Category,
     [CategoryIds.SÜSS]: {
         name: 'SÜSS',
-        color: '#D37CA4'
+        color: '#D37CA4',
+        sequenceNumber: 13
     } as Category,
     [CategoryIds.FRÜHSTÜCK]: {
         name: 'FRÜHSTÜCK',
-        color: '#FFA2A2'
+        color: '#FFA2A2',
+        sequenceNumber: 14
     } as Category
 }
 
@@ -115,7 +130,7 @@ export enum LabelIds {
 export const Labels = {
     [LabelIds.VEGAN]: {
         name: 'VEGAN',
-        shortName: 'V',
+        shortName: 'VE',
         color: '#267200',
         tooltip: 'Dieses Gericht ist vegan.'
     } as Label,
