@@ -31,12 +31,14 @@ export default defineComponent({
   .inner-footer {
     max-width: $max-page-width;
     margin: auto;
-    height: $footer-height;
+    min-height: $footer-height;
     color: $color-font-light;
-    padding: $sp-medium $sp-big;
+    padding: $sp-small $sp-big;
     display: flex;
+    gap: $sp-small;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
     a {
       color: $color-font-light;
