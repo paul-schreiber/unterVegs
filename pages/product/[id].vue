@@ -75,7 +75,9 @@ export default defineComponent({
     }
   },
   methods: {
-    makeDateReadable(date: string): String {
+    makeDateReadable(dateString: string): String {
+      const [year, month, day] = dateString.split('-')
+      const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
       return DateTime.fromJSDate(new Date(date)).setLocale('de').toLocaleString()
     },
     getCategoryObject(categorieId: CategoryIds): Category {
