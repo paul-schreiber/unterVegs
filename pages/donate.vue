@@ -5,9 +5,9 @@
             oder uns einfach eine nette Nachricht da lässt - Wir freuen uns auf Feedback und deine Unterstützung!</section>
         <h2>📣 Shout it out loud!</h2>
         <section class="description-section">
-            <p>Du findest unterVegs übertrieben praktisch hast noch sie so ein extrem cooles Projekt gesehen? So geht es
+            <p>Du findest unterVegs übertrieben praktisch und hast noch sie so ein extrem cooles Projekt gesehen? So geht es
                 uns auch 😎. Leg los und
-                erzähl deinen Freunden, Kollegen und der Oma von nebenan davon! Dir passt etwas nicht? Dann gib uns
+                erzähl deinen Freunden, Kollegen und der Oma nebenan davon! Dir passt etwas nicht? Dann gib uns
                 Feedback was wir ändern können! </p>
             <NuxtLink to="/contact">
                 <ActionButton title="Gib uns dein Feedback!" aria-label="Feedback geben" name="Feedback geben"
@@ -31,14 +31,14 @@
         <h2>🙏🏼 Sag Danke!</h2>
         <section class="description-section">
             <p>
-                Falls du keine Zeit hast uns mit Rat und Tat zur Seite zu stehen ist das nicht schlimm. Wir freuen uns
+                Falls du keine Zeit hast uns mit Rat und Tat zur Seite zu stehen, ist das nicht schlimm. Wir freuen uns
                 auch
                 wenn du unterVegs einfach regelmäßig nutzt. Wenn du uns noch mehr unterstützen willst und der Meinung
                 bist
                 unsere Arbeit an unterVegs ist eine Spende wert, dann freuen wir uns über jeden Betrag. Wir möchten
                 unterVegs frei von Werbung oder Affiliate-Links halten, weshalb wir aktuell alle Kosten selbst tragen.
                 Mit
-                deiner Spende gibst du uns die Möglichkeit die Domain weiterhin zu finanzieren und Zeit in das Projekt
+                deiner Spende gibst du uns die Möglichkeit, die Domain weiterhin zu finanzieren und Zeit in das Projekt
                 zu
                 investieren. Wir sagen schon mal Danke! ☺️
             </p>

@@ -1,15 +1,15 @@
 <template>
-    <div class="product-item">
-      <div :class="{ 'label-container': true, mobile: isMobile }">
-        <Badge :color="getLabel.color" :name="getLabelName" :id="getLabelName" :title="getLabel.tooltip"
-          :removable="false" />
-      </div>
-      <div class="name-container">{{ product.name }}</div>
-      <div class="shop-container">{{ getShop.name }}</div>
-      <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`" v-if="!isMobile">{{
-          timeSince(product.lastEdited)
-      }}</div>
+  <div class="product-item">
+    <div :class="{ 'label-container': true, mobile: isMobile }">
+      <Badge :color="getLabel.color" :name="getLabelName" :id="getLabelName" :title="getLabel.tooltip"
+        :removable="false" />
     </div>
+    <div class="name-container">{{ product.name }}</div>
+    <div class="shop-container">{{ getShop.name }}</div>
+    <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`" v-if="!isMobile">{{
+        timeSince(product.lastEdited)
+    }}</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -39,8 +39,10 @@ export default defineComponent({
     }
   },
   methods: {
-    timeSince(date: string) {
-      const dayInPast = DateTime.fromJSDate(new Date(date))
+    timeSince(dateString: string) {
+      const [year, month, day] = dateString.split('-')
+      const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+      const dayInPast = DateTime.fromJSDate(date)
       const diff = DateTime.now().diff(dayInPast, ["years", "months", "days", "hours", "minutes"]).toObject()
       return diff.years != 0 ? `${diff.years} Jahr` : diff.months != 0 ? `${diff.months} Monaten` : diff.days != 0 ? `${diff.days} Tagen` : `${diff.hours} Stunden`
     }
@@ -49,7 +51,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-
 .product-item {
   display: flex;
   width: 100%;
