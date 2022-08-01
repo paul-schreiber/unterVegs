@@ -201,7 +201,6 @@ export default defineComponent({
       padding: 0px $sp-medium;
       justify-content: flex-start;
       margin-bottom: -2px;
-      z-index: 100;
     }
 
     .search-results {

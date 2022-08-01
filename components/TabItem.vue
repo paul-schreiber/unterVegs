@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-item" :class="{active: isActive}">
+    <div class="tab-item" :class="{ active: isActive }">
         <div>
             <font-awesome-icon :icon="['fas', icon]" />
         </div>
@@ -44,6 +44,7 @@ export default defineComponent({
     margin: 0px $sp-small;
     padding: $sp-small;
     border-bottom: solid 2px transparent;
+    z-index: 100;
 
     &.active {
         border-bottom: solid 2px $color-primary;
