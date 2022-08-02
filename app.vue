@@ -13,27 +13,6 @@
 import { useState } from "vue-gtag-next";
 import { defineComponent } from "vue";
 export default defineComponent({
-  useHead() {
-    return {
-      title: 'unterVegs',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'unterVegs ist dein Begleiter für vegane Produkte bei Restaurantketten. Suche einfach nach Produkten oder Shops und checke die vegane Auswah!'
-        },
-        {
-          hid: "viewport",
-          name: "viewport",
-          content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        }
-      ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: 'static/favicon/favicon.svg' },
-        { rel: 'apple-touch-icon', type: 'image/x-icon', href: 'static/favicon/apple-touch-icon.png' },
-      ]
-    }
-  },
   methods: {
     enableAnalytics() {
       const { isEnabled } = useState()

@@ -46,7 +46,7 @@ a {
   align-items: center;
 
   .categories-container {
-    max-width: 60%;
+    max-width: 75%;
     display: flex;
     margin-right: $sp-small;
     overflow-x: scroll;
