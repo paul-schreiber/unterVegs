@@ -7,7 +7,8 @@
         <section class="description-section">
             <p>Du findest unterVegs übertrieben praktisch und hast noch sie so ein extrem cooles Projekt gesehen? So geht es
                 uns auch 😎. Leg los und
-                erzähl deinen Freunden, Kollegen und der Oma nebenan davon! Dir passt etwas nicht? Dann gib uns
+                erzähl deinen Freunden, Kollegen und der Oma nebenan davon! Teile es auf <a
+                    href="https://www.instagram.com/untervegs_com/" aria-label="Link zu Instagram"><b>Instagram</b></a> oder wo auch immer du willst. Dir passt etwas nicht? Dann gib uns
                 Feedback was wir ändern können! </p>
             <NuxtLink to="/contact">
                 <ActionButton title="Gib uns dein Feedback!" aria-label="Feedback geben" name="Feedback geben"
