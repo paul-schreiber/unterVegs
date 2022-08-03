@@ -1,22 +1,41 @@
 <template>
   <div id="app">
-    <NavigationBar />
-    <div class="content-wrapper">
-      <NuxtPage />
-    </div>
-    <CookieBanner :onAccept="enableAnalytics" />
-    <PageFooter />
+    <NavigationBar :toggleMobileMenu="toggleMobileMenu" :hideMobileMenu="hideMobileMenu" />
+    <MobileMenu v-if="showMobileMenu && isMobile" :toggleMobileMenu="toggleMobileMenu" />
+    <template v-else>
+      <div class="content-wrapper">
+        <NuxtPage />
+      </div>
+      <CookieBanner :onAccept="enableAnalytics" />
+      <PageFooter />
+    </template>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useState } from "vue-gtag-next";
 import { defineComponent } from "vue";
 export default defineComponent({
+  data() {
+    return {
+      showMobileMenu: false,
+    }
+  },
+  computed: {
+    isMobile(): boolean {
+      return window.innerWidth < 700
+    }
+  },
   methods: {
     enableAnalytics() {
       const { isEnabled } = useState()
       isEnabled.value = true
+    },
+    hideMobileMenu() {
+      this.showMobileMenu = false
+    },
+    toggleMobileMenu() {
+      this.showMobileMenu = !this.showMobileMenu
     }
   }
 })
