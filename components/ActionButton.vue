@@ -21,12 +21,13 @@ export default defineComponent({
         onClick: {
             type: Function,
             required: false
-        }
+        },
     },
     computed: {
         buttonType() {
             return this.isPrimary ? 'primary' : 'secondary'
-        }
+        },
+
     }
 })
 </script>
@@ -48,6 +49,13 @@ button {
 
     &.secondary {
         border: solid 2px $color-font-medium;
+    }
+
+    &:disabled {
+        border: 2px solid #b8b8b8;
+        background-color: #e0e0e0;
+        color: #9c9c9c;
+        cursor: not-allowed;
     }
 }
 </style>
