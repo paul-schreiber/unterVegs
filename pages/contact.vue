@@ -23,42 +23,47 @@
             </section>
             <section class="form-section">
                 <UserInputWithCaption caption="Deine Nachricht" :isMandatory="false">
-                    <textarea v-model="message" aria-placeholder="Schreib los!"
-                        placeholder="Schreib los!" name="message" />
+                    <textarea v-model="message" aria-placeholder="Schreib los!" placeholder="Schreib los!"
+                        name="message" />
                 </UserInputWithCaption>
             </section>
             <section class="form-section captcha-container">
-
+                <VueFriendlyCaptcha :sitekey="config.FRIENDLY_CAPTCHA_SITE_KEY" @done="isHuman = true" language="de" />
             </section>
             <div class="action-bar">
-                <ActionButton name="Absenden" aria-label="Absenden" :onClick="submitForm" :disabled="!formIsFilled" :isPrimary=true />
+                <ActionButton name="Absenden" aria-label="Absenden" :onClick="submitForm" :disabled="!formIsFilled"
+                    :isPrimary=true />
             </div>
         </form>
     </div>
 </template>
 
-
-<script>
-//import VueFriendlyCaptcha from "@somushq/vue-friendly-captcha";
+<script lang="ts">
 import { defineComponent } from "vue";
 import UserInputWithCaption from "~~/components/Contact/UserInputWithCaption.vue";
+import VueFriendlyCaptcha from '@somushq/vue3-friendly-captcha';
+import { MailService } from '../services/MailService'
 export default defineComponent({
     data() {
         return {
             userName: "",
             email: "",
             message: "",
-            topic: this.$route.params.topic,
-            //siteKey: process.env.friendlyCaptchaKey,
+            topic: this.$route.params.topic || "",
             isHuman: false,
-            mailError: false,
+            mailError: false
         };
     },
+    setup() {
+        const config = useRuntimeConfig();
+        const MS = new MailService(config.EMAIL_JS_SERVICE_ID, config.EMAIL_JS_TEMPLATE_ID, config.EMAIL_JS_PUBLIC_KEY);
+        return { MS, config };
+    },
     computed: {
-        formIsFilled() {
-            return this.email != "" && this.isHuman;
+        formIsFilled(): Boolean {
+            return [this.email, this.userName, this.topic, this.message].every(inputValue => inputValue != "") && this.isHuman;
         },
-        isMailInputValid() {
+        isMailInputValid(): Boolean {
             return this.email && this.validateMail(this.email);
         },
     },
@@ -72,7 +77,17 @@ export default defineComponent({
         },
         submitForm() {
             if (this.checkForm()) {
-                this.sendMail(this.userName, this.email, this.sanitiseText(this.message));
+                const response = this.MS.sendMail(this.userName, this.email, this.topic, this.sanitiseText(this.message));
+                response.then(
+                (result) => {
+                    alert('Mail gesendet.')
+                    console.log("SUCCESS!", result.text);
+                },
+                (error) => {
+                    alert('Mail konnte nicht gesendet werden.')
+                    console.log("FAILED...", error.text);
+                }
+            );
             }
         },
         checkForm() {
@@ -85,12 +100,11 @@ export default defineComponent({
             }
         },
     },
-    components: { UserInputWithCaption }
+    components: { UserInputWithCaption, VueFriendlyCaptcha }
 })
 </script>
 
 <style lang="scss" scoped>
-
 .form-section {
     margin-bottom: $sp-medium;
 }
@@ -99,6 +113,7 @@ export default defineComponent({
     display: flex;
     justify-content: flex-end;
     margin-bottom: $sp-small;
+    height: 30px;
 }
 
 .action-bar {
