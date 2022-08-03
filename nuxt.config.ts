@@ -30,7 +30,7 @@ export default defineNuxtConfig({
             ogHost: config.url,
             ogTitle: config.name,
             nativeUI: true
-          }
+        }
     },
     publicRuntimeConfig: {
         FRIENDLY_CAPTCHA_SITE_KEY: process.env.FRIENDLY_CAPTCHA_SITE_KEY,
@@ -47,6 +47,10 @@ export default defineNuxtConfig({
             },
         }
     },
+    generate: {
+        fallback: '200.html'
+    },
+    ssr: false,
     target: 'static',
     typescript: {
         typeCheck: true
