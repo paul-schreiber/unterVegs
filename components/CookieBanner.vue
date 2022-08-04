@@ -58,6 +58,7 @@ export default defineComponent({
     box-shadow: $box-shadow;
     width: 95%;
     max-width: 800px;
+    font-size: $fs-small;
 
     display: flex;
     flex-direction: column;
