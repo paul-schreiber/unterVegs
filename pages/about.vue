@@ -1,17 +1,15 @@
 <template>
     <div class="about-page">
-        <h1>Über uns:</h1>
+        <header>
+            <Slugline title="Die Idee" />
+            <h1>Wie alles begann...</h1>
+        </header>
         <div>Wir sind ...</div>
         <h3>Test</h3>
     </div>
 </template>
 
 <style lang="scss" scoped>
-
-h1 {
-    width: fit-content;
-    border-bottom: 6px solid $color-secondary;
-}
 h3 {
     width: fit-content;
     border-bottom: 3px solid $color-secondary;
@@ -19,5 +17,9 @@ h3 {
 
 .about-page {
     text-align: left;
+
+    header {
+        text-align: center;
+    }
 }
 </style>

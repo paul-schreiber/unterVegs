@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Slugline title="Kontakt" />
         <div v-if="isLoading">
             Papierflieger werden gefaltet...
             <loading v-model:active="isLoading" :can-cancel="false" :is-full-page="true" color="#498830"
@@ -30,7 +31,7 @@
                 <section class="form-section">
                     <UserInputWithCaption caption="Deine Nachricht" :isMandatory="false">
                         <textarea v-model="message" aria-placeholder="Schreib los!" placeholder="Schreib los!"
-                            name="message" />
+                            name="message"></textarea>
                     </UserInputWithCaption>
                 </section>
                 <section class="form-section captcha-container">

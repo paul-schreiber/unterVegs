@@ -1,14 +1,21 @@
 <template>
     <div class="donate-page">
-        <h1>Deine Hilfe wird gebraucht!</h1>
-        <section>Ob du selbst Produkte hinzufügst oder aktualisierst, deinen Freunden von unterVegs erzählst, etwas spendest
-            oder uns einfach eine nette Nachricht da lässt - Wir freuen uns auf Feedback und deine Unterstützung!</section>
+        <header>
+            <Slugline title="Unterstütze uns" />
+            <h1>Deine Hilfe wird gebraucht!</h1>
+        </header>
+        <section>Ob du selbst Produkte hinzufügst oder aktualisierst, deinen Freunden von unterVegs erzählst, etwas
+            spendest
+            oder uns einfach eine nette Nachricht da lässt - Wir freuen uns auf Feedback und deine Unterstützung!
+        </section>
         <h2>📣 Shout it out loud!</h2>
         <section class="description-section">
-            <p>Du findest unterVegs übertrieben praktisch und hast noch sie so ein extrem cooles Projekt gesehen? So geht es
+            <p>Du findest unterVegs übertrieben praktisch und hast noch sie so ein extrem cooles Projekt gesehen? So
+                geht es
                 uns auch 😎. Leg los und
                 erzähl deinen Freunden, Kollegen und der Oma nebenan davon! Teile es auf <a
-                    href="https://www.instagram.com/untervegs_com/" aria-label="Link zu Instagram"><b>Instagram</b></a> oder wo auch immer du willst. Dir passt etwas nicht? Dann gib uns
+                    href="https://www.instagram.com/untervegs_com/" aria-label="Link zu Instagram"><b>Instagram</b></a>
+                oder wo auch immer du willst. Dir passt etwas nicht? Dann gib uns
                 Feedback was wir ändern können! </p>
             <NuxtLink to="/contact">
                 <ActionButton title="Gib uns dein Feedback!" aria-label="Feedback geben" name="Feedback geben"
@@ -53,21 +60,17 @@ a {
     text-decoration: none;
 }
 
-
-h1 {
-    width: fit-content;
-    border-bottom: 6px solid $color-secondary;
-}
-
 h2 {
     width: fit-content;
     margin: $sp-small 0px;
 }
 
-
-
 .donate-page {
     text-align: left;
+
+    header {
+        text-align: center;
+    }
 
     .description-section {
         margin-bottom: $sp-huge;
