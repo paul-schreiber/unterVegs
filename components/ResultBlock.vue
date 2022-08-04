@@ -26,11 +26,5 @@ export default defineComponent({
 header {
   display: flex;
   justify-content: flex-start;
-
-  .block-title {
-    margin: 0px;
-    font-size: $fs-small;
-    color: $color-font-medium;
-  }
 }
 </style>

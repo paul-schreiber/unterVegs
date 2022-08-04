@@ -5,5 +5,8 @@ export default {
         zipCode: '10713',
         city: 'Berlin',
         mail: 'untervegs@proton.me'
+    },
+    donation: {
+        PayPal: 'paypal.me/paulschreiber96'
     }
 }

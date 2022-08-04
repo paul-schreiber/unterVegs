@@ -2,12 +2,14 @@
   <nav id="nav">
     <div class="navbar-container">
       <NuxtLink to="/" aria-label="Link zur Startseite" @click="hideMobileMenu">
-        <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo" class="logo" />
+        <div class="logo">
+          <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo" />
+        </div>
       </NuxtLink>
       <div class="menu" v-if="!isMobile">
         <div class="menu-item">
           <NuxtLink to="/about">
-            Über uns
+            Die Idee
           </NuxtLink>
         </div>
         <div class="menu-item">
@@ -36,7 +38,7 @@ export default defineComponent({
   props: ['toggleMobileMenu', 'hideMobileMenu'],
   computed: {
     isMobile(): boolean {
-      return window.innerWidth < 700
+      return this.$device.isMobile
     }
   }
 })
@@ -57,10 +59,21 @@ nav {
     justify-content: space-between;
   }
 
-  .logo {
+  .logo img {
     height: calc($navbar-height * 0.80);
     min-height: 80px;
     max-height: 105px;
+    cursor: pointer;
+    user-select: none;
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
   }
 
   .burger-menu {

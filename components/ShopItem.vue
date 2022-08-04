@@ -3,7 +3,7 @@
       <div class="name-container">{{ shop.name }}</div>
       <div class="categories-container">
         <Badge v-for="badgeID in getProductBadges" :key="badgeID" :color="getCategory(badgeID).color" :name="getCategory(badgeID).name"
-          :id="badgeID" :title="badgeID" :removable="false" />
+          :id="badgeID" :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :removable="false" />
       </div>
     </div>
 </template>

@@ -10,7 +10,7 @@
             :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
             :onClose="removeCategoryFromFilter" />
         </div>
-        <input v-model="searchTerm" placeholder="Suche nach 'Pizza' oder 'Dean & David'..." class="search-field"
+        <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
           @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" />
         <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
           :disabled="availableFilters.size === 0">
@@ -64,6 +64,7 @@ export default defineComponent({
       showFilterPanel: false,
       maxFilters: 3,
       selectedTab: 'products',
+      placeholderList: ['Pizza', 'Pasta', 'Tofu', 'Pommes', 'Hummus', 'Vegan TS', 'Burger', 'Dean & David', 'McDonald`s', 'Burger King', 'deinem Lieblingsshop', 'deinem Lieblingsgericht']
     };
   },
 
@@ -78,7 +79,12 @@ export default defineComponent({
       return this.searchTerm === '' && this.appliedFilters.size === 0
     },
     isMobile(): boolean {
-      return window.innerWidth < 700
+      return this.$device.isMobile
+    },
+    randomPlaceholder(): string {
+      const randomIndex = Math.floor(Math.random() * this.placeholderList.length)
+      const phrase = this.placeholderList[randomIndex]
+      return `Suche nach ${phrase}...`
     }
   },
   methods: {
@@ -136,6 +142,7 @@ export default defineComponent({
   width: 90vw;
   border-radius: 15px;
   background-color: white;
+  margin-bottom: $sp-large;
 
   header {
     width: 100%;
