@@ -142,7 +142,7 @@ export default defineComponent({
   width: 90vw;
   border-radius: 15px;
   background-color: white;
-  margin-bottom: $sp-large;
+  margin: $sp-big 0px;
 
   header {
     width: 100%;
