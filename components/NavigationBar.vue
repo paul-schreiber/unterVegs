@@ -1,7 +1,7 @@
 <template>
   <nav id="nav">
     <div class="navbar-container">
-      <NuxtLink to="/" aria-label="Link zur Startseite" @click="hideMobileMenu">
+      <NuxtLink to="/" aria-label="Link zur Startseite">
         <div class="logo">
           <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo" />
         </div>
@@ -39,6 +39,11 @@ export default defineComponent({
   computed: {
     isMobile(): boolean {
       return this.$device.isMobile
+    }
+  },
+  watch: {
+    $route() {
+      setTimeout(this.hideMobileMenu, 300);
     }
   }
 })
