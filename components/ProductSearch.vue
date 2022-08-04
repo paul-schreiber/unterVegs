@@ -79,7 +79,7 @@ export default defineComponent({
       return this.searchTerm === '' && this.appliedFilters.size === 0
     },
     isMobile(): boolean {
-      return window.innerWidth < 700
+      return this.$device.isMobile
     },
     randomPlaceholder(): string {
       const randomIndex = Math.floor(Math.random() * this.placeholderList.length)

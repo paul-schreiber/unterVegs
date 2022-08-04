@@ -38,7 +38,7 @@ export default defineComponent({
     },
     computed: {
         isMobile() {
-            return window.innerWidth < 700
+            return this.$device.isMobile
         }
     }
 })

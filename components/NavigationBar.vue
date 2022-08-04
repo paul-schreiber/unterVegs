@@ -38,7 +38,7 @@ export default defineComponent({
   props: ['toggleMobileMenu', 'hideMobileMenu'],
   computed: {
     isMobile(): boolean {
-      return window.innerWidth < 700
+      return this.$device.isMobile
     }
   }
 })

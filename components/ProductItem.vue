@@ -35,7 +35,7 @@ export default defineComponent({
       return this.$DS.getShopById(this.product.shop)
     },
     isMobile(): boolean {
-      return window.innerWidth < 700
+      return this.$device.isMobile
     }
   },
   methods: {
