@@ -99,7 +99,7 @@ a {
             width: 100%;
             text-align: left;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: $fw-bold;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -107,6 +107,7 @@ a {
 
         .date-container {
             color: $color-font-medium;
+            font-size: $fs-small;
         }
     }
 }

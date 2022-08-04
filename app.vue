@@ -47,6 +47,7 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: $fs-normal;
   text-align: center;
   color: $color-font-dark;
 }
@@ -84,7 +85,6 @@ h2 {
 @media only screen and (min-width: 800px) {
   .content-wrapper {
     padding: $sp-big;
-    padding-top: $sp-large;
   }
 }
 </style>
