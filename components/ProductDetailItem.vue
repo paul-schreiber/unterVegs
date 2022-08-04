@@ -3,11 +3,11 @@
         <div class="product-item">
             <header>
                 <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
-                        :removable="false" />
+                    :removable="false" />
                 <div class="labels">
                     <font-awesome-icon :icon="['fas', 'calendar-day']" title="nicht immer verfügbar"
                         v-if="product.isSeasonal" />
-                        <font-awesome-icon :icon="['fas', 'circle-info']" title="Klicke für mehr Infos!"/>
+                    <font-awesome-icon :icon="['fas', 'circle-info']" title="Klicke für mehr Infos!" />
                 </div>
             </header>
             <div class="body">
@@ -50,8 +50,10 @@ export default defineComponent({
         }
     },
     methods: {
-        timeSince(date: string) {
-            const dayInPast = DateTime.fromJSDate(new Date(date))
+        timeSince(dateString: string) {
+            const [year, month, day] = dateString.split('-')
+            const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+            const dayInPast = DateTime.fromJSDate(date)
             const diff = DateTime.now().diff(dayInPast, ["years", "months", "days", "hours", "minutes"]).toObject()
             return diff.years != 0 ? `${diff.years} Jahr` : diff.months != 0 ? `${diff.months} Monaten` : diff.days != 0 ? `${diff.days} Tagen` : `${diff.hours} Stunden`
         }
