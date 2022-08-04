@@ -1,6 +1,6 @@
 <template>
     <div class="welcome-container">
-        <h1>Ist das Eis vegan???</h1>
+        <h1>Ist das Eis vegan?</h1>
         <section>
             <p>Diese und weitere Fragen halten dich Tag und Nacht wach?</p>
             <p> Dann haben wir was für dich:</p>
