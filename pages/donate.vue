@@ -16,7 +16,7 @@
                     geht es
                     uns auch 😎. Leg los und
                     erzähl deinen Freunden, Kollegen und der Oma nebenan davon! Teile es auf <a
-                        href="https://www.instagram.com/untervegs_com/"
+                        :href="socialInfo.instagram"
                         aria-label="Link zu Instagram"><b>Instagram</b></a>
                     oder wo auch immer du willst. Dir passt etwas nicht? Dann gib uns
                     Feedback was wir ändern können! </p>
@@ -73,6 +73,18 @@
         </div>
     </div>
 </template>
+
+<script>
+import content from '../data/content'
+import { defineComponent } from "vue";
+export default defineComponent({
+  data() {
+    return {
+      socialInfo: content.social
+    }
+  }
+})
+</script>
 
 <style lang="scss" scoped>
 a {

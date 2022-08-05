@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="inner-footer">
       <div class="insta-link-container">
-        <a href="https://www.instagram.com/untervegs_com/" aria-label="Link zu Instagram">
+        <a :href="socialInfo.instagram" aria-label="Link zu Instagram">
           <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
       </div>
@@ -16,10 +16,16 @@
 </template>
 
 <script>
+import content from '../data/content'
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "PageFooter",
   props: {},
+  data() {
+    return {
+      socialInfo: content.social
+    }
+  }
 })
 </script>
 
