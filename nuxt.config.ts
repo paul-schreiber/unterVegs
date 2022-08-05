@@ -9,8 +9,7 @@ export default defineNuxtConfig({
     ],
     buildModules: [
         '@nuxtjs/device',
-    ]
-    ,
+    ],
     pwa: {
         icon: {
             source: 'static/favicon/icon-transparent.png'
@@ -52,7 +51,7 @@ export default defineNuxtConfig({
         }
     },
     generate: {
-        fallback: '200.html'
+        fallback: true
     },
     ssr: false,
     target: 'static',
