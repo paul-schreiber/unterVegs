@@ -25,6 +25,7 @@
     h1 {
         font-size: 3.5rem;
         margin-bottom: $sp-medium;
+        line-height: 3rem;
     }
 
     p {
