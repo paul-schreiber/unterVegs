@@ -51,6 +51,7 @@ export default defineComponent({
   font-size: $fs-normal;
   text-align: center;
   color: $color-font-dark;
+  touch-action: manipulation;
 }
 
 html * {
