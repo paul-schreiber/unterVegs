@@ -40,8 +40,8 @@ export default defineComponent({
 <style lang="scss">
 .help-button {
     position: fixed;
-    bottom: $sp-big;
-    right: $sp-big;
+    bottom: $sp-medium;
+    right: $sp-medium;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -70,10 +70,11 @@ export default defineComponent({
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.6rem;
+        font-size: 24px;
+        text-align: center;
         all: unset;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         cursor: pointer;
         background-color: $color-primary;
         border-radius: 50%;

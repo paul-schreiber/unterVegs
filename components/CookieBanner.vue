@@ -5,7 +5,8 @@
             <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
                 nutzerfreundlicher zu
                 gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">Datenschutzerklärung
-                </NuxtLink>.</p>
+                </NuxtLink>.
+            </p>
         </div>
         <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
     </div>
@@ -58,7 +59,6 @@ export default defineComponent({
     box-shadow: $box-shadow;
     width: 95%;
     max-width: 800px;
-    font-size: $fs-small;
 
     display: flex;
     flex-direction: column;
@@ -76,6 +76,7 @@ export default defineComponent({
     p {
         margin: 0px;
         text-align: left;
+        font-size: $fs-small;
     }
 }
 
