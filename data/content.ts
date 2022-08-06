@@ -8,5 +8,8 @@ export default {
     },
     donation: {
         PayPal: 'paypal.me/paulschreiber96'
+    },
+    social: {
+        instagram: 'https://www.instagram.com/untervegs_com/'
     }
 }

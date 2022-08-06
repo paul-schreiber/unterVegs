@@ -6,7 +6,7 @@
             <p> Dann haben wir was für dich:</p>
         </section>
         <ProductSearch />
-        <section>
+        <section class="explanation">
             <p>Mit <i>unterVegs</i> kannst du nach
                 veganen Gerichten suchen und wir zeigen dir welcher Shop dein nächstes Ziel wird. Deine Freunde haben
                 schon entschieden?
@@ -25,6 +25,7 @@
     h1 {
         font-size: 3.5rem;
         margin-bottom: $sp-medium;
+        line-height: 3rem;
     }
 
     p {
@@ -35,6 +36,10 @@
     section {
         font-size: $fs-medium;
         max-width: 800px;
+    }
+
+    .explanation {
+        display: none;
     }
 }
 </style>

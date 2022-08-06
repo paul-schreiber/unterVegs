@@ -65,6 +65,8 @@ export default defineComponent({
     align-items: center;
     gap: $sp-small;
 
+    z-index: 15;
+
     .cookie-icon-container {
         span {
             font-size: $fs-large;

@@ -32,6 +32,13 @@ export type Category = {
     sequenceNumber: number
 }
 
+export type DonationIdea = {
+    name: string,
+    description: string,
+    amount: number,
+    img?: string
+}
+
 export enum CategoryIds {
     PASTA = 'PASTA',
     MEXIKANISCH = 'MEXIKANISCH',

@@ -7,6 +7,7 @@
         <NuxtPage />
       </div>
       <CookieBanner :onAccept="enableAnalytics" />
+      <HelpButton />
       <PageFooter />
     </template>
   </div>
@@ -80,6 +81,10 @@ h1 {
 
 h2 {
   font-size: $fs-large;
+}
+
+h3 {
+  font-size: $fs-medium;
 }
 
 @media only screen and (min-width: 800px) {
