@@ -66,13 +66,13 @@ export default defineComponent({
     }
 
     button {
+        all: unset;
         padding: $sp-tiny;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 26px;
         text-align: center;
-        all: unset;
         width: 45px;
         height: 45px;
         cursor: pointer;
