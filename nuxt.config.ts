@@ -21,7 +21,7 @@ export default defineNuxtConfig({
             start_url: '/',
             display: 'standalone',
             background_color: '#ffffff',
-            theme_color: '#f8f8f8',
+            theme_color: '#faf4f4',
             description: config.description
         },
         meta: {

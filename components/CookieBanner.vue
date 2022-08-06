@@ -76,7 +76,7 @@ export default defineComponent({
     p {
         margin: 0px;
         text-align: left;
-        font-size: $fs-small;
+        font-size: 16px;
     }
 }
 
