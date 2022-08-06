@@ -50,6 +50,7 @@ export default defineComponent({
     display: flex;
     gap: $sp-medium;
     flex-wrap: wrap;
+    text-align: left;
 
     .donation-idea {
         background-color: white;
@@ -57,7 +58,7 @@ export default defineComponent({
         border-radius: 15px;
         display: flex;
         cursor: pointer;
-        width: 400px;
+        width: 330px;
 
         &:hover {
             transform: scale(1.05);
@@ -66,7 +67,11 @@ export default defineComponent({
         .image-container {
             margin-right: $sp-medium;
             font-size: $fs-large;
-            color: $color-secondary
+            color: $color-secondary;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .text-container {

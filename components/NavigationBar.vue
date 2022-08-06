@@ -1,5 +1,5 @@
 <template>
-  <nav id="nav">
+  <nav id="nav" autofocus>
     <div class="navbar-container">
       <NuxtLink to="/" aria-label="Link zur Startseite">
         <div class="logo">
