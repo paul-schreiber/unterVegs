@@ -32,7 +32,6 @@ export default defineNuxtConfig({
             ogSiteName: config.name,
             ogHost: config.url,
             ogTitle: config.name,
-            mobileAppIOS: true
         }
     },
     publicRuntimeConfig: {
