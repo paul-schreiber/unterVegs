@@ -44,7 +44,7 @@ export default defineComponent({
     margin: 0px $sp-small;
     padding: $sp-small;
     border-bottom: solid 2px transparent;
-    z-index: 100;
+    z-index: 5;
 
     &.active {
         border-bottom: solid 2px $color-primary;

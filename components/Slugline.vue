@@ -1,5 +1,5 @@
 <template>
-    <div class="slugline">{{capitalizedTitle}}</div>
+    <div class="slugline">{{ capitalizedTitle }}</div>
 </template>
 
 <script lang="ts">
