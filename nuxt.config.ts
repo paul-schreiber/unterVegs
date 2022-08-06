@@ -50,7 +50,7 @@ export default defineNuxtConfig({
         }
     },
     generate: {
-        fallback: true
+        fallback: '200.html'
     },
     ssr: false,
     target: 'static',
