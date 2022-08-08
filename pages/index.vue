@@ -13,6 +13,7 @@
                 Kein Ding, gib einfach den Namen des Shops ein und wir zeigen dir die vegane Auswahl.
             </p>
         </section>
+        <HelpButton />
     </div>
 </template>
 

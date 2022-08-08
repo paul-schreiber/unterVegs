@@ -7,7 +7,6 @@
         <NuxtPage />
       </div>
       <CookieBanner :onAccept="enableAnalytics" />
-      <HelpButton />
       <PageFooter />
     </template>
   </div>
