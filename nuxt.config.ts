@@ -4,8 +4,8 @@ import config from './config/general'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     css: ['@fortawesome/fontawesome-svg-core/styles.css'],
-    modules: [
-        '@kevinmarrec/nuxt-pwa'
+    buildModules: [
+        '@nuxtjs/device',
     ],
     pwa: {
         icon: {
