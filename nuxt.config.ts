@@ -49,10 +49,7 @@ export default defineNuxtConfig({
             },
         }
     },
-    generate: {
-        fallback: '200.html'
-    },
-    ssr: false,
+    ssr: true,
     target: 'static',
     typescript: {
         typeCheck: true
