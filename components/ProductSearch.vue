@@ -1,50 +1,52 @@
 <template>
-  <div class="search-container">
-    <header>
-      <div class="search">
-        <span class="search-icon">
-          <font-awesome-icon :icon="['fas', 'search']" />
-        </span>
-        <div class="applied-categories-container">
-          <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieObject(category).color"
-            :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
-            :onClose="removeCategoryFromFilter" />
+  <div class="hidden-wrapper" ref="search">
+    <div class='search-container'>
+      <header>
+        <div class="search">
+          <span class="search-icon">
+            <font-awesome-icon :icon="['fas', 'search']" />
+          </span>
+          <div class="applied-categories-container">
+            <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieObject(category).color"
+              :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
+              :onClose="removeCategoryFromFilter" />
+          </div>
+          <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
+            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" @focus="onFocus" />
+          <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
+            :disabled="availableFilters.size === 0">
+            <font-awesome-icon :icon="['fas', 'sliders']" />
+          </button>
         </div>
-        <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
-          @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" />
-        <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
-          :disabled="availableFilters.size === 0">
-          <font-awesome-icon :icon="['fas', 'sliders']" />
-        </button>
-      </div>
-      <div class="filter-container" v-if="availableFilters.size != 0 && showFilterPanel">
-        <div class="available-categories-container">
-          <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
-            @click="addCategoryToFilter(category)">
-            <Badge :color="getCategorieObject(category).color" :removable="false"
-              :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
+        <div class="filter-container" v-if="availableFilters.size != 0 && showFilterPanel">
+          <div class="available-categories-container">
+            <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
+              @click="addCategoryToFilter(category)">
+              <Badge :color="getCategorieObject(category).color" :removable="false"
+                :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-    <div class="content-container" v-if="!hideResults">
-      <div class="tab-bar">
-        <TabItem title="Produkte" icon="pizza-slice" @click="selectTab('products')"
-          :resultCount="filteredProducts.length" :isActive="selectedTab === 'products'" />
-        <TabItem title="Shops" icon="store" @click="selectTab('shops')" :resultCount="filteredShops.length"
-          :isActive="selectedTab === 'shops'" />
-      </div>
-      <div class="search-results">
-        <ResultBlock :hasResults="filteredProducts.length != 0" v-if="selectedTab === 'products'">
-            <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`" >
+      </header>
+      <div class="content-container" v-if="!hideResults">
+        <div class="tab-bar">
+          <TabItem title="Produkte" icon="pizza-slice" @click="selectTab('products')"
+            :resultCount="filteredProducts.length" :isActive="selectedTab === 'products'" />
+          <TabItem title="Shops" icon="store" @click="selectTab('shops')" :resultCount="filteredShops.length"
+            :isActive="selectedTab === 'shops'" />
+        </div>
+        <div class="search-results">
+          <ResultBlock :hasResults="filteredProducts.length != 0" v-if="selectedTab === 'products'">
+            <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`">
               <ProductItem :product="product" />
             </ItemContainer>
-        </ResultBlock>
-        <ResultBlock :hasResults="filteredShops.length != 0" v-if="selectedTab === 'shops'">
-          <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
-            <ShopItem :shop="shop" />
-          </ItemContainer>
-        </ResultBlock>
+          </ResultBlock>
+          <ResultBlock :hasResults="filteredShops.length != 0" v-if="selectedTab === 'shops'">
+            <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
+              <ShopItem :shop="shop" />
+            </ItemContainer>
+          </ResultBlock>
+        </div>
       </div>
     </div>
   </div>
@@ -85,6 +87,10 @@ export default defineComponent({
       const randomIndex = Math.floor(Math.random() * this.placeholderList.length)
       const phrase = this.placeholderList[randomIndex]
       return `Suche nach ${phrase}...`
+    },
+    onFocus(e: FocusEvent) {
+      //Scrolls input to top on mobile
+      if (this.isMobile) this.$refs['search'].scrollIntoView({ behavior: "smooth" })
     }
   },
   methods: {
@@ -131,13 +137,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 .search-container {
   justify-self: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: $box-shadow;
   max-width: 800px;
+
   height: fit-content;
   width: 90vw;
   border-radius: 15px;
@@ -217,6 +223,12 @@ export default defineComponent({
       overflow: scroll;
       border-top: 2px solid $color-light-grey;
     }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .hidden-wrapper {
+    min-height: calc(100vh - 70px);
   }
 }
 </style>
