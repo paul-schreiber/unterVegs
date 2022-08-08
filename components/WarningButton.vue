@@ -18,7 +18,7 @@
             </div>
         </div>
         <button @click="toggleHelp">
-            <span v-if="!showHelp">🔧</span>
+            <span v-if="!showWarning">🔧</span>
             <span v-else>
                 <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
             </span>
@@ -103,6 +103,7 @@ a {
         background-color: $color-warning;
         border-radius: 50%;
         box-shadow: $box-shadow;
+        color: white;
 
         user-select: none;
         /* supported by Chrome and Opera */
