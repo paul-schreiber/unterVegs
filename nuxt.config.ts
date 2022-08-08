@@ -7,9 +7,6 @@ export default defineNuxtConfig({
     modules: [
         '@kevinmarrec/nuxt-pwa'
     ],
-    buildModules: [
-        '@nuxtjs/device',
-    ],
     pwa: {
         icon: {
             source: 'static/favicon/icon-transparent.png'
