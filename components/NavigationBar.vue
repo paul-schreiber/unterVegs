@@ -58,7 +58,7 @@ nav {
     width: 100%;
     max-height: $navbar-height;
     min-height: 100px;
-    padding: $sp-medium;
+    padding: $sp-small;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -127,7 +127,7 @@ nav {
 @media only screen and (min-width: 800px) {
   nav {
     .navbar-container {
-      padding: $sp-big;
+      padding: $sp-medium;
     }
   }
 }
