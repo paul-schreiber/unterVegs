@@ -64,7 +64,7 @@ export default defineComponent({
       showFilterPanel: false,
       maxFilters: 3,
       selectedTab: 'products',
-      placeholderList: ['Pizza', 'Pasta', 'Tofu', 'Pommes', 'Hummus', 'Vegan TS', 'Burger', 'Dean & David', 'McDonald`s', 'Burger King', 'deinem Lieblingsshop', 'deinem Lieblingsgericht']
+      placeholderList: ['Pizza', 'Pasta', 'Brezel', 'Pommes', 'Hummus', 'Vegan TS', 'Burger', 'Dean & David', 'McDonald`s', 'Burger King', 'deinem Lieblingsshop', 'deinem Lieblingsgericht']
     };
   },
 

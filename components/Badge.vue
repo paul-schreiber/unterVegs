@@ -56,6 +56,8 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
 
+    padding-top: 0.04rem;
+
     .badge-name {
         display: grid;
         align-items: center;

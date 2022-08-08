@@ -1,6 +1,6 @@
 <template>
     <div class="welcome-container">
-        <h1>Ist das Eis vegan?</h1>
+        <h1>{{ randomMessage }}</h1>
         <section>
             <p>Diese und weitere Fragen halten dich Tag und Nacht wach?</p>
             <p> Dann haben wir was für dich:</p>
@@ -13,10 +13,29 @@
                 Kein Ding, gib einfach den Namen des Shops ein und wir zeigen dir die vegane Auswahl.
             </p>
         </section>
+        <HelpButton />
     </div>
 </template>
 
-<style lang="scss">
+<script lang="ts">
+export default defineComponent({
+    data() {
+        return {
+            welcomeMessages: ['Ist das Eis vegan?', 'Wo gibts vegane Nuggets?', 'Hat BK nur Pommes?']
+        }
+    },
+    computed: {
+        randomMessage() {
+            const randomIndex = Math.floor(Math.random() * this.welcomeMessages.length)
+            const message = this.welcomeMessages[randomIndex]
+            return `${message}`
+
+        }
+    }
+})
+</script>
+
+<style lang="scss" scoped>
 .welcome-container {
     display: flex;
     flex-direction: column;

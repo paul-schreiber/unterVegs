@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="product-detail-container">
     <header>
       <div class="heading">
         <h2>{{ product.name }}</h2>
@@ -7,7 +7,7 @@
           :removable="false" />
       </div>
       <div class="shop-name">
-        {{ getShop }}
+        <NuxtLink :to="`/shop/${product.shop}`">{{ getShopName }}</NuxtLink>
       </div>
       <div class="badges-container">
         <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge"
@@ -15,38 +15,23 @@
       </div>
     </header>
     <div class="product-info">
-      <div class="properties">
-        <div>
-          <div class="label">zuletzt aktualisiert:</div> {{ makeDateReadable(product.lastEdited) }}
+      <div>
+        <div class="properties">
+          <div>
+            <div class="label">zuletzt aktualisiert:</div> {{ makeDateReadable(product.lastEdited) }}
+          </div>
+          <div v-if="product.isSeasonal">
+            <div class="label">Verfügbarkeit:</div>
+            <span>nicht jederzeit verfügbar</span>
+          </div>
         </div>
-        <div v-if="product.isSeasonal">
-          <div class="label">Verfügbarkeit:</div>
-          <span>nicht jederzeit verfügbar</span>
+        <div class="description">
+          {{ product.notes }}
         </div>
-      </div>
-      <div class="description">
-        {{ product.notes }}
       </div>
       <div class="bottom-info">{{ getAuthorWithDate }}</div>
     </div>
-    <footer>
-
-      <div class="error-click-to-action">
-        <div class="header">
-          <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
-          <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
-        </div>
-        <NuxtLink :to="{
-          name: 'contact',
-          params: {
-            topic: `Fehler - ${product.name}/${getShop}`
-          }
-        }">
-          <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">👷🏽‍♀️ Fehler
-            melden</button>
-        </NuxtLink>
-      </div>
-    </footer>
+    <WarningButton :product="product" />
   </div>
 </template>
 
@@ -64,7 +49,7 @@ export default defineComponent({
     getLabel() {
       return Labels[this.product.label]
     },
-    getShop() {
+    getShopName() {
       return this.$DS.getShopById(this.product.shop).name
     },
     getProductBadges(): CategoryIds[] {
@@ -94,6 +79,12 @@ a {
   text-decoration: none;
 }
 
+.product-detail-container {
+  min-height: calc(100vh - $navbar-height - $sp-medium * 3);
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   margin-bottom: $sp-medium;
 
@@ -110,10 +101,13 @@ header {
   }
 
   .shop-name {
-    text-align: left;
-    color: $color-font-medium;
-    font-size: $fs-medium;
     margin-bottom: $sp-small;
+    text-align: left;
+
+    a {
+      color: $color-font-medium;
+      font-size: $fs-medium;
+    }
   }
 
   .badges-container {
@@ -126,7 +120,9 @@ header {
 }
 
 .product-info {
-  min-height: 55vh;
+  flex-grow: 1;
+  display: grid;
+  margin-bottom: $sp-medium;
 
   .description {
     text-align: left;
@@ -146,48 +142,8 @@ header {
   }
 
   .bottom-info {
-    margin-bottom: $sp-large;
+    align-self: flex-end;
     color: $color-font-medium;
-  }
-
-
-
-}
-
-.error-click-to-action {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  gap: $sp-medium;
-  margin: auto;
-  text-align: left;
-  padding: $sp-medium;
-  border-radius: 15px;
-  background-color: $color-warning-bg;
-  font-weight: bold;
-
-  .header {
-    display: flex;
-    gap: $sp-small;
-    align-items: center;
-  }
-
-  .warning-icon {
-    color: $color-warning;
-    font-size: 1.6rem;
-  }
-
-  button {
-    width: 145px;
-    all: unset;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: $sp-small;
-    margin: $sp-small;
-    font-weight: bold;
-    background-color: $color-warning;
-    color: $color-font-light;
   }
 }
 
