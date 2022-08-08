@@ -45,7 +45,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .donation-ideas {
     display: flex;
     gap: $sp-medium;

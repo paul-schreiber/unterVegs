@@ -37,7 +37,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .help-button {
     position: fixed;
     bottom: $sp-medium;

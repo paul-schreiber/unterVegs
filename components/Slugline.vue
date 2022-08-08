@@ -20,7 +20,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .slugline {
     font-weight: $fw-bold;
     color: $color-font-medium;
