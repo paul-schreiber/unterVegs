@@ -48,12 +48,14 @@ export default defineComponent({
     align-items: flex-end;
     color: $color-font-light;
     text-align: left;
+    margin-left: $sp-medium;
 
     .help-text {
         font-size: $fs-small;
         padding: $sp-medium;
         border-radius: 15px;
         min-height: 200px;
+        width: 100%;
         max-width: 350px;
         background-color: $color-primary;
         margin-bottom: $sp-medium;
@@ -66,6 +68,9 @@ export default defineComponent({
     }
 
     button {
+        //to center the icon
+        padding-top: 3px;
+        
         all: unset;
         padding: $sp-tiny;
         display: flex;

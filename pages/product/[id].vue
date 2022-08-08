@@ -7,7 +7,7 @@
           :removable="false" />
       </div>
       <div class="shop-name">
-        {{ getShop }}
+        <NuxtLink :to="`/shop/${product.shop}`">{{ getShopName }}</NuxtLink>
       </div>
       <div class="badges-container">
         <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge"
@@ -29,24 +29,21 @@
       </div>
       <div class="bottom-info">{{ getAuthorWithDate }}</div>
     </div>
-    <footer>
-
-      <div class="error-click-to-action">
-        <div class="header">
-          <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
-          <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
-        </div>
-        <NuxtLink :to="{
-          name: 'contact',
-          params: {
-            topic: `Fehler - ${product.name}/${getShop}`
-          }
-        }">
-          <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">👷🏽‍♀️ Fehler
-            melden</button>
-        </NuxtLink>
+    <div class="error-click-to-action">
+      <div class="header">
+        <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
+        <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
       </div>
-    </footer>
+      <NuxtLink :to="{
+        name: 'contact',
+        params: {
+          topic: `Fehler - ${product.name}/${getShopName}`
+        }
+      }">
+        <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">👷🏽‍♀️ Fehler
+          melden</button>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -64,7 +61,7 @@ export default defineComponent({
     getLabel() {
       return Labels[this.product.label]
     },
-    getShop() {
+    getShopName() {
       return this.$DS.getShopById(this.product.shop).name
     },
     getProductBadges(): CategoryIds[] {
@@ -110,10 +107,13 @@ header {
   }
 
   .shop-name {
-    text-align: left;
-    color: $color-font-medium;
-    font-size: $fs-medium;
     margin-bottom: $sp-small;
+    text-align: left;
+
+    a {
+      color: $color-font-medium;
+      font-size: $fs-medium;
+    }
   }
 
   .badges-container {
