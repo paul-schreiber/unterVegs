@@ -38,12 +38,12 @@
         <div class="search-results">
           <ResultBlock :hasResults="filteredProducts.length != 0" v-if="selectedTab === 'products'">
             <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`">
-              <ProductItem :product="product" />
+              <ProductItem :product="product" :searchTerm="searchTerm"/>
             </ItemContainer>
           </ResultBlock>
           <ResultBlock :hasResults="filteredShops.length != 0" v-if="selectedTab === 'shops'">
             <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
-              <ShopItem :shop="shop" />
+              <ShopItem :shop="shop" :searchTerm="searchTerm"/>
             </ItemContainer>
           </ResultBlock>
         </div>
@@ -60,7 +60,7 @@ export default defineComponent({
   name: "ProductSearch",
   data() {
     return {
-      searchTerm: '' as String,
+      searchTerm: '' as string,
       availableFilters: new Set<CategoryIds>(Object.keys(CategoryIds) as CategoryIds[]),
       appliedFilters: new Set<CategoryIds>(),
       showFilterPanel: false,

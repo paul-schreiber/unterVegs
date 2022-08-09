@@ -1,27 +1,36 @@
 <template>
-    <div class="shop-item">
-      <div class="name-container">{{ shop.name }}</div>
-      <div class="categories-container">
-        <Badge v-for="badgeID in getProductBadges" :key="badgeID" :color="getCategory(badgeID).color" :name="getCategory(badgeID).name"
-          :id="badgeID" :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :removable="false" />
-      </div>
+  <div class="shop-item">
+    <div class="name-container" v-html="getEmphasizedText"></div>
+    <div class="categories-container">
+      <Badge v-for="badgeID in getProductBadges" :key="badgeID" :color="getCategory(badgeID).color"
+        :name="getCategory(badgeID).name" :id="badgeID"
+        :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :removable="false" />
     </div>
+  </div>
 </template>
 
 <script lang="ts">
 import type { Shop, CategoryIds } from "../types"
 import { Categories } from "../types"
 import { defineComponent } from "vue";
+import emphasizeText from '../services/util'
 export default defineComponent({
   props: {
     shop: {
       type: Object as () => Shop,
       required: true
     },
+    searchTerm: {
+      type: String,
+      required: false
+    }
   },
   computed: {
     getProductBadges(): CategoryIds[] {
       return this.$DS.getCategoriesByShopId(this.shop.id)
+    },
+    getEmphasizedText(): string {
+      return emphasizeText(this.shop.name, this.searchTerm)
     }
   },
   methods: {
