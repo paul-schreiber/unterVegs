@@ -90,7 +90,7 @@ export default defineComponent({
     },
     onFocus(e: FocusEvent) {
       //Scrolls input to top on mobile
-      if (this.isMobile) this.$refs['search'].scrollIntoView({ behavior: "smooth" })
+      //if (this.isMobile) this.$refs['search'].scrollIntoView({ behavior: "smooth" })
     }
   },
   methods: {
