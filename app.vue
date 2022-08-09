@@ -30,7 +30,7 @@ useHead({
     {
       rel: "apple-touch-startup-image",
       href: "static/favicon/apple-startup-828x1792.png",
-      media: "(device-width: 414px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2)",
+      media: "(device-width: 414px) and (device-height: 828px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)",
       hid: "apple-touch-startup-image-iphone-xr"
     }
   ]
