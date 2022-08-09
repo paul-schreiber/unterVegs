@@ -12,6 +12,30 @@
   </div>
 </template>
 
+<script setup lang="ts">
+useHead({
+  link: [
+    {
+      rel: "shortcut icon",
+      type: "image/svg+xml",
+      href: "static/favicon/favicon.svg",
+      hid: 'icon',
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "196x196",
+      href: "static/favicon/apple-icon.png",
+      hid: "apple-touch-icon"
+    },
+    {
+      rel: "apple-touch-startup-image",
+      href: "static/favicon/apple-startup-image.png",
+      hid: "apple-touch-startup-image-iphone"
+    }
+  ]
+})
+</script>
+
 <script lang="ts">
 import { useState } from "vue-gtag-next";
 import { defineComponent } from "vue";
@@ -23,7 +47,7 @@ export default defineComponent({
   },
   onMounted() {
     //temporary fix for the bug that the page is scrolled to the bottom on load
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   },
   computed: {
     isMobile(): boolean {

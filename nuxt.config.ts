@@ -10,20 +10,15 @@ export default defineNuxtConfig({
     buildModules: [
         '@nuxtjs/device',
     ],
-    head: {
-
-    },
     pwa: {
-        icon: {
-            source: 'static/favicon/icon-white.png'
-        },
+        icon: false,
         manifest: {
             name: config.name,
             lang: 'de',
             short_name: config.name,
             start_url: '/',
             display: 'standalone',
-            background_color: '#ffffff',
+            background_color: '#faf4f4',
             theme_color: '#faf4f4',
             description: config.description
         },
