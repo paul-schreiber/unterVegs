@@ -10,6 +10,19 @@ export default defineNuxtConfig({
     buildModules: [
         '@nuxtjs/device',
     ],
+    head: {
+        link: [
+            {
+                rel: "apple-touch-icon",
+                sizes: "128x128",
+                href: "static/favicon/apple-icon.png"
+            },
+            {
+                rel: "apple-touch-startup-image",
+                href: "static/favicon/apple-icon.png"
+            }
+        ]
+    },
     pwa: {
         icon: {
             source: 'static/favicon/icon-transparent.png'
