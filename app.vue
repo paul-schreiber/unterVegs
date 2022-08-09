@@ -24,12 +24,12 @@ useHead({
     {
       rel: "apple-touch-icon",
       sizes: "196x196",
-      href: "static/favicon/apple-icon.png",
+      href: "static/favicon/icon-background-light.png",
       hid: "apple-touch-icon"
     },
     {
       rel: "apple-touch-startup-image",
-      href: "static/favicon/apple-startup-image.png",
+      href: "static/favicon/splash-image.jpg",
       hid: "apple-touch-startup-image-iphone"
     }
   ]
