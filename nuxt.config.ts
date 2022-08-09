@@ -15,11 +15,12 @@ export default defineNuxtConfig({
             {
                 rel: "apple-touch-icon",
                 sizes: "128x128",
-                href: "static/favicon/apple-icon.png"
+                href: "static/favicon/apple-icon.png",
+                hid: "apple-touch-icon-white"
             },
             {
                 rel: "apple-touch-startup-image",
-                href: "static/favicon/apple-icon.png",
+                href: "static/favicon/apple-startup-image.png",
                 hid: "apple-touch-startup-image-iphone"
             }
         ]
