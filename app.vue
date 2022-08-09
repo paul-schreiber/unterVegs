@@ -18,13 +18,13 @@ useHead({
     {
       rel: "shortcut icon",
       type: "image/svg+xml",
-      href: "static/favicon/favicon.svg",
+      href: "/favicon/favicon.svg",
       hid: 'icon',
     },
     {
       rel: "apple-touch-icon",
       sizes: "512x512",
-      href: "static/favicon/icon-background-light.png",
+      href: "/favicon/icon-background-light.png",
       hid: "apple-touch-icon"
     },
     { rel: "apple-touch-startup-image", href: "/splash-icons/apple-splash-2048-2732.jpg", media: "(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" },
