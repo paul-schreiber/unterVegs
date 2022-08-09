@@ -11,24 +11,11 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
     ],
     head: {
-        link: [
-            {
-                rel: "apple-touch-icon",
-                sizes: "128x128",
-                href: "static/favicon/apple-icon.png",
-                purpose: 'maskable',
-                hid: "apple-touch-icon"
-            },
-            {
-                rel: "apple-touch-startup-image",
-                href: "static/favicon/apple-startup-image.png",
-                hid: "apple-touch-startup-image-iphone"
-            }
-        ]
+
     },
     pwa: {
         icon: {
-            source: 'static/favicon/icon-transparent.png'
+            source: 'static/favicon/icon-white.png'
         },
         manifest: {
             name: config.name,
