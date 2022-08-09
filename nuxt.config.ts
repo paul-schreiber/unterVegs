@@ -11,7 +11,9 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
     ],
     pwa: {
-        icon: false,
+        icon: {
+            source: 'static/favicon/icon-background-light.png'
+        },
         manifest: {
             name: config.name,
             lang: 'de',
