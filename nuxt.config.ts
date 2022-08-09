@@ -16,7 +16,8 @@ export default defineNuxtConfig({
                 rel: "apple-touch-icon",
                 sizes: "128x128",
                 href: "static/favicon/apple-icon.png",
-                hid: "apple-touch-icon-white"
+                purpose: 'maskable',
+                hid: "apple-touch-icon"
             },
             {
                 rel: "apple-touch-startup-image",
