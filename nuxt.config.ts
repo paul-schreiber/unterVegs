@@ -19,12 +19,15 @@ export default defineNuxtConfig({
             },
             {
                 rel: "apple-touch-startup-image",
-                href: "static/favicon/apple-icon.png"
+                href: "static/favicon/apple-icon.png",
+                hid: "apple-touch-startup-image-iphone"
             }
         ]
     },
     pwa: {
-        icon: false,
+        icon: {
+            source: 'static/favicon/icon-transparent.png'
+        },
         manifest: {
             name: config.name,
             lang: 'de',
@@ -43,6 +46,7 @@ export default defineNuxtConfig({
             ogSiteName: config.name,
             ogHost: config.url,
             ogTitle: config.name,
+            mobileAppIOS: true
         }
     },
     publicRuntimeConfig: {
