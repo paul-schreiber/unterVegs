@@ -11,16 +11,14 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
     ],
     pwa: {
-        icon: {
-            source: 'static/favicon/icon-transparent.png'
-        },
+        icon: false,
         manifest: {
             name: config.name,
             lang: 'de',
             short_name: config.name,
             start_url: '/',
             display: 'standalone',
-            background_color: '#ffffff',
+            background_color: '#faf4f4',
             theme_color: '#faf4f4',
             description: config.description
         },
@@ -32,6 +30,7 @@ export default defineNuxtConfig({
             ogSiteName: config.name,
             ogHost: config.url,
             ogTitle: config.name,
+            mobileAppIOS: false
         }
     },
     publicRuntimeConfig: {
