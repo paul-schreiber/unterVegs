@@ -24,9 +24,7 @@ export default defineNuxtConfig({
         ]
     },
     pwa: {
-        icon: {
-            source: 'static/favicon/icon-transparent.png'
-        },
+        icon: false,
         manifest: {
             name: config.name,
             lang: 'de',
