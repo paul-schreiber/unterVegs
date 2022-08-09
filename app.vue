@@ -29,8 +29,9 @@ useHead({
     },
     {
       rel: "apple-touch-startup-image",
-      href: "static/favicon/splash-image.jpg",
-      hid: "apple-touch-startup-image-iphone"
+      href: "static/favicon/apple-startup-828x1792.png",
+      media: "(device-width: 414px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2)",
+      hid: "apple-touch-startup-image-iphone-xr"
     }
   ]
 })
