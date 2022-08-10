@@ -4,7 +4,7 @@
       <Badge :color="getLabel.color" :name="getLabelName" :id="getLabelName" :title="getLabel.tooltip"
         :removable="false" />
     </div>
-    <div class="name-container">{{ product.name }}</div>
+    <div class="name-container" v-html="getEmphasizedItemName"></div>
     <div class="shop-container">{{ getShop.name }}</div>
     <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`" v-if="!isMobile">{{
         timeSince(product.lastEdited)
@@ -17,16 +17,24 @@ import { DateTime } from "luxon";
 import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
 import { defineComponent } from "vue";
+import emphasizeText from '../services/util'
 export default defineComponent({
   props: {
     product: {
       type: Object as () => Product,
       required: true
+    },
+    searchTerm: {
+      type: String,
+      required: false
     }
   },
   computed: {
     getLabel(): Label {
       return Labels[this.product.label]
+    },
+    getEmphasizedItemName() {
+      return emphasizeText(this.product.name, this.searchTerm)
     },
     getLabelName(): string {
       return this.isMobile ? this.getLabel.shortName : this.getLabel.name

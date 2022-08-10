@@ -16,6 +16,12 @@
 useHead({
   link: [
     {
+      rel: "icon",
+      type: "image/svg+xml",
+      href: "/favicon/favicon.svg",
+      hid: 'icon',
+    },
+    {
       rel: "shortcut icon",
       type: "image/svg+xml",
       href: "/favicon/favicon.svg",
