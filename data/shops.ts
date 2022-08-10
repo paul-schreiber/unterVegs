@@ -3,7 +3,7 @@ export default [
     {
         name: 'Alex',
         id: ShopIds.ALEX,
-        isLocal: false,
+        isLocal: true,
         notes: ''
     },
     {
@@ -12,18 +12,6 @@ export default [
         isLocal: false,
         notes: '',
         imgURL: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/BackWerk_logo.svg'
-    },
-    {
-        name: 'Cafe & Bar Celona',
-        id: ShopIds.BARCELONA,
-        isLocal: false,
-        notes: 'Das Angebot kann sich je nach Standort unterscheiden.'
-    },
-    {
-        name: 'Coffee Fellowa',
-        id: ShopIds.COFFEEFELLOWS,
-        isLocal: false,
-        notes: ''
     },
     {
         name: 'Backfactory',
@@ -38,9 +26,15 @@ export default [
         notes: ''
     },
     {
+        name: 'Brammibals',
+        id: ShopIds.BRAMMIBALS,
+        isLocal: true,
+        notes: 'Ein toller Laden für vegane Donuts mit mehreren Filialen in Berlin. Die erste Eröffnung in Hamburg steht bevor!'
+    },
+    {
         name: 'Burgerheart',
         id: ShopIds.BURGERHEART,
-        isLocal: false,
+        isLocal: true,
         notes: ''
     },
     {
@@ -51,15 +45,27 @@ export default [
         imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Burger_King_logo_%281994%29.svg/1056px-Burger_King_logo_%281994%29.svg.png'
     },
     {
+        name: 'burgerme',
+        id: ShopIds.BURGERME,
+        isLocal: false,
+        notes: ''
+    },
+    {
         name: 'Call a Pizza',
         id: ShopIds.CALLAPIZZA,
         isLocal: false,
         notes: ''
     },
     {
+        name: 'Cafe & Bar Celona',
+        id: ShopIds.BARCELONA,
+        isLocal: false,
+        notes: 'Das Angebot kann sich je nach Standort unterscheiden.'
+    },
+    {
         name: 'Chidoba',
         id: ShopIds.CHIDOBA,
-        isLocal: false,
+        isLocal: true,
         notes: ''
     },
     {
@@ -67,6 +73,12 @@ export default [
         id: ShopIds.CIGKÖFTEM,
         isLocal: false,
         notes: 'Ciğköfte ist eine anatolische Spezialität, die aus Vollkorn-Bulgur, Tomatenmark, Paprikamark, Granatapfel Soße, Sonnenblumenöl, Petersilie und einer speziellen Gewürzmischung besteht. Sein traditioneller Herkunft reicht mehrere Hunderte Jahre zurück und ist heute eine, weltweit bekannte vegane Spezialität geworden. Sie beinhaltet nur die besten Zutaten aus der Natur und alles vegan, mit exzellentem Geschmack. Ciğköfte gewinnt heute auf allem Kontinenten als eine gesunde, kalorienarme, praktische und schnelle Ernährung an Beliebtheit.'
+    },
+    {
+        name: 'Coffee Fellows',
+        id: ShopIds.COFFEEFELLOWS,
+        isLocal: false,
+        notes: ''
     },
     {
         name: 'Deutsche Bahn',
@@ -101,30 +113,42 @@ export default [
     {
         name: 'Edelbeißer',
         id: ShopIds.EDELBEISSER,
-        isLocal: false,
-        notes: ''
+        isLocal: true,
+        notes: 'Filialen sind in Köln, Frechen, Göttingen, Bonn und Bochum zu finden.'
     },
     {
         name: 'Freddy Fresh',
         id: ShopIds.FREDDYFRESH,
-        isLocal: false,
+        isLocal: true,
         notes: ''
     },
     {
         name: 'Frittenwerk',
         id: ShopIds.FRITTENWERK,
-        isLocal: false,
-        notes: ''
+        isLocal: true,
+        notes: 'Bei Frittenwerk gibt es drei verschiedene Arten von Pommes: die regulären Hausfritten, Knoblauchfritten und Süßkartoffelfritten. Dazu werden mehrere vegane Dips angeboten: Mayo vegan, Ketchup, Zitronen-Ajoli, Alabama White BBQ, Paprika-Chili, Hot & Cheesy, Sour Cream, Guacamole, Pink Hummus. Darüber hinaus werden verschiedene vegane Poutinekreationen angeboten.'
     },
     {
         name: 'Gregorys',
         id: ShopIds.GREGORYS,
-        isLocal: false,
-        notes: ''
+        isLocal: true,
+        notes: 'Filialen sind bisher in Berlin und Erlangen.'
+    },
+    {
+        name: 'Haferkater',
+        id: ShopIds.HAFERKATER,
+        isLocal: true,
+        notes: 'Stores sind in Berlin und an den Hauptbahnhöfen Köln, Frankfurt, Düsseldorf, Bremen, Bonn, Hannover, Karlsruhe, Dresden, München Pasing, Mainz.'
     },
     {
         name: 'Hans im Glück',
         id: ShopIds.HANSIMGLÜCK,
+        isLocal: false,
+        notes: ''
+    },
+    {
+        name: 'Ikea',
+        id: ShopIds.IKEA,
         isLocal: false,
         notes: ''
     },
@@ -137,14 +161,14 @@ export default [
     {
         name: 'Jim Block',
         id: ShopIds.JIMBLOCK,
-        isLocal: false,
-        notes: ''
+        isLocal: true,
+        notes: 'Filialen sind in Berlin, Hamburg und Hannover.'
     },
     {
         name: 'Kaiser Biobäckerei',
         id: ShopIds.KAISERBIOBÄCKEREI,
-        isLocal: false,
-        notes: ''
+        isLocal: true,
+        notes: 'Vorallem im Süden/Westen Deutschlands vertreten.'
     },
     {
         name: 'Kamps',
@@ -171,10 +195,16 @@ export default [
         notes: ''
     },
     {
+        name: 'Mishba',
+        id: ShopIds.MISHBA,
+        isLocal: true,
+        notes: ''
+    },
+    {
         name: 'MoschMosch',
         id: ShopIds.MOSCHMOSCH,
-        isLocal: false,
-        notes: ''
+        isLocal: true,
+        notes: 'Filialen gibt es in folgenden Städten: Darmstadt, Frankfurt (aM), Heidelberg, Heilbronn, Mainz, Mannheim, Oberhausen, Wiesbaden.'
     },
     {
         name: 'Nordsee',
@@ -197,7 +227,7 @@ export default [
     {
         name: 'Pizzahelden',
         id: ShopIds.PIZZAHELDEN,
-        isLocal: false,
+        isLocal: true,
         notes: ''
     },
     {
@@ -257,8 +287,20 @@ export default [
     {
         name: 'World of Pizza',
         id: ShopIds.WORLDOFPIZZA,
+        isLocal: true,
+        notes: ''
+    },
+    {
+        name: 'Yormas',
+        id: ShopIds.YORMAS,
         isLocal: false,
         notes: ''
+    },
+    {
+        name: 'Zeit für Brot',
+        id: ShopIds.ZEITFÜRBROT,
+        isLocal: true,
+        notes: 'Filialen sind in Berlin, Hamburg, Frankfurt (aM) und Stuttgart. Bald soll eine Filiale in Potsdam eröffnet werden.'
     },
 
 ] as Shop[]
