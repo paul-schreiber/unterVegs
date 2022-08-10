@@ -3,7 +3,7 @@
         <div class="mobile-menu">
             <div class="menu-item">
                 <NuxtLink to="/about" @click.native="toggleMobileMenu">
-                    Über uns
+                    Die Idee
                 </NuxtLink>
             </div>
             <div class="menu-item">
