@@ -63,18 +63,6 @@ export default [
         notes: ""
     },
     {
-        name: "Pane Falafel",
-        id: uuidv4(),
-        author: "Miriam",
-        created: '2022-7-19',
-        lastEdited: '2022-7-19',
-        shop: ShopIds.BACKWERK,
-        label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.BACKWARE, CategoryIds.SNACK],
-        notes: ""
-    },
-    {
         name: "Börek (Stange) Spinat, vegan",
         id: uuidv4(),
         author: "Miriam",

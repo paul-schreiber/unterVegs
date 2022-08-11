@@ -136,6 +136,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .search-container {
+  position: sticky;
+  top: $sp-medium;
   justify-self: center;
   display: flex;
   flex-direction: column;

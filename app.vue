@@ -61,7 +61,7 @@ export default defineComponent({
   },
   onMounted() {
     //temporary fix for the bug that the page is scrolled to the bottom on load
-    window.scrollTo(0, 0)
+    //window.scrollTo(0, 0)
   },
   computed: {
     isMobile(): boolean {
