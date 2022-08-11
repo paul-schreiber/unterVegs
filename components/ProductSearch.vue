@@ -183,8 +183,6 @@ export default defineComponent({
 
   header {
     width: 100%;
-    padding: $sp-medium;
-
 
     .search {
       display: flex;
@@ -195,10 +193,12 @@ export default defineComponent({
 
       .search-icon {
         margin-right: $sp-tiny;
+        margin-left: $sp-medium;
       }
 
       .filter-icon {
-        padding: $sp-tiny;
+        padding: $sp-medium;
+        padding-left: $sp-tiny;
         all: unset;
         cursor: pointer;
         margin-left: $sp-small;
@@ -206,7 +206,8 @@ export default defineComponent({
     }
 
     .filter-container {
-      margin-top: $sp-medium;
+      padding: $sp-medium;
+      padding-top: 0px;
     }
 
     .applied-categories-container,
@@ -232,7 +233,7 @@ export default defineComponent({
       border: none;
       outline: none;
       color: $color-font-dark;
-      padding: $sp-tiny 0px;
+      padding: calc($sp-medium + $sp-tiny) 0px;
     }
   }
 

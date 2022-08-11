@@ -2,7 +2,7 @@
     <div class="about-page">
         <header>
             <Slugline title="Die Idee" />
-            <h1>Warum Untervegs?</h1>
+            <h1>Warum unterVegs?</h1>
         </header>
         <section>
             <p>

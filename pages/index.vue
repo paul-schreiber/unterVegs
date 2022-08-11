@@ -44,7 +44,7 @@ export default defineComponent({
     h1 {
         font-size: 3.5rem;
         margin-bottom: $sp-medium;
-        line-height: 3rem;
+        line-height: 3.4rem;
     }
 
     p {

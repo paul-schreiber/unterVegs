@@ -68,6 +68,9 @@ export default defineComponent({
     z-index: 15;
 
     .cookie-icon-container {
+        user-select: none;
+        animation: spin 8s linear infinite;
+
         span {
             font-size: $fs-large;
         }
@@ -77,6 +80,13 @@ export default defineComponent({
         margin: 0px;
         text-align: left;
         font-size: 16px;
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
