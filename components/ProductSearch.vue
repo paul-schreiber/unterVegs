@@ -18,15 +18,17 @@
             <font-awesome-icon :icon="['fas', 'sliders']" />
           </button>
         </div>
-        <div class="filter-container" v-if="availableFilters.size != 0 && showFilterPanel">
-          <div class="available-categories-container">
-            <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
-              @click="addCategoryToFilter(category)">
-              <Badge :color="getCategorieObject(category).color" :removable="false"
-                :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
+        <Transition name="slide-up">
+          <div class="filter-container" v-if="availableFilters.size != 0 && showFilterPanel">
+            <div class="available-categories-container">
+              <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
+                @click="addCategoryToFilter(category)">
+                <Badge :color="getCategorieObject(category).color" :removable="false"
+                  :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
+              </div>
             </div>
           </div>
-        </div>
+        </Transition>
       </header>
       <div class="content-container" v-if="!hideResults">
         <div class="tab-bar">
@@ -36,30 +38,34 @@
             :isActive="selectedTab === 'shops'" />
         </div>
         <div class="search-results">
-          <ResultBlock :hasResults="filteredProducts.length != 0" :showSuggestions="showProductSuggestions"
-            v-if="selectedTab === 'products'">
-            <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`">
-              <ProductItem :product="product" :searchTerm="searchTerm" />
-            </ItemContainer>
-            <template #suggestions>
-              <ItemContainer v-for="product in getMostSimilarProducts.slice(0, maxSuggestions - 1)"
-                :key="`ls-${product.id}`" :link="`/product/${product.id}`">
-                <ProductItem :product="product" />
+          <Transition name="fade">
+            <ResultBlock :hasResults="filteredProducts.length != 0" :showSuggestions="showProductSuggestions"
+              v-if="selectedTab === 'products'">
+              <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`">
+                <ProductItem :product="product" :searchTerm="searchTerm" />
               </ItemContainer>
-            </template>
-          </ResultBlock>
-          <ResultBlock :hasResults="filteredShops.length != 0" :showSuggestions="showShopSuggestions"
-            v-if="selectedTab === 'shops'">
-            <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
-              <ShopItem :shop="shop" :searchTerm="searchTerm" />
-            </ItemContainer>
-            <template #suggestions>
-              <ItemContainer v-for="shop in getMostSimilarShops.slice(0, maxSuggestions - 1)" :key="`ls-${shop.id}`"
-                :link="`/shop/${shop.id}`">
-                <ShopItem :shop="shop" />
+              <template #suggestions>
+                <ItemContainer v-for="product in getMostSimilarProducts.slice(0, maxSuggestions - 1)"
+                  :key="`ls-${product.id}`" :link="`/product/${product.id}`">
+                  <ProductItem :product="product" />
+                </ItemContainer>
+              </template>
+            </ResultBlock>
+          </Transition>
+          <Transition name="fade">
+            <ResultBlock :hasResults="filteredShops.length != 0" :showSuggestions="showShopSuggestions"
+              v-if="selectedTab === 'shops'">
+              <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
+                <ShopItem :shop="shop" :searchTerm="searchTerm" />
               </ItemContainer>
-            </template>
-          </ResultBlock>
+              <template #suggestions>
+                <ItemContainer v-for="shop in getMostSimilarShops.slice(0, maxSuggestions - 1)" :key="`ls-${shop.id}`"
+                  :link="`/shop/${shop.id}`">
+                  <ShopItem :shop="shop" />
+                </ItemContainer>
+              </template>
+            </ResultBlock>
+          </Transition>
         </div>
       </div>
     </div>
@@ -255,6 +261,27 @@ export default defineComponent({
       border-top: 2px solid $color-light-grey;
     }
   }
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translateY(-15px);
+  opacity: 0%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.4s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0%;
 }
 
 @media only screen and (max-width: 700px) {
