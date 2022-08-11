@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden-wrapper" ref="search">
+  <div class="hidden-wrapper">
     <div class='search-container'>
       <header>
         <div class="search">
@@ -12,7 +12,7 @@
               :onClose="removeCategoryFromFilter" />
           </div>
           <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
-            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" @focus="onFocus" />
+            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" @focus="onFocus" ref="search" />
           <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
             :disabled="availableFilters.size === 0">
             <font-awesome-icon :icon="['fas', 'sliders']" />
