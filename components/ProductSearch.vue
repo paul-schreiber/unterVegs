@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden-wrapper">
+  <div class="hidden-wrapper" ref="search">
     <div class='search-container'>
       <header>
         <div class="search">
@@ -12,7 +12,7 @@
               :onClose="removeCategoryFromFilter" />
           </div>
           <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
-            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" @focus="onFocus" ref="search" />
+            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" @focus="onFocus" />
           <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
             :disabled="availableFilters.size === 0">
             <font-awesome-icon :icon="['fas', 'sliders']" />
@@ -113,7 +113,7 @@ export default defineComponent({
     },
     onFocus(e: FocusEvent) {
       //Scrolls input to top on mobile
-      if (this.isMobile) this.$refs['search'].scrollIntoView({ behavior: "smooth" })
+      //if (this.isMobile) this.$refs['search'].scrollIntoView({ behavior: "smooth" })
     },
     getMostSimilarProducts(): Product[] {
       return this.$DS.getLevenshteinBasedProductSuggestions(this.searchTerm, [...this.appliedFilters], this.maxLevenshteinDistance)
