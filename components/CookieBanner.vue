@@ -1,15 +1,19 @@
 <template>
-    <div class="cookie-banner" v-if="!hideBanner">
-        <div class="cookie-icon-container"><span>🍪</span> </div>
-        <div>
-            <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
-                nutzerfreundlicher zu
-                gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">Datenschutzerklärung
-                </NuxtLink>.
-            </p>
+    <Transition name="slide-down">
+        <div class="cookie-banner" v-if="!hideBanner">
+
+            <div class="cookie-icon-container"><span>🍪</span> </div>
+            <div>
+                <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
+                    nutzerfreundlicher zu
+                    gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">
+                        Datenschutzerklärung
+                    </NuxtLink>.
+                </p>
+            </div>
+            <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
         </div>
-        <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
-    </div>
+    </Transition>
 </template>
 
 <script lang="ts">
@@ -88,6 +92,18 @@ export default defineComponent({
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+
+.slide-down-enter-active, .slide-down-leave-active {
+    transition: all 1.5s ease-in-out;
+}
+
+.slide-down-enter-active {
+    transition-delay: 3s;
+}
+
+.slide-down-enter-from, .slide-down-leave-to {
+    transform: translateY(200px) translateX(0px);
 }
 
 @media only screen and (min-width: 700px) {
