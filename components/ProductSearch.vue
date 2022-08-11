@@ -250,7 +250,7 @@ export default defineComponent({
     .search-results {
       width: 100%;
       max-height: 400px;
-      overflow: scroll;
+      overflow-y: scroll;
       border-top: 2px solid $color-light-grey;
     }
   }
