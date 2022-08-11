@@ -1,8 +1,17 @@
 <template>
-    <div class="result-list">
-      <span v-if="!hasResults">Keine Ergebnisse.</span>
+  <div class="result-list">
+    <div class="matched-results">
       <slot v-if="hasResults"></slot>
+      <span v-else>Hmm, das sagt uns leider nichts..</span>
     </div>
+    <div class="matched-suggestions" v-if="showSuggestions">
+      <header>...oder meintest du das hier?</header>
+      <div>
+        <slot name="suggestions"></slot>
+      </div>
+    </div>
+
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,6 +22,10 @@ export default defineComponent({
     hasResults: {
       type: Boolean,
       required: true
+    },
+    showSuggestions: {
+      type: Boolean,
+      required: true
     }
   },
 });
@@ -21,10 +34,20 @@ export default defineComponent({
 <style lang="scss" scoped>
 .result-list {
   width: 100%;
-}
 
-header {
-  display: flex;
-  justify-content: flex-start;
+  .matched-results {
+    padding: $sp-medium;
+  }
+
+  .matched-suggestions {
+    border-top: 2px solid #efefef;
+    padding: $sp-medium;
+
+    header {
+      width: 100%;
+      text-align: center;
+      margin: 0px $sp-small;
+    }
+  }
 }
 </style>
