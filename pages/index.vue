@@ -2,8 +2,7 @@
     <div class="welcome-container">
         <h1>{{ randomMessage }}</h1>
         <section>
-            <p>Diese und weitere Fragen halten dich Tag und Nacht wach?</p>
-            <p> Dann haben wir was für dich:</p>
+            <p>Diese Frage hält dich Tag und Nacht wach? Dann haben wir was für dich:</p>
         </section>
         <ProductSearch />
         <section class="explanation">
