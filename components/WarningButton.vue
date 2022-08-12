@@ -1,22 +1,24 @@
 <template>
     <div class="help-button">
-        <div class="help-text" v-if="showWarning">
-            <div class="error-click-to-action">
-                <div class="header">
-                    <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
-                    <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
+        <Transition name="slide-right">
+            <div class="help-text" v-if="showWarning">
+                <div class="error-click-to-action">
+                    <div class="header">
+                        <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
+                        <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
+                    </div>
+                    <NuxtLink :to="{
+                        name: 'contact',
+                        params: {
+                            topic: `Fehler - ${product.name}/${getShopName}`
+                        }
+                    }">
+                        <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">👷🏽‍♀️ Fehler
+                            melden</button>
+                    </NuxtLink>
                 </div>
-                <NuxtLink :to="{
-                    name: 'contact',
-                    params: {
-                        topic: `Fehler - ${product.name}/${getShopName}`
-                    }
-                }">
-                    <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">👷🏽‍♀️ Fehler
-                        melden</button>
-                </NuxtLink>
             </div>
-        </div>
+        </Transition>
         <button @click="toggleHelp">
             <span v-if="!showWarning">🔧</span>
             <span v-else>
@@ -150,5 +152,16 @@ a {
             color: $color-font-light;
         }
     }
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-right-enter-from,
+.slide-right-leave-to {
+    transform: translateX(400px);
+    opacity: 70%;
 }
 </style>

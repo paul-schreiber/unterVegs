@@ -45,7 +45,7 @@
                 <div class="call-to-action-container">
                     <NuxtLink to="/contact">
                         <ActionButton title="Kontaktiere uns!" aria-label="Kontaktiere uns!"
-                            name="Werde ein unterVegs-Hero!" :isPrimary="true" />
+                            name="Werde Teil des Teams!" :isPrimary="true" />
                     </NuxtLink>
                 </div>
             </div>

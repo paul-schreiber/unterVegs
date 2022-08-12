@@ -1,18 +1,21 @@
 <template>
     <div class="help-button">
-        <div class="help-text" v-if="showHelp">
-            <h3>So funktionierts:</h3>
-            Mit <i>unterVegs</i> kannst du nach veganen Gerichten suchen und wir zeigen dir welcher Shop dein nächstes
-            Ziel
-            wird.
-            <p>Deine Freunde haben schon entschieden? Kein Ding, gib einfach den Namen des Shops ein und wir zeigen
-                dir die vegane Auswahl.
-            </p>
-            <p>
-                VE - steht für vegan<br>
-                VB - steht für veganisierbar - bei diesen Gerichten können Zutaten ersetzt oder weggelassen werden
-            </p>
-        </div>
+        <Transition name="slide-right">
+            <div class="help-text" v-if="showHelp">
+                <h3>So funktionierts:</h3>
+                Mit <i>unterVegs</i> kannst du nach veganen Gerichten suchen und wir zeigen dir welcher Shop dein
+                nächstes
+                Ziel
+                wird.
+                <p>Deine Freunde haben schon entschieden? Kein Ding, gib einfach den Namen des Shops ein und wir zeigen
+                    dir die vegane Auswahl.
+                </p>
+                <p>
+                    VE - steht für vegan<br>
+                    VB - steht für veganisierbar - bei diesen Gerichten können Zutaten ersetzt oder weggelassen werden
+                </p>
+            </div>
+        </Transition>
         <button @click="toggleHelp">
             <span v-if="!showHelp">🤔</span>
             <span v-else>
@@ -70,7 +73,7 @@ export default defineComponent({
     button {
         //to center the icon
         padding-top: 3px;
-        
+
         all: unset;
         padding: $sp-tiny;
         display: flex;
@@ -97,5 +100,16 @@ export default defineComponent({
         /* Internet Explorer/Edge */
 
     }
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-right-enter-from,
+.slide-right-leave-to {
+    transform: translateX(400px);
+    opacity: 70%;
 }
 </style>

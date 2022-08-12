@@ -1,15 +1,19 @@
 <template>
-    <div class="cookie-banner" v-if="!hideBanner">
-        <div class="cookie-icon-container"><span>🍪</span> </div>
-        <div>
-            <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
-                nutzerfreundlicher zu
-                gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">Datenschutzerklärung
-                </NuxtLink>.
-            </p>
+    <Transition name="slide-down" appear>
+        <div class="cookie-banner" v-if="!hideBanner">
+
+            <div class="cookie-icon-container"><span>🍪</span> </div>
+            <div>
+                <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
+                    nutzerfreundlicher zu
+                    gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">
+                        Datenschutzerklärung
+                    </NuxtLink>.
+                </p>
+            </div>
+            <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
         </div>
-        <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
-    </div>
+    </Transition>
 </template>
 
 <script lang="ts">
@@ -68,6 +72,9 @@ export default defineComponent({
     z-index: 15;
 
     .cookie-icon-container {
+        user-select: none;
+        animation: spin 8s linear infinite;
+
         span {
             font-size: $fs-large;
         }
@@ -78,6 +85,27 @@ export default defineComponent({
         text-align: left;
         font-size: 16px;
     }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide-down-enter-from {
+    transition-delay: 3s;
+}
+
+.slide-down-enter-from,
+.slide-down-leave-to {
+    transform: translate(-50%, 200px);
 }
 
 @media only screen and (min-width: 700px) {

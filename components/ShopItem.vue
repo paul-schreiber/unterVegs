@@ -2,7 +2,7 @@
   <div class="shop-item">
     <div class="name-container" v-html="getEmphasizedText"></div>
     <div class="categories-container">
-      <Badge v-for="badgeID in getProductBadges" :key="badgeID" :color="getCategory(badgeID).color"
+      <Badge v-for="badgeID in getProductBadges" :key="randomId" :color="getCategory(badgeID).color"
         :name="getCategory(badgeID).name" :id="badgeID"
         :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :removable="false" />
     </div>
@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts">
+import { v4 as uuidv4 } from 'uuid';
 import type { Shop, CategoryIds } from "../types"
 import { Categories } from "../types"
 import { defineComponent } from "vue";
@@ -31,6 +32,9 @@ export default defineComponent({
     },
     getEmphasizedText(): string {
       return emphasizeText(this.shop.name, this.searchTerm)
+    },
+    randomId() {
+      return uuidv4()
     }
   },
   methods: {
@@ -73,5 +77,14 @@ a {
     width: 110px;
   }
 
+}
+
+@media only screen and (min-width: 700px) {
+
+  .shop-item {
+    .categories-container {
+      overflow-x: hidden;
+    }
+  }
 }
 </style>

@@ -16,6 +16,9 @@
     </header>
     <div class="product-info">
       <div>
+        <div class="description">
+          {{ product.notes }}
+        </div>
         <div class="properties">
           <div>
             <div class="label">zuletzt aktualisiert:</div> {{ makeDateReadable(product.lastEdited) }}
@@ -24,9 +27,6 @@
             <div class="label">Verfügbarkeit:</div>
             <span>nicht jederzeit verfügbar</span>
           </div>
-        </div>
-        <div class="description">
-          {{ product.notes }}
         </div>
       </div>
       <div class="bottom-info">{{ getAuthorWithDate }}</div>

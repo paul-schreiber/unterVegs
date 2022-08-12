@@ -18,15 +18,17 @@
             <font-awesome-icon :icon="['fas', 'sliders']" />
           </button>
         </div>
-        <div class="filter-container" v-if="availableFilters.size != 0 && showFilterPanel">
-          <div class="available-categories-container">
-            <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
-              @click="addCategoryToFilter(category)">
-              <Badge :color="getCategorieObject(category).color" :removable="false"
-                :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
+        <Transition name="slide-up">
+          <div class="filter-container" v-if="availableFilters.size != 0 && showFilterPanel">
+            <div class="available-categories-container">
+              <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
+                @click="addCategoryToFilter(category)">
+                <Badge :color="getCategorieObject(category).color" :removable="false"
+                  :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
+              </div>
             </div>
           </div>
-        </div>
+        </Transition>
       </header>
       <div class="content-container" v-if="!hideResults">
         <div class="tab-bar">
@@ -36,16 +38,34 @@
             :isActive="selectedTab === 'shops'" />
         </div>
         <div class="search-results">
-          <ResultBlock :hasResults="filteredProducts.length != 0" v-if="selectedTab === 'products'">
-            <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`">
-              <ProductItem :product="product" :searchTerm="searchTerm"/>
-            </ItemContainer>
-          </ResultBlock>
-          <ResultBlock :hasResults="filteredShops.length != 0" v-if="selectedTab === 'shops'">
-            <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
-              <ShopItem :shop="shop" :searchTerm="searchTerm"/>
-            </ItemContainer>
-          </ResultBlock>
+          <Transition name="fade">
+            <ResultBlock :hasResults="filteredProducts.length != 0" :showSuggestions="showProductSuggestions"
+              v-if="selectedTab === 'products'">
+              <ItemContainer v-for="product in filteredProducts" :key="product.id" :link="`/product/${product.id}`">
+                <ProductItem :product="product" :searchTerm="searchTerm" />
+              </ItemContainer>
+              <template #suggestions>
+                <ItemContainer v-for="product in getMostSimilarProducts.slice(0, maxSuggestions - 1)"
+                  :key="`ls-${product.id}`" :link="`/product/${product.id}`">
+                  <ProductItem :product="product" />
+                </ItemContainer>
+              </template>
+            </ResultBlock>
+          </Transition>
+          <Transition name="fade">
+            <ResultBlock :hasResults="filteredShops.length != 0" :showSuggestions="showShopSuggestions"
+              v-if="selectedTab === 'shops'">
+              <ItemContainer v-for="shop in filteredShops" :key="shop.id" :link="`/shop/${shop.id}`">
+                <ShopItem :shop="shop" :searchTerm="searchTerm" />
+              </ItemContainer>
+              <template #suggestions>
+                <ItemContainer v-for="shop in getMostSimilarShops.slice(0, maxSuggestions - 1)" :key="`ls-${shop.id}`"
+                  :link="`/shop/${shop.id}`">
+                  <ShopItem :shop="shop" />
+                </ItemContainer>
+              </template>
+            </ResultBlock>
+          </Transition>
         </div>
       </div>
     </div>
@@ -55,7 +75,6 @@
 <script lang="ts">
 import { Product, Shop, CategoryIds, Category } from "../types"
 import { Categories } from "../types"
-import { defineComponent } from "vue";
 export default defineComponent({
   name: "ProductSearch",
   data() {
@@ -65,6 +84,10 @@ export default defineComponent({
       appliedFilters: new Set<CategoryIds>(),
       showFilterPanel: false,
       maxFilters: 3,
+      minSearchTermLength: 2,
+      minSearchTermLengthForSuggestions: 3,
+      maxLevenshteinDistance: 4,
+      maxSuggestions: 5,
       selectedTab: 'products',
       placeholderList: ['Pizza', 'Pasta', 'Brezel', 'Pommes', 'Hummus', 'Vegan TS', 'Burger', 'Dean & David', 'McDonald`s', 'Burger King', 'deinem Lieblingsshop', 'deinem Lieblingsgericht']
     };
@@ -78,7 +101,7 @@ export default defineComponent({
       return this.$DS.filterShops(this.searchTerm, [...this.appliedFilters])
     },
     hideResults(): boolean {
-      return this.searchTerm === '' && this.appliedFilters.size === 0
+      return this.searchTerm.length < this.minSearchTermLength && this.appliedFilters.size === 0
     },
     isMobile(): boolean {
       return this.$device.isMobile
@@ -91,6 +114,18 @@ export default defineComponent({
     onFocus(e: FocusEvent) {
       //Scrolls input to top on mobile
       //if (this.isMobile) this.$refs['search'].scrollIntoView({ behavior: "smooth" })
+    },
+    getMostSimilarProducts(): Product[] {
+      return this.$DS.getLevenshteinBasedProductSuggestions(this.searchTerm, [...this.appliedFilters], this.maxLevenshteinDistance)
+    },
+    getMostSimilarShops(): Shop[] {
+      return this.$DS.getLevenshteinBasedShopSuggestions(this.searchTerm, [...this.appliedFilters], this.maxLevenshteinDistance)
+    },
+    showProductSuggestions() {
+      return this.getMostSimilarProducts.length != 0 && this.searchTerm.length > this.minSearchTermLengthForSuggestions
+    },
+    showShopSuggestions() {
+      return this.getMostSimilarShops.length != 0 && this.searchTerm.length > this.minSearchTermLengthForSuggestions
     }
   },
   methods: {
@@ -136,6 +171,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .search-container {
+  position: sticky;
+  top: $sp-medium;
   justify-self: center;
   display: flex;
   flex-direction: column;
@@ -152,8 +189,6 @@ export default defineComponent({
 
   header {
     width: 100%;
-    padding: $sp-medium;
-
 
     .search {
       display: flex;
@@ -164,18 +199,21 @@ export default defineComponent({
 
       .search-icon {
         margin-right: $sp-tiny;
+        margin-left: $sp-medium;
       }
 
       .filter-icon {
-        padding: $sp-tiny;
         all: unset;
         cursor: pointer;
         margin-left: $sp-small;
+        padding: $sp-medium;
+        padding-left: $sp-tiny;
       }
     }
 
     .filter-container {
-      margin-top: $sp-medium;
+      padding: $sp-medium;
+      padding-top: 0px;
     }
 
     .applied-categories-container,
@@ -201,7 +239,7 @@ export default defineComponent({
       border: none;
       outline: none;
       color: $color-font-dark;
-      padding: $sp-tiny 0px;
+      padding: calc($sp-medium + $sp-tiny) 0px;
     }
   }
 
@@ -219,11 +257,31 @@ export default defineComponent({
     .search-results {
       width: 100%;
       max-height: 400px;
-      padding: $sp-medium;
-      overflow: scroll;
+      overflow-y: scroll;
       border-top: 2px solid $color-light-grey;
     }
   }
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translateY(-15px);
+  opacity: 0%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.4s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0%;
 }
 
 @media only screen and (max-width: 700px) {

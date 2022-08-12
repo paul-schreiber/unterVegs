@@ -19,6 +19,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "@nuxtjs/device": "github:Redemption198/device-module",
     "@somushq/vue3-friendly-captcha": "^1.0.2",
+    "js-levenshtein": "^1.1.6",
     "luxon": "^3.0.1",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
