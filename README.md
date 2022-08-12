@@ -1,6 +1,6 @@
 # unterVegs 🥕
 
-unterVegs ist eine Suche für vegane Produkte verschiedener Imbiss- und Restaurantketten.
+[unterVegs](https://www.untervegs.com) ist eine Suche für vegane Produkte verschiedener Imbiss- und Restaurantketten.
 
 ## Setup
 
