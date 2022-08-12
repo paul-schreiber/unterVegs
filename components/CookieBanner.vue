@@ -94,15 +94,17 @@ export default defineComponent({
     }
 }
 
-.slide-down-enter-active, .slide-down-leave-active {
+.slide-down-enter-active,
+.slide-down-leave-active {
     transition: transform 0.8s ease-in-out;
 }
 
 .slide-down-enter-from {
-   transition-delay: 3s;
+    transition-delay: 3s;
 }
 
-.slide-down-enter-from, .slide-down-leave-to {
+.slide-down-enter-from,
+.slide-down-leave-to {
     transform: translate(-50%, 200px);
 }
 
