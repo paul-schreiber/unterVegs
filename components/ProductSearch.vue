@@ -203,11 +203,11 @@ export default defineComponent({
       }
 
       .filter-icon {
-        padding: $sp-medium;
-        padding-left: $sp-tiny;
         all: unset;
         cursor: pointer;
         margin-left: $sp-small;
+        padding: $sp-medium;
+        padding-left: $sp-tiny;
       }
     }
 
