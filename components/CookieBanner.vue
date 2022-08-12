@@ -1,5 +1,5 @@
 <template>
-    <Transition name="slide-down">
+    <Transition name="slide-down" appear>
         <div class="cookie-banner" v-if="!hideBanner">
 
             <div class="cookie-icon-container"><span>🍪</span> </div>
@@ -95,15 +95,15 @@ export default defineComponent({
 }
 
 .slide-down-enter-active, .slide-down-leave-active {
-    transition: all 1.5s ease-in-out;
+    transition: transform 0.8s ease-in-out;
 }
 
-.slide-down-enter-active {
-    transition-delay: 3s;
+.slide-down-enter-from {
+   transition-delay: 3s;
 }
 
 .slide-down-enter-from, .slide-down-leave-to {
-    transform: translateY(200px) translateX(0px);
+    transform: translate(-50%, 200px);
 }
 
 @media only screen and (min-width: 700px) {
