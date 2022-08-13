@@ -23,6 +23,13 @@ export default defineComponent({
             welcomeMessages: ['Ist das Eis vegan?', 'Wo gibts vegane Nuggets?', 'Hat BK nur Pommes?']
         }
     },
+    setup () {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    },
     computed: {
         randomMessage() {
             const randomIndex = Math.floor(Math.random() * this.welcomeMessages.length)
