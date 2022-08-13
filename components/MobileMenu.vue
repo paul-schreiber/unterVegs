@@ -1,23 +1,28 @@
 <template>
-    <nav id="nav">
-        <div class="mobile-menu">
-            <div class="menu-item">
-                <NuxtLink to="/about" @click.native="toggleMobileMenu">
-                    Die Idee
-                </NuxtLink>
+        <nav id="nav">
+            <div class="mobile-menu">
+                 <div class="menu-item">
+                    <NuxtLink to="/" @click.native="toggleMobileMenu">
+                        Home
+                    </NuxtLink>
+                </div>
+                <div class="menu-item">
+                    <NuxtLink to="/about" @click.native="toggleMobileMenu">
+                        Die Idee
+                    </NuxtLink>
+                </div>
+                <div class="menu-item">
+                    <NuxtLink to="/donate" @click.native="toggleMobileMenu">
+                        Unterstütze uns!
+                    </NuxtLink>
+                </div>
+                <div class="menu-item">
+                    <NuxtLink to="/contact" @click.native="toggleMobileMenu">
+                        Kontakt
+                    </NuxtLink>
+                </div>
             </div>
-            <div class="menu-item">
-                <NuxtLink to="/donate" @click.native="toggleMobileMenu">
-                    Unterstütze uns!
-                </NuxtLink>
-            </div>
-            <div class="menu-item">
-                <NuxtLink to="/contact" @click.native="toggleMobileMenu">
-                    Kontakt
-                </NuxtLink>
-            </div>
-        </div>
-    </nav>
+        </nav>
 </template>
 
 <script lang="ts">
@@ -37,6 +42,8 @@ export default defineComponent({
     gap: $sp-medium;
     align-items: center;
     margin-top: $sp-huge;
+    position: absolute;
+    width: 100%;
 
     .menu-item {
         font-size: $fs-large;
@@ -48,4 +55,5 @@ export default defineComponent({
         text-decoration: none;
     }
 }
+
 </style>

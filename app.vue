@@ -1,14 +1,21 @@
 <template>
   <div id="app">
     <NavigationBar :toggleMobileMenu="toggleMobileMenu" :hideMobileMenu="hideMobileMenu" />
-    <MobileMenu v-if="showMobileMenu && isMobile" :toggleMobileMenu="toggleMobileMenu" />
-    <template v-else>
-      <div class="content-wrapper">
-        <NuxtPage />
-      </div>
-      <CookieBanner :onAccept="enableAnalytics" />
-      <PageFooter />
-    </template>
+    <Transition name="slide-right">
+      <MobileMenu v-if="enableMobileMenu" :toggleMobileMenu="toggleMobileMenu" />
+    </Transition>
+    <Transition name="slide-left">
+      <template v-if="!enableMobileMenu">
+        <div>
+
+          <div class="content-wrapper">
+            <NuxtPage />
+          </div>
+          <CookieBanner :onAccept="enableAnalytics" />
+          <PageFooter />
+        </div>
+      </template>
+    </Transition>
   </div>
 </template>
 
@@ -66,6 +73,9 @@ export default defineComponent({
   computed: {
     isMobile(): boolean {
       return this.$device.isMobile
+    },
+    enableMobileMenu() {
+      return this.showMobileMenu && this.isMobile
     }
   },
   methods: {
@@ -128,6 +138,27 @@ h2 {
 h3 {
   font-size: $fs-medium;
 }
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide-right-enter-from,
+.slide-right-leave-to {
+  transform: translateX(100vw);
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+  transform: translateX(-100vw);
+}
+
 
 @media only screen and (min-width: 800px) {
   .content-wrapper {
