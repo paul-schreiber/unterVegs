@@ -105,7 +105,7 @@ export default defineComponent({
 
 .slide-down-enter-from,
 .slide-down-leave-to {
-    transform: translate(-50%, 200px);
+    transform: translate(-50%, 400px);
 }
 
 @media only screen and (min-width: 700px) {

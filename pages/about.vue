@@ -51,6 +51,18 @@
     </div>
 </template>
 
+<script lang="ts">
+export default defineComponent({
+    mounted() {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }
+})
+</script>
+
 <style lang="scss" scoped>
 h3 {
     width: fit-content;

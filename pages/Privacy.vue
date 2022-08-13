@@ -107,15 +107,27 @@
     </div>
 </template>
 
-<script>
-import content from "~~/data/content";
+<script lang="ts">
+import content from "../data/content";
 import { defineComponent } from "vue";
 export default defineComponent({
     data() {
         return {
             address: content.address
         }
-    }
+    },
+    setup() {
+        useMeta({
+            title: 'Datenschutzerklärung'
+        })
+        
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    },
+    
 })
 </script>
 

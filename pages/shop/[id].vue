@@ -3,7 +3,7 @@
         <header>
             <div class="heading-container">
                 <h2 class="heading">{{ shop.name }}</h2>
-                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" :alt="`Logo von ${shop.name}`"/>
+                <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" :alt="`Logo von ${shop.name}`" />
             </div>
             <div class="badge-container">
                 <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color"
@@ -35,6 +35,13 @@ export default defineComponent({
         return {
             shop: this.$DS.getShopById(this.$route.params.id as ShopIds),
         }
+    },
+    mounted() {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
     },
     computed: {
         getProducts() {

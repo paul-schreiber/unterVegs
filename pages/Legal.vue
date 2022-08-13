@@ -7,12 +7,12 @@
                 <address class="contact-data">
                     <div>{{ address.name }}</div>
                     <div>
-                        {{ address.street }} {{ address.streetNumber }}
+                        {{ address.street }}
                     </div>
                     <div>{{ address.zipCode }} {{ address.city }}</div>
 
                     <div class="mt-s">
-                        {{ mail }}
+                        <a :href="`mailto:${mail}`">{{ mail }}</a>
                     </div>
                 </address>
             </section>
@@ -67,8 +67,8 @@
 
 </template>
 
-<script>
-import content from "~~/data/content";
+<script lang="ts">
+import content from "../data/content";
 import { defineComponent } from "vue";
 export default defineComponent({
     data() {
@@ -77,18 +77,17 @@ export default defineComponent({
             mail: content.mail
         }
     },
-    head() {
-        return {
-            title: 'Impressum',
-            meta: [
-                {
-                    hid: 'description',
-                    name: 'description',
-                    content: `Impressum von unterVegs`
-                }
-            ]
-        }
-    }
+    setup() {
+        useMeta({
+            title: 'Impressum'
+        })
+        
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    },
 })
 </script>
 
@@ -100,6 +99,10 @@ export default defineComponent({
         font-weight: $fw-light;
         line-height: 1.6rem;
         margin-bottom: $sp-large;
+    }
+
+    a {
+        color: $color-font-dark;
     }
 }
 </style>

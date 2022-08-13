@@ -60,6 +60,8 @@
     </div>
 </template>
 
+
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import UserInputWithCaption from "~~/components/Contact/UserInputWithCaption.vue";
@@ -93,6 +95,11 @@ export default defineComponent({
     },
     mounted() {
         this.sendingStatus = SENDINGSTATUS.EDITING
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
     },
     computed: {
         formIsFilled(): Boolean {

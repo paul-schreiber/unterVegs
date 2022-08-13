@@ -12,7 +12,7 @@
               :onClose="removeCategoryFromFilter" />
           </div>
           <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
-            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()" @focus="onFocus" />
+            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
           <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
             :disabled="availableFilters.size === 0">
             <font-awesome-icon :icon="['fas', 'sliders']" />
@@ -110,10 +110,6 @@ export default defineComponent({
       const randomIndex = Math.floor(Math.random() * this.placeholderList.length)
       const phrase = this.placeholderList[randomIndex]
       return `Suche nach ${phrase}...`
-    },
-    onFocus(e: FocusEvent) {
-      //Scrolls input to top on mobile
-      //if (this.isMobile) this.$refs['search'].scrollIntoView({ behavior: "smooth" })
     },
     getMostSimilarProducts(): Product[] {
       return this.$DS.getLevenshteinBasedProductSuggestions(this.searchTerm, [...this.appliedFilters], this.maxLevenshteinDistance)

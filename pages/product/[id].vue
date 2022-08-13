@@ -45,6 +45,13 @@ export default defineComponent({
       product: this.$DS.getProductById(this.$route.params.id as String)
     }
   },
+  mounted() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  },
   computed: {
     getLabel() {
       return Labels[this.product.label]
