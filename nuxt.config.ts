@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from 'nuxt'
 import config from './config/general'
+import generateDynamicRoutes from './services/RouteGenerator'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -11,10 +12,10 @@ export default defineNuxtConfig({
     buildModules: [
         '@nuxtjs/device',
     ],
-    robots: {
-        UserAgent: '*',
-        Disallow: ['/legal', '/privacy'],
-        Sitemap: 'https://www.untervegs.com/sitemap.xml'
+    nitro: {
+        prerender: {
+            routes: generateDynamicRoutes()
+        }
     },
     pwa: {
         icon: false,
@@ -44,6 +45,11 @@ export default defineNuxtConfig({
         EMAIL_JS_PUBLIC_KEY: process.env.EMAIL_JS_PUBLIC_KEY,
         EMAIL_JS_SERVICE_ID: process.env.EMAIL_JS_SERVICE_ID,
         EMAIL_JS_TEMPLATE_ID: process.env.EMAIL_JS_TEMPLATE_ID,
+    },
+    robots: {
+        UserAgent: '*',
+        Disallow: ['/legal', '/privacy'],
+        Sitemap: 'https://www.untervegs.com/sitemap.xml'
     },
     vite: {
         css: {
