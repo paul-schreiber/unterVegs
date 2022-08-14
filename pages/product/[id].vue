@@ -46,6 +46,9 @@ export default defineComponent({
     }
   },
   mounted() {
+    useHead({
+      title: this.$DS.getProductById(this.$route.params.id as String).name
+    })
     window.scrollTo({
       top: 0,
       left: 0,

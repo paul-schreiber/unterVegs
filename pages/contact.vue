@@ -89,6 +89,9 @@ export default defineComponent({
         };
     },
     setup() {
+         useHead({
+            title: 'Kontakt'
+        })
         const config = useRuntimeConfig();
         const MS = new MailService(config.EMAIL_JS_SERVICE_ID, config.EMAIL_JS_TEMPLATE_ID, config.EMAIL_JS_PUBLIC_KEY);
         return { MS, config };

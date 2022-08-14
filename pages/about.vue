@@ -54,6 +54,9 @@
 <script lang="ts">
 export default defineComponent({
     mounted() {
+        useHead({
+            title: 'Die Idee'
+        })
         window.scrollTo({
             top: 0,
             left: 0,

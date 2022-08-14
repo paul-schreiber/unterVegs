@@ -83,10 +83,14 @@ import { defineComponent } from "vue";
 export default defineComponent({
     data() {
         return {
-            socialInfo: content.social
+            socialInfo: content.social,
+            pageTitle: 'Unterstütze uns'
         }
     },
     setup() {
+         useHead({
+            title: 'Unterstüze uns'
+        })
         window.scrollTo({
             top: 0,
             left: 0,
