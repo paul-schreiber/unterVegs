@@ -117,17 +117,30 @@ export default defineComponent({
         }
     },
     setup() {
+        const description = 'Datenschutzerklärung von unterVegs'
         useHead({
-            title: 'Datenschutzerklärung'
+            title: 'Datenschutzerklärung',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description
+                }
+            ]
         })
-        
+
         window.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth'
         })
     },
-    
+
 })
 </script>
 

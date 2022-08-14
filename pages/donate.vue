@@ -84,12 +84,24 @@ export default defineComponent({
     data() {
         return {
             socialInfo: content.social,
-            pageTitle: 'Unterstütze uns'
         }
     },
     setup() {
-         useHead({
-            title: 'Unterstüze uns'
+        const description = 'Du möchstest unterVegs unterstützen? Dafür gibt es viele Möglichkeiten:'
+        useHead({
+            title: 'Unterstütze uns!',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description
+                }
+            ]
         })
         window.scrollTo({
             top: 0,

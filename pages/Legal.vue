@@ -78,10 +78,23 @@ export default defineComponent({
         }
     },
     setup() {
+        const description = 'Impressum von unterVegs'
         useHead({
-            title: 'Impressum'
+            title: 'Impressum',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description
+                }
+            ]
         })
-        
+
         window.scrollTo({
             top: 0,
             left: 0,

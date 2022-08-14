@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { DateTime } from "luxon";
-import { Labels, Categories, CategoryIds, Category } from "../../types"
+import { Labels, Categories, CategoryIds, Category, Product, Shop } from "../../types"
 import { defineComponent } from "vue";
 export default defineComponent({
   data() {
@@ -46,8 +46,23 @@ export default defineComponent({
     }
   },
   mounted() {
+    const product = this.$DS.getProductById(this.$route.params.id as String) as Product
+    const shop = this.$DS.getShopById(product.shop) as Shop
+    const description = `${product.name} ist ein veganes oder veganisierbares Gericht bei ${shop.name}.`
     useHead({
-      title: this.$DS.getProductById(this.$route.params.id as String).name
+      title: product.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description
+        }
+      ]
     })
     window.scrollTo({
       top: 0,
