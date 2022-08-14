@@ -117,7 +117,7 @@ export default defineComponent({
         }
     },
     setup() {
-        useMeta({
+        useHead({
             title: 'Datenschutzerklärung'
         })
         

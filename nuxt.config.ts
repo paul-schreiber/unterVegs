@@ -5,11 +5,17 @@ import config from './config/general'
 export default defineNuxtConfig({
     css: ['@fortawesome/fontawesome-svg-core/styles.css'],
     modules: [
-        '@kevinmarrec/nuxt-pwa'
+        '@kevinmarrec/nuxt-pwa',
+        '@nuxtjs/robots'
     ],
     buildModules: [
         '@nuxtjs/device',
     ],
+    robots: {
+        UserAgent: '*',
+        Disallow: ['/legal', '/privacy'],
+        Sitemap: 'https://www.untervegs.com/sitemap.xml'
+    },
     pwa: {
         icon: false,
         manifest: {
