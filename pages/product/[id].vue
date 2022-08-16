@@ -46,7 +46,9 @@ export default defineComponent({
     }
   },
   mounted() {
-    const product = this.$DS.getProductById(this.$route.params.id as String) as Product
+    const route = useRoute()
+    const DS = inject('DS')
+    const product = this.$DS.getProductById(route.params.id as String) as Product
     const shop = this.$DS.getShopById(product.shop) as Shop
     const description = `${product.name} ist ein veganes oder veganisierbares Gericht bei ${shop.name}.`
     useHead({
@@ -64,6 +66,7 @@ export default defineComponent({
         }
       ]
     })
+
     window.scrollTo({
       top: 0,
       left: 0,
