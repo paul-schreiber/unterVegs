@@ -9,7 +9,7 @@
   "devDependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.4.2",
     "@types/luxon": "^2.3.2",
-    "nuxt": "3.0.0-rc.4"
+    "nuxt": "^3.0.0-rc.8"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -27,6 +27,7 @@
     "uuid": "^8.3.2",
     "vue-gtag-next": "^1.14.0",
     "vue-loading-overlay": "^5.0.3",
+    "vue-tsc": "^0.40.1",
     "vue3-cookies": "^1.0.6"
   }
 }
