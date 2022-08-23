@@ -12,6 +12,5 @@ library.add(fas)
 library.add(fab)
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon, {})
+  nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon as any) //fix for overloading error from https://fontawesome.com/docs/web/use-with/vue/use-with
 })
-

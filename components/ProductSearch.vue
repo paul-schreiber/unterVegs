@@ -12,7 +12,7 @@
               :onClose="removeCategoryFromFilter" />
           </div>
           <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
-            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="$event.target.blur()"/>
+            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="($event.target as HTMLElement).blur()"/>
           <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
             :disabled="availableFilters.size === 0">
             <font-awesome-icon :icon="['fas', 'sliders']" />
