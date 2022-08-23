@@ -12,11 +12,6 @@ export default defineNuxtConfig({
     buildModules: [
         '@nuxtjs/device',
     ],
-    nitro: {
-        prerender: {
-            routes: generateDynamicRoutes()
-        }
-    },
     pwa: {
         icon: false,
         manifest: {
