@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     css: ['@fortawesome/fontawesome-svg-core/styles.css'],
     modules: [
         '@kevinmarrec/nuxt-pwa',
-        '@nuxtjs/robots'
+        '@nuxtjs/robots',
+        '@nuxtjs/sitemap'
     ],
     buildModules: [
         '@nuxtjs/device',
@@ -27,7 +28,22 @@ export default defineNuxtConfig({
             display: 'standalone',
             background_color: '#faf4f4',
             theme_color: '#faf4f4',
-            description: config.description
+            description: config.description,
+            icons: [
+                {
+                    src: "/favicon/icon-background-light.png",
+                    sizes: "512x512",
+                    type: "image/png",
+                    purpose: 'any'
+                },
+                {
+                    src: "/favicon/icon-maskable.png",
+                    sizes: "512x512",
+                    type: "image/png",
+                    purpose: 'maskable'
+                },
+            ]
+
         },
         meta: {
             name: config.name,
@@ -50,6 +66,10 @@ export default defineNuxtConfig({
         UserAgent: '*',
         Disallow: ['/legal', '/privacy'],
         Sitemap: 'https://www.untervegs.com/sitemap.xml'
+    },
+    sitemap: {
+        gzip: true,
+        routes: generateDynamicRoutes()
     },
     vite: {
         css: {
