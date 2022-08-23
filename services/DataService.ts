@@ -52,7 +52,7 @@ export class DataService {
     public filterProducts(searchTerm: string, filters: CategoryIds[]): Product[] {
         return this.products.filter((product) => {
             const hasMatchedSearchTerm = this.matchesSearchTerm(product.name, searchTerm)
-            const hasCategory = this.productMatchesCategory(product, filters)
+            const hasCategory = this.productHasCategory(product, filters)
             return hasMatchedSearchTerm && hasCategory
         })
     }
@@ -60,7 +60,7 @@ export class DataService {
     public filterShops(searchTerm: string, filters: CategoryIds[]): Shop[] {
         return this.shops.filter((shop) => {
             const hasMatchedSearchTerm = this.matchesSearchTerm(shop.name, searchTerm)
-            const hasCategory = this.shopMatchesCategory(shop, filters)
+            const hasCategory = this.shopHasCategory(shop, filters)
             return hasMatchedSearchTerm && hasCategory
         })
     }
@@ -72,14 +72,14 @@ export class DataService {
     /*
         Returns true if the shop contains one of the categorys in the array
     */
-    private shopMatchesCategory(shop: Shop, categories: CategoryIds[]) {
+    private shopHasCategory(shop: Shop, categories: CategoryIds[]) {
         return categories.length ? categories.some(filterCategory => this.getCategoriesByShopId(shop.id).includes(filterCategory)) : true
     }
 
     /*
         Returns true if the product contains one of the categorys in the array
     */
-    private productMatchesCategory(product: Product, categories: CategoryIds[]) {
+    private productHasCategory(product: Product, categories: CategoryIds[]) {
         return categories.length ? categories.some(filterCategory => product.categories.includes(filterCategory)) : true
     }
 
@@ -90,7 +90,7 @@ export class DataService {
     public getLevenshteinBasedProductSuggestions(searchTerm: string, filters: CategoryIds[], maxDistance): Product[] {
         return this.products.filter((product) => {
             const lsDistance = calculateLevenshteinDistance(product.name, searchTerm)
-            const hasCategory = this.productMatchesCategory(product, filters)
+            const hasCategory = this.productHasCategory(product, filters)
             //filter out exactly matching items
             const hasMatchedSearchTerm = this.matchesSearchTerm(product.name, searchTerm)
             return lsDistance <= maxDistance && hasCategory && !hasMatchedSearchTerm
@@ -100,7 +100,7 @@ export class DataService {
     public getLevenshteinBasedShopSuggestions(searchTerm: string, filters: CategoryIds[], maxDistance): Shop[] {
         return this.shops.filter((shop) => {
             const lsDistance = calculateLevenshteinDistance(shop.name, searchTerm)
-            const hasCategory = this.shopMatchesCategory(shop, filters)
+            const hasCategory = this.shopHasCategory(shop, filters)
 
             //filter out exactly matching items
             const hasMatchedSearchTerm = this.matchesSearchTerm(shop.name, searchTerm)
