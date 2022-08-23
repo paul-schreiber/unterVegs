@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     css: ['@fortawesome/fontawesome-svg-core/styles.css'],
     modules: [
         '@kevinmarrec/nuxt-pwa',
-        '@nuxtjs/robots'
+        '@nuxtjs/robots',
+        '@nuxtjs/sitemap'
     ],
     buildModules: [
         '@nuxtjs/device',
@@ -65,6 +66,10 @@ export default defineNuxtConfig({
         UserAgent: '*',
         Disallow: ['/legal', '/privacy'],
         Sitemap: 'https://www.untervegs.com/sitemap.xml'
+    },
+    sitemap: {
+        gzip: true,
+        routes: generateDynamicRoutes()
     },
     vite: {
         css: {
