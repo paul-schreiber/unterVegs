@@ -27,7 +27,22 @@ export default defineNuxtConfig({
             display: 'standalone',
             background_color: '#faf4f4',
             theme_color: '#faf4f4',
-            description: config.description
+            description: config.description,
+            icons: [
+                {
+                    src: "/favicon/icon-background-light.png",
+                    sizes: "512x512",
+                    type: "image/png",
+                    purpose: 'any'
+                },
+                {
+                    src: "/favicon/icon-maskable.png",
+                    sizes: "512x512",
+                    type: "image/png",
+                    purpose: 'maskable'
+                },
+            ]
+
         },
         meta: {
             name: config.name,
