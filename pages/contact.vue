@@ -89,6 +89,22 @@ export default defineComponent({
         };
     },
     setup() {
+        const description = 'Du hast Anmerkungen, einen Fehler gefunden oder möchtest ein neues Produkt in den Katalog von unterVegs aufnehmen? Dann nimm einfach Kontakt mit uns auf!'
+        useHead({
+            title: 'Kontakt',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description
+                }
+            ]
+        })
         const config = useRuntimeConfig();
         const MS = new MailService(config.EMAIL_JS_SERVICE_ID, config.EMAIL_JS_TEMPLATE_ID, config.EMAIL_JS_PUBLIC_KEY);
         return { MS, config };

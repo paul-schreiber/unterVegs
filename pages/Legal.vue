@@ -78,16 +78,31 @@ export default defineComponent({
         }
     },
     setup() {
-        useMeta({
-            title: 'Impressum'
+        const description = 'Impressum von unterVegs'
+        useHead({
+            title: 'Impressum',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description
+                }
+            ]
         })
-        
+
+    },
+    mounted() {
         window.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth'
         })
-    },
+    }
 })
 </script>
 

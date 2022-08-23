@@ -53,6 +53,24 @@
 
 <script lang="ts">
 export default defineComponent({
+    setup() {
+        const description = 'In einer fremden Stadt nur Karotten mit Hummus aus dem Supermarkt? Mit Freunden im Restaurant und die einzige Option sind Pommes ? Beim Essen bestellen nur Gemüsepizza ohne Käse ? Unterwegs nur ein trockenes Brötchen vom Bäcker? Nichts da! Dafür gibt es jetzt unterVegs!'
+        useHead({
+            title: 'Die Idee',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description
+                }
+            ]
+        })
+    },
     mounted() {
         window.scrollTo({
             top: 0,

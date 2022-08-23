@@ -83,10 +83,28 @@ import { defineComponent } from "vue";
 export default defineComponent({
     data() {
         return {
-            socialInfo: content.social
+            socialInfo: content.social,
         }
     },
     setup() {
+        const description = 'Du möchstest unterVegs unterstützen? Dafür gibt es viele Möglichkeiten:'
+        useHead({
+            title: 'Unterstütze uns!',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description
+                }
+            ]
+        })
+    },
+    mounted() {
         window.scrollTo({
             top: 0,
             left: 0,

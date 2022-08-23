@@ -28,7 +28,7 @@
 
 
 import { defineComponent } from "vue";
-import { Category, ShopIds, CategoryIds } from "~~/types";
+import { Category, ShopIds, CategoryIds, Shop } from "~~/types";
 import { Categories } from "../../types"
 export default defineComponent({
     data() {
@@ -37,6 +37,23 @@ export default defineComponent({
         }
     },
     mounted() {
+        const shop = this.$DS.getShopById(this.$route.params.id as ShopIds) as Shop
+        const descripton = `Diese veganen Produkte gibt es bei ${shop.name}:`
+        useHead({
+            title: shop.name,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: descripton
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: descripton
+                }
+            ]
+        })
         window.scrollTo({
             top: 0,
             left: 0,

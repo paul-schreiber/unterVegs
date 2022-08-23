@@ -29,15 +29,15 @@ export class DataService {
     }
 
     public getProductById(productId: String): Product {
-        return this.products.find(product => product.id === productId)
+        return this.products.find(product => product.id.toLocaleLowerCase() === productId.toLocaleLowerCase())
     }
 
     public getShopById(shopId: ShopIds): Shop {
-        return this.shops.find(shop => shop.id === shopId)
+        return this.shops.find(shop => shop.id.toLocaleLowerCase() === shopId.toLocaleLowerCase())
     }
 
     public getProductsByShopId(shopId: ShopIds): Product[] {
-        return this.products.filter(product => product.shop === shopId)
+        return this.products.filter(product => product.shop.toLocaleLowerCase() === shopId.toLocaleLowerCase())
     }
 
     public getCategoriesByShopId(shopId: ShopIds): CategoryIds[] {
