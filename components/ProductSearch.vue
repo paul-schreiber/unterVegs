@@ -11,7 +11,7 @@
               :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
               :onClose="removeCategoryFromFilter" />
           </div>
-          <input v-model="searchTerm" :placeholder="randomPlaceholder" class="search-field"
+          <input :value="searchTerm" @input="e => searchTerm = (e.target as HTMLInputElement).value" :placeholder="randomPlaceholder" class="search-field"
             @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="($event.target as HTMLElement).blur()"/>
           <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
             :disabled="availableFilters.size === 0">
