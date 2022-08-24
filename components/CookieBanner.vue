@@ -22,7 +22,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
     data() {
         return {
-            hideBanner: (this.cookies as any).get("cookiesAccepted")
+            hideBanner: process.client? (this.cookies as any).get("cookiesAccepted") : false
         }
     },
     setup() {
