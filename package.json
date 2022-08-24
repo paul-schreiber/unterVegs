@@ -9,7 +9,8 @@
   "devDependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.4.2",
     "@types/luxon": "^2.3.2",
-    "nuxt": "^3.0.0-rc.8"
+    "nuxt": "^3.0.0-rc.8",
+    "sitemap": "^7.1.1"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -19,7 +20,6 @@
     "@fortawesome/vue-fontawesome": "^3.0.1",
     "@nuxtjs/device": "github:Redemption198/device-module",
     "@nuxtjs/robots": "^2.5.0",
-    "@nuxtjs/sitemap": "^2.4.0",
     "@somushq/vue3-friendly-captcha": "^1.0.2",
     "js-levenshtein": "^1.1.6",
     "luxon": "^3.0.1",
