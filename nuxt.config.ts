@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     modules: [
         '@kevinmarrec/nuxt-pwa',
         '@nuxtjs/robots',
-        '@nuxtjs/sitemap'
     ],
     buildModules: [
         '@nuxtjs/device',
@@ -66,10 +65,6 @@ export default defineNuxtConfig({
         UserAgent: '*',
         Disallow: ['/legal', '/privacy'],
         Sitemap: 'https://www.untervegs.com/sitemap.xml'
-    },
-    sitemap: {
-        gzip: true,
-        routes: generateDynamicRoutes()
     },
     vite: {
         css: {
