@@ -1128,7 +1128,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: false,
         categories: [CategoryIds.BURGER],
-        notes: "Mit Veg von Beef-BratlingGw, veganer Käse mit roten Zwiebeln. Vegane Brötchen sind Sauerteig und Mehrkorn."
+        notes: "Mit Veg von Beef-Bratling, veganer Käse mit roten Zwiebeln. Vegane Brötchen sind Sauerteig und Mehrkorn."
     },
     {
         name: "Kebab Klaus",
