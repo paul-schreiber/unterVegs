@@ -99,7 +99,7 @@ export default defineComponent({
 
 .slide-down-enter-active,
 .slide-down-leave-active {
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
 .slide-down-enter-from {
