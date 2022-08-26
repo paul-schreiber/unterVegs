@@ -11,8 +11,8 @@
           <div class="content-wrapper">
             <NuxtPage />
           </div>
-          <CookieBanner :onAccept="enableAnalytics" />
-          
+
+          <PageFooter />
         </div>
       </template>
     </Transition>
