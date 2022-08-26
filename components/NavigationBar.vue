@@ -25,7 +25,7 @@
       </div>
 
       <button class="burger-menu" v-if="isMobile" @click="toggleMobileMenu" aria-label="Menü-Button">
-        <font-awesome-icon :icon="['fas', 'bars']" />
+        <ClientOnly><font-awesome-icon :icon="['fas', 'bars']" /></ClientOnly>
       </button>
     </div>
   </nav>
