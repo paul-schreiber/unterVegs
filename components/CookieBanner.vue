@@ -1,7 +1,6 @@
 <template>
     <Transition name="slide-down" appear>
         <div class="cookie-banner" v-if="!hideBanner">
-
             <div class="cookie-icon-container"><span>🍪</span> </div>
             <div>
                 <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
@@ -22,7 +21,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
     data() {
         return {
-            hideBanner: process.client? (this.cookies as any).get("cookiesAccepted") : false
+            hideBanner: process.client? (this.cookies as any).get("cookiesAccepted") : true
         }
     },
     setup() {

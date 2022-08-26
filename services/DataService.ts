@@ -3,6 +3,7 @@ import shopsJSON from '../data/shops'
 import type { CategoryIds, Product, Shop, ShopIds } from '../types'
 import { Categories } from '../types';
 import calculateLevenshteinDistance from 'js-levenshtein';
+import { replaceSpecialCharacters } from './util';
 
 export class DataService {
 
@@ -15,7 +16,7 @@ export class DataService {
 
         //generate id's
         this.products.forEach(product => {
-            product.id = `${product.shop.replace(/\s/g, '')}-${product.name.replace(/\s/g, '')}`
+            product.id = `${replaceSpecialCharacters(product.shop)}-${replaceSpecialCharacters(product.name)}`
             this.sortCategories(product.categories)
         })
     }

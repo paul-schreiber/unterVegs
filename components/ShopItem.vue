@@ -14,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Shop, CategoryIds } from "../types"
 import { Categories } from "../types"
 import { defineComponent } from "vue";
-import emphasizeText from '../services/util'
+import { emphasizeText } from '../services/util'
 export default defineComponent({
   props: {
     shop: {

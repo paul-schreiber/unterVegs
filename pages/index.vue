@@ -1,6 +1,6 @@
 <template>
     <div class="welcome-container">
-        <h1>{{ randomMessage }}</h1>
+        <h1><ClientOnly>{{ randomMessage }}</ClientOnly></h1>
         <section>
             <p>Diese Frage hält dich Tag und Nacht wach? Dann haben wir was für dich:</p>
         </section>
