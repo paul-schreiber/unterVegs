@@ -42,13 +42,13 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      product: this.$DS.getProductById(this.$route.params.id as String)
+      product: this.$DS.getProductById(this.$route.params.id as string)
     }
   },
   mounted() {
     const route = useRoute()
     const DS = inject('DS')
-    const product = this.$DS.getProductById(route.params.id as String) as Product
+    const product = this.$DS.getProductById(route.params.id as string) as Product
     const shop = this.$DS.getShopById(product.shop) as Shop
     const description = `${product.name} ist ein veganes oder veganisierbares Gericht bei ${shop.name}.`
     useHead({

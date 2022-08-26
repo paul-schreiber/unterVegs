@@ -17,7 +17,7 @@ import { DateTime } from "luxon";
 import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
 import { defineComponent } from "vue";
-import emphasizeText from '../services/util'
+import { emphasizeText } from '../services/util'
 export default defineComponent({
   props: {
     product: {

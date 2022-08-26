@@ -1,5 +1,6 @@
 import shops from '../data/shops'
 import products from '../data/products'
+import { replaceSpecialCharacters } from './util'
 
 const shopBaseURL = '/shop'
 const productBaseURL = '/product'
@@ -22,6 +23,6 @@ function generateShopRoutes(): string[] {
 
 function generateProductRoutes(): string[] {
     return products.map(product => {
-        return `${productBaseURL}/${product.shop.replace(/\s/g, '')}-${product.name.replace(/\s/g, '')}`
+        return `${productBaseURL}/${replaceSpecialCharacters(product.shop)}-${replaceSpecialCharacters(product.name)}`
     })
 }
