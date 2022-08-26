@@ -47,7 +47,6 @@ export default defineComponent({
   },
   mounted() {
     const route = useRoute()
-    const DS = inject('DS')
     const product = this.$DS.getProductById(route.params.id as string) as Product
     const shop = this.$DS.getShopById(product.shop) as Shop
     const description = `${product.name} ist ein veganes oder veganisierbares Gericht bei ${shop.name}.`
