@@ -4,7 +4,7 @@
       <header>
         <div class="search">
           <span class="search-icon">
-            <font-awesome-icon :icon="['fas', 'search']" />
+            <ClientOnly><font-awesome-icon :icon="['fas', 'search']" /></ClientOnly>
           </span>
           <div class="applied-categories-container">
             <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieObject(category).color"
@@ -15,7 +15,7 @@
             @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="($event.target as HTMLElement).blur()"/>
           <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
             :disabled="availableFilters.size === 0">
-            <font-awesome-icon :icon="['fas', 'sliders']" />
+            <ClientOnly><font-awesome-icon :icon="['fas', 'sliders']" /></ClientOnly>
           </button>
         </div>
         <Transition name="slide-up">

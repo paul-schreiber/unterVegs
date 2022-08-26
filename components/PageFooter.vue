@@ -7,7 +7,9 @@
       <div class="sub-footer">
         <div class="insta-link-container">
           <a :href="socialInfo.instagram" aria-label="Link zu Instagram">
-            <font-awesome-icon :icon="['fab', 'instagram']" />
+            <ClientOnly>
+              <font-awesome-icon :icon="['fab', 'instagram']" />
+            </ClientOnly>
           </a>
         </div>
         <NuxtLink to="/legal">Impressum </NuxtLink>
