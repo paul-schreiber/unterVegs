@@ -51,6 +51,7 @@ export default defineComponent({
     gap: $sp-medium;
     flex-wrap: wrap;
     text-align: left;
+    justify-content: center;
 
     .donation-idea {
         background-color: white;
