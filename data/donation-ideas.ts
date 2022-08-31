@@ -2,20 +2,26 @@ import type { DonationIdea } from "~~/types"
 export default [
     {
         name: 'Veganer Riegel',
-        description: 'Was gibt es besseres?',
+        description: 'Was kleines für zwischendurch.',
         amount: 2,
         img: 'cookie'
     },
     {
         name: '2 Kugeln Eis',
-        description: 'lol',
+        description: 'Ice Ice Baby',
         amount: 4,
         img: 'ice-cream'
     },
     {
+        name: '1 Glas Nuss-Nougat-Creme',
+        description: 'Schokolaaadig',
+        amount: 6,
+        img: 'glass-water'
+    },
+    {
         name: 'Ein Kasten Lieblingsmate',
         description: 'Damit wir immer gut versorgt sind',
-        amount: 9,
+        amount: 10,
         img: 'bottle-droplet'
     },
     {
