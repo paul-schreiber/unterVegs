@@ -1,5 +1,5 @@
 <template>
-    <h3 :id="category">{{category || "Sonstige:"}}:</h3>
+    <h3 :id="category">{{category || "Sonstige"}}:</h3>
     <div class="product-list">
         <ProductDetailItem v-for="product in products" :key="`PDI-${product.id}`" :product="product" />
     </div>
@@ -21,7 +21,8 @@ export default defineComponent({
     },
     computed: {
         getCategoryColor() {
-            return this.getCategoryObject(this.category).color
+            console.log(this.category)
+            return this.category ? this.getCategoryObject(this.category).color : 'black'
         }
     },
     methods: {
