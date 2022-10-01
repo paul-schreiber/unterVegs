@@ -29,7 +29,7 @@ export default [
         name: 'Brammibals',
         id: ShopIds.BRAMMIBALS,
         isLocal: true,
-        notes: 'Ein toller Laden für vegane Donuts mit mehreren Filialen in Berlin. Die erste Eröffnung in Hamburg steht bevor!'
+        notes: 'Ein toller Laden für vegane Donuts mit mehreren Filialen in Berlin und Hamburg.'
     },
     {
         name: 'Burgerheart',
@@ -114,7 +114,13 @@ export default [
         name: 'Edelbeißer',
         id: ShopIds.EDELBEISSER,
         isLocal: true,
-        notes: 'Filialen sind in Köln, Frechen, Göttingen, Bonn und Bochum zu finden.'
+        notes: 'Filialen sind in Köln, Göttingen, Bonn und Bochum zu finden.'
+    },
+    {
+        name: 'Espresso House',
+        id: ShopIds.ESPRESSOHOUSE,
+        isLocal: true,
+        notes: 'Gibt es zum Beispiel in Berlin, Hamburg, Bremen, Celle, Lüneburg und Hannover'
     },
     {
         name: 'Freddy Fresh',
@@ -127,12 +133,6 @@ export default [
         id: ShopIds.FRITTENWERK,
         isLocal: true,
         notes: 'Bei Frittenwerk gibt es drei verschiedene Arten von Pommes: die regulären Hausfritten, Knoblauchfritten und Süßkartoffelfritten. Dazu werden mehrere vegane Dips angeboten: Mayo vegan, Ketchup, Zitronen-Ajoli, Alabama White BBQ, Paprika-Chili, Hot & Cheesy, Sour Cream, Guacamole, Pink Hummus. Darüber hinaus werden verschiedene vegane Poutinekreationen angeboten.'
-    },
-    {
-        name: 'Gregorys',
-        id: ShopIds.GREGORYS,
-        isLocal: true,
-        notes: 'Filialen sind bisher in Berlin und Erlangen.'
     },
     {
         name: 'Haferkater',
@@ -183,13 +183,13 @@ export default [
         notes: ''
     },
     {
-        name: 'L´Osteria',
+        name: 'L\'Osteria',
         id: ShopIds.LOSTERIA,
         isLocal: false,
         notes: ''
     },
     {
-        name: 'McDonald´s',
+        name: 'McDonald\'s',
         id: ShopIds.MCDONALDS,
         isLocal: false,
         notes: ''
@@ -213,7 +213,7 @@ export default [
         notes: ''
     },
     {
-        name: 'Papa John´s',
+        name: 'Papa John\'s',
         id: ShopIds.PAPAJOHNS,
         isLocal: true,
         notes: 'Filialen sind in Hamburg, Magdeburg, Merseburg und Leipzig.'
@@ -279,10 +279,16 @@ export default [
         notes: ''
     },
     {
+        name: 'Waffle Brothers',
+        id: ShopIds.WAFFLEBROTHERS,
+        isLocal: true,
+        notes: 'Dienstags gibt es veganen Teig und einige vegane Toppings. Filialen gibt es in Berlin, Augsburg, Dresden, Merzig, Saarlouis und Magdeburg.'
+    },
+    {
         name: 'Wonder Waffel',
         id: ShopIds.WONDERWAFFEL,
         isLocal: false,
-        notes: ''
+        notes: 'Wonder Waffel hat je nach Filiale veganen Teig und einige vegane Toppings. Dazu gehört zum Beispiel verschiedenes Obst, Apfelmus oder auch Erdnussbutter. Das alles kann sicher vor Ort erfragt werden.'
     },
     {
         name: 'World of Pizza',
