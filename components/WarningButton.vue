@@ -4,7 +4,9 @@
             <div class="help-text" v-if="showWarning">
                 <div class="error-click-to-action">
                     <div class="header">
-                        <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
+                        <ClientOnly>
+                            <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
+                        </ClientOnly>
                         <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
                     </div>
                     <NuxtLink :to="{
