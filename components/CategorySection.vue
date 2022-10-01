@@ -1,0 +1,58 @@
+<template>
+    <h3 :id="category">{{category || "Sonstige:"}}:</h3>
+    <div class="product-list">
+        <ProductDetailItem v-for="product in products" :key="`PDI-${product.id}`" :product="product" />
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import { Product, CategoryIds, Category, Categories } from "~~/types";
+export default defineComponent({
+    props: {
+        category: {
+            type: String,
+            required: false
+        },
+        products: {
+            type: Array<Product>,
+            required: true
+        },
+    },
+    computed: {
+        getCategoryColor() {
+            return this.getCategoryObject(this.category).color
+        }
+    },
+    methods: {
+        getCategoryObject(categorieId: CategoryIds): Category {
+            return Categories[categorieId]
+        }
+    }
+})
+</script>
+
+<style lang="scss" scoped>
+.product-list {
+    margin: $sp-medium 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-medium;
+    justify-content: center;
+
+}
+
+h3 {
+    text-align: left;
+    margin: 0px;
+    width: fit-content;
+    border-bottom: 4px solid v-bind(getCategoryColor);
+}
+
+
+@media only screen and (min-width: 700px) {
+    .product-list {
+        justify-content: flex-start;
+    }
+}
+</style>
