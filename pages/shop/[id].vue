@@ -6,21 +6,23 @@
                 <img class="logo" :src="shop.imgURL" v-if="shop.imgURL" :alt="`Logo von ${shop.name}`" />
             </div>
             <div class="badge-container">
-                <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color"
-                    :id="badge" :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
+                <Badge v-for="badge in getCategories" :key="badge" :color="getCategoryObject(badge).color" :id="badge"
+                    :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
             </div>
             <div class="is-local-warning" title="Dieses Restaurant gibt es nur an manchen Orten." v-if="shop.isLocal">
-                <font-awesome-icon :icon="['fas', 'map-pin']" />
+                <ClientOnly>
+                    <font-awesome-icon :icon="['fas', 'map-pin']" />
+                </ClientOnly>
                 {{ `${shop.name} gibt es nicht in allen Bundesländern.` }}
             </div>
             <div class="description">
                 {{ shop.notes }}
             </div>
         </header>
-        <h3>Alle Produkte:</h3>
-        <div class="product-list">
-            <ProductDetailItem v-for="product in getProducts" :key="product.id" :product="product" />
+        <div v-for="category in getCategories" :key="'heading' + category" class="category-section">
+            <CategorySection  v-if="getProductsByPrimaryCategory(category).length != 0" :products="getProductsByPrimaryCategory(category)" :category="category"/>
         </div>
+        <CategorySection  v-if="getProductsWithoutCategory.length != 0" :products="getProductsWithoutCategory"/>
     </div>
 </template>
 
@@ -28,7 +30,7 @@
 
 
 import { defineComponent } from "vue";
-import { Category, ShopIds, CategoryIds, Shop } from "~~/types";
+import { Category, ShopIds, CategoryIds, Shop, Product } from "~~/types";
 import { Categories } from "../../types"
 export default defineComponent({
     data() {
@@ -64,13 +66,22 @@ export default defineComponent({
         getProducts() {
             return this.$DS.getProductsByShopId(this.shop.id)
         },
-        getProductBadges(): CategoryIds[] {
+        getProductsWithoutCategory() {
+            return this.$DS.getProductsByShopId(this.shop.id).filter((product: Product) => product.categories.length === 0)
+        },
+        getCategories(): CategoryIds[] {
             return this.$DS.getCategoriesByShopId(this.shop.id)
         }
     },
     methods: {
         getCategoryObject(categorieId: CategoryIds): Category {
             return Categories[categorieId]
+        },
+        getProductsByPrimaryCategory(categorieId: CategoryIds): Product[] {
+            const filteredProducts = this.getProducts.filter((product: Product) => {
+                return product.categories[0] === categorieId
+            })
+            return filteredProducts
         }
     }
 })
@@ -115,23 +126,7 @@ header {
     }
 }
 
-.product-list {
-    margin: $sp-medium 0px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: $sp-medium;
-    justify-content: center;
-
-}
-
-h3 {
-    text-align: left;
-    margin: 0px;
-}
-
-@media only screen and (min-width: 700px) {
-    .product-list {
-        justify-content: flex-start;
-    }
+.category-section {
+    margin-bottom: $sp-large;
 }
 </style>

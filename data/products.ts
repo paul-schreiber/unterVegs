@@ -63,6 +63,18 @@ export default [
         notes: ""
     },
     {
+        name: "Pane Falafel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-19',
+        lastEdited: '2022-7-19',
+        shop: ShopIds.BACKWERK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BACKWARE, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
         name: "Börek (Stange) Spinat, vegan",
         id: uuidv4(),
         author: "Miriam",
@@ -192,19 +204,19 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SNACK, CategoryIds.FASTFOOD],
-        notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben. Können mit veganen Saucen (Ketchup, Süßsauer, Curry, Barbeque, Chili) bestellt werden."
+        notes: "Können mit veganen Saucen (Ketchup, Süßsauer, Curry, Barbeque, Chili) bestellt werden."
     },
     {
         name: "McFlurry Schoko",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-7-19',
-        lastEdited: '2022-7-19',
+        lastEdited: '2022-9-19',
         shop: ShopIds.MCDONALDS,
         label: LabelIds.VEGANISIERBAR,
         isSeasonal: false,
         categories: [CategoryIds.SÜSS],
-        notes: "Muss mit veganen Toppings (KitKat vegan, Oreo, Katjes, Erdbeer-Sauce vegan) bestellt werden."
+        notes: "Muss mit veganen Toppings (Oreo, Katjes, Erdbeer-Sauce vegan) bestellt werden. Das Oreo-Topping ist nicht als vegan gelabeled, enthält allerdings keine unveganen Allergene."
     },
     {
         name: "McSundae Schoko",
@@ -265,6 +277,18 @@ export default [
         isSeasonal: false,
         categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
         notes: "Nicht auf der McDonals Seite so gekennzeichnet, aber von anderen Websites angegeben."
+    },
+    {
+        name: "Fruit Smoothie Mango-Ananas",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-9-19',
+        lastEdited: '2022-9-19',
+        shop: ShopIds.MCDONALDS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: ""
     },
     {
         name: "Fruchtquatsch",
@@ -1071,30 +1095,6 @@ export default [
         notes: "Mit Mais, Jalapenos, Bruschetta, Balsamico."
     },
     {
-        name: "Smokey BBQ vegan",
-        id: uuidv4(),
-        author: "Miriam",
-        created: '2022-7-21',
-        lastEdited: '2022-7-21',
-        shop: ShopIds.PIZZAHUT,
-        label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.PIZZA],
-        notes: "Mit BBQ Sauce, Violife Vegane Käsealternative, Mais, Zwiebeln, Paprika-Mix, Veganer Hühnchenersatz."
-    },
-    {
-        name: "Vegan Chik'n'Cheez",
-        id: uuidv4(),
-        author: "Miriam",
-        created: '2022-7-21',
-        lastEdited: '2022-7-21',
-        shop: ShopIds.PIZZAHUT,
-        label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.PIZZA],
-        notes: "Mit Vegane Sauce Käse-Geschmack, Violife Vegane Käsealternative, rote Zwiebeln, Paprika-Mix, Champignons, Veganer Hühnchenersatz."
-    },
-    {
         name: "Creamy Cheez Pasta vegan",
         id: uuidv4(),
         author: "Miriam",
@@ -1201,6 +1201,18 @@ export default [
         isSeasonal: false,
         categories: [CategoryIds.BURGER],
         notes: "Mit Süßkartoffel-Amaranth-Bratling, sonnengetrocknete Tomaten, Wildkräuter, Steakpfeffer mit Basilikum-Mayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
+    },
+    {
+        name: "Der Crunchige",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-21',
+        lastEdited: '2022-7-21',
+        shop: ShopIds.PETERPANE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.BURGER],
+        notes: "Mit Veg von Chicken-Bratling in pikanter knuspriger Cornflakes-Panade, junger Spinat und Knoblauchmayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
     },
     {
         name: "Panflöte",
@@ -2211,6 +2223,18 @@ export default [
         notes: "Veganes Dressing: Balsamico."
     },
     {
+        name: "JB Salad",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-27',
+        lastEdited: '2022-7-27',
+        shop: ShopIds.JIMBLOCK,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Veganes Dressing: Balsamico."
+    },
+    {
         name: "Pommes",
         id: uuidv4(),
         author: "Miriam",
@@ -3051,16 +3075,28 @@ export default [
         notes: "Große Portion Pommes mit veganer Bolognese, Rucola, Tomate, Paprika-Chili-Dip und Cheezano."
     },
     {
-        name: "Masala Plantball Poutine",
+        name: "Poke Fries",
         id: uuidv4(),
         author: "Miriam",
-        created: '2022-7-28',
-        lastEdited: '2022-7-28',
+        created: '2022-8-10',
+        lastEdited: '2022-8-10',
         shop: ShopIds.FRITTENWERK,
         label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.FASTFOOD],
-        notes: "Große Portion Pommes mit fruchtiger Tomaten-Curry-Sauce, würzigen Vegan Meatballs (Soja), leichter, veganer Sour Cream, knusprigen Röstzwiebeln, Limette und Petersilie."
+        isSeasonal: true,
+        categories: [CategoryIds.FASTFOOD, CategoryIds.VISCH],
+        notes: "Große Portion Pommes mit veganem Thunfisch-Sashimi, Tomaten-Avocado-Salat, Pokesauce und Sesammayo."
+    },
+    {
+        name: "Poke Bowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-11',
+        lastEdited: '2022-8-11',
+        shop: ShopIds.FRITTENWERK,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SALAT, CategoryIds.VISCH],
+        notes: "Große Bowl mit Salatmix, veganem Thunfisch-Sashimi, Avocado, Quinoa, Gurkenscheiben, Tomaten und warmem Poke-Dressing."
     },
     {
         name: "Rainbow Bowl",
@@ -3217,18 +3253,6 @@ export default [
         isSeasonal: false,
         categories: [CategoryIds.SNACK],
         notes: ""
-    },
-    {
-        name: "Vegane Spanakopita",
-        id: uuidv4(),
-        author: "Miriam",
-        created: '2022-7-28',
-        lastEdited: '2022-7-28',
-        shop: ShopIds.GREGORYS,
-        label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.BACKWARE, CategoryIds.SNACK],
-        notes: "Aus Filoteig mit Spinatfüllung."
     },
     {
         name: "Buenos dias Vegan",
@@ -3843,6 +3867,18 @@ export default [
         notes: ""
     },
     {
+        name: "Cinnamon-Apple Compote Cross (Croissant-Donut)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-28',
+        lastEdited: '2022-7-28',
+        shop: ShopIds.ROYALDONUTS,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: ""
+    },
+    {
         name: "Fresh Strawberry Peanut Cross (Croissant-Donut)",
         id: uuidv4(),
         author: "Miriam",
@@ -4176,6 +4212,18 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: false,
         categories: [CategoryIds.SNACK, CategoryIds.SANDWICH],
+        notes: ""
+    },
+    {
+        name: "Avocado-Rotkohl-Salat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-7-30',
+        lastEdited: '2022-7-30',
+        shop: ShopIds.HAFERKATER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
         notes: ""
     },
     {
@@ -5187,6 +5235,18 @@ export default [
         notes: ""
     },
     {
+        name: "White Choc & Strawberries Donut",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-08',
+        lastEdited: '2022-8-08',
+        shop: ShopIds.BRAMMIBALS,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
         name: "Caramel Hazelnut Donut",
         id: uuidv4(),
         author: "Miriam",
@@ -5245,6 +5305,18 @@ export default [
         isSeasonal: false,
         categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
         notes: ""
+    },
+    {
+        name: "Monatsspecial Donut",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-08',
+        lastEdited: '2022-8-08',
+        shop: ShopIds.BRAMMIBALS,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: "Jeden Monat hat Brammibals einige Monatsspecials, die nur in diesem Monat verfügbar sind."
     },
     {
         name: "Monatsspecial Donut",
@@ -5328,7 +5400,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Gibt es in Köln."
+        notes: "Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Kreuzblütler",
@@ -5340,7 +5412,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit Broccoli, Paprika, Spinat, Champignons, Sonnenblumenkernen und würzigem Kräuter Dip. Gibt es in Köln."
+        notes: "Mit Broccoli, Paprika, Spinat, Champignons, Sonnenblumenkernen und würzigem Kräuter Dip. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Spincai",
@@ -5352,7 +5424,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit Blattspinat, Zwiebeln und Edelbeißer Cashew-Topping verfeinert. Gibt es in Köln."
+        notes: "Mit Blattspinat, Zwiebeln und Edelbeißer Cashew-Topping verfeinert. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Hellas Spezial",
@@ -5364,7 +5436,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit Hellas Dip als Grundsauce, Edelbeißer-Gyros und würzigem Krautsalat. Gibt es in Köln."
+        notes: "Mit Hellas Dip als Grundsauce, Edelbeißer-Gyros und würzigem Krautsalat. Gibt es in Köln, Göttingen, Bonn."
     },
     {
         name: "Pizza Frida",
@@ -5376,7 +5448,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit grünem Spargel und Broccoli. Nach dem Backen mit Cashew Topping und frischer Petersilie verfeinert. Gibt es in Köln."
+        notes: "Mit grünem Spargel und Broccoli. Nach dem Backen mit Cashew Topping und frischer Petersilie verfeinert. Gibt es in Köln, Bonn."
     },
     {
         name: "Pizza Papa Luigi",
@@ -5388,7 +5460,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit würzigem Salamico-Aufschnitt, frischen Champignons und milden Peperoni. Gibt es in Köln."
+        notes: "Mit würzigem Salamico-Aufschnitt, frischen Champignons und milden Peperoni. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Kaktus",
@@ -5400,7 +5472,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit BBQ Sauce, Phönix-Filet, Paprika, Tomaten, Zwiebeln, Mais & Jalapeños. Gibt es in Köln."
+        notes: "Mit BBQ Sauce, Phönix-Filet, Paprika, Tomaten, Zwiebeln, Mais & Jalapeños. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Egerling",
@@ -5412,7 +5484,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit frischen Champignons, Cashew-Topping und Sonnenblumenkernen. Gibt es in Köln."
+        notes: "Mit frischen Champignons, Cashew-Topping und Sonnenblumenkernen. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Duero",
@@ -5424,7 +5496,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit BBQ-Sauce, würzigem Edelbeißer-Hack, Zwiebeln und scharfen Jalapeños. Gibt es in Köln."
+        notes: "Mit BBQ-Sauce, würzigem Edelbeißer-Hack, Zwiebeln und scharfen Jalapeños. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza El Popo",
@@ -5436,7 +5508,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit würzigem Edelbeißer-Hack, frischer Paprika, Mais und Kapern. Gibt es in Köln."
+        notes: "Mit würzigem Edelbeißer-Hack, frischer Paprika, Mais und Kapern. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Gutes Karma",
@@ -5448,7 +5520,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit Phönix Filet, saftigen Ananasstücken und einzigartiger Edelbeißer Hare-Curry Sauce. Gibt es in Köln."
+        notes: "Mit Phönix Filet, saftigen Ananasstücken und einzigartiger Edelbeißer Hare-Curry Sauce. Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizza Hellas",
@@ -5460,7 +5532,55 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PIZZA],
-        notes: "Mit würzigem Edelbeißer-Gyros, frischen Tomaten, Zwiebeln und cremigem Hellas Dip. Gibt es in Köln."
+        notes: "Mit würzigem Edelbeißer-Gyros, frischen Tomaten, Zwiebeln und cremigem Hellas Dip. Gibt es in Köln, Göttingen, Bonn, Bochum."
+    },
+    {
+        name: "Pizza Bella",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-10',
+        lastEdited: '2022-8-10',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PIZZA],
+        notes: "Mit Hack, Auberginen, Tomaten, Oliven und Knoblauch. Gibt es in Bochum."
+    },
+    {
+        name: "Pizza Grillbeißer",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-10',
+        lastEdited: '2022-8-10',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PIZZA],
+        notes: "Mit gegrillten Auberginen, Paprika, Mais, Zucchini, Knoblauch & Zwiebeln. Gibt es in Bochum."
+    },
+    {
+        name: "Pizza Mediterrana",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-10',
+        lastEdited: '2022-8-10',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PIZZA],
+        notes: "Mit Tomaten, Auberginen, Rucola, Edelbeißer Parmesano & Balsamico Creme. Gibt es in Bochum."
+    },
+    {
+        name: "Pizza Edelbeißer Spinaci",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PIZZA],
+        notes: "Mit Blattspinat, Zwiebeln, Cashew-Topping, Olivenöl und Parmesano verfeinert. Gibt es in Bochum."
     },
     {
         name: "Hellas Wrap",
@@ -5472,7 +5592,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SANDWICH],
-        notes: "Mit Hellas-Sauce, Edelbeißer-Gyros, Krautsalat, frischer Petersilie und Zwiebeln. Gibt es in Köln."
+        notes: "Mit Hellas-Sauce, Edelbeißer-Gyros, Krautsalat, frischer Petersilie und Zwiebeln. Gibt es in Köln, Bonn."
     },
     {
         name: "Gutes Karma Wrap",
@@ -5484,7 +5604,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SANDWICH],
-        notes: "Mit Phönix Filet, Ananasstücken, Mais und Edelbeißer Hare-Curry Sauce. Gibt es in Köln."
+        notes: "Mit Phönix Filet, Ananasstücken, Mais und Edelbeißer Hare-Curry Sauce. Gibt es in Köln, Bonn."
     },
     {
         name: "Kaktus Wrap",
@@ -5496,7 +5616,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SANDWICH],
-        notes: "Mit BBQ Sauce, Phönix-Filet, Paprika, Tomaten, Zwiebeln, Mais & Jalapeños. Gibt es in Köln."
+        notes: "Mit BBQ Sauce, Phönix-Filet, Paprika, Tomaten, Zwiebeln, Mais & Jalapeños. Gibt es in Köln, Bonn."
     },
     {
         name: "vegan Muffin Double Choc",
@@ -5508,7 +5628,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
-        notes: "Gibt es in Köln."
+        notes: "Gibt es in Köln, Bonn."
     },
     {
         name: "vegan Muffin Blueberry",
@@ -5520,7 +5640,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
-        notes: "Gibt es in Köln."
+        notes: "Gibt es in Köln, Bonn."
     },
     {
         name: "Pasta Sunshine",
@@ -5532,7 +5652,139 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.PASTA],
-        notes: "Mit Paprika, Ananas, Mais, Phönix Filet und Hare Curry Sauce. Gibt es in Köln."
+        notes: "Mit Paprika, Ananas, Mais, Phönix Filet und Hare Curry Sauce. Gibt es in Köln, Bonn, Bochum."
+    },
+    {
+        name: "Pasta El Pruno",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-09',
+        lastEdited: '2022-8-09',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PASTA],
+        notes: "Mit frischen Champignons in Sojasahne-Sauce, verfeinert mit Cashew Topping & Oregano. Gibt es in Bochum."
+    },
+    {
+        name: "Pasta Verdure",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-09',
+        lastEdited: '2022-8-09',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PASTA],
+        notes: "Mit Zucchini, Auberginen, Paprika, Zwiebeln, Tomaten-Sojasahnesauce & Cayenn Pesto. Gibt es in Bochum."
+    },
+    {
+        name: "Pasta Redhot",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-09',
+        lastEdited: '2022-8-09',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PASTA],
+        notes: "Mit frischer Paprika, Zwiebeln, Auberginen, Jalapenos & Tomaten-Chili-Sojasahnesauce. Gibt es in Bochum."
+    },
+    {
+        name: "Pasta Edelbeißer Bolognese",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-09',
+        lastEdited: '2022-8-09',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PASTA],
+        notes: "Mit Edelbeißer Bolognese Sauce, Parmesano & Basilikum. Gibt es in Bochum."
+    },
+    {
+        name: "Pasta Grill & Chill",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-09',
+        lastEdited: '2022-8-09',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.PASTA],
+        notes: "Mit gegrillten Auberginen, Paprika, Mais, Zucchini. Verfeinert mit Rosmarin, Knoblauch und Olivenöl. Gibt es in Bochum."
+    },
+    {
+        name: "Hellas Auflauf",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: 'Mit Edelbeißer-Gyros, Kartoffeln, Zwiebeln, Tomaten, Oliven in Tomaten-Sojasahnesauce. Anschließend mit Edelschmelz überbacken. Gibt es in Bochum'
+    },
+    {
+        name: "Kreuzblütler Auflauf",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: 'Mit Broccoli, Kartoffeln, Blumenkohl in Sojasahnesauce. Anschließend mit Edelschmelz überbacken und Cashew Topping verfeinert. Gibt es in Bochum'
+    },
+    {
+        name: "Heißbaby Auflauf",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: 'Mit Penne, gegrillten Auberginen, Paprika, Mais, Zucchini. Verfeinert mit Rosmarin, Knoblauch und Chilisauce. Gibt es in Bochum'
+    },
+    {
+        name: "Herdöpfel Auflauf",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: 'Mit Kartoffeln, milden Peperoni und Edelbeißer Bolognese Sauce. Gibt es in Bochum'
+    },
+    {
+        name: "Lasagne Bolognesebeißer",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: 'Mit hausgemachten Lasagneblättern und Edelbeißer Bolognese Sauce. Gibt es in Bochum'
+    },
+    {
+        name: "Lasagne Mein Garten",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: 'Mit hausgemachten Lasagneblätter, Auberginen, Zucchini, Paprika, Spargel und Tomaten-Sahnesauce. Gibt es in Bochum'
     },
     {
         name: "Salat Frisch Mix",
@@ -5544,7 +5796,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SALAT],
-        notes: "Gemischter Salat mit Tomaten, Mais, Karotten, Gurken, Paprika, Rucola & Oliven. Gibt es in Köln."
+        notes: "Gemischter Salat mit Tomaten, Mais, Karotten, Gurken, Paprika, Rucola & Oliven. Gibt es in Köln, Göttingen, Bonn."
     },
     {
         name: "Salat Speziale",
@@ -5556,7 +5808,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SALAT],
-        notes: "Gemischter Salat mit Tomaten, Mais, Karotten, Gurken, Artischocken und Edelbeißer Phönix-Filet. Gibt es in Köln."
+        notes: "Gemischter Salat mit Tomaten, Mais, Karotten, Gurken, Artischocken und Edelbeißer Phönix-Filet. Gibt es in Köln, Göttingen, Bonn."
     },
     {
         name: "Salat Amico Greco",
@@ -5568,10 +5820,10 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SALAT],
-        notes: "Mit Eisbergsalat, Rucola, Cocktailtomaten, Edelbeißer Gyros und knackigen Zwiebeln. Gibt es in Köln."
+        notes: "Mit Eisbergsalat, Rucola, Cocktailtomaten, Edelbeißer Gyros und knackigen Zwiebeln. Gibt es in Köln, Göttingen, Bonn."
     },
     {
-        name: "Van Van Greco",
+        name: "Van Van Salat",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-8-09',
@@ -5580,7 +5832,19 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SALAT],
-        notes: "Mit Eisbergsalat, Rucola, Cocktailtomaten, Zwiebeln, Ananas und gebratenem Phönix Filet in Sweet-Chili Sauce. Gibt es in Köln."
+        notes: "Mit Eisbergsalat, Rucola, Cocktailtomaten, Zwiebeln, Ananas und gebratenem Phönix Filet in Sweet-Chili Sauce. Gibt es in Köln, Göttingen, Bonn."
+    },
+    {
+        name: "Belugi Salat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Mit Rucola, Cherrytomaten, Parmesano & Balsamico Creme. Gibt es in Bochum."
     },
     {
         name: "Pizzabrötchen mit Hellas Dip",
@@ -5592,7 +5856,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SNACK],
-        notes: "Gibt es in Köln."
+        notes: "Gibt es in Köln, Göttingen, Bonn, Bochum."
     },
     {
         name: "Pizzabrötchen mit Kräuter Dip",
@@ -5604,7 +5868,19 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SNACK],
-        notes: "Gibt es in Köln."
+        notes: "Gibt es in Köln, Göttingen, Bonn, Bochum."
+    },
+    {
+        name: "Pizzabrötchen mit Trüffel Dip",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-10',
+        lastEdited: '2022-8-10',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: true,
+        categories: [CategoryIds.SNACK],
+        notes: "Gibt es in Bochum."
     },
     {
         name: "Gebackener Maiskolben",
@@ -5616,7 +5892,7 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SNACK],
-        notes: "Gibt es in Köln."
+        notes: "Gibt es in Köln, Bonn."
     },
     {
         name: "Potato Wedges",
@@ -5628,7 +5904,560 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: true,
         categories: [CategoryIds.SNACK],
-        notes: "Gibt es in Köln."
+        notes: "Gibt es in Köln, Bonn."
     },
-  
+    {
+        name: "Edelbeißer-Gyros Pita",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-8-10',
+        lastEdited: '2022-8-10',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Gibt es in Göttingen."
+    },
+    {
+        name: "Schnitzel Frida",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit Spargel und Soja-Sahne Sauce. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Frische Pilze Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit frischen Champignons und Soja-Sahne Sauce. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Mexicana Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit gebratenem Gemüse, Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Jäger Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit Jägersauce. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Mein lieber Wiener Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Der Klassiker mit Zitronenscheiben. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Bröckel Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit Broccoli und Soja-Sahne Sauce. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Cherry Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit Cherrytomaten und Tomaten-Soja-Sahne Sauce. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Scharfes Ding Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit frischer Paprika, Zwiebeln, Peperoni & Tomaten-Soja-Sahne Sauce. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Bologna Schnitzel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.EDELBEISSER,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [],
+        notes: "Mit Edelbeißer Bolognese Sauce. Dazu Pommes und Salat. Gibt es in Bochum."
+    },
+    {
+        name: "Avocado Baguette Greek Style (vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Sauerteig-Baguette mit Avocado, Tomaten, veganer Alternative zu Feta, hauseigener Estragon-Crème, Babyspinat und Römersalat."
+    },
+    {
+        name: "Kornbrød Avocado & veganer Feta",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Kürbiskern-Roggenbrot mit veganer Alternative zu Feta, mediterraner Tomatencreme, Avocado, Tomaten und Römersalat."
+    },
+    {
+        name: "Focaccia Antipasti & Trüffelmayonnaise (vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Focaccia mit mariniertem Grillgemüse, hauseigener Trüffelmayonnaise und Babyspinat."
+    },
+    {
+        name: "Bauernbrötchen mit Avocado & Tomate",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Rustikales Brötchen mit Avocado, Tomate, hauseigener Limetten-Mayonnaise, Babyspinat und Schnittlauch."
+    },
+    {
+        name: "Rainbow Bowl Falafel",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Mischsalat, Falafel, Rotkraut, Mango, Edamame, Cranberries und Nordic-Dressing."
+    },
+    {
+        name: "Karamell-Brownie mit Pekannüssen (vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: "Schokobrownie mit flüssigem Karamellkern und gehackten Pekannüssen."
+    },
+    {
+        name: "Chocolate Ball (vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: "Schwedische Spezialität. Mit Kokosflocken ummantelt und Kaffee sowie Vanille verfeinert."
+    },
+    {
+        name: "Apfelkuchen (vegan)",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.BACKWARE],
+        notes: ""
+    },
+    {
+        name: "Overnight Oats Mango-Minze",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.FRÜHSTÜCK],
+        notes: "Mit Mango-Minz-Kompott & Topping aus getrockneten Bananen, Mandeln, Kokosnuss-Flakes & frischen Blaubeeren."
+    },
+    {
+        name: "Overnight Oats Blaubeere",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.ESPRESSOHOUSE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SÜSS, CategoryIds.FRÜHSTÜCK],
+        notes: "Mit Topping aus Kernen, Nüssen & frischen Blaubeeren."
+    },
+    {
+        name: "Fitness Vegan Wrap",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Gibt es im Basis und im PremiumSortiment."
+    },
+    {
+        name: "Köfte Vegan Wrap",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Gibt es im PremiumSortiment."
+    },
+    {
+        name: "Caprese Vegan Grilled Focaccia",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Gibt es im PremiumSortiment."
+    },
+    {
+        name: "Veggie Vegan Wrap",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SANDWICH],
+        notes: "Gibt es im Basis Sortiment."
+    },
+    {
+        name: "Salatzwerg",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Gibt es im Basis Sortiment. Vegane Dressings: Mango Chili, Weißes Balsamico, Joghurt Vegan."
+    },
+    {
+        name: "Vegan Falafel Salat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Gibt es im Basis Sortiment. Vegane Dressings: Mango Chili, Weißes Balsamico, Joghurt Vegan."
+    },
+    {
+        name: "Vegan Kartoffelbowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Gibt es im Basis Sortiment."
+    },
+    {
+        name: "Vegan Falafelfreunde Kartoffelbowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Gibt es im Premium Sortiment."
+    },
+    {
+        name: "Soya Power Kartoffelbowl",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.IMMERGRÜN,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.SALAT],
+        notes: "Gibt es im Premium Sortiment."
+    },
+    {
+        name: "Nigiri",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Gibt es vegan mit Avocado, Inari (süßer Tofu) oder Shiiake-Pilz."
+    },
+    {
+        name: "Nigiri",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Gibt es vegan mit Avocado, Inari (süßer Tofu) oder Shiiake-Pilz."
+    },
+    {
+        name: "Inside Out",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Gibt es vegan als Blütenzauber Roll, Coloured Veggy Roll, Green Roll und Sesam Roll."
+    },
+    {
+        name: "Maki",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Gibt es vegan mit Avokado, Gurke, Mango, Paprika, Salicornes oder Shinko (eingelegtem Rettich)."
+    },
+    {
+        name: "Tofu Gunkan",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: ""
+    },
+    {
+        name: "Futo Maki Veggy",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Mit Avocado, Inari, eingelegter Rettich, Salicornes, Röstzwiebeln."
+    },
+    {
+        name: "Goma Wakame",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: "Seetangsalat"
+    },
+    {
+        name: "Japanischer Gurkensalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: "Mit Gurken, Seetang, Edamame, Karotten, Sesam."
+    },
+    {
+        name: "Japanischer Krautsalat",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SALAT, CategoryIds.SNACK],
+        notes: "Mit Weisskraut, Salicornes, Shisokresse, Kimchi-Sesam."
+    },
+    {
+        name: "Dim Sum",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH],
+        notes: "Mit Quinoa, Tofu oder Gemüse."
+    },
+    {
+        name: "Edamame",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SNACK],
+        notes: "Sojabohnen mit Meersalz."
+    },
+    {
+        name: "Mini-Frühlingsrollen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SNACK],
+        notes: ""
+    },
+    {
+        name: "Samosa",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SNACK],
+        notes: "Gibt es als Samosa Grün oder Samosa Orange."
+    },
+    {
+        name: "Bananenbällchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: ""
+    },
+    {
+        name: "Kokosbällchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "gedämpft, mit Erdbeersoße."
+    },
+    {
+        name: "Sesambällchen",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: ""
+    },
+    {
+        name: "Sweet Sushi",
+        id: uuidv4(),
+        author: "Miriam",
+        created: '2022-10-01',
+        lastEdited: '2022-10-01',
+        shop: ShopIds.SUHICIRCLE,
+        label: LabelIds.VEGAN,
+        isSeasonal: false,
+        categories: [CategoryIds.ASIATISCH, CategoryIds.SNACK, CategoryIds.SÜSS],
+        notes: "Mit Kokosmilchreis."
+    },
+
+
 ] as Product[]

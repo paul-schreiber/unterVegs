@@ -15,7 +15,9 @@
         <NuxtLink to="/legal">Impressum </NuxtLink>
         <NuxtLink to="/privacy">Datenschutz</NuxtLink>
         <div>
-          Made with ❤️ by Miri & <a class="contact-link" href="https://github.com/paul-schreiber">Paul</a>
+          Made with <ClientOnly>
+            <font-awesome-icon :icon="['fas', 'heart']" />
+          </ClientOnly> by Miri & <a class="contact-link" href="https://github.com/paul-schreiber">Paul</a>
         </div>
       </div>
     </div>

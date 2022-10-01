@@ -5,16 +5,18 @@
                 <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
                     :removable="false" />
                 <div class="labels">
-                    <font-awesome-icon :icon="['fas', 'calendar-day']" title="nicht immer verfügbar"
-                        v-if="product.isSeasonal" />
-                    <font-awesome-icon :icon="['fas', 'circle-info']" title="Klicke für mehr Infos!" />
+                    <ClientOnly>
+                        <font-awesome-icon :icon="['fas', 'calendar-day']" title="nicht immer verfügbar"
+                            v-if="product.isSeasonal" />
+                        <font-awesome-icon :icon="['fas', 'circle-info']" title="Klicke für mehr Infos!" />
+                    </ClientOnly>
                 </div>
             </header>
             <div class="body">
                 <div class="product-name">{{ product.name }}</div>
                 <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`">
                     bearbeitet vor {{
-                            timeSince(product.lastEdited)
+                    timeSince(product.lastEdited)
                     }}
                 </div>
             </div>
