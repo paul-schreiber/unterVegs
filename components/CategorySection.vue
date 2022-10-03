@@ -1,7 +1,7 @@
 <template>
     <h3 :id="category">{{category || "Sonstige"}}:</h3>
     <div class="product-list">
-        <ProductDetailItema v-for="product in products" :key="`PDI-${product.id}`" :product="product" />
+        <ProductDetailItem v-for="product in products" :key="`PDI-${product.id}`" :product="product" />
     </div>
 </template>
 
