@@ -5,7 +5,7 @@
             <div>
                 <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
                     nutzerfreundlicher zu
-                    gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">
+                    gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="/privacy">
                         Datenschutzerklärung
                     </NuxtLink>.
                 </p>
@@ -16,6 +16,7 @@
 </template>
 
 <script lang="ts">
+    // NUXT 3 usecookies
 import { useCookies } from "vue3-cookies";
 import { defineComponent } from "vue";
 export default defineComponent({
@@ -47,7 +48,7 @@ export default defineComponent({
             this.closeBanner()
         },
         closeBanner() {
-            this.cookies.set("cookiesAccepted", true);
+            this.cookies.set("cookiesAccepted", true, "1y");
             this.hideBanner = true
         }
     }
