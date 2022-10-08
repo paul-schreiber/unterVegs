@@ -1,7 +1,7 @@
 <template>
   <div class="result-list">
     <div class="matched-results">
-      <slot v-if="hasResults"></slot>
+      <slot v-if="hasResults" />
       <span v-else>Hmm, das sagt uns leider nichts..</span>
     </div>
     <div class="matched-suggestions" v-if="showSuggestions">

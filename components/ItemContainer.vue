@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="link">
     <div class="item-container">
-      <slot></slot>
+      <slot />
     </div>
   </NuxtLink>
 

@@ -8,8 +8,8 @@
           </span>
           <div class="applied-categories-container">
             <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieObject(category).color"
-              :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
-              :onClose="removeCategoryFromFilter" />
+              removable :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
+              @close="removeCategoryFromFilter" />
           </div>
           <input :value="searchTerm" @input="e => searchTerm = (e.target as HTMLInputElement).value" :placeholder="randomPlaceholder" class="search-field"
             @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="($event.target as HTMLElement).blur()"/>

@@ -10,7 +10,7 @@
                     </NuxtLink>.
                 </p>
             </div>
-            <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
+            <ActionButton name="Gib mir 🍪🍪🍪!" is-primary tooltip="Cookies akzeptieren" @click="onConfirm" />
         </div>
     </Transition>
 </template>

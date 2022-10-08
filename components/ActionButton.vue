@@ -1,5 +1,5 @@
 <template>
-    <button @click="onClick()" :title="tooltip" :class="buttonType">{{ name }}</button>
+    <button :title="tooltip" :class="buttonType">{{ name }}</button>
 </template>
 
 <script lang="ts">
@@ -17,11 +17,7 @@ export default defineComponent({
         tooltip: {
             type: String,
             required: false
-        },
-        onClick: {
-            type: Function,
-            required: false
-        },
+        }
     },
     computed: {
         buttonType() {

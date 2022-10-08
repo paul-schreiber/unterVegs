@@ -7,25 +7,19 @@
         </div>
       </NuxtLink>
       <div class="menu" v-if="!isMobile">
-        <div class="menu-item">
-          <NuxtLink to="/about">
-            Die Idee
-          </NuxtLink>
-        </div>
-        <div class="menu-item">
-          <NuxtLink to="/donate">
-            Unterstütze uns
-          </NuxtLink>
-        </div>
-        <div class="menu-item">
-          <NuxtLink to="/contact">
-            Kontakt
-          </NuxtLink>
-        </div>
+        <template v-for="option in menuOptions">
+          <div class="menu-item" v-if="option.name != 'Home'">
+            <NuxtLink :to="option.path">
+              {{option.name}}
+            </NuxtLink>
+          </div>
+        </template>
       </div>
 
-      <button class="burger-menu" v-if="isMobile" @click="toggleMobileMenu" aria-label="Menü-Button">
-        <ClientOnly><font-awesome-icon :icon="['fas', 'bars']" /></ClientOnly>
+      <button class="burger-menu" v-if="isMobile" @click="$emit('toggleMobileMenu')" aria-label="Menü-Button">
+        <ClientOnly>
+          <font-awesome-icon :icon="['fas', 'bars']" />
+        </ClientOnly>
       </button>
     </div>
   </nav>
@@ -35,7 +29,12 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   name: 'NavigationBar',
-  props: ['toggleMobileMenu', 'hideMobileMenu'],
+  props: {
+    menuOptions: {
+      type: Array<Object>,
+      required: true
+    }
+  },
   computed: {
     isMobile(): boolean {
       return this.$device.isMobile
@@ -43,7 +42,7 @@ export default defineComponent({
   },
   watch: {
     $route() {
-      setTimeout(this.hideMobileMenu, 300);
+      setTimeout(this.$emit('hideMobileMenu'), 300);
     }
   }
 })

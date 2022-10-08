@@ -1,5 +1,5 @@
 <template>
-    <h3 :id="category">{{category || "Sonstige"}}:</h3>
+    <h3 :id="category">{{category}}:</h3>
     <div class="product-list">
         <ProductDetailItem v-for="product in products" :key="`PDI-${product.id}`" :product="product" />
     </div>
@@ -12,7 +12,7 @@ export default defineComponent({
     props: {
         category: {
             type: String,
-            required: false
+            default: 'Sonstige'
         },
         products: {
             type: Array<Product>,
@@ -21,13 +21,7 @@ export default defineComponent({
     },
     computed: {
         getCategoryColor() {
-            console.log(this.category)
-            return this.category ? this.getCategoryObject(this.category).color : 'black'
-        }
-    },
-    methods: {
-        getCategoryObject(categorieId: CategoryIds): Category {
-            return Categories[categorieId]
+            return this.category ? Categories[this.category].color : 'black'
         }
     }
 })

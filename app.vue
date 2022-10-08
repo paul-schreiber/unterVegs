@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <NavigationBar :toggleMobileMenu="toggleMobileMenu" :hideMobileMenu="hideMobileMenu" />
+    <NavigationBar @toggleMobileMenu="toggleMobileMenu" @hideMobileMenu="hideMobileMenu" :menuOptions=menuOptions />
     <Transition name="slide-right">
-      <MobileMenu v-if="enableMobileMenu" :toggleMobileMenu="toggleMobileMenu" />
+      <MobileMenu v-if="enableMobileMenu" @toggleMobileMenu="toggleMobileMenu" />
     </Transition>
     <Transition name="slide-left">
       <template v-if="!enableMobileMenu">
@@ -55,6 +55,25 @@ useHead({
     { rel: "apple-touch-startup-image", href: "/splash-icons/apple-splash-640-1136.jpg", media: "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" }
   ]
 })
+
+const menuOptions = [
+  {
+    name: 'Home',
+    path: '/'
+  },
+  {
+    name: 'Die Idee',
+    path: '/about'
+  },
+  {
+    name: 'Unterstütze uns',
+    path: '/donate'
+  },
+  {
+    name: 'Kontakt',
+    path: '/contact'
+  },
+]
 </script>
 
 <script lang="ts">
