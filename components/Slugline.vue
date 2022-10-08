@@ -1,5 +1,5 @@
 <template>
-    <div class="slugline">{{ capitalizedTitle }}</div>
+    <h4 class="slugline">{{ capitalizedTitle }}</h4>
 </template>
 
 <script lang="ts">
@@ -13,7 +13,6 @@ export default defineComponent({
     },
     computed: {
         capitalizedTitle() {
-            const test = ''
             return this.title.toLocaleUpperCase()
         }
     }
@@ -22,6 +21,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .slugline {
+    margin: 0px;
     font-weight: $fw-bold;
     color: $color-font-medium;
     letter-spacing: 2px;
