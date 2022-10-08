@@ -13,11 +13,10 @@
 </template>
 
 <script lang="ts">
-import { DateTime } from "luxon";
 import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
 import { defineComponent } from "vue";
-import { emphasizeText } from '../services/util'
+import { emphasizeText, timeSince } from '../services/util'
 export default defineComponent({
   props: {
     product: {
@@ -47,13 +46,7 @@ export default defineComponent({
     }
   },
   methods: {
-    timeSince(dateString: string) {
-      const [year, month, day] = dateString.split('-')
-      const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
-      const dayInPast = DateTime.fromJSDate(date)
-      const diff = DateTime.now().diff(dayInPast, ["years", "months", "days", "hours", "minutes"]).toObject()
-      return diff.years != 0 ? `${diff.years} Jahr` : diff.months != 0 ? `${diff.months} Monaten` : diff.days != 0 ? `${diff.days} Tagen` : `${diff.hours} Stunden`
-    }
+    timeSince    
   }
 });
 </script>
