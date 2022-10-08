@@ -39,7 +39,7 @@
                         language="de" />
                 </section>
                 <div class="action-bar">
-                    <ActionButton name="Absenden" aria-label="Absenden" :onClick="submitForm" :disabled="!formIsFilled"
+                    <ActionButton name="Absenden" aria-label="Absenden" @click="submitForm" :disabled="!formIsFilled"
                         :isPrimary=true />
                 </div>
             </form>
@@ -48,7 +48,7 @@
             <h1>Danke für deine Nachricht! 💌</h1>
             <div>Wir kümmern uns so schnell wie möglich drum!</div>
             <NuxtLink to="/">
-                <ActionButton name="Supi!" tooltip="Link zur Startseite" :isPrimary="true" :onClick="() => { }" />
+                <ActionButton name="Supi!" tooltip="Link zur Startseite" :isPrimary="true" />
             </NuxtLink>
         </div>
         <div v-if="hasFailed">
@@ -82,7 +82,7 @@ export default defineComponent({
             userName: "",
             email: "",
             message: "",
-            topic: this.$route.params.topic || "",
+            topic: this.$route.query.topic || "",
             isHuman: false,
             mailError: false,
             sendingStatus: SENDINGSTATUS.EDITING
@@ -106,6 +106,7 @@ export default defineComponent({
             ]
         })
         const config = useRuntimeConfig();
+
         const MS = new MailService(config.EMAIL_JS_SERVICE_ID, config.EMAIL_JS_TEMPLATE_ID, config.EMAIL_JS_PUBLIC_KEY);
         return { MS, config };
     },

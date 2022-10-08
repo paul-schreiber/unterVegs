@@ -11,7 +11,7 @@
                     </div>
                     <NuxtLink :to="{
                         name: 'contact',
-                        params: {
+                        query: {
                             topic: `Fehler - ${product.name}/${getShopName}`
                         }
                     }">
@@ -24,7 +24,9 @@
         <button @click="toggleHelp">
             <span v-if="!showWarning">🔧</span>
             <span v-else>
-                <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                <ClientOnly>
+                    <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                </ClientOnly>
             </span>
         </button>
     </div>
