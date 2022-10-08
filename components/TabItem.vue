@@ -1,7 +1,9 @@
 <template>
     <div class="tab-item" :class="{ active: isActive }">
         <div>
-            <font-awesome-icon :icon="['fas', icon]" />
+            <ClientOnly>
+                <font-awesome-icon :icon="['fas', icon]" />
+            </ClientOnly>
         </div>
         <div class="tab-name">
             {{ title }}

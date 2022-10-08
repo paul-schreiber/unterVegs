@@ -19,7 +19,9 @@
         <button @click="toggleHelp">
             <span v-if="!showHelp">🤔</span>
             <span v-else>
-                <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                <ClientOnly>
+                    <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                </ClientOnly>
             </span>
         </button>
     </div>
@@ -89,16 +91,6 @@ export default defineComponent({
         box-shadow: $box-shadow;
 
         user-select: none;
-        /* supported by Chrome and Opera */
-        -webkit-user-select: none;
-        /* Safari */
-        -khtml-user-select: none;
-        /* Konqueror HTML */
-        -moz-user-select: none;
-        /* Firefox */
-        -ms-user-select: none;
-        /* Internet Explorer/Edge */
-
     }
 }
 

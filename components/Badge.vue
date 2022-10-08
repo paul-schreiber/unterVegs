@@ -1,8 +1,10 @@
 <template>
     <div class="badge-container" :title="title">
         <div :class="{ 'badge-name': true, mobile: isMobile }"> {{ name }}</div>
-        <button class="close-button" v-if="removable" @click="onClose(id)" aria-label="Badge entfernen">
-            <font-awesome-icon :icon="['fas', 'xmark']" />
+        <button class="close-button" v-if="removable" @click="$emit('close', id)" aria-label="Badge entfernen">
+            <ClientOnly>
+                <font-awesome-icon :icon="['fas', 'xmark']" />
+            </ClientOnly>
         </button>
     </div>
 </template>
@@ -27,14 +29,10 @@ export default defineComponent({
             type: String,
             required: false
         },
-        removable: {
+        removable: { // isRemovable
             type: Boolean,
             required: true
         },
-        onClose: {
-            type: Function,
-            required: false
-        }
     },
     computed: {
         isMobile() {
