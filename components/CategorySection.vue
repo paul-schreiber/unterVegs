@@ -5,26 +5,21 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import { Product, CategoryIds, Category, Categories } from "~~/types";
-export default defineComponent({
-    props: {
-        category: {
-            type: String,
-            default: 'Sonstige'
-        },
-        products: {
-            type: Array<Product>,
-            required: true
-        },
+<script lang="ts" setup>
+import { Product, Categories } from "~~/types";
+const props = defineProps({
+    category: {
+        type: String,
+        default: 'Sonstige'
     },
-    computed: {
-        getCategoryColor() {
-            return this.category ? Categories[this.category].color : 'black'
-        }
-    }
+    products: {
+        type: Array<Product>,
+        required: true
+    },
 })
+const getCategoryColor = () => {
+    return props.category ? Categories[props.category].color : 'black'
+}
 </script>
 
 <style lang="scss" scoped>
@@ -41,7 +36,7 @@ h3 {
     text-align: left;
     margin: 0px;
     width: fit-content;
-    border-bottom: 4px solid v-bind(getCategoryColor);
+    border-bottom: 4px solid v-bind(getCategoryColor());
 }
 
 
