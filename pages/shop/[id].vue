@@ -7,7 +7,7 @@
             </div>
             <div class="badge-container">
                 <Badge v-for="badge in getCategories" :key="badge" :color="getCategoryObject(badge).color" :id="badge"
-                    :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
+                    :name="getCategoryObject(badge).name" :is-removable="false" :title="badge" />
             </div>
             <div class="is-local-warning" title="Dieses Restaurant gibt es nur an manchen Orten." v-if="shop.isLocal">
                 <ClientOnly>

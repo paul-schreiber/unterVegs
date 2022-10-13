@@ -8,7 +8,7 @@
           </span>
           <div class="applied-categories-container">
             <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieObject(category).color"
-              removable :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
+              is-removable :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
               @close="removeCategoryFromFilter" />
           </div>
           <input :value="searchTerm" @input="e => searchTerm = (e.target as HTMLInputElement).value" :placeholder="randomPlaceholder" class="search-field"
@@ -23,7 +23,7 @@
             <div class="available-categories-container">
               <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
                 @click="addCategoryToFilter(category)">
-                <Badge :color="getCategorieObject(category).color" :removable="false"
+                <Badge :color="getCategorieObject(category).color" :is-removable="false"
                   :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
               </div>
             </div>

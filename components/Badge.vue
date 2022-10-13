@@ -1,7 +1,7 @@
 <template>
     <div class="badge-container" :title="title">
-        <div :class="{ 'badge-name': true, mobile: isMobile }"> {{ name }}</div>
-        <button class="close-button" v-if="removable" @click="$emit('close', id)" aria-label="Badge entfernen">
+        <div :class="{ 'badge-name': true, mobile: isMobile() }"> {{ name }}</div>
+        <button class="close-button" v-if="isRemovable" @click="$emit('close', id)" aria-label="Badge entfernen">
             <ClientOnly>
                 <font-awesome-icon :icon="['fas', 'xmark']" />
             </ClientOnly>
@@ -9,37 +9,33 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-    props: {
-        name: {
-            type: String,
-            required: true
-        },
-        id: {
-            type: String,
-            required: true
-        },
-        color: {
-            type: String,
-            required: true
-        },
-        title: {
-            type: String,
-            required: false
-        },
-        removable: { // isRemovable
-            type: Boolean,
-            required: true
-        },
+<script lang="ts" setup>
+defineProps({
+    name: {
+        type: String,
+        required: true
     },
-    computed: {
-        isMobile() {
-            return this.$device.isMobile
-        }
-    }
+    id: {
+        type: String,
+        required: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
+    title: {
+        type: String,
+        required: false
+    },
+    isRemovable: {
+        type: Boolean,
+        required: true
+    },
 })
+const nuxtApp = useNuxtApp()
+const isMobile = () => {
+    return nuxtApp.$device.isMobile
+}
 </script>
 
 <style lang="scss" scoped>

@@ -2,7 +2,7 @@
   <div class="product-item">
     <div :class="{ 'label-container': true, mobile: isMobile }">
       <Badge :color="getLabel.color" :name="getLabelName" :id="getLabelName" :title="getLabel.tooltip"
-        :removable="false" />
+        :is-removable="false" />
     </div>
     <div class="name-container" v-html="getEmphasizedItemName"></div>
     <div class="shop-container">{{ getShop.name }}</div>

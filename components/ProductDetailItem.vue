@@ -3,7 +3,7 @@
         <div class="product-item">
             <header>
                 <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
-                    :removable="false" />
+                    :is-removable="false" />
                 <div class="labels">
                     <ClientOnly>
                         <font-awesome-icon :icon="['fas', 'calendar-day']" title="nicht immer verfügbar"

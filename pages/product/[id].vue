@@ -4,14 +4,14 @@
       <div class="heading">
         <h2>{{ product.name }}</h2>
         <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
-          :removable="false" />
+          :is-removable="false" />
       </div>
       <div class="shop-name">
         <NuxtLink :to="`/shop/${product.shop}`">{{ getShopName }}</NuxtLink>
       </div>
       <div class="badges-container">
         <Badge v-for="badge in getProductBadges" :key="badge" :color="getCategoryObject(badge).color" :id="badge"
-          :name="getCategoryObject(badge).name" :removable="false" :title="badge" />
+          :name="getCategoryObject(badge).name" :is-removable="false" :title="badge" />
       </div>
     </header>
     <div class="product-info">

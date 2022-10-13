@@ -4,7 +4,7 @@
     <div class="categories-container">
       <Badge v-for="badgeID in getProductBadges" :key="randomId" :color="getCategory(badgeID).color"
         :name="getCategory(badgeID).name" :id="badgeID"
-        :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :removable="false" />
+        :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :is-removable="false" />
     </div>
   </div>
 </template>
