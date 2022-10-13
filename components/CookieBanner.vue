@@ -15,44 +15,35 @@
     </Transition>
 </template>
 
-<script lang="ts">
-    // NUXT 3 usecookies
-import { useCookies } from "vue3-cookies";
-import { defineComponent } from "vue";
-export default defineComponent({
-    data() {
-        return {
-            hideBanner: true
-        }
-    },
-    setup() {
-        const { cookies } = useCookies();
-        return { cookies };
-    },
-    mounted() {
-        const cookieIsSet = this.cookies.get("cookiesAccepted")
-        this.hideBanner = cookieIsSet
-    },
-    props: {
-        onAccept: {
-            type: Function,
-            required: true
-        }
-    },
-    methods: {
-        onConfirm() {
-            this.onAccept()
-            this.closeBanner()
-        },
-        onReject() {
-            this.closeBanner()
-        },
-        closeBanner() {
-            this.cookies.set("cookiesAccepted", true, "1y");
-            this.hideBanner = true
-        }
+<script lang="ts" setup>
+import { ref } from 'vue'
+const props = defineProps({
+    onAccept: {
+        type: Function,
+        required: true
     }
 })
+const useAnalyticsBannerCookie = useCookie('useAnalytics', {
+    maxAge: 31536000 // 1y
+})
+const hideBanner = ref('true')
+
+//To trigger animation
+setTimeout(() => {
+    hideBanner.value = useAnalyticsBannerCookie.value
+}, 1)
+
+const onConfirm = () => {
+    useAnalyticsBannerCookie.value = 'true'
+    props.onAccept()
+    closeBanner()
+}
+const onReject = () => {
+    closeBanner()
+}
+const closeBanner = () => {
+    hideBanner.value = 'true'
+}
 </script>
 
 <style lang="scss" scoped>
