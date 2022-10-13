@@ -32,12 +32,13 @@
 import { DonationIdea } from '../types'
 import donationIdeas from '../data/donation-ideas'
 import { ref } from 'vue'
+import config from '~/data/content'
 
 const ideas = ref(donationIdeas as DonationIdea[])
 const donationAmount = ref(0)
 
 const paypalURL = () => {
-    return `https://www.paypal.com/paypalme/paulschreiber96/${donationAmount.value}`
+    return `${config.donation.PayPal}${donationAmount.value}`
 }
 const selectAmount = (amount: number) => {
     donationAmount.value = amount

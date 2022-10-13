@@ -35,16 +35,14 @@
 <script lang="ts" setup>
 import { Product } from "../types"
 import { ref } from 'vue'
-import { DataService } from "~~/services/DataService";
 const nuxtApp = useNuxtApp()
+const DS = nuxtApp.$DS
 const props = defineProps({
     product: {
         type: Object as () => Product,
         required: true
     }
 })
-
-const DS = nuxtApp.$DS
 
 const showWarning = ref(false)
 
