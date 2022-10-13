@@ -18,9 +18,11 @@ export function replaceSpecialCharacters(originalString: string): string {
 }
 
 export function timeSince(dateString: string) {
-    const [year, month, day] = dateString.split('-')
+    /* const [year, month, day] = dateString.split('-')
     const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
     const dayInPast = DateTime.fromJSDate(date)
     const diff = DateTime.now().diff(dayInPast, ["years", "months", "days", "hours", "minutes"]).toObject()
     return diff.years != 0 ? `${diff.years} Jahr` : diff.months != 0 ? `${diff.months} Monaten` : diff.days != 0 ? `${diff.days} Tagen` : `${diff.hours} Stunden`
-  }
+   */
+    return 'broken'
+}
