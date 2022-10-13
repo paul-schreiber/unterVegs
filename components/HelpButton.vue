@@ -16,7 +16,7 @@
                 </p>
             </div>
         </Transition>
-        <button @click="toggleHelp">
+        <button @click="toggleHelp()">
             <span v-if="!showHelp">🤔</span>
             <span v-else>
                 <ClientOnly>
@@ -27,19 +27,12 @@
     </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-    data() {
-        return {
-            showHelp: false
-        }
-    },
-    methods: {
-        toggleHelp() {
-            this.showHelp = !this.showHelp
-        }
-    }
-})
+<script lang="ts" setup>
+import { ref } from 'vue'
+const showHelp = ref(false)
+const toggleHelp = () => {
+    showHelp.value = !showHelp.value
+}
 </script>
 
 <style lang="scss" scoped>

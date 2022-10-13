@@ -1,22 +1,15 @@
 <template>
-    <h4 class="slugline">{{ capitalizedTitle }}</h4>
+    <h4 class="slugline">{{ capitalizedTitle() }}</h4>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-    props: {
-        title: {
-            type: String,
-            required: true
-        }
-    },
-    computed: {
-        capitalizedTitle() {
-            return this.title.toLocaleUpperCase()
-        }
-    }
+<script lang="ts" setup>
+const props = defineProps({
+    title: String
 })
+
+const capitalizedTitle = () => {
+    return props.title.toLocaleUpperCase()
+}
 </script>
 
 <style lang="scss" scoped>

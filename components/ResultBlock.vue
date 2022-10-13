@@ -14,11 +14,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "ResultBlock",
-  props: {
+<script lang="ts" setup>
+defineProps(
+  {
     hasResults: {
       type: Boolean,
       required: true
@@ -27,8 +25,8 @@ export default defineComponent({
       type: Boolean,
       required: true
     }
-  },
-});
+  }
+)
 </script>
 
 <style lang="scss" scoped>
