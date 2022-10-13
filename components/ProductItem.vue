@@ -4,7 +4,7 @@
       <Badge :color="getLabel().color" :name="getLabelName()" :id="getLabelName()" :title="getLabel().tooltip"
         :is-removable="false" />
     </div>
-    <div class="name-container" v-html="getEmphasizedItemName()"></div>
+    <div class="name-container" v-dompurify-html="getEmphasizedItemName()"></div>
     <div class="shop-container">{{ getShop().name }}</div>
     <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`" v-if="!isMobile()">{{
     timeSince(product.lastEdited)
