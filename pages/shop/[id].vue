@@ -20,71 +20,65 @@
             </div>
         </header>
         <div v-for="category in getCategories" :key="'heading' + category" class="category-section">
-            <CategorySection  v-if="getProductsByPrimaryCategory(category).length != 0" :products="getProductsByPrimaryCategory(category)" :category="category"/>
+            <CategorySection v-if="getProductsByPrimaryCategory(category).length != 0"
+                :products="getProductsByPrimaryCategory(category)" :category="category" />
         </div>
-        <CategorySection  v-if="getProductsWithoutCategory.length != 0" :products="getProductsWithoutCategory"/>
+        <CategorySection v-if="getProductsWithoutCategory.length != 0" :products="getProductsWithoutCategory" />
     </div>
 </template>
 
-<script lang="ts">
-
-
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import { computed, ref } from "vue";
 import { Category, ShopIds, CategoryIds, Shop, Product } from "~~/types";
 import { Categories } from "../../types"
-export default defineComponent({
-    data() {
-        return {
-            shop: this.$DS.getShopById(this.$route.params.id as ShopIds),
-        }
-    },
-    mounted() {
-        const shop = this.$DS.getShopById(this.$route.params.id as ShopIds) as Shop
-        const descripton = `Diese veganen Produkte gibt es bei ${shop.name}:`
-        useHead({
-            title: shop.name,
-            meta: [
-                {
-                    hid: 'description',
-                    name: 'description',
-                    content: descripton
-                },
-                {
-                    hid: 'og:description',
-                    property: 'og:description',
-                    content: descripton
-                }
-            ]
-        })
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
-    },
-    computed: {
-        getProducts() {
-            return this.$DS.getProductsByShopId(this.shop.id)
-        },
-        getProductsWithoutCategory() {
-            return this.$DS.getProductsByShopId(this.shop.id).filter((product: Product) => product.categories.length === 0)
-        },
-        getCategories(): CategoryIds[] {
-            return this.$DS.getCategoriesByShopId(this.shop.id)
-        }
-    },
-    methods: {
-        getCategoryObject(categorieId: CategoryIds): Category {
-            return Categories[categorieId]
-        },
-        getProductsByPrimaryCategory(categorieId: CategoryIds): Product[] {
-            const filteredProducts = this.getProducts.filter((product: Product) => {
-                return product.categories[0] === categorieId
-            })
-            return filteredProducts
-        }
-    }
+
+const nuxtApp = useNuxtApp()
+const route = useRoute()
+
+const shop = ref(nuxtApp.$DS.getShopById(route.params.id as ShopIds))
+
+onMounted(() => {
+    const descripton = `Diese veganen Produkte gibt es bei ${shop.value.name}:`
+    useHead({
+        title: shop.value.name,
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: descripton
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: descripton
+            }
+        ]
+    })
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
 })
+const getProducts = computed(() => {
+    return nuxtApp.$DS.getProductsByShopId(shop.value.id)
+})
+const getProductsWithoutCategory = computed(() => {
+    return nuxtApp.$DS.getProductsByShopId(shop.value.id).filter((product: Product) => product.categories.length === 0)
+})
+const getCategories = computed((): CategoryIds[] => {
+    return nuxtApp.$DS.getCategoriesByShopId(shop.value.id)
+})
+
+const getCategoryObject = (categorieId: CategoryIds): Category => {
+    return Categories[categorieId]
+}
+const getProductsByPrimaryCategory = (categorieId: CategoryIds): Product[] => {
+    const filteredProducts = getProducts.value.filter((product: Product) => {
+        return product.categories[0] === categorieId
+    })
+    return filteredProducts
+}
 </script>
 
 <style lang="scss" scoped>
