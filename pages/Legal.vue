@@ -67,42 +67,34 @@
 
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import content from "../data/content";
-import { defineComponent } from "vue";
-export default defineComponent({
-    data() {
-        return {
-            address: content.address,
-            mail: content.mail
-        }
-    },
-    setup() {
-        const description = 'Impressum von unterVegs'
-        useHead({
-            title: 'Impressum',
-            meta: [
-                {
-                    hid: 'description',
-                    name: 'description',
-                    content: description
-                },
-                {
-                    hid: 'og:description',
-                    property: 'og:description',
-                    content: description
-                }
-            ]
-        })
 
-    },
-    mounted() {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
-    }
+const address = content.address
+const mail = content.mail
+const description = 'Impressum von unterVegs'
+useHead({
+    title: 'Impressum',
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: description
+        },
+        {
+            hid: 'og:description',
+            property: 'og:description',
+            content: description
+        }
+    ]
+})
+
+onMounted(() => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
 })
 </script>
 
