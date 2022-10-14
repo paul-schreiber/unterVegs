@@ -19,7 +19,7 @@ const props = defineProps({
     },
 })
 const getCategoryColor = computed(() => {
-    return props.category ? Categories[props.category].color : 'black'
+    return props.category != 'Sonstige' ? Categories[props.category].color : 'black'
 })
 </script>
 
