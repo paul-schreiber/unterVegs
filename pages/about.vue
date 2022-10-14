@@ -51,33 +51,30 @@
     </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-    setup() {
-        const description = 'In einer fremden Stadt nur Karotten mit Hummus aus dem Supermarkt? Mit Freunden im Restaurant und die einzige Option sind Pommes ? Beim Essen bestellen nur Gemüsepizza ohne Käse ? Unterwegs nur ein trockenes Brötchen vom Bäcker? Nichts da! Dafür gibt es jetzt unterVegs!'
-        useHead({
-            title: 'Die Idee',
-            meta: [
-                {
-                    hid: 'description',
-                    name: 'description',
-                    content: description
-                },
-                {
-                    hid: 'og:description',
-                    property: 'og:description',
-                    content: description
-                }
-            ]
-        })
-    },
-    mounted() {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
-    }
+<script lang="ts" setup>
+import { onMounted } from 'vue'
+const description = 'In einer fremden Stadt nur Karotten mit Hummus aus dem Supermarkt? Mit Freunden im Restaurant und die einzige Option sind Pommes ? Beim Essen bestellen nur Gemüsepizza ohne Käse ? Unterwegs nur ein trockenes Brötchen vom Bäcker? Nichts da! Dafür gibt es jetzt unterVegs!'
+useHead({
+    title: 'Die Idee',
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: description
+        },
+        {
+            hid: 'og:description',
+            property: 'og:description',
+            content: description
+        }
+    ]
+})
+onMounted(() => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
 })
 </script>
 
