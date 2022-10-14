@@ -2,23 +2,21 @@
   <div id="app">
     <NavigationBar @toggleMobileMenu="toggleMobileMenu" @hideMobileMenu="hideMobileMenu" :menuOptions=menuOptions />
     <Transition name="slide-right">
-      <MobileMenu v-if="enableMobileMenu" @toggleMobileMenu="toggleMobileMenu" />
+      <MobileMenu v-show="enableMobileMenu" @toggleMobileMenu="toggleMobileMenu" :menuOptions=menuOptions />
     </Transition>
     <Transition name="slide-left">
-      <template v-if="!enableMobileMenu">
-        <div>
+      <div v-show="!enableMobileMenu">
 
-          <div class="content-wrapper">
-            <NuxtPage />
-          </div>
-          <CookieBanner :onAccept="enableAnalytics" />
-          <PageFooter />
+        <div class="content-wrapper">
+          <NuxtPage />
         </div>
-      </template>
+        <CookieBanner :onAccept="enableAnalytics" />
+        <PageFooter />
+      </div>
     </Transition>
   </div>
 </template>
-
+  
 <script setup lang="ts">
 useHead({
   link: [
@@ -75,7 +73,7 @@ const menuOptions = [
   },
 ]
 </script>
-
+  
 <script lang="ts">
 import { useState } from "vue-gtag-next";
 import { defineComponent } from "vue";
@@ -107,8 +105,8 @@ export default defineComponent({
   }
 })
 </script>
-
-
+  
+  
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -181,3 +179,4 @@ h3 {
   }
 }
 </style>
+  

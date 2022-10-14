@@ -6,7 +6,7 @@
           <img src="~/assets/img/logo-unterVegs.svg" alt="unterVegs Logo" />
         </div>
       </NuxtLink>
-      <div class="menu" v-if="!isMobile">
+      <div class="menu" v-if="!isMobile()">
         <template v-for="option in menuOptions">
           <div class="menu-item" v-if="option.name != 'Home'">
             <NuxtLink :to="option.path">
@@ -16,7 +16,7 @@
         </template>
       </div>
 
-      <button class="burger-menu" v-if="isMobile" @click="$emit('toggleMobileMenu')" aria-label="Menü-Button">
+      <button class="burger-menu" v-if="isMobile()" @click="$emit('toggleMobileMenu')" aria-label="Menü-Button">
         <ClientOnly>
           <font-awesome-icon :icon="['fas', 'bars']" />
         </ClientOnly>
@@ -25,27 +25,30 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: 'NavigationBar',
-  props: {
-    menuOptions: {
-      type: Array<Object>,
-      required: true
-    }
-  },
-  computed: {
-    isMobile(): boolean {
-      return this.$device.isMobile
-    }
-  },
-  watch: {
-    $route() {
-      setTimeout(this.$emit('hideMobileMenu'), 300);
-    }
+<script lang="ts" setup>
+type MenuOption = {
+  path: string,
+  name: string
+}
+
+const route = useRoute()
+const nuxtApp = useNuxtApp()
+const emit = defineEmits(['hideMobileMenu', 'toggleMobileMenu'])
+const props = defineProps({
+  menuOptions: {
+    type: Array<MenuOption>,
+    required: true
   }
 })
+
+const isMobile = (): boolean => {
+  return nuxtApp.$device.isMobile
+}
+
+watch(() => route.fullPath, () => {
+  setTimeout(() => emit('hideMobileMenu'), 300)
+})
+
 </script>
 
 <style lang="scss" scoped>
