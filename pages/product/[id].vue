@@ -35,68 +35,63 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { DateTime } from "luxon";
 import { Labels, Categories, CategoryIds, Category, Product, Shop } from "../../types"
-import { defineComponent } from "vue";
-export default defineComponent({
-  data() {
-    return {
-      product: this.$DS.getProductById(this.$route.params.id as string)
-    }
-  },
-  mounted() {
-    const route = useRoute()
-    const product = this.$DS.getProductById(route.params.id as string) as Product
-    const shop = this.$DS.getShopById(product.shop) as Shop
-    const description = `${product.name} ist ein veganes oder veganisierbares Gericht bei ${shop.name}.`
-    useHead({
-      title: product.name,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: description
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: description
-        }
-      ]
-    })
+import { computed, ref } from "vue";
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    })
-  },
-  computed: {
-    getLabel() {
-      return Labels[this.product.label]
-    },
-    getShopName() {
-      return this.$DS.getShopById(this.product.shop).name
-    },
-    getProductBadges(): CategoryIds[] {
-      return this.product.categories
-    },
-    getAuthorWithDate(): String {
-      return `erstellt von ${this.product.author} am ${this.makeDateReadable(this.product.created)}`
-    }
-  },
-  methods: {
-    makeDateReadable(dateString: string): String {
-      const [year, month, day] = dateString.split('-')
-      const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
-      return DateTime.fromJSDate(new Date(date)).setLocale('de').toLocaleString()
-    },
-    getCategoryObject(categorieId: CategoryIds): Category {
-      return Categories[categorieId]
-    }
-  }
+const route = useRoute()
+const nuxtApp = useNuxtApp()
+const product = ref(nuxtApp.$DS.getProductById(route.params.id as string))
+
+onMounted(() => {
+  const route = useRoute()
+  const product = nuxtApp.$DS.getProductById(route.params.id as string) as Product
+  const shop = nuxtApp.$DS.getShopById(product.shop) as Shop
+  const description = `${product.name} ist ein veganes oder veganisierbares Gericht bei ${shop.name}.`
+  useHead({
+    title: product.name,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: description
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description
+      }
+    ]
+  })
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
 })
+
+const getLabel = computed(() => {
+  return Labels[product.value.label]
+})
+const getShopName = computed(() => {
+  return nuxtApp.$DS.getShopById(product.value.shop).name
+})
+const getProductBadges = computed((): CategoryIds[] => {
+  return product.value.categories
+})
+const getAuthorWithDate = computed((): String => {
+  return `erstellt von ${product.value.author} am ${makeDateReadable(product.value.created)}`
+})
+
+const makeDateReadable = (dateString: string): String => {
+  const [year, month, day] = dateString.split('-')
+  const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+  return DateTime.fromJSDate(new Date(date)).setLocale('de').toLocaleString()
+}
+const getCategoryObject = (categorieId: CategoryIds): Category => {
+  return Categories[categorieId]
+}
 </script>
 
 
