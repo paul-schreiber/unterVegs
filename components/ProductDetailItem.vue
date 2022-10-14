@@ -2,7 +2,7 @@
     <NuxtLink :to="`/product/${product.id}`">
         <div class="product-item">
             <header>
-                <Badge :color="getLabel().color" :name="product.label" :title="getLabel().tooltip" :id="product.label"
+                <Badge :color="getLabel.color" :name="product.label" :title="getLabel.tooltip" :id="product.label"
                     :is-removable="false" />
                 <div class="labels">
                     <ClientOnly>
@@ -27,7 +27,7 @@
 import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
 import { timeSince } from "~~/services/util";
-const nuxtApp = useNuxtApp()
+import { computed } from 'vue'
 const props = defineProps({
     product: {
         type: Object as () => Product,
@@ -35,9 +35,9 @@ const props = defineProps({
     }
 })
 
-const getLabel = (): Label => {
+const getLabel = computed((): Label => {
     return Labels[props.product.label]
-}
+})
 </script>
 
 <style lang="scss" scoped>

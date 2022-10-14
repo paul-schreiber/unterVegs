@@ -1,6 +1,6 @@
 <template>
     <div class="badge-container" :title="title">
-        <div :class="{ 'badge-name': true, mobile: isMobile() }"> {{ name }}</div>
+        <div :class="{ 'badge-name': true, mobile: isMobile }"> {{ name }}</div>
         <button class="close-button" v-if="isRemovable" @click="$emit('close', id)" aria-label="Badge entfernen">
             <ClientOnly>
                 <font-awesome-icon :icon="['fas', 'xmark']" />
@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
 defineProps({
     name: {
         type: String,
@@ -33,9 +34,9 @@ defineProps({
     },
 })
 const nuxtApp = useNuxtApp()
-const isMobile = () => {
+const isMobile = computed(() => {
     return nuxtApp.$device.isMobile
-}
+})
 </script>
 
 <style lang="scss" scoped>

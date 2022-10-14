@@ -7,6 +7,7 @@
 
 <script lang="ts" setup>
 import { Product, Categories } from "~~/types";
+import { computed } from 'vue'
 const props = defineProps({
     category: {
         type: String,
@@ -17,9 +18,9 @@ const props = defineProps({
         required: true
     },
 })
-const getCategoryColor = () => {
+const getCategoryColor = computed(() => {
     return props.category ? Categories[props.category].color : 'black'
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -36,7 +37,7 @@ h3 {
     text-align: left;
     margin: 0px;
     width: fit-content;
-    border-bottom: 4px solid v-bind(getCategoryColor());
+    border-bottom: 4px solid v-bind(getCategoryColor);
 }
 
 

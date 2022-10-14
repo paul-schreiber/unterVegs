@@ -1,8 +1,8 @@
 <template>
   <div class="shop-item">
-    <div class="name-container" v-dompurify-html="getEmphasizedText()"></div>
+    <div class="name-container" v-dompurify-html="getEmphasizedText"></div>
     <div class="categories-container">
-      <Badge v-for="badgeID in getProductBadges()" :key="randomId()" :color="getCategory(badgeID).color"
+      <Badge v-for="badgeID in getProductBadges" :key="randomId" :color="getCategory(badgeID).color"
         :name="getCategory(badgeID).name" :id="badgeID"
         :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :is-removable="false" />
     </div>
@@ -14,6 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Shop, CategoryIds } from "../types"
 import { Categories } from "../types"
 import { emphasizeText } from '../services/util'
+import { computed } from 'vue'
 const nuxtApp = useNuxtApp()
 const props = defineProps({
   shop: {
@@ -26,15 +27,15 @@ const props = defineProps({
   }
 })
 
-const getProductBadges = (): CategoryIds[] => {
+const getProductBadges = computed((): CategoryIds[] => {
   return nuxtApp.$DS.getCategoriesByShopId(props.shop.id)
-}
-const getEmphasizedText = (): string => {
+})
+const getEmphasizedText = computed((): string => {
   return emphasizeText(props.shop.name, props.searchTerm)
-}
-const randomId = () => {
+})
+const randomId = computed(() => {
   return uuidv4()
-}
+})
 const getCategory = (categorieId: CategoryIds) => {
   return Categories[categorieId]
 }

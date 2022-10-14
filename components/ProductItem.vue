@@ -1,12 +1,12 @@
 <template>
   <div class="product-item">
-    <div :class="{ 'label-container': true, mobile: isMobile() }">
-      <Badge :color="getLabel().color" :name="getLabelName()" :id="getLabelName()" :title="getLabel().tooltip"
+    <div :class="{ 'label-container': true, mobile: isMobile }">
+      <Badge :color="getLabel.color" :name="getLabelName" :id="getLabelName" :title="getLabel.tooltip"
         :is-removable="false" />
     </div>
-    <div class="name-container" v-dompurify-html="getEmphasizedItemName()"></div>
-    <div class="shop-container">{{ getShop().name }}</div>
-    <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`" v-if="!isMobile()">{{
+    <div class="name-container" v-dompurify-html="getEmphasizedItemName"></div>
+    <div class="shop-container">{{ getShop.name }}</div>
+    <div class="date-container" :title="`zuletzt bearbeitet vor ${timeSince(product.lastEdited)}`" v-if="!isMobile">{{
     timeSince(product.lastEdited)
     }}</div>
   </div>
@@ -16,6 +16,7 @@
 import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
 import { emphasizeText, timeSince } from '../services/util'
+import { computed } from 'vue'
 const nuxtApp = useNuxtApp()
 const props = defineProps({
   product: {
@@ -28,21 +29,21 @@ const props = defineProps({
   }
 })
 
-const getLabel = (): Label => {
+const getLabel = computed((): Label => {
   return Labels[props.product.label]
-}
-const getEmphasizedItemName = () => {
+})
+const getEmphasizedItemName = computed(() => {
   return emphasizeText(props.product.name, props.searchTerm)
-}
-const getLabelName = (): string => {
-  return isMobile() ? getLabel().shortName : getLabel().name
-}
-const getShop = (): Shop => {
+})
+const getLabelName = computed((): string => {
+  return isMobile.value ? getLabel.value.shortName : getLabel.value.name
+})
+const getShop = computed((): Shop => {
   return nuxtApp.$DS.getShopById(props.product.shop)
-}
-const isMobile = (): boolean => {
+})
+const isMobile = computed((): boolean => {
   return nuxtApp.$device.isMobile
-}
+})
 </script>
 
 <style lang="scss" scoped>

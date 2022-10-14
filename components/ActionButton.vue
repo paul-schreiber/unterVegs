@@ -1,8 +1,9 @@
 <template>
-    <button :title="tooltip" :class="buttonType()">{{ name }}</button>
+    <button :title="tooltip" :class="buttonType">{{ name }}</button>
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
 const props = defineProps({
     name: {
         type: String,
@@ -18,9 +19,9 @@ const props = defineProps({
     }
 })
 
-const buttonType = () => {
+const buttonType = computed(() => {
     return props.isPrimary ? 'primary' : 'secondary'
-}
+})
 </script>
 
 <style lang="scss" scoped>

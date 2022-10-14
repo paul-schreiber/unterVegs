@@ -19,7 +19,7 @@
         </div>
         <div class="donation-action-container">
             <div><input v-model="donationAmount" />€</div>
-            <a :href="paypalURL()" target="_blank">Los gehts!
+            <a :href="paypalURL" target="_blank">Los gehts!
                 <ClientOnly>
                     <font-awesome-icon :icon="['fab', 'paypal']" />
                 </ClientOnly>
@@ -31,15 +31,15 @@
 <script lang="ts" setup>
 import { DonationIdea } from '../types'
 import donationIdeas from '../data/donation-ideas'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import config from '~/data/content'
 
 const ideas = ref(donationIdeas as DonationIdea[])
 const donationAmount = ref(0)
 
-const paypalURL = () => {
+const paypalURL = computed(() => {
     return `${config.donation.PayPal}${donationAmount.value}`
-}
+})
 const selectAmount = (amount: number) => {
     donationAmount.value = amount
 }

@@ -12,7 +12,7 @@
                     <NuxtLink :to="{
                         name: 'contact',
                         query: {
-                            topic: `Fehler - ${product.name}/${getShopName()}`
+                            topic: `Fehler - ${product.name}/${getShopName}`
                         }
                     }">
                         <button title="Melde ein Problem oder einen Fehler!" aria-label="Fehler melden">👷🏽‍♀️ Fehler
@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import { Product } from "../types"
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 const nuxtApp = useNuxtApp()
 const DS = nuxtApp.$DS
 const props = defineProps({
@@ -50,9 +50,9 @@ const toggleHelp = () => {
     showWarning.value = !showWarning.value
 }
 
-const getShopName = () => {
+const getShopName = computed(() => {
     return DS.getShopById(props.product.shop).name
-}
+})
 </script>
 
 <style lang="scss" scoped>
