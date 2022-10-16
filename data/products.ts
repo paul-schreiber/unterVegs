@@ -1203,18 +1203,6 @@ export default [
         notes: "Mit Süßkartoffel-Amaranth-Bratling, sonnengetrocknete Tomaten, Wildkräuter, Steakpfeffer mit Basilikum-Mayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
     },
     {
-        name: "Der Crunchige",
-        id: uuidv4(),
-        author: "Miriam",
-        created: '2022-7-21',
-        lastEdited: '2022-7-21',
-        shop: ShopIds.PETERPANE,
-        label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.BURGER],
-        notes: "Mit Veg von Chicken-Bratling in pikanter knuspriger Cornflakes-Panade, junger Spinat und Knoblauchmayo. Vegane Brötchen sind Sauerteig und Mehrkorn."
-    },
-    {
         name: "Panflöte",
         id: uuidv4(),
         author: "Miriam",
@@ -4224,18 +4212,6 @@ export default [
         label: LabelIds.VEGAN,
         isSeasonal: false,
         categories: [CategoryIds.SALAT],
-        notes: ""
-    },
-    {
-        name: "Avocado-Rotkohl-Salat",
-        id: uuidv4(),
-        author: "Miriam",
-        created: '2022-7-30',
-        lastEdited: '2022-7-30',
-        shop: ShopIds.HAFERKATER,
-        label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.SALAT],
         notes: "Mit mariniertem Rotkohl, Orangenspalten, Kirschtomaten, in Gomasio gewälzter Avocado, Sonnenblumenkernen und Balsamico-Orangen-Dressing."
     },
     {
@@ -5212,18 +5188,6 @@ export default [
     },
     {
         name: "Strawberry Sprinkles Donut",
-        id: uuidv4(),
-        author: "Miriam",
-        created: '2022-8-08',
-        lastEdited: '2022-8-08',
-        shop: ShopIds.BRAMMIBALS,
-        label: LabelIds.VEGAN,
-        isSeasonal: false,
-        categories: [CategoryIds.SNACK, CategoryIds.SÜSS, CategoryIds.BACKWARE],
-        notes: ""
-    },
-    {
-        name: "White Choc & Strawberries Donut",
         id: uuidv4(),
         author: "Miriam",
         created: '2022-8-08',
