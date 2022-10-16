@@ -43,7 +43,7 @@ defineProps({
 })
 
 const isMobile = computed((): boolean => {
-  return nuxtApp.$device.isMobile
+  return process.client ? nuxtApp.$device.isMobile: false
 })
 
 watch(() => route.fullPath, () => {
