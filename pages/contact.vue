@@ -63,7 +63,6 @@
 
 
 <script lang="ts" setup>
-import { defineComponent } from "vue";
 import UserInputWithCaption from "~~/components/Contact/UserInputWithCaption.vue";
 import VueFriendlyCaptcha from '@somushq/vue3-friendly-captcha';
 import Loading from 'vue-loading-overlay';
