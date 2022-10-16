@@ -17,7 +17,10 @@
   </div>
 </template>
   
-<script setup lang="ts">
+<script lang="ts" setup>
+import { useState } from "vue-gtag-next";
+import { computed, ref } from "vue";
+
 useHead({
   link: [
     {
@@ -72,38 +75,27 @@ const menuOptions = [
     path: '/contact'
   },
 ]
-</script>
-  
-<script lang="ts">
-import { useState } from "vue-gtag-next";
-import { defineComponent } from "vue";
-export default defineComponent({
-  data() {
-    return {
-      showMobileMenu: false,
-    }
-  },
-  computed: {
-    isMobile(): boolean {
-      return this.$device.isMobile
-    },
-    enableMobileMenu() {
-      return this.showMobileMenu && this.isMobile
-    }
-  },
-  methods: {
-    enableAnalytics() {
-      const { isEnabled } = useState()
-      isEnabled.value = true
-    },
-    hideMobileMenu() {
-      this.showMobileMenu = false
-    },
-    toggleMobileMenu() {
-      this.showMobileMenu = !this.showMobileMenu
-    }
-  }
+
+const showMobileMenu = ref(false)
+const nuxtApp = useNuxtApp()
+
+const isMobile = computed((): boolean => {
+  return nuxtApp.$device.isMobile
 })
+const enableMobileMenu = computed(() => {
+  return showMobileMenu.value && isMobile.value
+})
+
+const enableAnalytics = () => {
+  const { isEnabled } = useState()
+  isEnabled.value = true
+}
+const hideMobileMenu = () => {
+  showMobileMenu.value = false
+}
+const toggleMobileMenu = () => {
+  showMobileMenu.value = !showMobileMenu.value
+}
 </script>
   
   
