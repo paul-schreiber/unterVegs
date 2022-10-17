@@ -17,6 +17,7 @@ import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
 import { emphasizeText, timeSince } from '../services/util'
 import { computed } from 'vue'
+const device = useDevice()
 const nuxtApp = useNuxtApp()
 const props = defineProps({
   product: {
@@ -42,7 +43,7 @@ const getShop = computed((): Shop => {
   return nuxtApp.$DS.getShopById(props.product.shop)
 })
 const isMobile = computed((): boolean => {
-  return nuxtApp.$device.isMobile
+  return device.isMobile
 })
 </script>
 

@@ -33,9 +33,9 @@ defineProps({
         required: true
     },
 })
-const nuxtApp = useNuxtApp()
+const device = useDevice()
 const isMobile = computed(() => {
-    return nuxtApp.$device.isMobile
+    return device.isMobile
 })
 </script>
 

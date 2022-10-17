@@ -77,13 +77,10 @@ const menuOptions = [
 ]
 
 const showMobileMenu = ref(false)
-const nuxtApp = useNuxtApp()
+const device = useDevice()
 
-const isMobile = computed((): boolean => {
-  return nuxtApp.$device.isMobile
-})
 const enableMobileMenu = computed(() => {
-  return showMobileMenu.value && isMobile.value
+  return showMobileMenu.value && device.isMobile
 })
 
 const enableAnalytics = () => {

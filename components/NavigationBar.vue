@@ -33,7 +33,7 @@ type MenuOption = {
 }
 
 const route = useRoute()
-const nuxtApp = useNuxtApp()
+const device = useDevice()
 const emit = defineEmits(['hideMobileMenu', 'toggleMobileMenu'])
 defineProps({
   menuOptions: {
@@ -43,7 +43,7 @@ defineProps({
 })
 
 const isMobile = computed((): boolean => {
-  return nuxtApp.$device.isMobile
+  return device.isMobile
 })
 
 watch(() => route.fullPath, () => {

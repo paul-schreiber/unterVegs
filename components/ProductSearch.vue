@@ -83,6 +83,7 @@ import { Categories } from "../types"
 import { ref, computed, reactive } from 'vue'
 
 const nuxtApp = useNuxtApp()
+const device = useDevice()
 const MAX_FILTERS = 3
 const MIN_SEARCH_TERM_LENGTH = 2
 const MIN_SEARCH_TERM_LENGTH_FOR_SUGGESTIONS = 3
@@ -106,7 +107,7 @@ const hideResults = computed((): boolean => {
   return searchTerm.value.length < MIN_SEARCH_TERM_LENGTH && appliedFilters.size === 0
 })
 const isMobile = computed((): boolean => {
-  return nuxtApp.$device.isMobile
+  return device.isMobile
 })
 const randomPlaceholder = computed((): string => {
   const randomIndex = Math.floor(Math.random() * placeholderList.length)
