@@ -27,7 +27,6 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import useDevice from '@nuxtjs/device/dist/runtime/composables/useDevice'
 
 type MenuOption = {
   path: string,

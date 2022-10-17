@@ -20,7 +20,6 @@
 <script lang="ts" setup>
 import { useState } from "vue-gtag-next";
 import { computed, ref } from "vue";
-import useDevice from '@nuxtjs/device/dist/runtime/composables/useDevice'
 
 useHead({
   link: [

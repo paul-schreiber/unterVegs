@@ -81,7 +81,6 @@
 import { Product, Shop, CategoryIds, Category } from "../types"
 import { Categories } from "../types"
 import { ref, computed, reactive } from 'vue'
-import useDevice from '@nuxtjs/device/dist/runtime/composables/useDevice'
 
 const nuxtApp = useNuxtApp()
 const device = useDevice()
