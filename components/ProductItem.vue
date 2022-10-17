@@ -14,9 +14,11 @@
 
 <script lang="ts" setup>
 import type { Product, Shop, Label } from "../types"
+import useDevice from '@nuxtjs/device/dist/runtime/composables/useDevice'
 import { Labels } from "../types"
 import { emphasizeText, timeSince } from '../services/util'
 import { computed } from 'vue'
+
 const device = useDevice()
 const nuxtApp = useNuxtApp()
 const props = defineProps({
