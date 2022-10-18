@@ -26,7 +26,7 @@
 <script lang="ts" setup>
 import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
-import { timeSince } from "~~/services/util";
+import { timeSince } from "../services/util";
 import { computed } from 'vue'
 const props = defineProps({
     product: {

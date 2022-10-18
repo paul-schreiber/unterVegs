@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import type { Product, Shop, Label } from "../types"
 import { Labels } from "../types"
-import { emphasizeText, timeSince } from '../services/util'
+import { timeSince, emphasizeText } from '../services/util'
 import { computed } from 'vue'
 
 const device = useDevice()
@@ -46,6 +46,7 @@ const getShop = computed((): Shop => {
 const isMobile = computed((): boolean => {
   return device.isMobile
 })
+
 </script>
 
 <style lang="scss" scoped>

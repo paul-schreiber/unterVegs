@@ -21,7 +21,7 @@
     "@nuxtjs/robots": "^2.5.0",
     "@somushq/vue3-friendly-captcha": "^1.0.2",
     "js-levenshtein": "^1.1.6",
-    "luxon": "^3.0.1",
+    "luxon": "^3.0.4",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "uuid": "^8.3.2",
