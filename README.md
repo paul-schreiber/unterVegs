@@ -1,20 +1,15 @@
-# unterVegs
+# unterVegs 🥕
 
-unterVegs ist eine Suche für vegane Produkte verschiedener Imbiss- und Restaurantketten.
+[unterVegs](https://www.untervegs.com) ist eine Suche für vegane Produkte verschiedener Imbiss- und Restaurantketten.
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
 
 # npm
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
 ## Development Server
