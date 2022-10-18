@@ -175,7 +175,7 @@ export enum ShopIds {
     FRITTENWERK = 'FW',
     HAFERKATER = 'HK',
     HANSIMGLÜCK = 'HIG',
-    IKEA = 'Ikea', 
+    IKEA = 'IKEA', 
     IMMERGRÜN = 'IG',
     JIMBLOCK = 'JB',
     KAISERBIOBÄCKEREI = 'KBIO',

@@ -1,7 +1,7 @@
 <template>
   <div class="result-list">
     <div class="matched-results">
-      <slot v-if="hasResults"></slot>
+      <slot v-if="hasResults" />
       <span v-else>Hmm, das sagt uns leider nichts..</span>
     </div>
     <div class="matched-suggestions" v-if="showSuggestions">
@@ -14,11 +14,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "ResultBlock",
-  props: {
+<script lang="ts" setup>
+defineProps(
+  {
     hasResults: {
       type: Boolean,
       required: true
@@ -27,8 +25,8 @@ export default defineComponent({
       type: Boolean,
       required: true
     }
-  },
-});
+  }
+)
 </script>
 
 <style lang="scss" scoped>

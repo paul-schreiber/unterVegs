@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
 import config from './config/general'
 import generateDynamicRoutes from './services/RouteGenerator'
 
@@ -75,8 +74,6 @@ export default defineNuxtConfig({
             },
         }
     },
-    ssr: true,
-    target: 'static',
     typescript: {
         typeCheck: true
     },

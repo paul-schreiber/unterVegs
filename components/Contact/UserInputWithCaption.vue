@@ -1,41 +1,29 @@
 <template>
   <div class="user-input-container">
     <span class="input-caption">{{ caption }}</span>
-    <div class="input-container" :class="{ showError: showError }">
+    <div class="input-container" :class="{ showError: hasError }">
       <slot></slot>
       <span class="asterisk" v-if="isMandatory">*</span>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      showError: false,
-    };
-  },
-  props: {
-    caption: String,
-    isMandatory: Boolean,
-    hasError: Boolean,
-  },
-  watch: {
-    hasError(newStatus, oldStatus) {
-      this.showError = newStatus;
-    },
-  },
-};
+<script setup>
+const props = defineProps({
+  caption: String,
+  isMandatory: Boolean,
+  hasError: Boolean,
+})
 </script>
 
 <style lang="scss">
-
 .user-input-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
 }
+
 .input-caption {
   font-size: $fs-tiny;
   font-weight: bold;
@@ -61,6 +49,7 @@ export default {
   }
 
   @keyframes wiggle {
+
     10%,
     90% {
       transform: translate3d(-1px, 0, 0);

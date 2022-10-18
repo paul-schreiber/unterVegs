@@ -5,53 +5,45 @@
             <div>
                 <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
                     nutzerfreundlicher zu
-                    gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="privacy">
+                    gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="/privacy">
                         Datenschutzerklärung
                     </NuxtLink>.
                 </p>
             </div>
-            <ActionButton name="Gib mir 🍪🍪🍪!" :isPrimary="true" tooltip="Cookies akzeptieren" :onClick="onConfirm" />
+            <ActionButton name="Gib mir 🍪🍪🍪!" is-primary tooltip="Cookies akzeptieren" @click="onConfirm" />
         </div>
     </Transition>
 </template>
 
-<script lang="ts">
-import { useCookies } from "vue3-cookies";
-import { defineComponent } from "vue";
-export default defineComponent({
-    data() {
-        return {
-            hideBanner: true
-        }
-    },
-    setup() {
-        const { cookies } = useCookies();
-        return { cookies };
-    },
-    mounted() {
-        const cookieIsSet = this.cookies.get("cookiesAccepted")
-        this.hideBanner = cookieIsSet
-    },
-    props: {
-        onAccept: {
-            type: Function,
-            required: true
-        }
-    },
-    methods: {
-        onConfirm() {
-            this.onAccept()
-            this.closeBanner()
-        },
-        onReject() {
-            this.closeBanner()
-        },
-        closeBanner() {
-            this.cookies.set("cookiesAccepted", true);
-            this.hideBanner = true
-        }
+<script lang="ts" setup>
+import { ref } from 'vue'
+const props = defineProps({
+    onAccept: {
+        type: Function,
+        required: true
     }
 })
+const useAnalyticsBannerCookie = useCookie('useAnalytics', {
+    maxAge: 31536000 // 1y
+})
+const hideBanner = ref('true')
+
+//To trigger animation
+setTimeout(() => {
+    hideBanner.value = useAnalyticsBannerCookie.value
+}, 1)
+
+const onConfirm = () => {
+    useAnalyticsBannerCookie.value = 'true'
+    props.onAccept()
+    closeBanner()
+}
+const onReject = () => {
+    closeBanner()
+}
+const closeBanner = () => {
+    hideBanner.value = 'true'
+}
 </script>
 
 <style lang="scss" scoped>

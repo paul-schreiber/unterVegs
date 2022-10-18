@@ -1,6 +1,6 @@
 import shops from '../data/shops'
 import products from '../data/products'
-import { replaceSpecialCharacters } from './util'
+import { replaceSpecialCharacters } from './route-generator-util'
 
 const shopBaseURL = '/shop'
 const productBaseURL = '/product'

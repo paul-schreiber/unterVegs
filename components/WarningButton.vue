@@ -4,12 +4,14 @@
             <div class="help-text" v-if="showWarning">
                 <div class="error-click-to-action">
                     <div class="header">
+                        <ClientOnly>
                             <font-awesome-icon class="warning-icon" :icon="['fas', 'circle-exclamation']" />
+                        </ClientOnly>
                         <span>Du hast einen Fehler entdeckt oder eine Angabe stimmt nicht? Her damit!</span>
                     </div>
                     <NuxtLink :to="{
                         name: 'contact',
-                        params: {
+                        query: {
                             topic: `Fehler - ${product.name}/${getShopName}`
                         }
                     }">
@@ -22,36 +24,34 @@
         <button @click="toggleHelp">
             <span v-if="!showWarning">🔧</span>
             <span v-else>
-                <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                <ClientOnly>
+                    <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                </ClientOnly>
             </span>
         </button>
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { Product } from "../types"
-export default defineComponent({
-    props: {
-        product: {
-            type: Object as () => Product,
-            required: true
-        }
-    },
-    data() {
-        return {
-            showWarning: false
-        }
-    },
-    computed: {
-        getShopName() {
-            return this.$DS.getShopById(this.product.shop).name
-        },
-    },
-    methods: {
-        toggleHelp() {
-            this.showWarning = !this.showWarning
-        }
+import { ref, computed } from 'vue'
+const nuxtApp = useNuxtApp()
+const DS = nuxtApp.$DS
+const props = defineProps({
+    product: {
+        type: Object as () => Product,
+        required: true
     }
+})
+
+const showWarning = ref(false)
+
+const toggleHelp = () => {
+    showWarning.value = !showWarning.value
+}
+
+const getShopName = computed(() => {
+    return DS.getShopById(props.product.shop).name
 })
 </script>
 

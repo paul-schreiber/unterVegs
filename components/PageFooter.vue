@@ -24,17 +24,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import content from '../data/content'
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "PageFooter",
-  data() {
-    return {
-      socialInfo: content.social
-    }
-  }
-})
+const socialInfo = content.social
 </script>
 
 <style lang="scss" scoped>

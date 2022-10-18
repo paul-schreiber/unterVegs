@@ -1,9 +1,10 @@
-import productsJSON from '../data/products'
-import shopsJSON from '../data/shops'
-import type { CategoryIds, Product, Shop, ShopIds } from '../types'
+import productsJSON from '../data/products.json'
+import shopsJSON from '../data/shops.json'
+import { CategoryIds, LabelIds, Product, Shop, ShopIds } from '../types'
 import { Categories } from '../types';
 import calculateLevenshteinDistance from 'js-levenshtein';
-import { replaceSpecialCharacters } from './util';
+//import { replaceSpecialCharacters } from './route-generator-util';
+import fs from 'fs'
 
 export class DataService {
 
@@ -11,14 +12,54 @@ export class DataService {
     private shops: Shop[];
 
     constructor() {
-        this.products = productsJSON.sort((a, b) => a.name.localeCompare(b.name))
-        this.shops = shopsJSON.sort((a, b) => a.name.localeCompare(b.name))
+        this.products = this.transformProductJSON()
+        this.shops = this.transformShopJSON()
 
         //generate id's
         this.products.forEach(product => {
-            product.id = `${replaceSpecialCharacters(product.shop)}-${replaceSpecialCharacters(product.name)}`
+            //product.id = `${replaceSpecialCharacters(product.shop)}-${replaceSpecialCharacters(product.name)}`
             this.sortCategories(product.categories)
         })
+    }
+
+    private transformProductJSON(): Product[] {
+        const transformedProducts = productsJSON.map((product): Product => {
+            const transformedCategories = product.categories.map((category): CategoryIds => {
+                return CategoryIds[category]
+            })
+            const shop = Object.values(ShopIds)[Object.values(ShopIds).indexOf(product.shop as unknown as ShopIds)]
+
+            return {
+                author: product.author,
+                categories: transformedCategories,
+                created: product.created,
+                id: product.id,
+                isSeasonal: product.isSeasonal,
+                label: LabelIds[product.label],
+                lastEdited: product.lastEdited,
+                name: product.name,
+                notes: product.notes,
+                shop: shop,
+            }
+        })
+        transformedProducts.sort((a, b) => a.name.localeCompare(b.name))
+        return transformedProducts
+    }
+
+    private transformShopJSON(): Shop[] {
+        const transformedShops = shopsJSON.map((shop): Shop => {
+            const shopId = Object.values(ShopIds)[Object.values(ShopIds).indexOf(shop.id as unknown as ShopIds)]
+
+            return {
+                id: shopId,
+                isLocal: shop.isLocal,
+                name: shop.name,
+                notes: shop.notes,
+                imgURL: shop.imgURL,
+            }
+        })
+        transformedShops.sort((a, b) => a.name.localeCompare(b.name))
+        return transformedShops
     }
 
     public getAllProducts(): Product[] {

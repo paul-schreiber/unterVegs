@@ -7,46 +7,50 @@
         </div>
       </NuxtLink>
       <div class="menu" v-if="!isMobile">
-        <div class="menu-item">
-          <NuxtLink to="/about">
-            Die Idee
-          </NuxtLink>
-        </div>
-        <div class="menu-item">
-          <NuxtLink to="/donate">
-            Unterstütze uns
-          </NuxtLink>
-        </div>
-        <div class="menu-item">
-          <NuxtLink to="/contact">
-            Kontakt
-          </NuxtLink>
-        </div>
+        <template v-for="option in menuOptions">
+          <div class="menu-item" v-if="option.name != 'Home'">
+            <NuxtLink :to="option.path">
+              {{option.name}}
+            </NuxtLink>
+          </div>
+        </template>
       </div>
 
-      <button class="burger-menu" v-if="isMobile" @click="toggleMobileMenu" aria-label="Menü-Button">
-        <ClientOnly><font-awesome-icon :icon="['fas', 'bars']" /></ClientOnly>
+      <button class="burger-menu" v-if="isMobile" @click="$emit('toggleMobileMenu')" aria-label="Menü-Button">
+        <ClientOnly>
+          <font-awesome-icon :icon="['fas', 'bars']" />
+        </ClientOnly>
       </button>
     </div>
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: 'NavigationBar',
-  props: ['toggleMobileMenu', 'hideMobileMenu'],
-  computed: {
-    isMobile(): boolean {
-      return this.$device.isMobile
-    }
-  },
-  watch: {
-    $route() {
-      setTimeout(this.hideMobileMenu, 300);
-    }
+<script lang="ts" setup>
+import { computed } from 'vue'
+
+type MenuOption = {
+  path: string,
+  name: string
+}
+
+const route = useRoute()
+const device = useDevice()
+const emit = defineEmits(['hideMobileMenu', 'toggleMobileMenu'])
+defineProps({
+  menuOptions: {
+    type: Array<MenuOption>,
+    required: true
   }
 })
+
+const isMobile = computed((): boolean => {
+  return device.isMobile
+})
+
+watch(() => route.fullPath, () => {
+  setTimeout(() => emit('hideMobileMenu'), 300)
+})
+
 </script>
 
 <style lang="scss" scoped>

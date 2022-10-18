@@ -1,46 +1,42 @@
 <template>
     <div class="badge-container" :title="title">
         <div :class="{ 'badge-name': true, mobile: isMobile }"> {{ name }}</div>
-        <button class="close-button" v-if="removable" @click="onClose(id)" aria-label="Badge entfernen">
-            <font-awesome-icon :icon="['fas', 'xmark']" />
+        <button class="close-button" v-if="isRemovable" @click="$emit('close', id)" aria-label="Badge entfernen">
+            <ClientOnly>
+                <font-awesome-icon :icon="['fas', 'xmark']" />
+            </ClientOnly>
         </button>
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-    props: {
-        name: {
-            type: String,
-            required: true
-        },
-        id: {
-            type: String,
-            required: true
-        },
-        color: {
-            type: String,
-            required: true
-        },
-        title: {
-            type: String,
-            required: false
-        },
-        removable: {
-            type: Boolean,
-            required: true
-        },
-        onClose: {
-            type: Function,
-            required: false
-        }
+<script lang="ts" setup>
+import { computed } from 'vue'
+
+defineProps({
+    name: {
+        type: String,
+        required: true
     },
-    computed: {
-        isMobile() {
-            return this.$device.isMobile
-        }
-    }
+    id: {
+        type: String,
+        required: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
+    title: {
+        type: String,
+        required: false
+    },
+    isRemovable: {
+        type: Boolean,
+        required: true
+    },
+})
+const device = useDevice()
+const isMobile = computed(() => {
+    return device.isMobile
 })
 </script>
 

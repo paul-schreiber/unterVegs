@@ -1,34 +1,26 @@
 <template>
-    <button @click="onClick()" :title="tooltip" :class="buttonType">{{ name }}</button>
+    <button :title="tooltip" :class="buttonType">{{ name }}</button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-    props: {
-        name: {
-            type: String,
-            required: true
-        },
-        isPrimary: {
-            type: Boolean,
-            required: true
-        },
-        tooltip: {
-            type: String,
-            required: false
-        },
-        onClick: {
-            type: Function,
-            required: false
-        },
+<script lang="ts" setup>
+import { computed } from 'vue'
+const props = defineProps({
+    name: {
+        type: String,
+        required: true
     },
-    computed: {
-        buttonType() {
-            return this.isPrimary ? 'primary' : 'secondary'
-        },
-
+    isPrimary: {
+        type: Boolean,
+        required: true
+    },
+    tooltip: {
+        type: String,
+        required: false
     }
+})
+
+const buttonType = computed(() => {
+    return props.isPrimary ? 'primary' : 'secondary'
 })
 </script>
 

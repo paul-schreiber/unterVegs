@@ -1,34 +1,18 @@
 <template>
-        <nav id="nav">
-            <div class="mobile-menu">
-                 <div class="menu-item">
-                    <NuxtLink to="/" @click.native="toggleMobileMenu">
-                        Home
-                    </NuxtLink>
-                </div>
-                <div class="menu-item">
-                    <NuxtLink to="/about" @click.native="toggleMobileMenu">
-                        Die Idee
-                    </NuxtLink>
-                </div>
-                <div class="menu-item">
-                    <NuxtLink to="/donate" @click.native="toggleMobileMenu">
-                        Unterstütze uns!
-                    </NuxtLink>
-                </div>
-                <div class="menu-item">
-                    <NuxtLink to="/contact" @click.native="toggleMobileMenu">
-                        Kontakt
-                    </NuxtLink>
-                </div>
+    <nav id="nav">
+        <div class="mobile-menu">
+            <div class="menu-item" v-for="option in menuOptions">
+                <NuxtLink :to="option.path">
+                    {{option.name}}
+                </NuxtLink>
             </div>
-        </nav>
+        </div>
+    </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-    props: ['toggleMobileMenu']
+<script setup>
+const props = defineProps({
+    menuOptions: Array
 })
 </script>
 
@@ -55,5 +39,4 @@ export default defineComponent({
         text-decoration: none;
     }
 }
-
 </style>

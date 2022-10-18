@@ -7,7 +7,7 @@ export default {
     },
     mail: 'untervegs@proton.me',
     donation: {
-        PayPal: 'paypal.me/paulschreiber96'
+        PayPal: 'https://paypal.me/paulschreiber96/'
     },
     social: {
         instagram: 'https://www.instagram.com/untervegs_com/'

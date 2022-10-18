@@ -39,7 +39,7 @@
                         language="de" />
                 </section>
                 <div class="action-bar">
-                    <ActionButton name="Absenden" aria-label="Absenden" :onClick="submitForm" :disabled="!formIsFilled"
+                    <ActionButton name="Absenden" aria-label="Absenden" @click="submitForm" :disabled="!formIsFilled"
                         :isPrimary=true />
                 </div>
             </form>
@@ -48,7 +48,7 @@
             <h1>Danke für deine Nachricht! 💌</h1>
             <div>Wir kümmern uns so schnell wie möglich drum!</div>
             <NuxtLink to="/">
-                <ActionButton name="Supi!" tooltip="Link zur Startseite" :isPrimary="true" :onClick="() => { }" />
+                <ActionButton name="Supi!" tooltip="Link zur Startseite" :isPrimary="true" />
             </NuxtLink>
         </div>
         <div v-if="hasFailed">
@@ -62,12 +62,14 @@
 
 
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import UserInputWithCaption from "~~/components/Contact/UserInputWithCaption.vue";
 import VueFriendlyCaptcha from '@somushq/vue3-friendly-captcha';
 import Loading from 'vue-loading-overlay';
 import { MailService } from '../services/MailService'
+import { computed, ref } from 'vue'
+
+const route = useRoute()
 
 enum SENDINGSTATUS {
     EDITING = 'EDITING',
@@ -76,102 +78,93 @@ enum SENDINGSTATUS {
     FAILED = 'FAILED',
 }
 
-export default defineComponent({
-    data() {
-        return {
-            userName: "",
-            email: "",
-            message: "",
-            topic: this.$route.params.topic || "",
-            isHuman: false,
-            mailError: false,
-            sendingStatus: SENDINGSTATUS.EDITING
-        };
-    },
-    setup() {
-        const description = 'Du hast Anmerkungen, einen Fehler gefunden oder möchtest ein neues Produkt in den Katalog von unterVegs aufnehmen? Dann nimm einfach Kontakt mit uns auf!'
-        useHead({
-            title: 'Kontakt',
-            meta: [
-                {
-                    hid: 'description',
-                    name: 'description',
-                    content: description
-                },
-                {
-                    hid: 'og:description',
-                    property: 'og:description',
-                    content: description
-                }
-            ]
-        })
-        const config = useRuntimeConfig();
-        const MS = new MailService(config.EMAIL_JS_SERVICE_ID, config.EMAIL_JS_TEMPLATE_ID, config.EMAIL_JS_PUBLIC_KEY);
-        return { MS, config };
-    },
-    mounted() {
-        this.sendingStatus = SENDINGSTATUS.EDITING
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
-    },
-    computed: {
-        formIsFilled(): Boolean {
-            return [this.email, this.userName, this.topic, this.message].every(inputValue => inputValue != "") && this.isHuman;
-        },
-        isMailInputValid(): Boolean {
-            return this.email && this.validateMail(this.email);
-        },
-        isEdited() {
-            return this.sendingStatus === SENDINGSTATUS.EDITING
-        },
-        isLoading() {
-            return this.sendingStatus === SENDINGSTATUS.LOADING
-        },
-        hasBeenSent() {
-            return this.sendingStatus === SENDINGSTATUS.SENT
-        },
-        hasFailed() {
-            return this.sendingStatus === SENDINGSTATUS.FAILED
-        },
-    },
-    methods: {
-        sanitiseText(value) {
-            return value.replace("<", "&lt;").replace(">", "&gt;");
-        },
-        validateMail(mail) {
-            const mailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return mailRegEx.test(mail);
-        },
-        submitForm() {
-            if (this.checkForm()) {
-                this.sendingStatus = SENDINGSTATUS.LOADING
-                const response = this.MS.sendMail(this.userName, this.email, this.topic, this.sanitiseText(this.message));
-                response.then(
-                    (result) => {
-                        this.sendingStatus = SENDINGSTATUS.SENT
-                        console.log("SUCCESS!", result.text);
-                    },
-                    (error) => {
-                        this.sendingStatus = SENDINGSTATUS.FAILED
-                        console.log("FAILED...", error.text);
-                    }
-                );
+const userName = ref("")
+const email = ref("")
+const message = ref("")
+const topic = ref(route.query.topic || "")
+const isHuman = ref(false)
+const mailError = ref(false)
+const sendingStatus = ref(SENDINGSTATUS.EDITING)
+
+const config = useRuntimeConfig();
+const MS = new MailService(config.EMAIL_JS_SERVICE_ID, config.EMAIL_JS_TEMPLATE_ID, config.EMAIL_JS_PUBLIC_KEY);
+
+onMounted(() => {
+    sendingStatus.value = SENDINGSTATUS.EDITING
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+})
+
+const formIsFilled = computed((): Boolean => {
+    return [email.value, userName.value, topic.value, message.value].every(inputValue => inputValue != "") && isHuman.value;
+})
+const isMailInputValid = computed((): Boolean => {
+    return email.value && validateMail(email.value);
+})
+const isEdited = computed(() => {
+    return sendingStatus.value === SENDINGSTATUS.EDITING
+})
+const isLoading = computed(() => {
+    return sendingStatus.value === SENDINGSTATUS.LOADING
+})
+const hasBeenSent = computed(() => {
+    return sendingStatus.value === SENDINGSTATUS.SENT
+})
+const hasFailed = computed(() => {
+    return sendingStatus.value === SENDINGSTATUS.FAILED
+})
+
+const sanitiseText = (value: string) => {
+    return value.replace("<", "&lt;").replace(">", "&gt;");
+}
+const validateMail = (mail) => {
+    const mailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return mailRegEx.test(mail);
+}
+const submitForm = () => {
+    if (checkForm()) {
+        sendingStatus.value = SENDINGSTATUS.LOADING
+        const response = MS.sendMail(userName.value, email.value, topic.value as string, sanitiseText(message.value));
+        response.then(
+            (result) => {
+                sendingStatus.value = SENDINGSTATUS.SENT
+                console.log("SUCCESS!", result.text);
+            },
+            (error) => {
+                sendingStatus.value = SENDINGSTATUS.FAILED
+                console.log("FAILED...", error.text);
             }
+        );
+    }
+}
+const checkForm = () => {
+    if (isHuman.value && isMailInputValid.value) {
+        return true;
+    }
+    else {
+        mailError.value = true;
+        return false;
+    }
+}
+
+const description = 'Du hast Anmerkungen, einen Fehler gefunden oder möchtest ein neues Produkt in den Katalog von unterVegs aufnehmen? Dann nimm einfach Kontakt mit uns auf!'
+useHead({
+    title: 'Kontakt',
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: description
         },
-        checkForm() {
-            if (this.isHuman && this.isMailInputValid) {
-                return true;
-            }
-            else {
-                this.mailError = true;
-                return false;
-            }
-        },
-    },
-    components: { UserInputWithCaption, VueFriendlyCaptcha, Loading }
+        {
+            hid: 'og:description',
+            property: 'og:description',
+            content: description
+        }
+    ]
 })
 </script>
 

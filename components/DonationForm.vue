@@ -1,48 +1,48 @@
 <template>
     <div>
         <div class="donation-ideas">
-            <div class="donation-idea" @click="selectAmount(idea.amount)" v-for="idea in donationIdeas">
+            <button class="donation-idea" @click="selectAmount(idea.amount)" v-for="idea in ideas">
                 <div class="image-container">
-                    <font-awesome-icon :icon="['fas', idea.img]" />
+                    <ClientOnly>
+                        <font-awesome-icon :icon="['fas', idea.img]" />
+                    </ClientOnly>
                 </div>
                 <div class="text-container">
                     <header>
                         {{ idea.name }}
                     </header>
-                    {{ idea.description }}
+                    <p>
+                        {{ idea.description }}
+                    </p>
                 </div>
-            </div>
+            </button>
         </div>
         <div class="donation-action-container">
             <div><input v-model="donationAmount" />€</div>
             <a :href="paypalURL" target="_blank">Los gehts!
-                <font-awesome-icon :icon="['fab', 'paypal']" />
+                <ClientOnly>
+                    <font-awesome-icon :icon="['fab', 'paypal']" />
+                </ClientOnly>
             </a>
         </div>
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { DonationIdea } from '../types'
 import donationIdeas from '../data/donation-ideas'
-export default defineComponent({
-    data() {
-        return {
-            donationIdeas: donationIdeas as DonationIdea[],
-            donationAmount: 0,
-        }
-    },
-    computed: {
-        paypalURL() {
-            return `https://www.paypal.com/paypalme/paulschreiber96/${this.donationAmount}`
-        }
-    },
-    methods: {
-        selectAmount(amount: number) {
-            this.donationAmount = amount
-        }
-    }
+import { ref, computed } from 'vue'
+import config from '~/data/content'
+
+const ideas = ref(donationIdeas as DonationIdea[])
+const donationAmount = ref(0)
+
+const paypalURL = computed(() => {
+    return `${config.donation.PayPal}${donationAmount.value}`
 })
+const selectAmount = (amount: number) => {
+    donationAmount.value = amount
+}
 </script>
 
 <style lang="scss" scoped>
@@ -54,6 +54,7 @@ export default defineComponent({
     justify-content: center;
 
     .donation-idea {
+        all: unset;
         background-color: white;
         padding: $sp-medium;
         border-radius: 15px;
@@ -81,6 +82,10 @@ export default defineComponent({
 
             header {
                 font-weight: $fw-bold;
+            }
+
+            p {
+                all: unset;
             }
         }
     }

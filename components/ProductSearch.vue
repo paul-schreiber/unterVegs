@@ -4,18 +4,23 @@
       <header>
         <div class="search">
           <span class="search-icon">
-            <ClientOnly><font-awesome-icon :icon="['fas', 'search']" /></ClientOnly>
+            <ClientOnly>
+              <font-awesome-icon :icon="['fas', 'search']" />
+            </ClientOnly>
           </span>
           <div class="applied-categories-container">
             <Badge v-for="category in appliedFilters" :key="category" :color="getCategorieObject(category).color"
-              :removable="true" :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
-              :onClose="removeCategoryFromFilter" />
+              is-removable :name="shortenText(getCategorieObject(category).name)" :id="category" :title="category"
+              @close="removeCategoryFromFilter" />
           </div>
-          <input :value="searchTerm" @input="e => searchTerm = (e.target as HTMLInputElement).value" :placeholder="randomPlaceholder" class="search-field"
-            @keydown.backspace="removeLastCategoryFromFilter" @keydown.enter="($event.target as HTMLElement).blur()"/>
+          <input :value="searchTerm" @input="e => searchTerm = (e.target as HTMLInputElement).value"
+            :placeholder="randomPlaceholder" class="search-field" @keydown.backspace="removeLastCategoryFromFilter"
+            @keydown.enter="($event.target as HTMLElement).blur()" />
           <button @click="toggleFilterPanel" class="filter-icon" aria-label="Filtereinstellungen"
             :disabled="availableFilters.size === 0">
-            <ClientOnly><font-awesome-icon :icon="['fas', 'sliders']" /></ClientOnly>
+            <ClientOnly>
+              <font-awesome-icon :icon="['fas', 'sliders']" />
+            </ClientOnly>
           </button>
         </div>
         <Transition name="slide-up">
@@ -23,7 +28,7 @@
             <div class="available-categories-container">
               <div class="badge-wrapper" v-for="category in availableFilters" :key="category"
                 @click="addCategoryToFilter(category)">
-                <Badge :color="getCategorieObject(category).color" :removable="false"
+                <Badge :color="getCategorieObject(category).color" :is-removable="false"
                   :name="getCategorieObject(category).name" :id="category" :title="`Nach ${category} suchen`" />
               </div>
             </div>
@@ -45,7 +50,7 @@
                 <ProductItem :product="product" :searchTerm="searchTerm" />
               </ItemContainer>
               <template #suggestions>
-                <ItemContainer v-for="product in getMostSimilarProducts.slice(0, maxSuggestions - 1)"
+                <ItemContainer v-for="product in getMostSimilarProducts.slice(0, MAX_SUGGESTIONS - 1)"
                   :key="`ls-${product.id}`" :link="`/product/${product.id}`">
                   <ProductItem :product="product" />
                 </ItemContainer>
@@ -59,7 +64,7 @@
                 <ShopItem :shop="shop" :searchTerm="searchTerm" />
               </ItemContainer>
               <template #suggestions>
-                <ItemContainer v-for="shop in getMostSimilarShops.slice(0, maxSuggestions - 1)" :key="`ls-${shop.id}`"
+                <ItemContainer v-for="shop in getMostSimilarShops.slice(0, MAX_SUGGESTIONS - 1)" :key="`ls-${shop.id}`"
                   :link="`/shop/${shop.id}`">
                   <ShopItem :shop="shop" />
                 </ItemContainer>
@@ -72,97 +77,93 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { Product, Shop, CategoryIds, Category } from "../types"
 import { Categories } from "../types"
-export default defineComponent({
-  name: "ProductSearch",
-  data() {
-    return {
-      searchTerm: '' as string,
-      availableFilters: new Set<CategoryIds>(Object.keys(CategoryIds) as CategoryIds[]),
-      appliedFilters: new Set<CategoryIds>(),
-      showFilterPanel: false,
-      maxFilters: 3,
-      minSearchTermLength: 2,
-      minSearchTermLengthForSuggestions: 3,
-      maxLevenshteinDistance: 4,
-      maxSuggestions: 5,
-      selectedTab: 'products',
-      placeholderList: ['Pizza', 'Pasta', 'Brezel', 'Pommes', 'Hummus', 'Vegan TS', 'Burger', 'Dean & David', 'McDonald`s', 'Burger King', 'deinem Lieblingsshop', 'deinem Lieblingsgericht']
-    };
-  },
+import { ref, computed, reactive } from 'vue'
 
-  computed: {
-    filteredProducts(): Product[] {
-      return this.$DS.filterProducts(this.searchTerm, [...this.appliedFilters])
-    },
-    filteredShops(): Shop[] {
-      return this.$DS.filterShops(this.searchTerm, [...this.appliedFilters])
-    },
-    hideResults(): boolean {
-      return this.searchTerm.length < this.minSearchTermLength && this.appliedFilters.size === 0
-    },
-    isMobile(): boolean {
-      return this.$device.isMobile
-    },
-    randomPlaceholder(): string {
-      const randomIndex = Math.floor(Math.random() * this.placeholderList.length)
-      const phrase = this.placeholderList[randomIndex]
-      return `Suche nach ${phrase}...`
-    },
-    getMostSimilarProducts(): Product[] {
-      return this.$DS.getLevenshteinBasedProductSuggestions(this.searchTerm, [...this.appliedFilters], this.maxLevenshteinDistance)
-    },
-    getMostSimilarShops(): Shop[] {
-      return this.$DS.getLevenshteinBasedShopSuggestions(this.searchTerm, [...this.appliedFilters], this.maxLevenshteinDistance)
-    },
-    showProductSuggestions() {
-      return this.getMostSimilarProducts.length != 0 && this.searchTerm.length > this.minSearchTermLengthForSuggestions
-    },
-    showShopSuggestions() {
-      return this.getMostSimilarShops.length != 0 && this.searchTerm.length > this.minSearchTermLengthForSuggestions
-    }
-  },
-  methods: {
-    getCategorieObject(categorieId: CategoryIds): Category {
-      return Categories[categorieId]
-    },
-    addCategoryToFilter(category: CategoryIds) {
-      if (this.appliedFilters.size === this.maxFilters) {
-        alert(`Du kannst nur ${this.maxFilters} Filter gleichzeitig nutzen`)
-        return
-      }
-      this.appliedFilters.add(category)
-      this.availableFilters.delete(category)
-      this.toggleFilterPanel()
-    },
-    removeCategoryFromFilter(category: CategoryIds) {
-      this.appliedFilters.delete(category)
-      this.availableFilters.add(category)
-      const availableFiltersArray = [...this.availableFilters]
-      this.$DS.sortCategories(availableFiltersArray)
-      this.availableFilters = new Set<CategoryIds>(availableFiltersArray)
-    },
-    toggleFilterPanel() {
-      this.showFilterPanel = !this.showFilterPanel
-    },
-    selectTab(tabName: string) {
-      this.selectedTab = tabName
-    },
-    shortenText(text: string): string {
-      return this.isMobile ? text.slice(0, 2) : text
-    },
-    removeLastCategoryFromFilter() {
-      if (this.searchTerm === '' && this.appliedFilters.size != 0) {
-        const filterArray = [...this.appliedFilters]
-        const lastFilter = filterArray[filterArray.length - 1]
-        this.appliedFilters.delete(lastFilter)
-        this.availableFilters.add(lastFilter)
-      }
-    },
+const nuxtApp = useNuxtApp()
+const device = useDevice()
+const MAX_FILTERS = 3
+const MIN_SEARCH_TERM_LENGTH = 2
+const MIN_SEARCH_TERM_LENGTH_FOR_SUGGESTIONS = 3
+const MAX_LEVENSHTEIN_DISTANCE = 4
+const MAX_SUGGESTIONS = 5
+
+const searchTerm = ref('' as string)
+const availableFilters = ref(new Set<CategoryIds>(Object.keys(CategoryIds) as CategoryIds[]))
+const appliedFilters = reactive(new Set<CategoryIds>())
+const showFilterPanel = ref(false)
+const placeholderList = reactive(['Pizza', 'Pasta', 'Brezel', 'Pommes', 'Hummus', 'Vegan TS', 'Burger', 'Dean & David', 'McDonald`s', 'Burger King', 'deinem Lieblingsshop', 'deinem Lieblingsgericht'])
+const selectedTab = ref('products')
+
+const filteredProducts = computed((): Product[] => {
+  return nuxtApp.$DS.filterProducts(searchTerm.value, [...appliedFilters])
+})
+const filteredShops = computed((): Shop[] => {
+  return nuxtApp.$DS.filterShops(searchTerm.value, [...appliedFilters])
+})
+const hideResults = computed((): boolean => {
+  return searchTerm.value.length < MIN_SEARCH_TERM_LENGTH && appliedFilters.size === 0
+})
+const isMobile = computed((): boolean => {
+  return device.isMobile
+})
+const randomPlaceholder = computed((): string => {
+  const randomIndex = Math.floor(Math.random() * placeholderList.length)
+  const phrase = placeholderList[randomIndex]
+  return `Suche nach ${phrase}...`
+})
+const getMostSimilarProducts = computed((): Product[] => {
+  return nuxtApp.$DS.getLevenshteinBasedProductSuggestions(searchTerm.value, [...appliedFilters], MAX_LEVENSHTEIN_DISTANCE)
+})
+const getMostSimilarShops = computed((): Shop[] => {
+  return nuxtApp.$DS.getLevenshteinBasedShopSuggestions(searchTerm.value, [...appliedFilters], MAX_LEVENSHTEIN_DISTANCE)
+})
+const showProductSuggestions = computed(() => {
+  return getMostSimilarProducts.value.length != 0 && searchTerm.value.length > MIN_SEARCH_TERM_LENGTH_FOR_SUGGESTIONS
+})
+const showShopSuggestions = computed(() => {
+  return getMostSimilarShops.value.length != 0 && searchTerm.value.length > MIN_SEARCH_TERM_LENGTH_FOR_SUGGESTIONS
+})
+
+//methods
+const getCategorieObject = (categorieId: CategoryIds): Category => {
+  return Categories[categorieId]
+}
+const addCategoryToFilter = (category: CategoryIds) => {
+  if (appliedFilters.size === MAX_FILTERS) {
+    alert(`Du kannst nur ${MAX_FILTERS} Filter gleichzeitig nutzen`)
+    return
   }
-});
+  appliedFilters.add(category)
+  availableFilters.value.delete(category)
+  toggleFilterPanel()
+}
+const removeCategoryFromFilter = (category: CategoryIds) => {
+  appliedFilters.delete(category)
+  availableFilters.value.add(category)
+  const availableFiltersArray = [...availableFilters.value]
+  nuxtApp.$DS.sortCategories(availableFiltersArray)
+  availableFilters.value = new Set<CategoryIds>(availableFiltersArray)
+}
+const toggleFilterPanel = () => {
+  showFilterPanel.value = !showFilterPanel.value
+}
+const selectTab = (tabName: string) => {
+  selectedTab.value = tabName
+}
+const shortenText = (text: string): string => {
+  return isMobile.value ? text.slice(0, 2) : text
+}
+const removeLastCategoryFromFilter = () => {
+  if (searchTerm.value === '' && appliedFilters.size != 0) {
+    const filterArray = [...appliedFilters]
+    const lastFilter = filterArray[filterArray.length - 1]
+    appliedFilters.delete(lastFilter)
+    availableFilters.value.add(lastFilter)
+  }
+}
 </script>
 
 <style lang="scss" scoped>

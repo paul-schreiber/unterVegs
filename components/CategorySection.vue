@@ -1,35 +1,25 @@
 <template>
-    <h3 :id="category">{{category || "Sonstige"}}:</h3>
+    <h3 :id="category">{{category}}:</h3>
     <div class="product-list">
         <ProductDetailItem v-for="product in products" :key="`PDI-${product.id}`" :product="product" />
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import { Product, CategoryIds, Category, Categories } from "~~/types";
-export default defineComponent({
-    props: {
-        category: {
-            type: String,
-            required: false
-        },
-        products: {
-            type: Array<Product>,
-            required: true
-        },
+<script lang="ts" setup>
+import { Product, Categories } from "~~/types";
+import { computed } from 'vue'
+const props = defineProps({
+    category: {
+        type: String,
+        default: 'Sonstige'
     },
-    computed: {
-        getCategoryColor() {
-            console.log(this.category)
-            return this.category ? this.getCategoryObject(this.category).color : 'black'
-        }
+    products: {
+        type: Array<Product>,
+        required: true
     },
-    methods: {
-        getCategoryObject(categorieId: CategoryIds): Category {
-            return Categories[categorieId]
-        }
-    }
+})
+const getCategoryColor = computed(() => {
+    return props.category != 'Sonstige' ? Categories[props.category].color : 'black'
 })
 </script>
 

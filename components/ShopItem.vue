@@ -1,48 +1,44 @@
 <template>
   <div class="shop-item">
-    <div class="name-container" v-html="getEmphasizedText"></div>
+    <div class="name-container" v-dompurify-html="getEmphasizedText"></div>
     <div class="categories-container">
       <Badge v-for="badgeID in getProductBadges" :key="randomId" :color="getCategory(badgeID).color"
         :name="getCategory(badgeID).name" :id="badgeID"
-        :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :removable="false" />
+        :title="`Dieser Shop verkauft Gerichte aus der Kategorie ${getCategory(badgeID).name}`" :is-removable="false" />
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { v4 as uuidv4 } from 'uuid';
 import type { Shop, CategoryIds } from "../types"
 import { Categories } from "../types"
-import { defineComponent } from "vue";
 import { emphasizeText } from '../services/util'
-export default defineComponent({
-  props: {
-    shop: {
-      type: Object as () => Shop,
-      required: true
-    },
-    searchTerm: {
-      type: String,
-      required: false
-    }
+import { computed } from 'vue'
+const nuxtApp = useNuxtApp()
+const props = defineProps({
+  shop: {
+    type: Object as () => Shop,
+    required: true
   },
-  computed: {
-    getProductBadges(): CategoryIds[] {
-      return this.$DS.getCategoriesByShopId(this.shop.id)
-    },
-    getEmphasizedText(): string {
-      return emphasizeText(this.shop.name, this.searchTerm)
-    },
-    randomId() {
-      return uuidv4()
-    }
-  },
-  methods: {
-    getCategory(categorieId: CategoryIds) {
-      return Categories[categorieId]
-    }
+  searchTerm: {
+    type: String,
+    required: false
   }
-});
+})
+
+const getProductBadges = computed((): CategoryIds[] => {
+  return nuxtApp.$DS.getCategoriesByShopId(props.shop.id)
+})
+const getEmphasizedText = computed((): string => {
+  return emphasizeText(props.shop.name, props.searchTerm)
+})
+const randomId = computed(() => {
+  return uuidv4()
+})
+const getCategory = (categorieId: CategoryIds) => {
+  return Categories[categorieId]
+}
 </script>
 
 <style lang="scss" scoped>

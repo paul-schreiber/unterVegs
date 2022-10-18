@@ -1,25 +1,26 @@
 <template>
   <div id="app">
-    <NavigationBar :toggleMobileMenu="toggleMobileMenu" :hideMobileMenu="hideMobileMenu" />
+    <NavigationBar @toggleMobileMenu="toggleMobileMenu" @hideMobileMenu="hideMobileMenu" :menuOptions=menuOptions />
     <Transition name="slide-right">
-      <MobileMenu v-if="enableMobileMenu" :toggleMobileMenu="toggleMobileMenu" />
+      <MobileMenu v-show="enableMobileMenu" @toggleMobileMenu="toggleMobileMenu" :menuOptions=menuOptions />
     </Transition>
     <Transition name="slide-left">
-      <template v-if="!enableMobileMenu">
-        <div>
+      <div v-show="!enableMobileMenu">
 
-          <div class="content-wrapper">
-            <NuxtPage />
-          </div>
-          <CookieBanner :onAccept="enableAnalytics" />
-          <PageFooter />
+        <div class="content-wrapper">
+          <NuxtPage />
         </div>
-      </template>
+        <CookieBanner :onAccept="enableAnalytics" />
+        <PageFooter />
+      </div>
     </Transition>
   </div>
 </template>
+  
+<script lang="ts" setup>
+import { useState } from "vue-gtag-next";
+import { computed, ref } from "vue";
 
-<script setup lang="ts">
 useHead({
   link: [
     {
@@ -55,41 +56,46 @@ useHead({
     { rel: "apple-touch-startup-image", href: "/splash-icons/apple-splash-640-1136.jpg", media: "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" }
   ]
 })
-</script>
 
-<script lang="ts">
-import { useState } from "vue-gtag-next";
-import { defineComponent } from "vue";
-export default defineComponent({
-  data() {
-    return {
-      showMobileMenu: false,
-    }
+const menuOptions = [
+  {
+    name: 'Home',
+    path: '/'
   },
-  computed: {
-    isMobile(): boolean {
-      return this.$device.isMobile
-    },
-    enableMobileMenu() {
-      return this.showMobileMenu && this.isMobile
-    }
+  {
+    name: 'Die Idee',
+    path: '/about'
   },
-  methods: {
-    enableAnalytics() {
-      const { isEnabled } = useState()
-      isEnabled.value = true
-    },
-    hideMobileMenu() {
-      this.showMobileMenu = false
-    },
-    toggleMobileMenu() {
-      this.showMobileMenu = !this.showMobileMenu
-    }
-  }
+  {
+    name: 'Unterstütze uns',
+    path: '/donate'
+  },
+  {
+    name: 'Kontakt',
+    path: '/contact'
+  },
+]
+
+const showMobileMenu = ref(false)
+const device = useDevice()
+
+const enableMobileMenu = computed(() => {
+  return showMobileMenu.value && device.isMobile
 })
+
+const enableAnalytics = () => {
+  const { isEnabled } = useState()
+  isEnabled.value = true
+}
+const hideMobileMenu = () => {
+  showMobileMenu.value = false
+}
+const toggleMobileMenu = () => {
+  showMobileMenu.value = !showMobileMenu.value
+}
 </script>
-
-
+  
+  
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -162,3 +168,4 @@ h3 {
   }
 }
 </style>
+  

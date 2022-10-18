@@ -1,7 +1,9 @@
 <template>
     <div class="tab-item" :class="{ active: isActive }">
         <div>
-            <font-awesome-icon :icon="['fas', icon]" />
+            <ClientOnly>
+                <font-awesome-icon :icon="['fas', icon]" />
+            </ClientOnly>
         </div>
         <div class="tab-name">
             {{ title }}
@@ -10,29 +12,13 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-    name: "TabItem",
-    props: {
-        title: {
-            type: String,
-            required: true
-        },
-        icon: {
-            type: String,
-            required: true
-        },
-        resultCount: {
-            type: Number,
-            required: true
-        },
-        isActive: {
-            type: Boolean,
-            required: true
-        },
-    },
-});
+<script lang="ts" setup>
+defineProps({
+    title: String,
+    icon: String,
+    resultCount: Number,
+    isActive: Boolean
+})
 </script>
 
 <style lang="scss" scoped>

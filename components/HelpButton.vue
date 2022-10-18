@@ -16,28 +16,23 @@
                 </p>
             </div>
         </Transition>
-        <button @click="toggleHelp">
+        <button @click="toggleHelp()">
             <span v-if="!showHelp">🤔</span>
             <span v-else>
-                <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                <ClientOnly>
+                    <font-awesome-icon class="warning-icon" :icon="['fas', 'close']" />
+                </ClientOnly>
             </span>
         </button>
     </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-    data() {
-        return {
-            showHelp: false
-        }
-    },
-    methods: {
-        toggleHelp() {
-            this.showHelp = !this.showHelp
-        }
-    }
-})
+<script lang="ts" setup>
+import { ref } from 'vue'
+const showHelp = ref(false)
+const toggleHelp = () => {
+    showHelp.value = !showHelp.value
+}
 </script>
 
 <style lang="scss" scoped>
@@ -89,16 +84,6 @@ export default defineComponent({
         box-shadow: $box-shadow;
 
         user-select: none;
-        /* supported by Chrome and Opera */
-        -webkit-user-select: none;
-        /* Safari */
-        -khtml-user-select: none;
-        /* Konqueror HTML */
-        -moz-user-select: none;
-        /* Firefox */
-        -ms-user-select: none;
-        /* Internet Explorer/Edge */
-
     }
 }
 
