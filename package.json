@@ -9,7 +9,7 @@
   "devDependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.4.2",
     "@types/luxon": "^2.3.2",
-    "nuxt": "^3.0.0-rc.11"
+    "nuxt": "3.0.0-rc.12"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
