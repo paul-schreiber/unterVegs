@@ -3,9 +3,9 @@
         <div class="cookie-banner" v-if="!hideBanner">
             <div class="cookie-icon-container"><span>🍪</span> </div>
             <div>
-                <p>Wir nutzen <b>Cookies</b> um die Website stetig zu verbessern und deinen Besuch
+                <p>Wir nutzen <b>Cookies</b> (natürlich 100% vegan) um die Website stetig zu verbessern und deinen Besuch
                     nutzerfreundlicher zu
-                    gestalten. Wie genau das funktioniert erfährst du in unserer <NuxtLink to="/privacy">
+                    gestalten.  Wir würden uns deswegen über deine Zustimmung freuen! Weitere Infos erfährst du in unserer <NuxtLink to="/privacy">
                         Datenschutzerklärung
                     </NuxtLink>.
                 </p>
